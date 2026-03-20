@@ -1,0 +1,50 @@
+---
+interface Props {
+  lang?: string;
+}
+
+const { lang = "en" } = Astro.props;
+
+const t = {
+  en: {
+    headline: "Ready to simplify your property management?",
+    sub: "Join landlords who save hours every month with Vermietler. Start for free, no credit card required.",
+    cta: "Get started for free",
+  },
+  de: {
+    headline: "Bereit, Ihre Immobilienverwaltung zu vereinfachen?",
+    sub: "Schließen Sie sich Vermietern an, die jeden Monat Stunden sparen. Kostenlos starten, keine Kreditkarte nötig.",
+    cta: "Kostenlos starten",
+  },
+}[lang]!;
+---
+
+<section class="py-24">
+  <div class="mx-auto max-w-6xl px-6">
+    <div class="relative overflow-hidden rounded-3xl bg-gradient-to-br from-brand-500 to-brand-700 px-8 py-16 text-center sm:px-16">
+      <!-- Background decoration -->
+      <div class="pointer-events-none absolute inset-0 -z-0">
+        <div class="absolute -top-20 -right-20 h-60 w-60 rounded-full bg-white/10 blur-2xl"></div>
+        <div class="absolute -bottom-20 -left-20 h-60 w-60 rounded-full bg-white/10 blur-2xl"></div>
+      </div>
+
+      <div class="relative z-10">
+        <h2 class="mx-auto max-w-2xl font-display text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+          {t.headline}
+        </h2>
+        <p class="mx-auto mt-4 max-w-xl text-lg text-brand-100">
+          {t.sub}
+        </p>
+        <a
+          href="#pricing"
+          class="mt-8 inline-flex items-center gap-2 rounded-xl bg-white px-8 py-3.5 text-base font-semibold text-brand-700 shadow-lg transition hover:bg-brand-50"
+        >
+          {t.cta}
+          <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,66 @@
+---
+import Layout from "./Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import Footer from "../components/Footer.astro";
+
+interface Props {
+  title: string;
+  description: string;
+  date: Date;
+  author: string;
+  tags: string[];
+  lang?: string;
+}
+
+const { title, description, date, author, tags, lang = "en" } = Astro.props;
+const formattedDate = date.toLocaleDateString(lang === "de" ? "de-DE" : "en-US", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
+const backLabel = lang === "de" ? "Alle Artikel" : "All posts";
+const backHref = lang === "de" ? "/de/blog" : "/blog";
+---
+
+<Layout title={`${title} — Vermietler Blog`} description={description} lang={lang}>
+  <Navbar lang={lang} />
+  <main class="pt-32 pb-24">
+    <article class="mx-auto max-w-3xl px-6">
+      <!-- Back link -->
+      <a
+        href={backHref}
+        class="inline-flex items-center gap-1.5 text-sm text-gray-500 transition hover:text-gray-900"
+      >
+        <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+        </svg>
+        {backLabel}
+      </a>
+
+      <!-- Header -->
+      <header class="mt-8">
+        <div class="flex flex-wrap gap-2">
+          {tags.map((tag) => (
+            <span class="rounded-full bg-brand-50 px-2.5 py-0.5 text-xs font-medium text-brand-700">
+              {tag}
+            </span>
+          ))}
+        </div>
+        <h1 class="mt-4 font-display text-3xl font-semibold tracking-tight text-gray-900 sm:text-4xl">
+          {title}
+        </h1>
+        <div class="mt-4 flex items-center gap-3 text-sm text-gray-500">
+          <span>{author}</span>
+          <span class="h-1 w-1 rounded-full bg-gray-300"></span>
+          <time datetime={date.toISOString()}>{formattedDate}</time>
+        </div>
+      </header>
+
+      <!-- Content -->
+      <div class="prose mt-10 max-w-none prose-headings:font-display prose-headings:font-semibold prose-headings:tracking-tight prose-a:text-brand-500 prose-a:no-underline hover:prose-a:underline prose-p:text-gray-600 prose-li:text-gray-600 prose-strong:text-gray-900">
+        <slot />
+      </div>
+    </article>
+  </main>
+  <Footer lang={lang} />
+</Layout>

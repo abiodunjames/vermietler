@@ -1,0 +1,93 @@
+---
+interface Props {
+  lang?: string;
+}
+
+const { lang = "en" } = Astro.props;
+
+const t = {
+  en: {
+    eyebrow: "How it works",
+    headline: "Up and running in minutes",
+    sub: "No migration headaches. No complex setup. Just add your properties and go.",
+    steps: [
+      {
+        number: "01",
+        title: "Add your properties",
+        description: "Create your portfolio, properties, and units in the guided onboarding flow. Upload key documents and photos.",
+      },
+      {
+        number: "02",
+        title: "Connect your bank",
+        description: "Link your bank account to auto-import transactions. Set up rules to categorize and reconcile rent payments.",
+      },
+      {
+        number: "03",
+        title: "Manage everything",
+        description: "Track tenants, leases, meter readings, expenses, and documents. Communicate with tenants directly from the platform.",
+      },
+      {
+        number: "04",
+        title: "Generate statements",
+        description: "Use the statement wizard to allocate costs, include consumption data, and produce PDF statements ready to send.",
+      },
+    ],
+  },
+  de: {
+    eyebrow: "So funktioniert's",
+    headline: "In wenigen Minuten startklar",
+    sub: "Keine aufwändige Migration. Kein komplexes Setup. Einfach Immobilien anlegen und loslegen.",
+    steps: [
+      {
+        number: "01",
+        title: "Immobilien anlegen",
+        description: "Erstellen Sie Ihr Portfolio, Immobilien und Einheiten im geführten Onboarding. Laden Sie Dokumente und Fotos hoch.",
+      },
+      {
+        number: "02",
+        title: "Bank verbinden",
+        description: "Verknüpfen Sie Ihr Bankkonto für automatischen Transaktionsimport. Richten Sie Regeln zur Kategorisierung ein.",
+      },
+      {
+        number: "03",
+        title: "Alles verwalten",
+        description: "Mieter, Mietverträge, Zählerstände, Ausgaben und Dokumente an einem Ort. Direkte Kommunikation mit Mietern.",
+      },
+      {
+        number: "04",
+        title: "Abrechnungen erstellen",
+        description: "Kosten zuordnen, Verbrauchsdaten einbeziehen und PDF-Abrechnungen per Assistent erstellen und versenden.",
+      },
+    ],
+  },
+}[lang]!;
+---
+
+<section id="how-it-works" class="py-24">
+  <div class="mx-auto max-w-6xl px-6">
+    <div class="text-center">
+      <p class="text-xs font-semibold uppercase tracking-[0.08em] text-brand-500">{t.eyebrow}</p>
+      <h2 class="mt-3 font-display text-3xl font-semibold tracking-tight text-gray-900 sm:text-4xl">
+        {t.headline}
+      </h2>
+      <p class="mx-auto mt-4 max-w-2xl text-lg text-gray-500">{t.sub}</p>
+    </div>
+
+    <div class="relative mt-16">
+      <!-- Connecting line -->
+      <div class="absolute top-8 right-0 left-0 hidden h-0.5 bg-gradient-to-r from-brand-100 via-brand-200 to-brand-100 lg:block"></div>
+
+      <div class="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
+        {t.steps.map((step) => (
+          <div class="relative text-center">
+            <div class="relative z-10 mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-brand-500 font-display text-xl font-semibold text-white shadow-md">
+              {step.number}
+            </div>
+            <h3 class="mt-6 text-base font-semibold text-gray-900">{step.title}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-gray-500">{step.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

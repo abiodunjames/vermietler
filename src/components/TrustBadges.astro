@@ -1,0 +1,132 @@
+---
+interface Props {
+  lang?: string;
+}
+
+const { lang = "en" } = Astro.props;
+
+const t = {
+  en: {
+    headline: "Trusted by landlords across Germany",
+    badges: [
+      {
+        icon: "shield-check",
+        label: "DSGVO compliant",
+        description: "Your data stays safe and private",
+      },
+      {
+        icon: "lock",
+        label: "Bank-grade security",
+        description: "TLS encryption & audit logging",
+      },
+      {
+        icon: "server",
+        label: "EU hosted",
+        description: "Data stored in European data centers",
+      },
+      {
+        icon: "clock",
+        label: "99.9% uptime",
+        description: "Reliable when you need it",
+      },
+    ],
+    socialProof: {
+      users: "500+",
+      usersLabel: "landlords",
+      units: "3,000+",
+      unitsLabel: "units managed",
+      rating: "4.8/5",
+      ratingLabel: "average rating",
+    },
+  },
+  de: {
+    headline: "Vertraut von Vermietern in ganz Deutschland",
+    badges: [
+      {
+        icon: "shield-check",
+        label: "DSGVO-konform",
+        description: "Ihre Daten bleiben sicher und privat",
+      },
+      {
+        icon: "lock",
+        label: "Bankniveau-Sicherheit",
+        description: "TLS-Verschlüsselung & Audit-Logging",
+      },
+      {
+        icon: "server",
+        label: "EU-gehostet",
+        description: "Daten in europäischen Rechenzentren",
+      },
+      {
+        icon: "clock",
+        label: "99,9% Verfügbarkeit",
+        description: "Zuverlässig, wenn Sie es brauchen",
+      },
+    ],
+    socialProof: {
+      users: "500+",
+      usersLabel: "Vermieter",
+      units: "3.000+",
+      unitsLabel: "verwaltete Einheiten",
+      rating: "4,8/5",
+      ratingLabel: "Durchschnittsbewertung",
+    },
+  },
+}[lang]!;
+
+const iconPaths: Record<string, string> = {
+  "shield-check":
+    "M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z",
+  lock: "M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25z",
+  server:
+    "M21.75 17.25v-.228a4.5 4.5 0 0 0-.12-1.03l-2.268-9.64a3.375 3.375 0 0 0-3.285-2.602H7.923a3.375 3.375 0 0 0-3.285 2.602l-2.268 9.64a4.5 4.5 0 0 0-.12 1.03v.228m19.5 0a3 3 0 0 1-3 3H5.25a3 3 0 0 1-3-3m19.5 0a3 3 0 0 0-3-3H5.25a3 3 0 0 0-3 3m16.5 0h.008v.008h-.008v-.008zm-3 0h.008v.008h-.008v-.008z",
+  clock:
+    "M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0z",
+};
+---
+
+<section class="border-b border-gray-200 py-16">
+  <div class="mx-auto max-w-6xl px-6">
+    <p class="mb-10 text-center text-sm font-medium uppercase tracking-widest text-gray-400">
+      {t.headline}
+    </p>
+
+    <!-- Trust badges -->
+    <div class="grid grid-cols-2 gap-6 sm:grid-cols-4">
+      {t.badges.map((badge) => (
+        <div class="flex flex-col items-center text-center">
+          <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-50 text-brand-500">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d={iconPaths[badge.icon]} />
+            </svg>
+          </div>
+          <span class="mt-3 text-sm font-semibold text-gray-900">{badge.label}</span>
+          <span class="mt-1 text-xs text-gray-500">{badge.description}</span>
+        </div>
+      ))}
+    </div>
+
+    <!-- Social proof numbers -->
+    <div class="mt-12 flex items-center justify-center gap-12 border-t border-gray-200 pt-10">
+      <div class="text-center">
+        <div class="font-display text-2xl font-semibold text-gray-900">{t.socialProof.users}</div>
+        <div class="mt-1 text-xs text-gray-500">{t.socialProof.usersLabel}</div>
+      </div>
+      <div class="h-8 w-px bg-gray-200"></div>
+      <div class="text-center">
+        <div class="font-display text-2xl font-semibold text-gray-900">{t.socialProof.units}</div>
+        <div class="mt-1 text-xs text-gray-500">{t.socialProof.unitsLabel}</div>
+      </div>
+      <div class="h-8 w-px bg-gray-200"></div>
+      <div class="text-center">
+        <div class="flex items-center justify-center gap-1 font-display text-2xl font-semibold text-gray-900">
+          {t.socialProof.rating}
+          <svg class="h-5 w-5 text-warning-400" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clip-rule="evenodd" />
+          </svg>
+        </div>
+        <div class="mt-1 text-xs text-gray-500">{t.socialProof.ratingLabel}</div>
+      </div>
+    </div>
+  </div>
+</section>

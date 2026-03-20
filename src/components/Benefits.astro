@@ -1,0 +1,102 @@
+---
+interface Props {
+  lang?: string;
+}
+
+const { lang = "en" } = Astro.props;
+
+const t = {
+  en: {
+    eyebrow: "Why landlords love it",
+    headline: "Less admin, more control",
+    sub: "Vermietler automates the tedious work so you can focus on growing your portfolio.",
+    benefits: [
+      {
+        icon: "clock",
+        title: "Save hours every month",
+        description: "Automated rent reconciliation, receipt capture, and statement generation eliminate repetitive manual work.",
+      },
+      {
+        icon: "banknotes",
+        title: "Never miss a payment",
+        description: "Instant visibility into who paid and who didn't. Automatic reminders keep your cashflow predictable.",
+      },
+      {
+        icon: "chart",
+        title: "Stay in control of finances",
+        description: "Real-time overview of income, expenses, and profitability across your entire portfolio.",
+      },
+      {
+        icon: "puzzle",
+        title: "No complex setup",
+        description: "Add your first property in minutes. No training, no consultants, no migration headaches.",
+      },
+    ],
+  },
+  de: {
+    eyebrow: "Warum Vermieter es lieben",
+    headline: "Weniger Verwaltung, mehr Kontrolle",
+    sub: "Vermietler automatisiert die mühsame Arbeit, damit Sie sich auf Ihr Portfolio konzentrieren können.",
+    benefits: [
+      {
+        icon: "clock",
+        title: "Stunden sparen jeden Monat",
+        description: "Automatischer Mietabgleich, Belegerfassung und Abrechnungserstellung eliminieren manuelle Arbeit.",
+      },
+      {
+        icon: "banknotes",
+        title: "Keine Zahlung mehr verpassen",
+        description: "Sofortige Übersicht, wer bezahlt hat und wer nicht. Automatische Erinnerungen für planbaren Cashflow.",
+      },
+      {
+        icon: "chart",
+        title: "Finanzen im Griff",
+        description: "Echtzeit-Überblick über Einnahmen, Ausgaben und Rentabilität Ihres gesamten Portfolios.",
+      },
+      {
+        icon: "puzzle",
+        title: "Kein komplexes Setup",
+        description: "Erste Immobilie in Minuten anlegen. Keine Schulung, keine Berater, keine Migrationsprobleme.",
+      },
+    ],
+  },
+}[lang]!;
+
+const iconPaths: Record<string, string> = {
+  clock: "M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0z",
+  banknotes:
+    "M2.25 18.75a60.07 60.07 0 0 1 15.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 0 1 3 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 0 0-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 0 1-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 0 0 3 15h-.75M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z",
+  chart:
+    "M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 0 1 3 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V4.125z",
+  puzzle:
+    "M14.25 6.087c0-.355.186-.676.401-.959.221-.29.349-.634.349-1.003 0-1.036-1.007-1.875-2.25-1.875s-2.25.84-2.25 1.875c0 .369.128.713.349 1.003.215.283.401.604.401.959v0a.64.64 0 0 1-.657.643 48.39 48.39 0 0 1-4.163-.3c.186 1.613.293 3.25.315 4.907a.656.656 0 0 1-.658.663v0c-.355 0-.676-.186-.959-.401a1.647 1.647 0 0 0-1.003-.349c-1.036 0-1.875 1.007-1.875 2.25s.84 2.25 1.875 2.25c.369 0 .713-.128 1.003-.349.283-.215.604-.401.959-.401v0c.31 0 .555.26.532.57a48.039 48.039 0 0 1-.642 5.056c1.518.19 3.058.309 4.616.354a.64.64 0 0 0 .657-.643v0c0-.355-.186-.676-.401-.959a1.647 1.647 0 0 1-.349-1.003c0-1.035 1.008-1.875 2.25-1.875 1.243 0 2.25.84 2.25 1.875 0 .369-.128.713-.349 1.003-.215.283-.4.604-.4.959v0c0 .333.277.599.61.58a48.1 48.1 0 0 0 5.427-.63 48.05 48.05 0 0 0 .582-4.717.532.532 0 0 0-.533-.57v0c-.355 0-.676.186-.959.401-.29.221-.634.349-1.003.349-1.035 0-1.875-1.007-1.875-2.25s.84-2.25 1.875-2.25c.37 0 .713.128 1.003.349.283.215.604.401.96.401v0a.656.656 0 0 0 .658-.663 48.422 48.422 0 0 0-.37-5.36c-1.886.342-3.81.574-5.766.689a.578.578 0 0 1-.61-.58z",
+};
+---
+
+<section class="py-24">
+  <div class="mx-auto max-w-6xl px-6">
+    <div class="text-center">
+      <p class="text-xs font-semibold uppercase tracking-[0.08em] text-brand-500">{t.eyebrow}</p>
+      <h2 class="mt-3 font-display text-3xl font-semibold tracking-tight text-gray-900 sm:text-4xl">
+        {t.headline}
+      </h2>
+      <p class="mx-auto mt-4 max-w-2xl text-lg text-gray-500">{t.sub}</p>
+    </div>
+
+    <div class="mt-16 grid gap-8 sm:grid-cols-2">
+      {t.benefits.map((benefit) => (
+        <div class="flex gap-5">
+          <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-brand-500 text-white shadow-sm">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" d={iconPaths[benefit.icon]} />
+            </svg>
+          </div>
+          <div>
+            <h3 class="text-base font-semibold text-gray-900">{benefit.title}</h3>
+            <p class="mt-2 text-sm leading-relaxed text-gray-500">{benefit.description}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

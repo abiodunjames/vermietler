@@ -1,0 +1,76 @@
+---
+interface Props {
+  lang?: string;
+}
+
+const { lang = "en" } = Astro.props;
+
+const t = {
+  en: {
+    features: "Features",
+    howItWorks: "How it works",
+    pricing: "Pricing",
+    blog: "Blog",
+    blogHref: "/blog",
+    login: "Log in",
+    getStarted: "Get started",
+    langSwitch: "DE",
+    langHref: "/de",
+  },
+  de: {
+    features: "Funktionen",
+    howItWorks: "So funktioniert's",
+    pricing: "Preise",
+    blog: "Blog",
+    blogHref: "/de/blog",
+    login: "Anmelden",
+    getStarted: "Jetzt starten",
+    langSwitch: "EN",
+    langHref: "/",
+  },
+}[lang]!;
+---
+
+<nav class="fixed top-0 z-50 w-full border-b border-gray-200 bg-white/80 backdrop-blur-lg">
+  <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+    <a href={lang === "de" ? "/de" : "/"}>
+      <img src="/images/logo-compact.svg" alt="Vermietler" class="h-7" />
+    </a>
+
+    <div class="hidden items-center gap-8 md:flex">
+      <a href="#features" class="text-sm font-medium text-gray-500 transition hover:text-gray-900">
+        {t.features}
+      </a>
+      <a href="#how-it-works" class="text-sm font-medium text-gray-500 transition hover:text-gray-900">
+        {t.howItWorks}
+      </a>
+      <a href="#pricing" class="text-sm font-medium text-gray-500 transition hover:text-gray-900">
+        {t.pricing}
+      </a>
+      <a href={t.blogHref} class="text-sm font-medium text-gray-500 transition hover:text-gray-900">
+        {t.blog}
+      </a>
+    </div>
+
+    <div class="flex items-center gap-3">
+      <a
+        href={t.langHref}
+        class="rounded-lg px-3 py-1.5 text-sm font-medium text-gray-400 transition hover:bg-gray-100"
+      >
+        {t.langSwitch}
+      </a>
+      <a
+        href="#"
+        class="hidden text-sm font-medium text-gray-600 transition hover:text-gray-900 sm:inline-block"
+      >
+        {t.login}
+      </a>
+      <a
+        href="#pricing"
+        class="rounded-lg bg-brand-500 px-5 py-2.5 text-sm font-semibold text-white shadow-xs transition hover:bg-brand-600"
+      >
+        {t.getStarted}
+      </a>
+    </div>
+  </div>
+</nav>

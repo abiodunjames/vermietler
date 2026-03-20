@@ -1,0 +1,140 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import MortgageCalculator from "../../components/calculator/MortgageCalculator";
+import Footer from "../../components/Footer.astro";
+
+const faqs = [
+  {
+    q: "How does a German mortgage (Annuitätendarlehen) work?",
+    a: "German mortgages use an annuity structure. You choose an initial repayment rate (Anfangstilgung, typically 1–5%) and a fixed interest period (Zinsbindung). Your monthly payment stays constant, but the split between principal and interest shifts over time — more goes to principal as the balance decreases."
+  },
+  {
+    q: "What is the Zinsbindung (fixed rate period)?",
+    a: "The Zinsbindung is the period during which your interest rate is locked. Common terms are 5, 10, 15, or 20 years. After it expires, you refinance the remaining balance (Restschuld) at the current market rate. Longer fixed periods offer more certainty but may have slightly higher rates."
+  },
+  {
+    q: "What is a good repayment rate (Tilgungsrate)?",
+    a: "Most experts recommend at least 2% initial repayment. Higher rates (3–5%) mean higher monthly payments but significantly less total interest and faster payoff. With a 1% repayment rate, it can take 40+ years to fully repay the loan."
+  },
+  {
+    q: "What is Sondertilgung (extra repayment)?",
+    a: "Sondertilgung allows you to make additional annual payments beyond your regular monthly installment, typically up to 5% of the original loan amount per year. This reduces your remaining balance faster and saves substantial interest over the life of the loan."
+  },
+  {
+    q: "What additional costs should I budget for when buying property in Germany?",
+    a: "Beyond the purchase price, expect: Grunderwerbsteuer (property transfer tax, 3.5–6.5% depending on the state), notary fees (1.5–2%), land registry fees (0.5%), and potentially broker fees (3–7%). These typically add 10–15% on top of the purchase price."
+  },
+];
+---
+
+<Layout
+  title="Free Mortgage Calculator for Germany — Tilgungsrechner | Vermietler"
+  description="Calculate your German mortgage (Annuitätendarlehen) payments, interest costs, and amortization schedule. Free online Tilgungsrechner with Zinsbindung, Sondertilgung, and full repayment plan."
+>
+  <!-- Navbar minimal -->
+  <nav class="border-b border-gray-100 bg-white">
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+      <a href="/"><img src="/images/logo-compact.svg" alt="Vermietler" class="h-7" /></a>
+      <a href="/de/tilgungsrechner" class="text-sm text-gray-500 hover:text-gray-900 transition">Deutsch</a>
+    </div>
+  </nav>
+
+  <main class="bg-white py-12 lg:py-16">
+    <div class="mx-auto max-w-6xl px-6">
+      <!-- SEO heading structure -->
+      <div class="mb-10 max-w-2xl">
+        <h1 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl" >
+          Mortgage Calculator for Germany
+        </h1>
+        <p class="mt-3 text-lg text-gray-500">
+          Calculate your monthly payments, total interest, and full amortization schedule for a German <strong>Annuitätendarlehen</strong>. Adjust the interest rate, repayment rate, and Zinsbindung to find the right mortgage for your property.
+        </p>
+      </div>
+
+      <!-- Calculator -->
+      <MortgageCalculator client:load lang="en" />
+
+      <!-- FAQ section for SEO -->
+      <section class="mt-20 border-t border-gray-200 pt-12">
+        <h2 class="text-2xl font-bold text-gray-900" >
+          Frequently Asked Questions
+        </h2>
+        <div class="mt-8 divide-y divide-gray-200">
+          {faqs.map((faq) => (
+            <details class="group py-5">
+              <summary class="flex cursor-pointer items-center justify-between text-base font-semibold text-gray-900 [&::-webkit-details-marker]:hidden">
+                <h3>{faq.q}</h3>
+                <svg class="h-5 w-5 shrink-0 text-gray-400 transition group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                </svg>
+              </summary>
+              <p class="mt-3 text-sm leading-relaxed text-gray-600">{faq.a}</p>
+            </details>
+          ))}
+        </div>
+      </section>
+
+      <!-- Additional SEO content -->
+      <section class="mt-16 border-t border-gray-200 pt-12">
+        <h2 class="text-2xl font-bold text-gray-900" >
+          How to Use This Mortgage Calculator
+        </h2>
+        <div class="mt-6 grid gap-8 text-sm leading-relaxed text-gray-600 sm:grid-cols-2">
+          <div>
+            <h3 class="mb-2 font-semibold text-gray-900">1. Enter Your Loan Details</h3>
+            <p>Start with the <strong>Darlehensbetrag</strong> (loan amount) — typically the property price minus your equity (Eigenkapital) and closing costs. Then set the <strong>Sollzins</strong> (nominal interest rate) from your bank's offer.</p>
+          </div>
+          <div>
+            <h3 class="mb-2 font-semibold text-gray-900">2. Choose Your Repayment Rate</h3>
+            <p>The <strong>Anfangstilgung</strong> (initial repayment rate) determines how fast you pay down the principal. A 2% rate is standard; 3%+ accelerates repayment significantly and saves tens of thousands in interest.</p>
+          </div>
+          <div>
+            <h3 class="mb-2 font-semibold text-gray-900">3. Set the Fixed Rate Period</h3>
+            <p>The <strong>Zinsbindung</strong> locks your interest rate for 5 to 30 years. After this period, you'll need to refinance the remaining balance. The calculator shows your <strong>Restschuld</strong> at the end of the fixed period.</p>
+          </div>
+          <div>
+            <h3 class="mb-2 font-semibold text-gray-900">4. Review the Amortization Schedule</h3>
+            <p>Switch to the <strong>Tilgungsplan</strong> tab to see year-by-year and month-by-month breakdowns of principal, interest, and remaining balance. Expand any year for monthly detail.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <Footer lang="en" />
+
+  <!-- JSON-LD: WebApplication -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name: "Mortgage Calculator for Germany",
+    alternateName: "Tilgungsrechner",
+    url: "https://vermietler.com/hypothekenrechner",
+    applicationCategory: "FinanceApplication",
+    operatingSystem: "Web",
+    offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" },
+    description: "Free German mortgage calculator (Annuitätendarlehen). Calculate monthly payments, total interest, Restschuld, and full amortization schedule.",
+    inLanguage: ["en", "de"],
+  })} />
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  })} />
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://vermietler.com/" },
+      { "@type": "ListItem", position: 2, name: "Mortgage Calculator", item: "https://vermietler.com/hypothekenrechner" },
+    ],
+  })} />
+</Layout>

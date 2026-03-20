@@ -1,0 +1,144 @@
+---
+interface Props {
+  lang?: string;
+}
+
+const { lang = "en" } = Astro.props;
+
+const t = {
+  en: {
+    portfolio: "Portfolio Overview",
+    properties: "Properties",
+    units: "Units",
+    occupied: "Occupied",
+    vacant: "Vacant",
+    revenue: "Monthly Revenue",
+    revenueAmount: "\u20AC12,450",
+    collected: "Collected",
+    collectedAmount: "\u20AC11,200",
+    pending: "Pending",
+    pendingAmount: "\u20AC1,250",
+    recentActivity: "Recent Activity",
+    activities: [
+      "Rent received from Unit 3A",
+      "Meter reading uploaded",
+      "Lease renewed for Unit 1B",
+    ],
+  },
+  de: {
+    portfolio: "Portfolio-Übersicht",
+    properties: "Immobilien",
+    units: "Einheiten",
+    occupied: "Belegt",
+    vacant: "Leer",
+    revenue: "Monatliche Einnahmen",
+    revenueAmount: "12.450\u20AC",
+    collected: "Eingegangen",
+    collectedAmount: "11.200\u20AC",
+    pending: "Ausstehend",
+    pendingAmount: "1.250\u20AC",
+    recentActivity: "Letzte Aktivität",
+    activities: [
+      "Miete eingegangen von Einheit 3A",
+      "Zählerstand hochgeladen",
+      "Mietvertrag verlängert für 1B",
+    ],
+  },
+}[lang]!;
+---
+
+<div class="mx-auto mt-16 max-w-4xl px-6">
+  <div class="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-xl">
+    <!-- Window chrome -->
+    <div class="flex items-center gap-2 border-b border-gray-100 bg-gray-50 px-4 py-3">
+      <div class="h-3 w-3 rounded-full bg-gray-300"></div>
+      <div class="h-3 w-3 rounded-full bg-gray-300"></div>
+      <div class="h-3 w-3 rounded-full bg-gray-300"></div>
+      <div class="ml-3 flex-1 rounded-lg bg-gray-200 px-3 py-1 text-center text-xs text-gray-400">
+        app.vermietler.com
+      </div>
+    </div>
+
+    <!-- Dashboard content -->
+    <div class="flex">
+      <!-- Sidebar -->
+      <div class="hidden w-48 shrink-0 border-r border-gray-100 bg-gray-900 p-4 sm:block">
+        <div class="mb-6 font-display text-sm font-semibold text-white">vermietler</div>
+        <nav class="space-y-1">
+          <div class="rounded-lg bg-brand-500 px-3 py-1.5 text-xs font-medium text-white">Dashboard</div>
+          <div class="px-3 py-1.5 text-xs text-gray-400">{t.properties}</div>
+          <div class="px-3 py-1.5 text-xs text-gray-400">{t.units}</div>
+          <div class="px-3 py-1.5 text-xs text-gray-400">Tenants</div>
+          <div class="px-3 py-1.5 text-xs text-gray-400">Finance</div>
+          <div class="px-3 py-1.5 text-xs text-gray-400">Documents</div>
+        </nav>
+      </div>
+
+      <!-- Main content -->
+      <div class="flex-1 bg-gray-50 p-5">
+        <h3 class="text-sm font-semibold text-gray-900">{t.portfolio}</h3>
+
+        <!-- Stats row -->
+        <div class="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
+          <div class="rounded-xl border border-gray-200 bg-white p-3 shadow-xs">
+            <div class="font-display text-lg font-semibold text-gray-900">4</div>
+            <div class="text-xs text-gray-500">{t.properties}</div>
+          </div>
+          <div class="rounded-xl border border-gray-200 bg-white p-3 shadow-xs">
+            <div class="font-display text-lg font-semibold text-gray-900">12</div>
+            <div class="text-xs text-gray-500">{t.units}</div>
+          </div>
+          <div class="rounded-xl border border-gray-200 bg-white p-3 shadow-xs">
+            <div class="font-display text-lg font-semibold text-success-500">10</div>
+            <div class="text-xs text-gray-500">{t.occupied}</div>
+          </div>
+          <div class="rounded-xl border border-gray-200 bg-white p-3 shadow-xs">
+            <div class="font-display text-lg font-semibold text-warning-500">2</div>
+            <div class="text-xs text-gray-500">{t.vacant}</div>
+          </div>
+        </div>
+
+        <!-- Revenue + Activity -->
+        <div class="mt-4 grid gap-3 sm:grid-cols-2">
+          <!-- Revenue card -->
+          <div class="rounded-xl border border-gray-200 bg-white p-3 shadow-xs">
+            <div class="text-xs font-medium text-gray-500">{t.revenue}</div>
+            <div class="mt-1 font-display text-xl font-semibold text-gray-900">{t.revenueAmount}</div>
+            <div class="mt-3 flex gap-4">
+              <div>
+                <div class="text-xs text-gray-400">{t.collected}</div>
+                <div class="text-sm font-semibold text-success-500">{t.collectedAmount}</div>
+              </div>
+              <div>
+                <div class="text-xs text-gray-400">{t.pending}</div>
+                <div class="text-sm font-semibold text-warning-500">{t.pendingAmount}</div>
+              </div>
+            </div>
+            <!-- Mini chart bars -->
+            <div class="mt-3 flex items-end gap-1">
+              <div class="h-6 w-full rounded-sm bg-brand-100"></div>
+              <div class="h-8 w-full rounded-sm bg-brand-200"></div>
+              <div class="h-5 w-full rounded-sm bg-brand-100"></div>
+              <div class="h-10 w-full rounded-sm bg-brand-300"></div>
+              <div class="h-7 w-full rounded-sm bg-brand-200"></div>
+              <div class="h-12 w-full rounded-sm bg-brand-500"></div>
+            </div>
+          </div>
+
+          <!-- Recent activity -->
+          <div class="rounded-xl border border-gray-200 bg-white p-3 shadow-xs">
+            <div class="text-xs font-medium text-gray-500">{t.recentActivity}</div>
+            <ul class="mt-3 space-y-2.5">
+              {t.activities.map((activity) => (
+                <li class="flex items-start gap-2">
+                  <div class="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-400"></div>
+                  <span class="text-xs text-gray-600">{activity}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
