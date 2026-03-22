@@ -1,0 +1,104 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import ClosingCostCalculator from "../../components/calculator/ClosingCostCalculator";
+import Footer from "../../components/Footer.astro";
+
+const faqs = [
+  {
+    q: "What are Kaufnebenkosten (closing costs) in Germany?",
+    a: "Kaufnebenkosten are the additional costs beyond the purchase price when buying property in Germany. They typically include Grunderwerbsteuer (property transfer tax), notary fees (Notarkosten), land registry fees (Grundbuchkosten), and potentially agent commission (Maklerprovision). Together, these usually add 7–12% on top of the purchase price."
+  },
+  {
+    q: "How much is the Grunderwerbsteuer (property transfer tax)?",
+    a: "The Grunderwerbsteuer varies by German state (Bundesland), ranging from 3.5% in Bavaria (Bayern) to 6.5% in Brandenburg, NRW, Saarland, and Schleswig-Holstein. It is calculated on the full purchase price and must be paid before the land registry transfer can be completed."
+  },
+  {
+    q: "Can I negotiate notary fees in Germany?",
+    a: "No. Notary fees (Notarkosten) are regulated by the Gerichts- und Notarkostengesetz (GNotKG) and are not negotiable. They scale with the purchase price and typically amount to about 1.0–2.0% of the purchase price. All property transactions in Germany must be notarised by law (§ 311b BGB)."
+  },
+  {
+    q: "How does the 2020 agent fee reform affect buyers?",
+    a: "Since December 2020, the Gesetz über die Verteilung der Maklerkosten mandates that buyers cannot pay more in agent commission than the seller pays. In practice, both parties typically pay 3.57% each (including 19% VAT), totalling 7.14% split equally. If you buy directly from a private seller (Privatverkauf), there may be no agent fee at all."
+  },
+  {
+    q: "Are closing costs included in mortgage financing?",
+    a: "Generally, German banks expect you to cover closing costs (Kaufnebenkosten) with your own equity (Eigenkapital). Most banks will finance up to 80–90% of the purchase price, but not the additional costs. This means you typically need at least 10–15% of the purchase price in savings to cover the Kaufnebenkosten."
+  },
+];
+---
+
+<Layout
+  title="Free Closing Cost Calculator for Germany — Kaufnebenkostenrechner | Vermietler"
+  description="Calculate all property purchase closing costs in Germany — including Grunderwerbsteuer, notary fees, land registry, and agent commission. Free online Kaufnebenkostenrechner for all 16 German states."
+>
+  <!-- Navbar minimal -->
+  <nav class="border-b border-gray-100 bg-white">
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+      <a href="/"><img src="/images/logo-compact.svg" alt="Vermietler" class="h-7" /></a>
+      <a href="/de/kaufnebenkostenrechner" class="text-sm text-gray-500 hover:text-gray-900 transition">Deutsch</a>
+    </div>
+  </nav>
+
+  <main class="bg-gray-50 py-12 lg:py-16">
+    <div class="mx-auto max-w-6xl px-6">
+      <ClosingCostCalculator client:load lang="en" />
+
+      <!-- FAQ section for SEO -->
+      <section class="mt-20 border-t border-gray-200 pt-12">
+        <h2 class="text-2xl font-bold text-gray-900">
+          Frequently Asked Questions
+        </h2>
+        <div class="mt-8 divide-y divide-gray-200">
+          {faqs.map((faq) => (
+            <details class="group py-5">
+              <summary class="flex cursor-pointer items-center justify-between text-base font-semibold text-gray-900 [&::-webkit-details-marker]:hidden">
+                <h3>{faq.q}</h3>
+                <svg class="h-5 w-5 shrink-0 text-gray-400 transition group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                </svg>
+              </summary>
+              <p class="mt-3 text-sm leading-relaxed text-gray-600">{faq.a}</p>
+            </details>
+          ))}
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <Footer lang="en" />
+
+  <!-- JSON-LD: WebApplication -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name: "Closing Cost Calculator for Germany",
+    alternateName: "Kaufnebenkostenrechner",
+    url: "https://vermietler.com/closing-cost-calculator",
+    applicationCategory: "FinanceApplication",
+    operatingSystem: "Web",
+    offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" },
+    description: "Free German property closing cost calculator. Calculate Grunderwerbsteuer, notary fees, land registry fees, and agent commission for all 16 German states.",
+    inLanguage: ["en", "de"],
+  })} />
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  })} />
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://vermietler.com/" },
+      { "@type": "ListItem", position: 2, name: "Closing Cost Calculator", item: "https://vermietler.com/closing-cost-calculator" },
+    ],
+  })} />
+</Layout>

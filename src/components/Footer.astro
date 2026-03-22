@@ -8,12 +8,11 @@ const { lang = "en" } = Astro.props;
 const t = {
   en: {
     tagline: "Property management, simplified.",
-    product: "Product",
-    features: "Features",
-    pricing: "Pricing",
-    howItWorks: "How it works",
-    blog: "Blog",
-    blogHref: "/blog",
+    calculators: "Calculators",
+    mortgageCalc: "Mortgage Calculator",
+    mortgageCalcHref: "/hypothekenrechner",
+    closingCostCalc: "Closing Cost Calculator",
+    closingCostCalcHref: "/closing-cost-calculator",
     legal: "Legal",
     privacy: "Privacy policy",
     terms: "Terms of service",
@@ -22,12 +21,11 @@ const t = {
   },
   de: {
     tagline: "Immobilienverwaltung, vereinfacht.",
-    product: "Produkt",
-    features: "Funktionen",
-    pricing: "Preise",
-    howItWorks: "So funktioniert's",
-    blog: "Blog",
-    blogHref: "/de/blog",
+    calculators: "Rechner",
+    mortgageCalc: "Tilgungsrechner",
+    mortgageCalcHref: "/de/tilgungsrechner",
+    closingCostCalc: "Kaufnebenkostenrechner",
+    closingCostCalcHref: "/de/kaufnebenkostenrechner",
     legal: "Rechtliches",
     privacy: "Datenschutz",
     terms: "AGB",
@@ -46,14 +44,12 @@ const t = {
         <p class="mt-3 max-w-xs text-sm text-gray-500">{t.tagline}</p>
       </div>
 
-      <!-- Product links -->
+      <!-- Calculator links -->
       <div>
-        <h4 class="text-sm font-semibold text-gray-900">{t.product}</h4>
+        <h4 class="text-sm font-semibold text-gray-900">{t.calculators}</h4>
         <ul class="mt-4 space-y-3">
-          <li><a href="#features" class="text-sm text-gray-500 transition hover:text-gray-900">{t.features}</a></li>
-          <li><a href="#how-it-works" class="text-sm text-gray-500 transition hover:text-gray-900">{t.howItWorks}</a></li>
-          <li><a href="#pricing" class="text-sm text-gray-500 transition hover:text-gray-900">{t.pricing}</a></li>
-          <li><a href={t.blogHref} class="text-sm text-gray-500 transition hover:text-gray-900">{t.blog}</a></li>
+          <li><a href={t.mortgageCalcHref} class="text-sm text-gray-500 transition hover:text-gray-900">{t.mortgageCalc}</a></li>
+          <li><a href={t.closingCostCalcHref} class="text-sm text-gray-500 transition hover:text-gray-900">{t.closingCostCalc}</a></li>
         </ul>
       </div>
 
