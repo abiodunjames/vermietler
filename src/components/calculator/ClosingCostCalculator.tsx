@@ -223,9 +223,9 @@ export default function ClosingCostCalculator({ lang = "en" }: { lang?: Lang }) 
   const t = translations[lang];
   const locale = lang === "de" ? "de-DE" : "en-US";
 
-  const [priceRaw, setPriceRaw] = useState("");
-  const [price, setPrice] = useState(0);
-  const [selectedStateId, setSelectedStateId] = useState("");
+  const [priceRaw, setPriceRaw] = useState(lang === "de" ? "350.000" : "350,000");
+  const [price, setPrice] = useState(350000);
+  const [selectedStateId, setSelectedStateId] = useState("be");
   const [agentPct, setAgentPct] = useState(3.57);
   const [notaryPct, setNotaryPct] = useState(1.5);
   const [registryPct, setRegistryPct] = useState(0.5);
@@ -277,9 +277,8 @@ export default function ClosingCostCalculator({ lang = "en" }: { lang?: Lang }) 
 
       {/* Layout grid */}
       <div className="grid items-start gap-6 lg:grid-cols-[420px_1fr]">
-        {/* ── LEFT: Inputs ── */}
-        <div className="flex flex-col gap-4">
-          {/* Input card */}
+        {/* ── Input card (left col, row 1 on desktop) ── */}
+        <div className="lg:col-start-1 lg:row-start-1">
           <div className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm">
             <div className="flex items-center gap-3 border-b border-gray-100 px-6 py-5">
               <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-brand-50 text-brand-500">
@@ -400,39 +399,10 @@ export default function ClosingCostCalculator({ lang = "en" }: { lang?: Lang }) 
               </div>
             </div>
           </div>
-
-          {/* State tax rates card */}
-          <div className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm">
-            <div className="flex items-center gap-3 border-b border-gray-100 px-6 py-5">
-              <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-amber-50 text-amber-500">
-                <InfoCircle />
-              </div>
-              <div>
-                <div className="font-display text-[15px] font-semibold text-gray-900">{t.taxRatesTitle}</div>
-                <div className="text-[13px] text-gray-400">{t.taxRatesSub}</div>
-              </div>
-            </div>
-            <div className="px-5 py-4">
-              {states.map((s) => (
-                <div key={s.id} className="flex items-center justify-between border-b border-gray-50 py-1.5 text-xs last:border-b-0">
-                  <span className="text-gray-600">{s.name[lang]}</span>
-                  <span
-                    className={`rounded-full px-2 py-0.5 font-mono text-[11px] ${
-                      selectedStateId === s.id
-                        ? "border border-brand-100 bg-brand-50 text-brand-700"
-                        : "bg-gray-100 text-gray-700"
-                    }`}
-                  >
-                    {s.rate.toFixed(1)}%
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
         </div>
 
-        {/* ── RIGHT: Results ── */}
-        <div className="flex flex-col gap-4">
+        {/* ── Results (right col on desktop, between input & tax rates on mobile) ── */}
+        <div className="flex flex-col gap-4 lg:col-start-2 lg:row-start-1 lg:row-end-3">
           {!hasResults ? (
             /* Empty state */
             <div className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm">
@@ -564,6 +534,35 @@ export default function ClosingCostCalculator({ lang = "en" }: { lang?: Lang }) 
               </div>
             </>
           )}
+        </div>
+
+        {/* ── State tax rates card (left col row 2 on desktop, after results on mobile) ── */}
+        <div className="lg:col-start-1 lg:row-start-2 overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm">
+          <div className="flex items-center gap-3 border-b border-gray-100 px-6 py-5">
+            <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-amber-50 text-amber-500">
+              <InfoCircle />
+            </div>
+            <div>
+              <div className="font-display text-[15px] font-semibold text-gray-900">{t.taxRatesTitle}</div>
+              <div className="text-[13px] text-gray-400">{t.taxRatesSub}</div>
+            </div>
+          </div>
+          <div className="px-5 py-4">
+            {states.map((s) => (
+              <div key={s.id} className="flex items-center justify-between border-b border-gray-50 py-1.5 text-xs last:border-b-0">
+                <span className="text-gray-600">{s.name[lang]}</span>
+                <span
+                  className={`rounded-full px-2 py-0.5 font-mono text-[11px] ${
+                    selectedStateId === s.id
+                      ? "border border-brand-100 bg-brand-50 text-brand-700"
+                      : "bg-gray-100 text-gray-700"
+                  }`}
+                >
+                  {s.rate.toFixed(1)}%
+                </span>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 

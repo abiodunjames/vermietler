@@ -22,20 +22,34 @@ const faqs = [
   },
   {
     q: "What additional costs should I budget for when buying property in Germany?",
-    a: "Beyond the purchase price, expect: Grunderwerbsteuer (property transfer tax, 3.5–6.5% depending on the state), notary fees (1.5–2%), land registry fees (0.5%), and potentially broker fees (3–7%). These typically add 10–15% on top of the purchase price."
+    a: "Beyond the purchase price, expect: Grunderwerbsteuer (property transfer tax, 3.5–6.5% depending on the state), notary fees (1.5–2%), land registry fees (0.5%), and potentially broker fees (3–7%). These typically add 10–15% on top of the purchase price. Use our closing cost calculator to estimate these amounts."
+  },
+  {
+    q: "What are current mortgage rates in Germany (2026)?",
+    a: "As of early 2026, typical German mortgage rates are around 3.1–3.3% for 5-year fixed, 3.3–3.6% for 10-year fixed, 3.5–3.9% for 15-year fixed, and 3.7–4.0% for 20-year fixed periods. Rates depend on your equity ratio, loan-to-value, and credit profile."
+  },
+  {
+    q: "How much equity (Eigenkapital) do I need to buy in Germany?",
+    a: "Most German banks require at least 10–20% equity of the purchase price, plus enough to cover the closing costs (Kaufnebenkosten) of 7–12%. So for a €400,000 property, you'd typically need €80,000–€120,000 in savings. Some banks offer 100% financing, but at significantly higher interest rates."
   },
 ];
 ---
 
 <Layout
-  title="Free Mortgage Calculator for Germany — Tilgungsrechner | Vermietler"
-  description="Calculate your German mortgage (Annuitätendarlehen) payments, interest costs, and amortization schedule. Free online Tilgungsrechner with Zinsbindung, Sondertilgung, and full repayment plan."
+  title="Free Mortgage Calculator Germany 2026 — Tilgungsrechner | Vermietler"
+  description="Calculate your German mortgage (Annuitätendarlehen) payments, total interest, and amortization schedule. Free Tilgungsrechner with Zinsbindung, Sondertilgung, Restschuld, and full repayment plan for 2026."
+  keywords="mortgage calculator germany, Tilgungsrechner, Annuitätendarlehen, Hypothekenrechner, mortgage rates germany 2026, Baufinanzierung Rechner, Zinsbindung, Restschuld, Sondertilgung, monthly mortgage payment calculator, german mortgage interest rates"
+  alternateEn="/hypothekenrechner"
+  alternateDe="/de/tilgungsrechner"
 >
-  <!-- Navbar minimal -->
+  <!-- Navbar -->
   <nav class="border-b border-gray-100 bg-white">
     <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
       <a href="/"><img src="/images/logo-compact.svg" alt="Vermietler" class="h-7" /></a>
-      <a href="/de/tilgungsrechner" class="text-sm text-gray-500 hover:text-gray-900 transition">Deutsch</a>
+      <div class="flex items-center gap-4">
+        <a href="/closing-cost-calculator" class="text-sm text-gray-500 hover:text-gray-900 transition">Closing Costs</a>
+        <a href="/de/tilgungsrechner" class="text-sm text-gray-500 hover:text-gray-900 transition">Deutsch</a>
+      </div>
     </div>
   </nav>
 
@@ -44,9 +58,22 @@ const faqs = [
       <!-- Calculator -->
       <MortgageCalculator client:load lang="en" />
 
-      <!-- FAQ section for SEO -->
+      <!-- Cross-link CTA -->
+      <section class="mt-12">
+        <a href="/closing-cost-calculator" class="group flex items-center justify-between rounded-xl border border-brand-200 bg-brand-50 px-6 py-5 transition hover:border-brand-300 hover:bg-brand-100">
+          <div>
+            <p class="text-sm font-semibold text-brand-700">Calculate your closing costs too</p>
+            <p class="mt-1 text-sm text-brand-600/70">Estimate Grunderwerbsteuer, notary, land registry, and agent fees for all 16 German states.</p>
+          </div>
+          <svg class="h-5 w-5 shrink-0 text-brand-400 transition group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+          </svg>
+        </a>
+      </section>
+
+      <!-- FAQ section -->
       <section class="mt-20 border-t border-gray-200 pt-12">
-        <h2 class="text-2xl font-bold text-gray-900" >
+        <h2 class="text-2xl font-bold text-gray-900">
           Frequently Asked Questions
         </h2>
         <div class="mt-8 divide-y divide-gray-200">
@@ -64,15 +91,15 @@ const faqs = [
         </div>
       </section>
 
-      <!-- Additional SEO content -->
+      <!-- How to use -->
       <section class="mt-16 border-t border-gray-200 pt-12">
-        <h2 class="text-2xl font-bold text-gray-900" >
+        <h2 class="text-2xl font-bold text-gray-900">
           How to Use This Mortgage Calculator
         </h2>
         <div class="mt-6 grid gap-8 text-sm leading-relaxed text-gray-600 sm:grid-cols-2">
           <div>
             <h3 class="mb-2 font-semibold text-gray-900">1. Enter Your Loan Details</h3>
-            <p>Start with the <strong>Darlehensbetrag</strong> (loan amount) — typically the property price minus your equity (Eigenkapital) and closing costs. Then set the <strong>Sollzins</strong> (nominal interest rate) from your bank's offer.</p>
+            <p>Start with the <strong>Darlehensbetrag</strong> (loan amount) — typically the property price minus your equity (Eigenkapital) and <a href="/closing-cost-calculator" class="text-brand-600 hover:underline">closing costs</a>. Then set the <strong>Sollzins</strong> (nominal interest rate) from your bank's offer.</p>
           </div>
           <div>
             <h3 class="mb-2 font-semibold text-gray-900">2. Choose Your Repayment Rate</h3>
@@ -86,6 +113,24 @@ const faqs = [
             <h3 class="mb-2 font-semibold text-gray-900">4. Review the Amortization Schedule</h3>
             <p>Switch to the <strong>Tilgungsplan</strong> tab to see year-by-year and month-by-month breakdowns of principal, interest, and remaining balance. Expand any year for monthly detail.</p>
           </div>
+        </div>
+      </section>
+
+      <!-- Contextual SEO paragraph -->
+      <section class="mt-16 border-t border-gray-200 pt-12">
+        <h2 class="text-2xl font-bold text-gray-900">
+          Understanding German Mortgages in 2026
+        </h2>
+        <div class="mt-6 max-w-3xl space-y-4 text-sm leading-relaxed text-gray-600">
+          <p>
+            The German mortgage market primarily uses the <strong>Annuitätendarlehen</strong> (annuity loan), where you pay a fixed monthly rate comprising both interest and principal repayment. Unlike variable-rate mortgages common in other countries, German borrowers typically lock in their interest rate for 10–15 years through the <strong>Zinsbindung</strong> (fixed rate period).
+          </p>
+          <p>
+            When the Zinsbindung expires, the remaining loan balance (<strong>Restschuld</strong>) must be refinanced at the then-current market rate. This makes the choice of fixed rate period a critical financial decision — especially in periods of rising interest rates. Our calculator helps you model different scenarios to find the optimal balance between monthly payment and total interest cost.
+          </p>
+          <p>
+            Before calculating your mortgage, remember to account for <strong>Kaufnebenkosten</strong> (closing costs), which typically add 7–12% to the purchase price. These include Grunderwerbsteuer (property transfer tax, 3.5–6.5% depending on the Bundesland), notary fees (~1.5%), and land registry fees (~0.5%). Use our <a href="/closing-cost-calculator" class="text-brand-600 hover:underline">closing cost calculator</a> to estimate these amounts for your specific state.
+          </p>
         </div>
       </section>
     </div>
@@ -105,6 +150,12 @@ const faqs = [
     offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" },
     description: "Free German mortgage calculator (Annuitätendarlehen). Calculate monthly payments, total interest, Restschuld, and full amortization schedule.",
     inLanguage: ["en", "de"],
+    publisher: {
+      "@type": "Organization",
+      name: "Vermietler",
+      url: "https://vermietler.com",
+    },
+    dateModified: "2026-03-22",
   })} />
 
   <!-- JSON-LD: FAQPage -->
@@ -125,6 +176,20 @@ const faqs = [
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Home", item: "https://vermietler.com/" },
       { "@type": "ListItem", position: 2, name: "Mortgage Calculator", item: "https://vermietler.com/hypothekenrechner" },
+    ],
+  })} />
+
+  <!-- JSON-LD: HowTo -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: "How to Calculate Your German Mortgage Payments",
+    description: "Use this free mortgage calculator to estimate monthly payments, total interest, and amortization for a German Annuitätendarlehen.",
+    step: [
+      { "@type": "HowToStep", position: 1, name: "Enter your loan amount", text: "Input the Darlehensbetrag — typically the property price minus your equity and closing costs." },
+      { "@type": "HowToStep", position: 2, name: "Set the interest and repayment rate", text: "Enter the Sollzins from your bank's offer and choose an initial repayment rate (Anfangstilgung) of 1–5%." },
+      { "@type": "HowToStep", position: 3, name: "Choose the fixed rate period", text: "Select a Zinsbindung of 5 to 30 years. The calculator shows your Restschuld at the end of this period." },
+      { "@type": "HowToStep", position: 4, name: "Review the amortization schedule", text: "Switch to the Tilgungsplan tab for year-by-year and month-by-month breakdowns of principal, interest, and remaining balance." },
     ],
   })} />
 </Layout>

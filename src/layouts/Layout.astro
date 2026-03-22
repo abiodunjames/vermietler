@@ -4,10 +4,32 @@ interface Props {
   description: string;
   lang?: string;
   ogImage?: string;
+  keywords?: string;
+  alternateEn?: string;
+  alternateDe?: string;
 }
 
-const { title, description, lang = "en", ogImage = "/images/og-default.png" } = Astro.props;
+const {
+  title,
+  description,
+  lang = "en",
+  ogImage = "/images/og-default.png",
+  keywords,
+  alternateEn,
+  alternateDe,
+} = Astro.props;
+
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
+// hreflang: use explicit alternates when provided, fallback to auto-detection
+const enURL = alternateEn
+  ? new URL(alternateEn, Astro.site)
+  : new URL(Astro.url.pathname.replace(/^\/de\//, "/"), Astro.site);
+const deURL = alternateDe
+  ? new URL(alternateDe, Astro.site)
+  : new URL(Astro.url.pathname.startsWith("/de/") ? Astro.url.pathname : `/de${Astro.url.pathname}`, Astro.site);
+
+const defaultKeywords = "property management, landlord software, Immobilienverwaltung, Vermietung, Nebenkostenabrechnung, tenant management, rent tracking, DSGVO";
 
 import "../styles/global.css";
 ---
@@ -22,7 +44,7 @@ import "../styles/global.css";
     <link rel="canonical" href={canonicalURL} />
 
     <!-- SEO keywords -->
-    <meta name="keywords" content="property management, landlord software, Immobilienverwaltung, Vermietung, Nebenkostenabrechnung, tenant management, rent tracking, DSGVO" />
+    <meta name="keywords" content={keywords || defaultKeywords} />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
@@ -41,44 +63,34 @@ import "../styles/global.css";
     <meta name="twitter:image" content={new URL(ogImage, Astro.site)} />
 
     <!-- hreflang for i18n SEO -->
-    <link rel="alternate" hreflang="en" href={new URL(Astro.url.pathname.replace(/^\/de\//, "/"), Astro.site)} />
-    <link rel="alternate" hreflang="de" href={new URL(Astro.url.pathname.startsWith("/de/") ? Astro.url.pathname : `/de${Astro.url.pathname}`, Astro.site)} />
-    <link rel="alternate" hreflang="x-default" href={new URL(Astro.url.pathname.replace(/^\/de\//, "/"), Astro.site)} />
+    <link rel="alternate" hreflang="en" href={enURL} />
+    <link rel="alternate" hreflang="de" href={deURL} />
+    <link rel="alternate" hreflang="x-default" href={enURL} />
 
-    <!-- Fonts: DM Sans (body) + Fraunces (display) — matches app design system -->
+    <!-- Fonts: DM Sans (body) + Space Grotesk (display) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Space+Grotesk:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
 
     <title>{title}</title>
 
-    <!-- Structured Data (JSON-LD) -->
+    <!-- Structured Data: Organization (site-wide) -->
     <script
       type="application/ld+json"
       set:html={JSON.stringify({
         "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
+        "@type": "Organization",
         name: "Vermietler",
-        applicationCategory: "BusinessApplication",
-        operatingSystem: "Web",
+        url: "https://vermietler.com",
+        logo: "https://vermietler.com/images/logo-compact.svg",
         description:
           lang === "de"
-            ? "Die All-in-One-Plattform für deutsche Vermieter. Verwalten Sie Immobilien, Finanzen, Mieter und Dokumente."
-            : "The all-in-one platform for German landlords. Manage properties, finances, tenants, and documents.",
-        offers: {
-          "@type": "Offer",
-          price: "0",
-          priceCurrency: "EUR",
-          description: "Free starter plan",
-        },
-        aggregateRating: {
-          "@type": "AggregateRating",
-          ratingValue: "4.8",
-          ratingCount: "127",
-        },
+            ? "Die All-in-One-Plattform für deutsche Vermieter."
+            : "The all-in-one platform for German landlords.",
+        sameAs: [],
       })}
     />
 

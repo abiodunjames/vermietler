@@ -22,21 +22,35 @@ const faqs = [
   },
   {
     q: "Welche Nebenkosten fallen beim Immobilienkauf in Deutschland an?",
-    a: "Neben dem Kaufpreis sollten Sie einplanen: Grunderwerbsteuer (3,5–6,5% je nach Bundesland), Notarkosten (1,5–2%), Grundbuchgebühren (0,5%) und ggf. Maklergebühren (3–7%). Diese Nebenkosten betragen typischerweise 10–15% des Kaufpreises."
+    a: "Neben dem Kaufpreis sollten Sie einplanen: Grunderwerbsteuer (3,5–6,5% je nach Bundesland), Notarkosten (1,5–2%), Grundbuchgebühren (0,5%) und ggf. Maklergebühren (3–7%). Diese Nebenkosten betragen typischerweise 10–15% des Kaufpreises. Nutzen Sie unseren Kaufnebenkostenrechner für eine genaue Berechnung."
+  },
+  {
+    q: "Wie hoch sind die aktuellen Bauzinsen in Deutschland (2026)?",
+    a: "Anfang 2026 liegen die typischen Bauzinsen bei ca. 3,1–3,3% für 5 Jahre fest, 3,3–3,6% für 10 Jahre fest, 3,5–3,9% für 15 Jahre fest und 3,7–4,0% für 20 Jahre Zinsbindung. Die genauen Konditionen hängen von Ihrer Eigenkapitalquote, dem Beleihungswert und Ihrer Bonität ab."
+  },
+  {
+    q: "Wie viel Eigenkapital brauche ich für den Immobilienkauf?",
+    a: "Die meisten deutschen Banken verlangen mindestens 10–20% Eigenkapital des Kaufpreises plus genug Mittel zur Deckung der Kaufnebenkosten von 7–12%. Für eine Immobilie für 400.000€ benötigen Sie also typischerweise 80.000–120.000€ an Ersparnissen. Einige Banken bieten 100%-Finanzierungen an, jedoch zu deutlich höheren Zinsen."
   },
 ];
 ---
 
 <Layout
-  title="Tilgungsrechner — Kostenloser Hypothekenrechner für Deutschland | Vermietler"
-  description="Berechnen Sie Ihre monatliche Rate, Zinskosten und den vollständigen Tilgungsplan für Ihr Annuitätendarlehen. Kostenloser Online-Tilgungsrechner mit Zinsbindung, Sondertilgung und detailliertem Tilgungsplan."
+  title="Tilgungsrechner 2026 — Kostenloser Hypothekenrechner für Deutschland | Vermietler"
+  description="Berechnen Sie Ihre monatliche Rate, Zinskosten und den vollständigen Tilgungsplan für Ihr Annuitätendarlehen. Kostenloser Online-Tilgungsrechner mit Zinsbindung, Sondertilgung, Restschuld und Tilgungsplan für 2026."
   lang="de"
+  keywords="Tilgungsrechner, Hypothekenrechner, Annuitätendarlehen Rechner, Baufinanzierung Rechner, monatliche Rate berechnen, Tilgungsplan, Restschuld berechnen, Zinsbindung, Sondertilgung, Bauzinsen 2026, Immobilienfinanzierung Deutschland"
+  alternateEn="/hypothekenrechner"
+  alternateDe="/de/tilgungsrechner"
 >
-  <!-- Navbar minimal -->
+  <!-- Navbar -->
   <nav class="border-b border-gray-100 bg-white">
     <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
       <a href="/de/"><img src="/images/logo-compact.svg" alt="Vermietler" class="h-7" /></a>
-      <a href="/hypothekenrechner" class="text-sm text-gray-500 hover:text-gray-900 transition">English</a>
+      <div class="flex items-center gap-4">
+        <a href="/de/kaufnebenkostenrechner" class="text-sm text-gray-500 hover:text-gray-900 transition">Kaufnebenkosten</a>
+        <a href="/hypothekenrechner" class="text-sm text-gray-500 hover:text-gray-900 transition">English</a>
+      </div>
     </div>
   </nav>
 
@@ -45,9 +59,22 @@ const faqs = [
       <!-- Calculator -->
       <MortgageCalculator client:load lang="de" />
 
-      <!-- FAQ section for SEO -->
+      <!-- Cross-link CTA -->
+      <section class="mt-12">
+        <a href="/de/kaufnebenkostenrechner" class="group flex items-center justify-between rounded-xl border border-brand-200 bg-brand-50 px-6 py-5 transition hover:border-brand-300 hover:bg-brand-100">
+          <div>
+            <p class="text-sm font-semibold text-brand-700">Kaufnebenkosten berechnen</p>
+            <p class="mt-1 text-sm text-brand-600/70">Berechnen Sie Grunderwerbsteuer, Notar-, Grundbuch- und Maklerkosten für alle 16 Bundesländer.</p>
+          </div>
+          <svg class="h-5 w-5 shrink-0 text-brand-400 transition group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+          </svg>
+        </a>
+      </section>
+
+      <!-- FAQ section -->
       <section class="mt-20 border-t border-gray-200 pt-12">
-        <h2 class="text-2xl font-bold text-gray-900" >
+        <h2 class="text-2xl font-bold text-gray-900">
           Häufig gestellte Fragen
         </h2>
         <div class="mt-8 divide-y divide-gray-200">
@@ -65,15 +92,15 @@ const faqs = [
         </div>
       </section>
 
-      <!-- Additional SEO content -->
+      <!-- How to use -->
       <section class="mt-16 border-t border-gray-200 pt-12">
-        <h2 class="text-2xl font-bold text-gray-900" >
+        <h2 class="text-2xl font-bold text-gray-900">
           So verwenden Sie den Tilgungsrechner
         </h2>
         <div class="mt-6 grid gap-8 text-sm leading-relaxed text-gray-600 sm:grid-cols-2">
           <div>
             <h3 class="mb-2 font-semibold text-gray-900">1. Darlehensbetrag eingeben</h3>
-            <p>Geben Sie den <strong>Darlehensbetrag</strong> ein — in der Regel der Kaufpreis abzüglich Eigenkapital und Erwerbsnebenkosten. Tragen Sie dann den <strong>Sollzins</strong> aus dem Angebot Ihrer Bank ein.</p>
+            <p>Geben Sie den <strong>Darlehensbetrag</strong> ein — in der Regel der Kaufpreis abzüglich Eigenkapital und <a href="/de/kaufnebenkostenrechner" class="text-brand-600 hover:underline">Erwerbsnebenkosten</a>. Tragen Sie dann den <strong>Sollzins</strong> aus dem Angebot Ihrer Bank ein.</p>
           </div>
           <div>
             <h3 class="mb-2 font-semibold text-gray-900">2. Tilgungsrate wählen</h3>
@@ -87,6 +114,24 @@ const faqs = [
             <h3 class="mb-2 font-semibold text-gray-900">4. Tilgungsplan prüfen</h3>
             <p>Wechseln Sie zum Reiter <strong>Tilgungsplan</strong> für die jahres- und monatsweise Aufschlüsselung von Tilgung, Zinsen und Restschuld. Klappen Sie beliebige Jahre auf für monatliche Details.</p>
           </div>
+        </div>
+      </section>
+
+      <!-- Contextual SEO paragraph -->
+      <section class="mt-16 border-t border-gray-200 pt-12">
+        <h2 class="text-2xl font-bold text-gray-900">
+          Immobilienfinanzierung in Deutschland 2026
+        </h2>
+        <div class="mt-6 max-w-3xl space-y-4 text-sm leading-relaxed text-gray-600">
+          <p>
+            Der deutsche Hypothekenmarkt basiert überwiegend auf dem <strong>Annuitätendarlehen</strong>, bei dem Sie eine feste monatliche Rate zahlen, die sich aus Zins- und Tilgungsanteil zusammensetzt. Anders als in vielen anderen Ländern sichern sich deutsche Kreditnehmer ihren Zinssatz typischerweise über 10–15 Jahre durch die <strong>Zinsbindung</strong>.
+          </p>
+          <p>
+            Nach Ablauf der Zinsbindung muss die verbleibende Darlehenssumme (<strong>Restschuld</strong>) zu den dann aktuellen Marktzinsen refinanziert werden. Die Wahl der Zinsbindungsdauer ist daher eine zentrale finanzielle Entscheidung — insbesondere in Zeiten steigender Zinsen. Unser Rechner hilft Ihnen, verschiedene Szenarien durchzuspielen und die optimale Balance zwischen monatlicher Belastung und Gesamtzinskosten zu finden.
+          </p>
+          <p>
+            Vor der Darlehensberechnung sollten Sie die <strong>Kaufnebenkosten</strong> berücksichtigen, die üblicherweise 7–12% zum Kaufpreis hinzukommen. Dazu gehören Grunderwerbsteuer (3,5–6,5% je nach Bundesland), Notarkosten (~1,5%) und Grundbuchgebühren (~0,5%). Nutzen Sie unseren <a href="/de/kaufnebenkostenrechner" class="text-brand-600 hover:underline">Kaufnebenkostenrechner</a>, um diese Beträge für Ihr Bundesland zu ermitteln.
+          </p>
         </div>
       </section>
     </div>
@@ -106,6 +151,12 @@ const faqs = [
     offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" },
     description: "Kostenloser Tilgungsrechner für Annuitätendarlehen. Berechnen Sie monatliche Rate, Gesamtzinsen, Restschuld und vollständigen Tilgungsplan.",
     inLanguage: ["de", "en"],
+    publisher: {
+      "@type": "Organization",
+      name: "Vermietler",
+      url: "https://vermietler.com",
+    },
+    dateModified: "2026-03-22",
   })} />
 
   <!-- JSON-LD: FAQPage -->
@@ -126,6 +177,20 @@ const faqs = [
     itemListElement: [
       { "@type": "ListItem", position: 1, name: "Startseite", item: "https://vermietler.com/de/" },
       { "@type": "ListItem", position: 2, name: "Tilgungsrechner", item: "https://vermietler.com/de/tilgungsrechner" },
+    ],
+  })} />
+
+  <!-- JSON-LD: HowTo -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: "So berechnen Sie Ihre Hypothekenrate",
+    description: "Nutzen Sie diesen kostenlosen Tilgungsrechner, um monatliche Raten, Gesamtzinsen und Tilgungsplan für Ihr Annuitätendarlehen zu berechnen.",
+    step: [
+      { "@type": "HowToStep", position: 1, name: "Darlehensbetrag eingeben", text: "Geben Sie den Darlehensbetrag ein — in der Regel der Kaufpreis abzüglich Eigenkapital und Kaufnebenkosten." },
+      { "@type": "HowToStep", position: 2, name: "Zinssatz und Tilgungsrate festlegen", text: "Tragen Sie den Sollzins aus dem Bankangebot ein und wählen Sie eine anfängliche Tilgungsrate von 1–5%." },
+      { "@type": "HowToStep", position: 3, name: "Zinsbindung wählen", text: "Wählen Sie eine Zinsbindung von 5 bis 30 Jahren. Der Rechner zeigt Ihre Restschuld am Ende der Zinsbindung." },
+      { "@type": "HowToStep", position: 4, name: "Tilgungsplan prüfen", text: "Wechseln Sie zum Tilgungsplan-Tab für die jahres- und monatsweise Aufschlüsselung von Tilgung, Zinsen und Restschuld." },
     ],
   })} />
 </Layout>
