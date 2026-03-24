@@ -1,0 +1,54 @@
+---
+import { getCollection } from "astro:content";
+import Layout from "../../../layouts/Layout.astro";
+import Footer from "../../../components/Footer.astro";
+import BlogPostCard from "../../../components/BlogPostCard.astro";
+
+const posts = (await getCollection("blog"))
+  .filter((post) => post.data.lang === "de")
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+
+<Layout
+  title="Blog — Vermietler"
+  description="Tipps, Anleitungen und Neuigkeiten für Vermieter. Erfahren Sie, wie Sie Ihre Immobilien effizienter verwalten."
+  lang="de"
+>
+  <nav class="border-b border-gray-100 bg-white">
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+      <a href="/de/"><img src="/images/logo-compact.svg" alt="Vermietler" class="h-7" /></a>
+      <a href="/blog" class="text-sm text-gray-500 hover:text-gray-900 transition">English</a>
+    </div>
+  </nav>
+  <main class="bg-gray-50 py-16">
+    <div class="mx-auto max-w-4xl px-6">
+      <header class="text-center">
+        <h1 class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Blog</h1>
+        <p class="mx-auto mt-4 max-w-2xl text-lg text-gray-500">
+          Tipps, Anleitungen und Updates für Vermieter, die smarter arbeiten wollen.
+        </p>
+      </header>
+
+      {posts.length === 0 ? (
+        <div class="mt-16 text-center">
+          <p class="text-gray-500">Noch keine Beiträge. Schauen Sie bald wieder vorbei!</p>
+        </div>
+      ) : (
+        <div class="mt-12 grid gap-6 sm:grid-cols-2">
+          {posts.map((post) => (
+            <BlogPostCard
+              title={post.data.title}
+              description={post.data.description}
+              date={post.data.date}
+              author={post.data.author}
+              slug={post.id.replace(/^de\//, "")}
+              tags={post.data.tags}
+              lang="de"
+            />
+          ))}
+        </div>
+      )}
+    </div>
+  </main>
+  <Footer lang="de" />
+</Layout>
