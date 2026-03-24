@@ -7,24 +7,28 @@ const { lang = "en" } = Astro.props;
 
 const t = {
   en: {
-    features: "Features",
-    howItWorks: "How it works",
-    pricing: "Pricing",
+    home: "Home",
+    homeHref: "/",
     blog: "Blog",
     blogHref: "/blog",
-    login: "Log in",
-    getStarted: "Get started",
+    mortgageCalc: "Mortgage Calculator",
+    mortgageCalcHref: "/hypothekenrechner",
+    closingCostCalc: "Closing Cost Calculator",
+    closingCostCalcHref: "/closing-cost-calculator",
+    getStarted: "Get early access",
     langSwitch: "DE",
     langHref: "/de",
   },
   de: {
-    features: "Funktionen",
-    howItWorks: "So funktioniert's",
-    pricing: "Preise",
+    home: "Startseite",
+    homeHref: "/de",
     blog: "Blog",
     blogHref: "/de/blog",
-    login: "Anmelden",
-    getStarted: "Jetzt starten",
+    mortgageCalc: "Tilgungsrechner",
+    mortgageCalcHref: "/de/tilgungsrechner",
+    closingCostCalc: "Kaufnebenkostenrechner",
+    closingCostCalcHref: "/de/kaufnebenkostenrechner",
+    getStarted: "Früher Zugang",
     langSwitch: "EN",
     langHref: "/",
   },
@@ -38,17 +42,17 @@ const t = {
     </a>
 
     <div class="hidden items-center gap-8 md:flex">
-      <a href="#features" class="text-sm font-medium text-gray-500 transition hover:text-gray-900">
-        {t.features}
-      </a>
-      <a href="#how-it-works" class="text-sm font-medium text-gray-500 transition hover:text-gray-900">
-        {t.howItWorks}
-      </a>
-      <a href="#pricing" class="text-sm font-medium text-gray-500 transition hover:text-gray-900">
-        {t.pricing}
+      <a href={t.homeHref} class="text-sm font-medium text-gray-500 transition hover:text-gray-900">
+        {t.home}
       </a>
       <a href={t.blogHref} class="text-sm font-medium text-gray-500 transition hover:text-gray-900">
         {t.blog}
+      </a>
+      <a href={t.mortgageCalcHref} class="text-sm font-medium text-gray-500 transition hover:text-gray-900">
+        {t.mortgageCalc}
+      </a>
+      <a href={t.closingCostCalcHref} class="text-sm font-medium text-gray-500 transition hover:text-gray-900">
+        {t.closingCostCalc}
       </a>
     </div>
 
@@ -60,13 +64,7 @@ const t = {
         {t.langSwitch}
       </a>
       <a
-        href="#"
-        class="hidden text-sm font-medium text-gray-600 transition hover:text-gray-900 sm:inline-block"
-      >
-        {t.login}
-      </a>
-      <a
-        href="#pricing"
+        href={t.homeHref}
         class="rounded-lg bg-brand-500 px-5 py-2.5 text-sm font-semibold text-white shadow-xs transition hover:bg-brand-600"
       >
         {t.getStarted}
