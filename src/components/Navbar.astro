@@ -45,12 +45,9 @@ const t = {
   data-nav-variant={variant}
 >
   <div class="mx-auto flex max-w-[1160px] items-center justify-between px-8 py-4">
-    <a href={lang === "de" ? "/de" : "/"}>
-      <img
-        src="/images/logo-compact.svg"
-        alt="Vermietler"
-        class:list={["h-7 transition-all duration-200", isTransparent && "nav-logo-img"]}
-      />
+    <a href={lang === "de" ? "/de" : "/"} class:list={["flex items-center gap-2 font-display text-xl font-bold tracking-tight no-underline transition", isTransparent ? "nav-logo-text text-white" : "text-slate-800"]}>
+      <svg class:list={["h-5 w-5 flex-shrink-0", isTransparent ? "text-blue-400" : "text-blue-600"]} fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      <span>vermiet<span class:list={[isTransparent ? "text-blue-400" : "text-blue-600"]}>ler</span></span>
     </a>
 
     <div class="hidden items-center gap-2 md:flex">
@@ -107,11 +104,12 @@ const t = {
     border-bottom-color: var(--color-gray-200);
     box-shadow: var(--shadow-sm);
   }
-  [data-nav-variant="transparent"] .nav-logo-img {
-    filter: brightness(0) invert(1);
+  [data-nav-variant="transparent"].scrolled .nav-logo-text {
+    color: var(--color-gray-800);
   }
-  [data-nav-variant="transparent"].scrolled .nav-logo-img {
-    filter: none;
+  [data-nav-variant="transparent"].scrolled .nav-logo-text svg,
+  [data-nav-variant="transparent"].scrolled .nav-logo-text span {
+    color: #2563eb;
   }
   [data-nav-variant="transparent"] .nav-link-text {
     color: rgba(255, 255, 255, 0.7);
