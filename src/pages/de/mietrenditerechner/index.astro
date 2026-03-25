@@ -1,0 +1,208 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import RentalYieldCalculator from "../../../components/calculator/RentalYieldCalculator";
+import Footer from "../../../components/Footer.astro";
+
+const faqs = [
+  {
+    q: "Was ist eine gute Mietrendite in Deutschland?",
+    a: "Eine Bruttomietrendite von 4–6% gilt als gut für deutsche Wohnimmobilien. In Großstädten wie München oder Frankfurt sind 3–4% üblich, da die Kaufpreise hoch sind. Kleinere Städte und B-Lagen bieten oft 5–7%+ Bruttorendite, tragen aber ein höheres Leerstandsrisiko."
+  },
+  {
+    q: "Was ist der Unterschied zwischen Brutto- und Nettomietrendite?",
+    a: "Die Bruttorendite ist einfach die Jahresmiete geteilt durch den Kaufpreis — ein schneller Vergleichswert. Die Nettorendite zieht alle nicht umlagefähigen Kosten ab (Hausgeld, Leerstand, Grundsteuer, Versicherung) und berücksichtigt die Kaufnebenkosten. Die Nettorendite gibt ein wesentlich realistischeres Bild Ihrer tatsächlichen Rendite."
+  },
+  {
+    q: "Was ist die Eigenkapitalrendite und warum ist sie wichtig?",
+    a: "Die Eigenkapitalrendite misst den jährlichen Cashflow im Verhältnis zum tatsächlich eingesetzten Eigenkapital (Anzahlung + Kaufnebenkosten). Bei Fremdfinanzierung kann die Eigenkapitalrendite durch den Hebeleffekt deutlich höher sein als die Nettomietrendite — birgt aber auch mehr Risiko bei steigenden Zinsen oder sinkenden Mieten."
+  },
+  {
+    q: "Welche Kosten kann ich auf Mieter umlegen (umlagefähige Kosten)?",
+    a: "Laut Betriebskostenverordnung (BetrKV) können Sie Betriebskosten wie Wasser, Heizung, Müllabfuhr, Straßenreinigung, Gebäudeversicherung, Grundsteuer und Gemeinschaftsflächen-Pflege umlegen. Nicht umlagefähig sind Kosten für die Hausverwaltung, die Instandhaltungsrücklage und Kreditraten."
+  },
+  {
+    q: "Wie wirkt sich Leerstand auf meine Mietrendite aus?",
+    a: "Leerstand reduziert direkt Ihre effektiven Mieteinnahmen. Selbst in angespannten Märkten wie München oder Berlin sollten Sie 2–3% Leerstandsquote einplanen — für Mieterwechsel, Renovierungszeiten und gelegentliche mietfreie Monate. In weniger nachgefragten Lagen sind 5–10% realistischer."
+  },
+  {
+    q: "Sollte ich Sondertilgung in die Berechnung einbeziehen?",
+    a: "Dieser Rechner konzentriert sich auf die reguläre Annuitätenrate. Sondertilgung ist eine zusätzliche Tilgung, die Ihren Darlehenssaldo schneller reduziert, aber Ihre reguläre Monatsrate nicht verändert. Nutzen Sie unseren Tilgungsrechner, um die Auswirkung von Sondertilgung auf Ihre Gesamtdarlehenskosten zu modellieren."
+  },
+  {
+    q: "Wie wirkt sich die Abschreibung (AfA) auf meine reale Rendite aus?",
+    a: "Das deutsche Steuerrecht erlaubt die Abschreibung des Gebäudeanteils — 2% p.a. für Gebäude ab 1925, 2,5% für vor 1925, oder 5% degressiv für Neubauten ab Fertigstellung 2024. Diese AfA mindert die steuerpflichtigen Mieteinnahmen erheblich und verbessert Ihre Nachsteuerrendite deutlich. Dieser Rechner zeigt Vorsteuerrenditen; konsultieren Sie einen Steuerberater für die vollständige Steuersicht."
+  },
+];
+---
+
+<Layout
+  title="Kostenloser Mietrenditerechner Deutschland 2026 — Brutto- & Nettomietrendite | Vermietler"
+  description="Berechnen Sie Bruttomietrendite, Nettomietrendite und Eigenkapitalrendite für Ihre Immobilien-Kapitalanlage in Deutschland. Kostenloser Mietrenditerechner mit Leerstand, Hausgeld, Finanzierung und Cashflow-Analyse 2026."
+  keywords="Mietrenditerechner, Bruttomietrendite berechnen, Nettomietrendite, Eigenkapitalrendite Immobilie, Mietrendite Rechner, Kapitalanlage Immobilie Rendite, Rendite Mietwohnung, Immobilienrendite berechnen 2026, Cashflow Immobilie"
+  lang="de"
+  alternateEn="/rental-yield-calculator"
+  alternateDe="/de/mietrenditerechner"
+>
+  <!-- Navbar -->
+  <nav class="border-b border-gray-100 bg-white">
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+      <a href="/de/" class="flex items-center gap-2 font-display text-xl font-bold tracking-tight text-slate-800 no-underline"><svg class="h-5 w-5 flex-shrink-0 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>vermiet<span class="text-blue-600">ler</span></a>
+      <div class="flex items-center gap-4">
+        <a href="/de/tilgungsrechner" class="text-sm text-gray-500 hover:text-gray-900 transition">Tilgungsrechner</a>
+        <a href="/de/kaufnebenkostenrechner" class="text-sm text-gray-500 hover:text-gray-900 transition">Kaufnebenkosten</a>
+        <a href="/rental-yield-calculator" class="text-sm text-gray-500 hover:text-gray-900 transition">English</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="bg-gray-50 py-12 lg:py-16">
+    <div class="mx-auto max-w-6xl px-6">
+      <RentalYieldCalculator client:load lang="de" />
+
+      <!-- Cross-link CTAs -->
+      <section class="mt-12 grid gap-4 sm:grid-cols-2">
+        <a href="/de/tilgungsrechner" class="group flex items-center justify-between rounded-xl border border-brand-200 bg-brand-50 px-6 py-5 transition hover:border-brand-300 hover:bg-brand-100">
+          <div>
+            <p class="text-sm font-semibold text-brand-700">Monatliche Kreditrate berechnen</p>
+            <p class="mt-1 text-sm text-brand-600/70">Modellieren Sie Monatsrate, Restschuld und vollständigen Tilgungsplan für Ihr Annuitätendarlehen.</p>
+          </div>
+          <svg class="h-5 w-5 shrink-0 text-brand-400 transition group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+          </svg>
+        </a>
+        <a href="/de/kaufnebenkostenrechner" class="group flex items-center justify-between rounded-xl border border-purple-200 bg-purple-50 px-6 py-5 transition hover:border-purple-300 hover:bg-purple-100">
+          <div>
+            <p class="text-sm font-semibold text-purple-700">Kaufnebenkosten berechnen</p>
+            <p class="mt-1 text-sm text-purple-600/70">Grunderwerbsteuer, Notar, Grundbuch und Maklerprovision für alle 16 Bundesländer.</p>
+          </div>
+          <svg class="h-5 w-5 shrink-0 text-purple-400 transition group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+          </svg>
+        </a>
+      </section>
+
+      <!-- FAQ section -->
+      <section class="mt-20 border-t border-gray-200 pt-12">
+        <h2 class="text-2xl font-bold text-gray-900">
+          Häufig gestellte Fragen
+        </h2>
+        <div class="mt-8 divide-y divide-gray-200">
+          {faqs.map((faq) => (
+            <details class="group py-5">
+              <summary class="flex cursor-pointer items-center justify-between text-base font-semibold text-gray-900 [&::-webkit-details-marker]:hidden">
+                <h3>{faq.q}</h3>
+                <svg class="h-5 w-5 shrink-0 text-gray-400 transition group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                </svg>
+              </summary>
+              <p class="mt-3 text-sm leading-relaxed text-gray-600">{faq.a}</p>
+            </details>
+          ))}
+        </div>
+      </section>
+
+      <!-- How to use -->
+      <section class="mt-16 border-t border-gray-200 pt-12">
+        <h2 class="text-2xl font-bold text-gray-900">
+          So nutzen Sie diesen Mietrenditerechner
+        </h2>
+        <div class="mt-6 grid gap-8 text-sm leading-relaxed text-gray-600 sm:grid-cols-2">
+          <div>
+            <h3 class="mb-2 font-semibold text-gray-900">1. Kaufpreis & Miete eingeben</h3>
+            <p>Beginnen Sie mit dem <strong>Kaufpreis</strong> und der erwarteten monatlichen <strong>Kaltmiete</strong> (ohne Nebenkosten). Prüfen Sie den lokalen Mietspiegel für einen realistischen Mietwert. Der Rechner zeigt sofort Ihre Bruttorendite.</p>
+          </div>
+          <div>
+            <h3 class="mb-2 font-semibold text-gray-900">2. Nicht umlagefähige Kosten ergänzen</h3>
+            <p>Geben Sie die Kosten ein, die Sie nicht auf Mieter umlegen können: den nicht umlagefähigen <strong>Hausgeld</strong>-Anteil (typisch 30–50%), <strong>Grundsteuer</strong>, Gebäudeversicherung und eine Leerstandsquote. Diese reduzieren die Bruttorendite zur realistischen Nettorendite.</p>
+          </div>
+          <div>
+            <h3 class="mb-2 font-semibold text-gray-900">3. Finanzierung konfigurieren</h3>
+            <p>Bei Fremdfinanzierung geben Sie den <strong>Darlehensbetrag</strong>, Sollzins und Tilgungsrate ein. Der Rechner zeigt Monatsrate, Cashflow und <strong>Eigenkapitalrendite</strong> nach Kapitaldienst.</p>
+          </div>
+          <div>
+            <h3 class="mb-2 font-semibold text-gray-900">4. Vergleichen & Entscheiden</h3>
+            <p>Wechseln Sie zwischen Renditeübersicht und Cashflow-Tab. Vergleichen Sie Ihre Immobilienrendite mit Tagesgeld, Anleihen und Aktien. Nutzen Sie den <a href="/de/tilgungsrechner" class="text-brand-600 hover:underline">Tilgungsrechner</a> für detaillierte Tilgungspläne.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SEO content -->
+      <section class="mt-16 border-t border-gray-200 pt-12">
+        <h2 class="text-2xl font-bold text-gray-900">
+          Mietrendite verstehen: Kapitalanlage-Immobilien in Deutschland (2026)
+        </h2>
+        <div class="mt-6 max-w-3xl space-y-4 text-sm leading-relaxed text-gray-600">
+          <p>
+            Die Mietrendite ist die grundlegendste Kennzahl zur Bewertung einer Kapitalanlage-Immobilie in Deutschland. Während Wertsteigerung langfristig wichtig ist, bestimmt die Rendite, ob Ihre Immobilie von Tag eins an positiven Cashflow generiert — oder ob Sie Ihre Mieter jeden Monat subventionieren.
+          </p>
+          <p>
+            Die <strong>Bruttomietrendite</strong> ist ein schnelles Vergleichsinstrument: Jahreskaltmiete geteilt durch Kaufpreis. Sie ignoriert Kosten und Finanzierung und eignet sich nur zur Erstauswahl. Die <strong>Nettomietrendite</strong> ist wesentlich aussagekräftiger — sie berücksichtigt nicht umlagefähige Kosten wie Hausgeld (Verwaltung + Instandhaltungsrücklage), Leerstand und Grundsteuer, gemessen am Gesamtkapitaleinsatz einschließlich <a href="/de/kaufnebenkostenrechner" class="text-brand-600 hover:underline">Kaufnebenkosten</a>.
+          </p>
+          <p>
+            Für fremdfinanzierte Investoren ist die <strong>Eigenkapitalrendite</strong> die entscheidende Kennzahl. Sie misst den jährlichen Cashflow im Verhältnis zum tatsächlich eingesetzten Eigenkapital — Anzahlung plus Kaufnebenkosten. Bei aktuellen Bauzinsen von 3,3–3,8% für 10-jährige Zinsbindung können Objekte mit 4,5%+ Nettorendite attraktive gehebelte Renditen erzielen, während solche unter 3,5% möglicherweise negativen Cashflow produzieren.
+          </p>
+          <p>
+            Beachten Sie, dass dieser Rechner <strong>Vorsteuerrenditen</strong> zeigt. Deutsche Vermieter profitieren von der Abschreibung (AfA), die das zu versteuernde Mieteinkommen erheblich senken kann — insbesondere die 5% degressive AfA für Neubauten ab Fertigstellung 2024 (§ 7 Abs. 5a EStG). Eine Immobilie, die vor Steuern marginal aussieht, kann nach Berücksichtigung der AfA attraktiv sein. Nutzen Sie unseren <a href="/de/tilgungsrechner" class="text-brand-600 hover:underline">Tilgungsrechner</a> zur detaillierten Modellierung der Finanzierungsseite.
+          </p>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <Footer lang="de" />
+
+  <!-- JSON-LD: WebApplication -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name: "Mietrenditerechner für Deutschland",
+    alternateName: "Rental Yield Calculator",
+    url: "https://vermietler.com/de/mietrenditerechner",
+    applicationCategory: "FinanceApplication",
+    operatingSystem: "Web",
+    offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" },
+    description: "Kostenloser Mietrenditerechner für Deutschland. Bruttomietrendite, Nettomietrendite und Eigenkapitalrendite für Wohnimmobilien-Kapitalanlagen berechnen.",
+    inLanguage: ["de", "en"],
+    publisher: {
+      "@type": "Organization",
+      name: "Vermietler",
+      url: "https://vermietler.com",
+    },
+    dateModified: "2026-03-25",
+  })} />
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  })} />
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Startseite", item: "https://vermietler.com/de/" },
+      { "@type": "ListItem", position: 2, name: "Mietrenditerechner", item: "https://vermietler.com/de/mietrenditerechner" },
+    ],
+  })} />
+
+  <!-- JSON-LD: HowTo -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: "So berechnen Sie die Mietrendite Ihrer Immobilie",
+    description: "Nutzen Sie diesen kostenlosen Rechner zur Berechnung von Bruttomietrendite, Nettomietrendite und Eigenkapitalrendite für eine Kapitalanlage-Immobilie in Deutschland.",
+    step: [
+      { "@type": "HowToStep", position: 1, name: "Kaufpreis und Miete eingeben", text: "Geben Sie den Kaufpreis und die erwartete monatliche Kaltmiete ein. Der Rechner zeigt sofort Ihre Bruttomietrendite." },
+      { "@type": "HowToStep", position: 2, name: "Nicht umlagefähige Kosten ergänzen", text: "Erfassen Sie Hausgeld, Grundsteuer, Versicherung und Leerstandsquote für die Nettomietrendite." },
+      { "@type": "HowToStep", position: 3, name: "Finanzierung konfigurieren", text: "Geben Sie Darlehensbetrag, Sollzins und Tilgung ein, um die Eigenkapitalrendite nach Kapitaldienst zu sehen." },
+      { "@type": "HowToStep", position: 4, name: "Vergleichen und entscheiden", text: "Nutzen Sie die Renditeübersicht zum Vergleich mit Benchmarks und den Cashflow-Tab für monatliche und jährliche Aufschlüsselungen." },
+    ],
+  })} />
+</Layout>

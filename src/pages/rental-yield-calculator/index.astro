@@ -1,0 +1,207 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import RentalYieldCalculator from "../../components/calculator/RentalYieldCalculator";
+import Footer from "../../components/Footer.astro";
+
+const faqs = [
+  {
+    q: "What is a good rental yield in Germany?",
+    a: "A gross rental yield (Bruttomietrendite) of 4–6% is considered good for German residential property. In major cities like Munich or Frankfurt, yields of 3–4% are common due to high purchase prices. Smaller cities and B-locations often offer 5–7%+ gross yields but may carry higher vacancy risk."
+  },
+  {
+    q: "What is the difference between gross and net rental yield?",
+    a: "Gross yield is simply annual rent divided by purchase price — it's a quick comparison metric. Net yield subtracts all non-recoverable costs (Hausgeld, vacancy, Grundsteuer, insurance) and includes closing costs in the total investment. Net yield gives a much more realistic picture of your actual return."
+  },
+  {
+    q: "What is cash-on-cash return and why does it matter?",
+    a: "Cash-on-cash return measures the annual cash flow against the equity you've actually invested (deposit + closing costs). If you're financing with a mortgage, your cash-on-cash return can be significantly higher than the net yield due to leverage — but it also carries more risk if rates rise or rents fall."
+  },
+  {
+    q: "What costs can I pass on to tenants (umlagefähige Kosten)?",
+    a: "Under the Betriebskostenverordnung (BetrKV), you can pass on operating costs like water, heating, waste collection, street cleaning, building insurance, Grundsteuer, and common area maintenance. You cannot pass on costs for property management (Verwaltung), the Instandhaltungsrücklage (maintenance reserve), or mortgage payments."
+  },
+  {
+    q: "How does vacancy affect my rental yield?",
+    a: "Vacancy directly reduces your effective rental income. Even in tight markets like Munich or Berlin, you should budget 2–3% vacancy allowance to account for tenant turnover, renovation periods between tenancies, and the occasional rent-free month for new tenants. In less competitive locations, 5–10% may be more realistic."
+  },
+  {
+    q: "Should I include Sondertilgung (extra repayment) in the calculation?",
+    a: "This calculator focuses on the standard annuity payment (Annuitätendarlehen). Sondertilgung is additional principal repayment that reduces your loan balance faster but doesn't change your regular monthly obligation. Use our mortgage calculator to model the impact of Sondertilgung on your total loan cost."
+  },
+  {
+    q: "How does depreciation (AfA) affect my real return?",
+    a: "German tax law allows you to depreciate the building portion of your rental property — 2% per year for post-1924 buildings, 2.5% for pre-1925, or 5% degressive for new builds completed after 2023. This depreciation offsets rental income for tax purposes, significantly improving your after-tax return. This calculator shows pre-tax returns; consult a Steuerberater for the full tax picture."
+  },
+];
+---
+
+<Layout
+  title="Free Rental Yield Calculator Germany 2026 — Mietrenditerechner | Vermietler"
+  description="Calculate gross yield, net yield, and cash-on-cash return for German rental property investments. Free Mietrenditerechner with vacancy, Hausgeld, financing, and cash flow analysis for 2026."
+  keywords="rental yield calculator germany, Mietrenditerechner, Bruttomietrendite, Nettomietrendite, Eigenkapitalrendite, rental property return germany, cash on cash return, Mietrendite berechnen, Kapitalanlage Immobilie Rechner 2026"
+  alternateEn="/rental-yield-calculator"
+  alternateDe="/de/mietrenditerechner"
+>
+  <!-- Navbar -->
+  <nav class="border-b border-gray-100 bg-white">
+    <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+      <a href="/" class="flex items-center gap-2 font-display text-xl font-bold tracking-tight text-slate-800 no-underline"><svg class="h-5 w-5 flex-shrink-0 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>vermiet<span class="text-blue-600">ler</span></a>
+      <div class="flex items-center gap-4">
+        <a href="/hypothekenrechner" class="text-sm text-gray-500 hover:text-gray-900 transition">Mortgage Calculator</a>
+        <a href="/closing-cost-calculator" class="text-sm text-gray-500 hover:text-gray-900 transition">Closing Costs</a>
+        <a href="/de/mietrenditerechner" class="text-sm text-gray-500 hover:text-gray-900 transition">Deutsch</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="bg-gray-50 py-12 lg:py-16">
+    <div class="mx-auto max-w-6xl px-6">
+      <RentalYieldCalculator client:load lang="en" />
+
+      <!-- Cross-link CTAs -->
+      <section class="mt-12 grid gap-4 sm:grid-cols-2">
+        <a href="/hypothekenrechner" class="group flex items-center justify-between rounded-xl border border-brand-200 bg-brand-50 px-6 py-5 transition hover:border-brand-300 hover:bg-brand-100">
+          <div>
+            <p class="text-sm font-semibold text-brand-700">Calculate your mortgage payments</p>
+            <p class="mt-1 text-sm text-brand-600/70">Model monthly payments, Restschuld, and full amortization for your Annuitätendarlehen.</p>
+          </div>
+          <svg class="h-5 w-5 shrink-0 text-brand-400 transition group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+          </svg>
+        </a>
+        <a href="/closing-cost-calculator" class="group flex items-center justify-between rounded-xl border border-purple-200 bg-purple-50 px-6 py-5 transition hover:border-purple-300 hover:bg-purple-100">
+          <div>
+            <p class="text-sm font-semibold text-purple-700">Estimate your closing costs</p>
+            <p class="mt-1 text-sm text-purple-600/70">Grunderwerbsteuer, notary, land registry, and agent fees for all 16 German states.</p>
+          </div>
+          <svg class="h-5 w-5 shrink-0 text-purple-400 transition group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+          </svg>
+        </a>
+      </section>
+
+      <!-- FAQ section -->
+      <section class="mt-20 border-t border-gray-200 pt-12">
+        <h2 class="text-2xl font-bold text-gray-900">
+          Frequently Asked Questions
+        </h2>
+        <div class="mt-8 divide-y divide-gray-200">
+          {faqs.map((faq) => (
+            <details class="group py-5">
+              <summary class="flex cursor-pointer items-center justify-between text-base font-semibold text-gray-900 [&::-webkit-details-marker]:hidden">
+                <h3>{faq.q}</h3>
+                <svg class="h-5 w-5 shrink-0 text-gray-400 transition group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                </svg>
+              </summary>
+              <p class="mt-3 text-sm leading-relaxed text-gray-600">{faq.a}</p>
+            </details>
+          ))}
+        </div>
+      </section>
+
+      <!-- How to use -->
+      <section class="mt-16 border-t border-gray-200 pt-12">
+        <h2 class="text-2xl font-bold text-gray-900">
+          How to Use This Rental Yield Calculator
+        </h2>
+        <div class="mt-6 grid gap-8 text-sm leading-relaxed text-gray-600 sm:grid-cols-2">
+          <div>
+            <h3 class="mb-2 font-semibold text-gray-900">1. Enter Purchase Price & Rent</h3>
+            <p>Start with the <strong>Kaufpreis</strong> (purchase price) and the expected monthly <strong>Kaltmiete</strong> (cold rent, excluding Nebenkosten). Check the local Mietspiegel for a realistic rent estimate. The calculator instantly shows your gross yield.</p>
+          </div>
+          <div>
+            <h3 class="mb-2 font-semibold text-gray-900">2. Add Non-Recoverable Costs</h3>
+            <p>Enter the costs you cannot pass on to tenants: the non-recoverable portion of <strong>Hausgeld</strong> (typically 30–50%), <strong>Grundsteuer</strong>, building insurance, and a vacancy allowance. These reduce your gross yield to a realistic net yield.</p>
+          </div>
+          <div>
+            <h3 class="mb-2 font-semibold text-gray-900">3. Configure Financing</h3>
+            <p>If you're using a mortgage, enter the <strong>Darlehensbetrag</strong>, interest rate, and repayment rate. The calculator shows your monthly payment, cash flow, and <strong>Eigenkapitalrendite</strong> (cash-on-cash return) after debt service.</p>
+          </div>
+          <div>
+            <h3 class="mb-2 font-semibold text-gray-900">4. Compare & Decide</h3>
+            <p>Switch between the yield overview and cash flow tabs. Compare your property's return against savings accounts, bonds, and equities. Use the <a href="/hypothekenrechner" class="text-brand-600 hover:underline">mortgage calculator</a> for detailed amortization schedules.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SEO content -->
+      <section class="mt-16 border-t border-gray-200 pt-12">
+        <h2 class="text-2xl font-bold text-gray-900">
+          Understanding Rental Yield for German Property Investments (2026)
+        </h2>
+        <div class="mt-6 max-w-3xl space-y-4 text-sm leading-relaxed text-gray-600">
+          <p>
+            Rental yield is the most fundamental metric for evaluating a buy-to-let property in Germany. While capital appreciation matters long-term, yield determines whether your property generates positive cash flow from day one — or whether you're subsidising your tenants every month.
+          </p>
+          <p>
+            The <strong>Bruttomietrendite</strong> (gross rental yield) is a quick comparison tool: annual Kaltmiete divided by purchase price. It ignores costs and financing, making it useful only for initial filtering. The <strong>Nettomietrendite</strong> (net rental yield) is far more meaningful — it accounts for non-recoverable costs like Hausgeld (Verwaltung + Instandhaltungsrücklage), vacancy, and Grundsteuer, measured against the full capital deployed including <a href="/closing-cost-calculator" class="text-brand-600 hover:underline">closing costs</a>.
+          </p>
+          <p>
+            For leveraged investors, the <strong>Eigenkapitalrendite</strong> (cash-on-cash return) is the number that matters most. It measures annual cash flow against the equity you've actually invested — your down payment plus Kaufnebenkosten. With current mortgage rates of 3.3–3.8% for 10-year fixed, properties yielding 4.5%+ net can generate attractive leveraged returns, while those yielding below 3.5% may produce negative cash flow.
+          </p>
+          <p>
+            Remember that this calculator shows <strong>pre-tax returns</strong>. German landlords benefit from depreciation (AfA) that can significantly reduce taxable rental income — especially the 5% degressive AfA available for new builds completed after 2023 (§ 7 Abs. 5a EStG). A property that looks marginal before tax may be attractive after factoring in depreciation. Use our <a href="/hypothekenrechner" class="text-brand-600 hover:underline">mortgage calculator</a> to model the financing side in detail.
+          </p>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <Footer lang="en" />
+
+  <!-- JSON-LD: WebApplication -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name: "Rental Yield Calculator for Germany",
+    alternateName: "Mietrenditerechner",
+    url: "https://vermietler.com/rental-yield-calculator",
+    applicationCategory: "FinanceApplication",
+    operatingSystem: "Web",
+    offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" },
+    description: "Free German rental yield calculator. Calculate gross yield, net yield, and cash-on-cash return for residential property investments.",
+    inLanguage: ["en", "de"],
+    publisher: {
+      "@type": "Organization",
+      name: "Vermietler",
+      url: "https://vermietler.com",
+    },
+    dateModified: "2026-03-25",
+  })} />
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  })} />
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://vermietler.com/" },
+      { "@type": "ListItem", position: 2, name: "Rental Yield Calculator", item: "https://vermietler.com/rental-yield-calculator" },
+    ],
+  })} />
+
+  <!-- JSON-LD: HowTo -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: "How to Calculate Rental Yield for German Property",
+    description: "Use this free calculator to estimate gross yield, net yield, and cash-on-cash return for a German buy-to-let investment.",
+    step: [
+      { "@type": "HowToStep", position: 1, name: "Enter purchase price and rent", text: "Input the Kaufpreis and expected monthly Kaltmiete. The calculator instantly shows your gross rental yield." },
+      { "@type": "HowToStep", position: 2, name: "Add non-recoverable costs", text: "Enter Hausgeld (non-recoverable portion), Grundsteuer, insurance, and vacancy allowance to see your net yield." },
+      { "@type": "HowToStep", position: 3, name: "Configure financing", text: "Enter loan amount, interest rate, and repayment rate to see monthly mortgage payments and cash-on-cash return." },
+      { "@type": "HowToStep", position: 4, name: "Compare and decide", text: "Use the yield overview to compare against benchmarks, and the cash flow tab for monthly and annual breakdowns." },
+    ],
+  })} />
+</Layout>
