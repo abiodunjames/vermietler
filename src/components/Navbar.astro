@@ -1,9 +1,11 @@
 ---
 interface Props {
   lang?: string;
+  variant?: "default" | "transparent";
 }
 
-const { lang = "en" } = Astro.props;
+const { lang = "en", variant = "default" } = Astro.props;
+const isTransparent = variant === "transparent";
 
 const t = {
   en: {
@@ -35,40 +37,113 @@ const t = {
 }[lang]!;
 ---
 
-<nav class="fixed top-0 z-50 w-full border-b border-gray-200 bg-white/80 backdrop-blur-lg">
-  <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+<nav
+  class:list={[
+    "fixed top-0 z-50 w-full transition-all duration-200",
+    isTransparent ? "" : "border-b border-gray-200 bg-white/80 backdrop-blur-lg"
+  ]}
+  data-nav-variant={variant}
+>
+  <div class="mx-auto flex max-w-[1160px] items-center justify-between px-8 py-4">
     <a href={lang === "de" ? "/de" : "/"}>
-      <img src="/images/logo-compact.svg" alt="Vermietler" class="h-7" />
+      <img
+        src="/images/logo-compact.svg"
+        alt="Vermietler"
+        class:list={["h-7 transition-all duration-200", isTransparent && "nav-logo-img"]}
+      />
     </a>
 
-    <div class="hidden items-center gap-8 md:flex">
-      <a href={t.homeHref} class="text-sm font-medium text-gray-500 transition hover:text-gray-900">
-        {t.home}
-      </a>
-      <a href={t.blogHref} class="text-sm font-medium text-gray-500 transition hover:text-gray-900">
-        {t.blog}
-      </a>
-      <a href={t.mortgageCalcHref} class="text-sm font-medium text-gray-500 transition hover:text-gray-900">
-        {t.mortgageCalc}
-      </a>
-      <a href={t.closingCostCalcHref} class="text-sm font-medium text-gray-500 transition hover:text-gray-900">
-        {t.closingCostCalc}
-      </a>
+    <div class="hidden items-center gap-2 md:flex">
+      {[
+        { href: t.homeHref, label: t.home },
+        { href: t.blogHref, label: t.blog },
+        { href: t.mortgageCalcHref, label: t.mortgageCalc },
+        { href: t.closingCostCalcHref, label: t.closingCostCalc },
+      ].map(link => (
+        <a
+          href={link.href}
+          class:list={[
+            "rounded-md px-3 py-1.5 text-sm font-medium transition",
+            isTransparent
+              ? "nav-link-text"
+              : "text-gray-500 hover:text-gray-900 hover:bg-gray-100"
+          ]}
+        >
+          {link.label}
+        </a>
+      ))}
     </div>
 
-    <div class="flex items-center gap-3">
+    <div class="flex items-center gap-2.5">
       <a
         href={t.langHref}
-        class="rounded-lg px-3 py-1.5 text-sm font-medium text-gray-400 transition hover:bg-gray-100"
+        class:list={[
+          "rounded-full border px-4 py-1.5 text-sm font-semibold transition",
+          isTransparent
+            ? "nav-lang-text border-white/30 hover:bg-white/10 hover:border-white/50"
+            : "border-gray-300 text-gray-700 hover:bg-gray-50"
+        ]}
       >
         {t.langSwitch}
       </a>
       <a
         href={t.homeHref}
-        class="rounded-lg bg-brand-500 px-5 py-2.5 text-sm font-semibold text-white shadow-xs transition hover:bg-brand-600"
+        class="rounded-full bg-brand-500 px-5 py-2 text-sm font-semibold text-white shadow-xs transition hover:bg-brand-600 hover:-translate-y-px hover:shadow-md"
       >
         {t.getStarted}
       </a>
     </div>
   </div>
 </nav>
+
+<style is:global>
+  [data-nav-variant="transparent"] {
+    background: transparent;
+    border-bottom: 1px solid transparent;
+  }
+  [data-nav-variant="transparent"].scrolled {
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(14px);
+    border-bottom-color: var(--color-gray-200);
+    box-shadow: var(--shadow-sm);
+  }
+  [data-nav-variant="transparent"] .nav-logo-img {
+    filter: brightness(0) invert(1);
+  }
+  [data-nav-variant="transparent"].scrolled .nav-logo-img {
+    filter: none;
+  }
+  [data-nav-variant="transparent"] .nav-link-text {
+    color: rgba(255, 255, 255, 0.7);
+  }
+  [data-nav-variant="transparent"] .nav-link-text:hover {
+    color: rgba(255, 255, 255, 0.95);
+    background: rgba(255, 255, 255, 0.08);
+  }
+  [data-nav-variant="transparent"].scrolled .nav-link-text {
+    color: var(--color-gray-600);
+  }
+  [data-nav-variant="transparent"].scrolled .nav-link-text:hover {
+    color: var(--color-gray-900);
+    background: var(--color-gray-100);
+  }
+  [data-nav-variant="transparent"] .nav-lang-text {
+    color: rgba(255, 255, 255, 0.9);
+  }
+  [data-nav-variant="transparent"].scrolled .nav-lang-text {
+    color: var(--color-gray-700);
+    border-color: var(--color-gray-300);
+  }
+  [data-nav-variant="transparent"].scrolled .nav-lang-text:hover {
+    background: var(--color-gray-50);
+  }
+</style>
+
+<script>
+  const nav = document.querySelector('[data-nav-variant="transparent"]');
+  if (nav) {
+    const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 30);
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  }
+</script>

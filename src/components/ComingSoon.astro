@@ -7,324 +7,803 @@ const { lang = "en" } = Astro.props;
 
 const t = {
   en: {
-    badge: "Coming Soon",
-    headline: "Property management,",
-    headlineAccent: "simplified.",
-    sub: "The all-in-one platform for German landlords. Manage properties, finances, tenants, documents, and Nebenkosten statements — all in one place.",
-    emailPlaceholder: "Enter your email",
-    cta: "Get Early Access",
-    submitting: "Sending...",
-    successTitle: "You're on the list!",
-    successMessage: "We'll notify you as soon as Vermietler launches.",
+    heroBadge: "Coming Soon \u00B7 Early Access Open",
+    heroTitle1: "Property management,",
+    heroTitle2: "simplified.",
+    heroSub: 'The all-in-one platform for <strong class="text-white/85 font-medium">German landlords.</strong> Manage properties, finances, tenants, documents, and Nebenkosten statements \u2014 all in one place.',
+    emailPlaceholder: "your@email.de",
+    heroCta: "Get Early Access",
+    heroNote: "DSGVO-compliant \u00B7 No spam \u00B7 Free during beta",
+    successTitle: "You\u2019re on the list!",
+    successSub: "We\u2019ll notify you as soon as Vermietler launches.",
     errorMessage: "Something went wrong. Please try again.",
-    featuresHeadline: "What's coming",
+
+    featEyebrow: "What\u2019s coming",
+    featTitle: "Everything a German landlord needs",
+    featSub: "One platform to replace the spreadsheets, paper folders, and disconnected tools.",
     features: [
-      { icon: "building", title: "Property & unit management", description: "Organize your entire portfolio in a clear hierarchy." },
-      { icon: "bank", title: "Banking & rent tracking", description: "Auto-import transactions and reconcile payments instantly." },
-      { icon: "receipt", title: "AI receipt capture", description: "Snap a receipt — AI extracts vendor, amount, and category." },
-      { icon: "statement", title: "Nebenkosten statements", description: "Generate operating cost statements with a guided wizard." },
-      { icon: "folder", title: "Document vault", description: "Upload, tag, and share documents securely with tenants." },
-      { icon: "shield", title: "DSGVO compliant", description: "Built with German privacy law in mind from day one." },
+      { title: "Property & unit management", desc: "Organize your entire portfolio in a clear hierarchy. Track units, leases, and tenants across multiple properties from a single dashboard.", tag: "In beta", tagStyle: "blue" },
+      { title: "Banking & rent tracking", desc: "Auto-import transactions and reconcile payments instantly. See at a glance who\u2019s paid, what\u2019s outstanding, and where your money goes.", tag: "In beta", tagStyle: "blue" },
+      { title: "AI receipt capture", desc: "Snap a photo of any receipt or invoice. Our AI extracts the vendor, amount, date, and category automatically \u2014 no manual entry needed.", tag: "AI-powered", tagStyle: "orange" },
+      { title: "Nebenkosten statements", desc: "Generate legally compliant operating cost statements with a guided step-by-step wizard. PDF output ready to send to tenants in minutes.", tag: "\u2605 Most popular", tagStyle: "blue", highlight: true },
+      { title: "Document vault", desc: "Upload, tag, and share documents securely with tenants. Rental agreements, \u00DCbergabeprotokolle, insurance docs \u2014 all organised and accessible.", tag: "Coming soon", tagStyle: "gray" },
+      { title: "DSGVO compliant", desc: "Built with German privacy law in mind from day one. Data hosted in Germany, end-to-end encrypted, full data portability and deletion on request.", tag: "Certified", tagStyle: "green" },
     ],
-    legal: "Legal",
-    privacy: "Privacy Policy",
-    terms: "Terms of Service",
-    imprint: "Imprint",
-    social: "Connect",
-    loanCalc: "Loan Calculator",
-    loanCalcHref: "/hypothekenrechner",
-    closingCostCalc: "Closing Cost Calculator",
-    closingCostCalcHref: "/closing-cost-calculator",
-    blog: "Blog",
+
+    howEyebrow: "How it works",
+    howTitle: "From setup to statement in minutes",
+    howSub: "No accounting degree required. Vermietler guides you every step of the way.",
+    steps: [
+      { title: "Add your properties", desc: "Enter your properties and units once. Vermietler builds the structure automatically and links everything together." },
+      { title: "Connect your bank or import transactions", desc: "Link your bank account for automatic imports, or upload a CSV. Rent payments are matched to tenants instantly." },
+      { title: "Snap receipts and log expenses", desc: "Photograph invoices on the go. AI categorises them, assigns them to the right property, and keeps your books tidy." },
+      { title: "Generate your Nebenkosten statement", desc: "Run the guided wizard at year-end. Vermietler pulls in all the data, calculates the split, and produces a legally compliant PDF." },
+    ],
+
+    nebkEyebrow: "Nebenkosten \u00B7 \u00A7556 BGB",
+    nebkTitle: "Operating cost statements, stress-free",
+    nebkSub: "Meet the 12-month deadline without spreadsheets. Vermietler knows which costs are umlagef\u00E4hig and distributes them correctly across tenants.",
+    nebkPoints: [
+      '<strong>Guided wizard</strong> walks you through every cost category \u2014 no legal knowledge needed.',
+      '<strong>Automatic distribution keys</strong> \u2014 split by Wohnfl\u00E4che, Personenanzahl, or Verbrauch.',
+      '<strong>Pre-filled PDF</strong> matching the standard Abrechnungsformular, ready to send.',
+      '<strong>Deadline tracker</strong> with reminders so you never miss the 31 December cutoff.',
+    ],
+    nebkCardTitle: "Betriebskostenabrechnung 2025 \u00B7 Einheit 1A",
+    nebkTotalLabel: "Nachzahlung",
+    nebkTotalNote: "Due within 30 days",
+    nebkTotalVal: "\u20AC 122,30",
+    nebkBadge: "PDF ready to send",
+
+    trustEyebrow: "Built for Germany",
+    trustTitle: "Security and compliance, by default",
+    trustItems: [
+      { title: "DSGVO-compliant", desc: "Built with EU privacy regulation in mind from the first line of code." },
+      { title: "Hosted in Germany", desc: "All data stored on servers located exclusively within Germany." },
+      { title: "End-to-end encrypted", desc: "Your tenant data and documents are encrypted in transit and at rest." },
+      { title: "Full data portability", desc: "Export all your data at any time. No lock-in, ever." },
+    ],
+
+    ctaBadge: "Beta launching soon",
+    ctaTitle: "Join the waitlist",
+    ctaSub: "Be the first to access Vermietler when we launch. Free during the open beta.",
+    ctaNote: "No credit card \u00B7 No spam \u00B7 Cancel anytime",
+
+    footerTagline: "Property management, simplified. Built for German landlords.",
+    footerStatus: "Early access open",
+    footerProduct: "Product",
+    footerResources: "Resources",
+    footerLegal: "Legal",
+    footerFeatures: "Features",
+    footerHowItWorks: "How it works",
+    footerNebenkosten: "Nebenkosten",
+    footerPricing: "Pricing",
+    footerBlog: "Blog",
+    footerLoanCalc: "Loan Calculator",
+    footerClosingCostCalc: "Closing Cost Calculator",
+    footerChangelog: "Changelog",
+    footerImprint: "Imprint",
+    footerPrivacy: "Privacy Policy",
+    footerTerms: "Terms of Service",
+    footerDsgvo: "DSGVO",
+    footerCopy: `\u00A9 ${new Date().getFullYear()} Vermietler. All rights reserved.`,
     blogHref: "/blog",
-    copyright: `© ${new Date().getFullYear()} Vermietler. All rights reserved.`,
+    loanCalcHref: "/hypothekenrechner",
+    closingCostCalcHref: "/closing-cost-calculator",
+    mockStatement: "Statement generated",
+    mockStatementSub: "PDF ready for tenant",
   },
   de: {
-    badge: "Demnächst verfügbar",
-    headline: "Immobilienverwaltung,",
-    headlineAccent: "vereinfacht.",
-    sub: "Die All-in-One-Plattform für deutsche Vermieter. Verwalten Sie Immobilien, Finanzen, Mieter, Dokumente und Nebenkostenabrechnungen — alles an einem Ort.",
-    emailPlaceholder: "Ihre E-Mail-Adresse",
-    cta: "Frühzugang sichern",
-    submitting: "Wird gesendet...",
+    heroBadge: "Demn\u00E4chst verf\u00FCgbar \u00B7 Fr\u00FChzugang offen",
+    heroTitle1: "Immobilienverwaltung,",
+    heroTitle2: "vereinfacht.",
+    heroSub: 'Die All-in-One-Plattform f\u00FCr <strong class="text-white/85 font-medium">deutsche Vermieter.</strong> Verwalten Sie Immobilien, Finanzen, Mieter, Dokumente und Nebenkostenabrechnungen \u2014 alles an einem Ort.',
+    emailPlaceholder: "ihre@email.de",
+    heroCta: "Fr\u00FChzugang sichern",
+    heroNote: "DSGVO-konform \u00B7 Kein Spam \u00B7 Kostenlos in der Beta",
     successTitle: "Sie sind dabei!",
-    successMessage: "Wir benachrichtigen Sie, sobald Vermietler startet.",
+    successSub: "Wir benachrichtigen Sie, sobald Vermietler startet.",
     errorMessage: "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut.",
-    featuresHeadline: "Was kommt",
+
+    featEyebrow: "Was kommt",
+    featTitle: "Alles was ein deutscher Vermieter braucht",
+    featSub: "Eine Plattform ersetzt Tabellen, Papierordner und einzelne Tools.",
     features: [
-      { icon: "building", title: "Immobilien- & Einheitenverwaltung", description: "Organisieren Sie Ihr gesamtes Portfolio übersichtlich." },
-      { icon: "bank", title: "Banking & Mietverfolgung", description: "Transaktionen automatisch importieren und Zahlungen abgleichen." },
-      { icon: "receipt", title: "KI-Belegerfassung", description: "Beleg fotografieren — KI extrahiert Lieferant, Betrag und Kategorie." },
-      { icon: "statement", title: "Nebenkostenabrechnung", description: "Abrechnungen per Assistent erstellen — inklusive PDF-Export." },
-      { icon: "folder", title: "Dokumenten-Tresor", description: "Dokumente hochladen, taggen und sicher mit Mietern teilen." },
-      { icon: "shield", title: "DSGVO-konform", description: "Von Anfang an nach deutschem Datenschutzrecht entwickelt." },
+      { title: "Immobilien- & Einheitenverwaltung", desc: "Organisieren Sie Ihr gesamtes Portfolio \u00FCbersichtlich. Verfolgen Sie Einheiten, Mietvertr\u00E4ge und Mieter \u00FCber mehrere Objekte von einem Dashboard aus.", tag: "In Beta", tagStyle: "blue" },
+      { title: "Banking & Mietverfolgung", desc: "Transaktionen automatisch importieren und Zahlungen sofort abgleichen. Sehen Sie auf einen Blick, wer gezahlt hat und was aussteht.", tag: "In Beta", tagStyle: "blue" },
+      { title: "KI-Belegerfassung", desc: "Fotografieren Sie Belege oder Rechnungen. Unsere KI extrahiert Lieferant, Betrag, Datum und Kategorie automatisch.", tag: "KI-gest\u00FCtzt", tagStyle: "orange" },
+      { title: "Nebenkostenabrechnung", desc: "Erstellen Sie rechtskonforme Betriebskostenabrechnungen mit einem gef\u00FChrten Schritt-f\u00FCr-Schritt-Assistenten. PDF-Ausgabe sofort versandfertig.", tag: "\u2605 Beliebteste", tagStyle: "blue", highlight: true },
+      { title: "Dokumenten-Tresor", desc: "Dokumente hochladen, taggen und sicher mit Mietern teilen. Mietvertr\u00E4ge, \u00DCbergabeprotokolle, Versicherungsdokumente \u2014 alles organisiert.", tag: "Bald verf\u00FCgbar", tagStyle: "gray" },
+      { title: "DSGVO-konform", desc: "Von Anfang an nach deutschem Datenschutzrecht entwickelt. Daten in Deutschland gehostet, Ende-zu-Ende verschl\u00FCsselt.", tag: "Zertifiziert", tagStyle: "green" },
     ],
-    legal: "Rechtliches",
-    privacy: "Datenschutz",
-    terms: "AGB",
-    imprint: "Impressum",
-    social: "Verbinden",
-    loanCalc: "Tilgungsrechner",
-    loanCalcHref: "/de/tilgungsrechner",
-    closingCostCalc: "Kaufnebenkostenrechner",
-    closingCostCalcHref: "/de/kaufnebenkostenrechner",
-    blog: "Blog",
+
+    howEyebrow: "So funktioniert\u2019s",
+    howTitle: "Vom Setup zur Abrechnung in Minuten",
+    howSub: "Kein BWL-Studium n\u00F6tig. Vermietler f\u00FChrt Sie Schritt f\u00FCr Schritt.",
+    steps: [
+      { title: "Immobilien anlegen", desc: "Geben Sie Ihre Immobilien und Einheiten einmalig ein. Vermietler baut die Struktur automatisch auf und verkn\u00FCpft alles." },
+      { title: "Bank verbinden oder Transaktionen importieren", desc: "Bankkonto f\u00FCr automatische Imports verkn\u00FCpfen oder CSV hochladen. Mietzahlungen werden sofort zugeordnet." },
+      { title: "Belege erfassen und Ausgaben buchen", desc: "Rechnungen unterwegs fotografieren. KI kategorisiert sie, ordnet sie der richtigen Immobilie zu und h\u00E4lt Ihre B\u00FCcher ordentlich." },
+      { title: "Nebenkostenabrechnung erstellen", desc: "F\u00FChren Sie den Assistenten zum Jahresende aus. Vermietler zieht alle Daten heran, berechnet die Verteilung und erstellt ein rechtskonformes PDF." },
+    ],
+
+    nebkEyebrow: "Nebenkosten \u00B7 \u00A7556 BGB",
+    nebkTitle: "Betriebskostenabrechnungen, stressfrei",
+    nebkSub: "Halten Sie die 12-Monats-Frist ein \u2014 ohne Tabellen. Vermietler wei\u00DF, welche Kosten umlagef\u00E4hig sind und verteilt sie korrekt.",
+    nebkPoints: [
+      '<strong>Gef\u00FChrter Assistent</strong> f\u00FChrt Sie durch jede Kostenkategorie \u2014 kein juristisches Wissen n\u00F6tig.',
+      '<strong>Automatische Verteilerschl\u00FCssel</strong> \u2014 Aufteilung nach Wohnfl\u00E4che, Personenanzahl oder Verbrauch.',
+      '<strong>Vorgef\u00FClltes PDF</strong> im Standard-Abrechnungsformat, sofort versandfertig.',
+      '<strong>Frist-Tracker</strong> mit Erinnerungen, damit Sie den 31. Dezember nie verpassen.',
+    ],
+    nebkCardTitle: "Betriebskostenabrechnung 2025 \u00B7 Einheit 1A",
+    nebkTotalLabel: "Nachzahlung",
+    nebkTotalNote: "F\u00E4llig innerhalb von 30 Tagen",
+    nebkTotalVal: "\u20AC 122,30",
+    nebkBadge: "PDF versandfertig",
+
+    trustEyebrow: "F\u00FCr Deutschland gebaut",
+    trustTitle: "Sicherheit und Compliance, ab Werk",
+    trustItems: [
+      { title: "DSGVO-konform", desc: "Von der ersten Codezeile an mit EU-Datenschutzverordnung im Blick entwickelt." },
+      { title: "Gehostet in Deutschland", desc: "Alle Daten auf Servern ausschlie\u00DFlich in Deutschland gespeichert." },
+      { title: "Ende-zu-Ende verschl\u00FCsselt", desc: "Ihre Mieter- und Dokumentendaten sind im Transit und im Ruhezustand verschl\u00FCsselt." },
+      { title: "Volle Datenportabilit\u00E4t", desc: "Exportieren Sie alle Ihre Daten jederzeit. Kein Lock-in, niemals." },
+    ],
+
+    ctaBadge: "Beta startet bald",
+    ctaTitle: "Auf die Warteliste",
+    ctaSub: "Geh\u00F6ren Sie zu den Ersten, wenn Vermietler startet. Kostenlos w\u00E4hrend der offenen Beta.",
+    ctaNote: "Keine Kreditkarte \u00B7 Kein Spam \u00B7 Jederzeit k\u00FCndbar",
+
+    footerTagline: "Immobilienverwaltung, vereinfacht. F\u00FCr deutsche Vermieter.",
+    footerStatus: "Fr\u00FChzugang offen",
+    footerProduct: "Produkt",
+    footerResources: "Ressourcen",
+    footerLegal: "Rechtliches",
+    footerFeatures: "Funktionen",
+    footerHowItWorks: "So funktioniert\u2019s",
+    footerNebenkosten: "Nebenkosten",
+    footerPricing: "Preise",
+    footerBlog: "Blog",
+    footerLoanCalc: "Tilgungsrechner",
+    footerClosingCostCalc: "Kaufnebenkostenrechner",
+    footerChangelog: "Changelog",
+    footerImprint: "Impressum",
+    footerPrivacy: "Datenschutz",
+    footerTerms: "AGB",
+    footerDsgvo: "DSGVO",
+    footerCopy: `\u00A9 ${new Date().getFullYear()} Vermietler. Alle Rechte vorbehalten.`,
     blogHref: "/de/blog",
-    copyright: `© ${new Date().getFullYear()} Vermietler. Alle Rechte vorbehalten.`,
+    loanCalcHref: "/de/tilgungsrechner",
+    closingCostCalcHref: "/de/kaufnebenkostenrechner",
+    mockStatement: "Abrechnung erstellt",
+    mockStatementSub: "PDF bereit f\u00FCr Mieter",
   },
 }[lang]!;
 
-const iconPaths: Record<string, string> = {
-  building: "M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008z",
-  bank: "M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0 0 12 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75z",
-  receipt: "M9 14.25l6-6m4.5-3.493V21.75l-3.75-1.5-3.75 1.5-3.75-1.5-3.75 1.5V4.757c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0c1.1.128 1.907 1.077 1.907 2.185zM9.75 9h.008v.008H9.75V9zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0zm4.125 4.5h.008v.008h-.008V13.5zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0z",
-  statement: "M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9z",
-  folder: "M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44z",
-  shield: "M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z",
-};
+const nebkLines = [
+  { label: "Grundsteuer", val: "\u20AC 186,40" },
+  { label: "Wasser & Abwasser", val: "\u20AC 312,80" },
+  { label: "Heizung", val: "\u20AC 980,20" },
+  { label: "M\u00FCllabfuhr", val: "\u20AC 124,60" },
+  { label: "Hausmeister", val: "\u20AC 240,00" },
+  { label: "Geb\u00E4udeversicherung", val: "\u20AC 198,30" },
+  { label: "Vorauszahlungen", val: "\u2212 \u20AC 1 920,00" },
+];
+
+const featureIcons = [
+  // Property
+  '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--color-brand-500)" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>',
+  // Banking
+  '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>',
+  // AI receipt
+  '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ea580c" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>',
+  // Nebenkosten
+  '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--color-brand-600)" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>',
+  // Document vault
+  '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>',
+  // DSGVO
+  '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>',
+];
+
+const featureIconBgs = [
+  "background:var(--color-brand-50)",
+  "background:#ecfdf5",
+  "background:#fff7ed",
+  "background:var(--color-brand-100)",
+  "background:#f5f3ff",
+  "background:#ecfdf5",
+];
+
+const trustIcons = [
+  '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--color-brand-500)" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>',
+  '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>',
+  '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ea580c" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>',
+  '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2"><polyline points="21 8 21 21 3 21 3 8"/><rect x="1" y="3" width="22" height="5"/><line x1="10" y1="12" x2="14" y2="12"/></svg>',
+];
+
+const trustIconBgs = [
+  "background:var(--color-brand-50)",
+  "background:#ecfdf5",
+  "background:#fff7ed",
+  "background:#f5f3ff",
+];
+
+const formEndpoint = "https://docs.google.com/forms/d/e/1FAIpQLScHcJlWZRXDs6RbxRDc44HUVVKgBSZWBQs-H28g7nWetaWpRQ/formResponse";
+const entryId = "entry.741940622";
 ---
 
-<div class="min-h-screen flex flex-col bg-white">
-  <!-- Hero -->
-  <section class="relative flex-1 flex items-center overflow-hidden pt-24 pb-20 lg:pt-36 lg:pb-32">
-    <!-- Background image -->
-    <div class="absolute inset-0 z-0">
-      <img src="/images/hero-bg.jpg" alt="" class="h-full w-full object-cover object-center" loading="eager" />
-      <div class="absolute inset-0 bg-gradient-to-b from-gray-900/80 via-gray-900/70 to-gray-900/90"></div>
-    </div>
+<!-- ── Hero ── -->
+<section class="landing-hero relative min-h-screen flex flex-col overflow-hidden" id="home">
+  <div class="landing-hero-glow"></div>
+  <div class="landing-hero-glow-2"></div>
 
-    <!-- Decorative gradient orb -->
-    <div class="pointer-events-none absolute inset-0 z-0 overflow-hidden">
-      <div class="absolute -top-40 left-1/2 h-[600px] w-[800px] -translate-x-1/2 rounded-full bg-brand-500/20 blur-[120px]"></div>
-    </div>
-
-    <div class="relative z-10 mx-auto w-full max-w-3xl px-6 text-center">
+  <div class="relative z-10 flex flex-1 flex-col items-center justify-center px-8 pt-36 pb-20 text-center lg:pt-44 lg:pb-32">
+    <div class="mx-auto max-w-[900px]">
       <!-- Badge -->
-      <div class="coming-soon-animate mb-8 inline-flex items-center gap-2 rounded-full border border-brand-400/30 bg-brand-500/10 backdrop-blur-sm px-4 py-1.5 text-sm font-medium text-brand-200">
-        <span class="relative flex h-2 w-2">
+      <div class="mb-7 inline-flex items-center gap-2 rounded-full border border-brand-400/30 bg-brand-500/15 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-brand-300 backdrop-blur-sm">
+        <span class="relative flex h-1.5 w-1.5">
           <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand-400 opacity-75"></span>
-          <span class="relative inline-flex h-2 w-2 rounded-full bg-brand-400"></span>
+          <span class="relative inline-flex h-1.5 w-1.5 rounded-full bg-brand-400"></span>
         </span>
-        {t.badge}
+        {t.heroBadge}
       </div>
 
-      <!-- Headline -->
-      <h1 class="coming-soon-animate font-display text-5xl font-bold tracking-tight text-white sm:text-6xl lg:text-7xl" style="animation-delay: 0.1s">
-        {t.headline}
-        <br />
-        <span class="bg-gradient-to-r from-brand-300 to-brand-400 bg-clip-text text-transparent">
-          {t.headlineAccent}
+      <!-- Title -->
+      <h1 class="font-display text-[clamp(38px,5.5vw,72px)] font-bold leading-[1.08] tracking-tight text-white" style="letter-spacing:-0.04em">
+        {t.heroTitle1}<br />
+        <span class="relative inline-block">
+          <span class="bg-gradient-to-r from-brand-400 to-brand-300 bg-clip-text text-transparent">{t.heroTitle2}</span>
+          <span class="absolute bottom-[-4px] left-0 right-0 h-[3px] rounded-full bg-gradient-to-r from-brand-400 to-brand-300 opacity-70"></span>
         </span>
       </h1>
 
-      <!-- Description -->
-      <p class="coming-soon-animate mx-auto mt-6 max-w-xl text-lg leading-relaxed text-gray-300 sm:text-xl" style="animation-delay: 0.2s">
-        {t.sub}
-      </p>
+      <!-- Subtitle -->
+      <p class="mx-auto mt-6 max-w-[580px] text-[clamp(16px,1.8vw,20px)] leading-relaxed text-white/60" set:html={t.heroSub} />
 
-      <!-- Email form -->
-      <div class="coming-soon-animate mt-10 mx-auto max-w-lg rounded-2xl border border-white/10 bg-white/5 backdrop-blur-md p-6" style="animation-delay: 0.3s">
-        <form id="email-form" class="flex flex-col gap-3 sm:flex-row">
+      <!-- Waitlist form -->
+      <div class="mt-10" id="waitlist">
+        <form class="landing-waitlist-form mx-auto flex max-w-[460px] items-center gap-0 rounded-full border-[1.5px] border-white/20 bg-white/8 p-1.5 pl-5 backdrop-blur-md" id="hero-form">
           <input
             type="email"
-            id="email-input"
+            id="hero-email"
             required
             placeholder={t.emailPlaceholder}
-            class="flex-1 rounded-xl border border-gray-200 bg-white px-5 py-3.5 text-base text-gray-900 shadow-xs outline-none transition placeholder:text-gray-400 focus:border-brand-400 focus:ring-4 focus:ring-brand-500/20"
+            class="min-w-0 flex-1 border-none bg-transparent text-sm text-white outline-none placeholder:text-white/40"
           />
-          <button
-            type="submit"
-            id="submit-btn"
-            class="inline-flex items-center justify-center gap-2 rounded-xl bg-brand-500 px-7 py-3.5 text-base font-semibold text-white shadow-md transition hover:bg-brand-600 hover:shadow-lg disabled:opacity-60 disabled:cursor-not-allowed"
-          >
-            <span id="btn-text">{t.cta}</span>
-            <svg id="btn-arrow" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
-            </svg>
-            <svg id="btn-spinner" class="hidden h-4 w-4 animate-spin" fill="none" viewBox="0 0 24 24">
-              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-              <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-            </svg>
+          <button type="submit" class="flex-shrink-0 rounded-full bg-brand-500 px-6 py-2.5 text-sm font-semibold text-white transition hover:bg-brand-400 hover:text-[#1e2d45]">
+            {t.heroCta}
           </button>
         </form>
+        <p class="mt-3.5 flex items-center justify-center gap-1.5 text-xs text-white/35">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          {t.heroNote}
+        </p>
+      </div>
 
-        <!-- Success message -->
-        <div id="success-msg" class="hidden rounded-xl border border-green-200 bg-green-50 p-5 text-center">
-          <svg class="mx-auto h-8 w-8 text-green-600" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z" />
-          </svg>
-          <p class="mt-2 text-base font-semibold text-green-800">{t.successTitle}</p>
-          <p class="mt-1 text-sm text-green-600">{t.successMessage}</p>
+      <!-- Success message -->
+      <div class="hidden mx-auto max-w-[460px] items-center gap-3 rounded-2xl border border-emerald-500/30 bg-emerald-500/15 px-5 py-4" id="hero-success">
+        <div class="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-emerald-500/25 text-emerald-400">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
         </div>
-
-        <!-- Error message -->
-        <div id="error-msg" class="hidden mt-3 rounded-lg bg-red-50 border border-red-200 px-4 py-2.5 text-sm text-red-700">
-          {t.errorMessage}
+        <div class="text-left">
+          <div class="text-sm font-semibold text-white">{t.successTitle}</div>
+          <div class="text-xs text-white/50">{t.successSub}</div>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Feature highlights -->
-  <section class="border-t border-gray-100 bg-gray-50 py-20">
-    <div class="mx-auto max-w-5xl px-6">
-      <p class="coming-soon-animate text-center text-xs font-semibold uppercase tracking-[0.08em] text-brand-500">{t.featuresHeadline}</p>
-      <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-        {t.features.map((feature, i) => (
-          <div class="coming-soon-animate group flex items-start gap-4 rounded-2xl border border-gray-200 bg-white p-5 shadow-xs transition hover:border-brand-200 hover:shadow-md" style={`animation-delay: ${0.1 * i}s`}>
-            <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-brand-50 text-brand-500 transition group-hover:bg-brand-100">
-              <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" d={iconPaths[feature.icon]} />
-              </svg>
+<!-- ── Features ── -->
+<section class="bg-gray-50 px-8 py-24" id="features">
+  <div class="mx-auto max-w-[1160px]">
+    <div class="mb-14 text-center">
+      <div class="mb-3 inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-widest text-brand-500">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        {t.featEyebrow}
+      </div>
+      <h2 class="font-display text-[clamp(28px,3vw,44px)] font-bold tracking-tight text-[#1e2d45]" style="letter-spacing:-0.03em;line-height:1.15">{t.featTitle}</h2>
+      <p class="mx-auto mt-4 max-w-[560px] text-lg text-gray-500">{t.featSub}</p>
+    </div>
+
+    <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      {t.features.map((feat, i) => (
+        <div class:list={[
+          "feature-card group relative overflow-hidden rounded-3xl border bg-white p-8 shadow-xs transition-all duration-200 hover:-translate-y-[3px] hover:shadow-lg",
+          feat.highlight ? "border-brand-200 bg-brand-25" : "border-gray-200 hover:border-brand-200"
+        ]}>
+          <div class="mb-5 flex h-[52px] w-[52px] items-center justify-center rounded-2xl" style={featureIconBgs[i]}>
+            <Fragment set:html={featureIcons[i]} />
+          </div>
+          <h3 class="font-display text-lg font-bold text-[#1e2d45]" style="letter-spacing:-0.015em">{feat.title}</h3>
+          <p class="mt-2.5 text-sm leading-relaxed text-gray-500">{feat.desc}</p>
+          <span class:list={[
+            "mt-4 inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[11.5px] font-semibold",
+            feat.tagStyle === "blue" && "bg-brand-50 text-brand-700",
+            feat.tagStyle === "orange" && "bg-orange-50 text-orange-700",
+            feat.tagStyle === "green" && "bg-emerald-50 text-emerald-800",
+            feat.tagStyle === "gray" && "bg-gray-100 text-gray-500",
+          ]}>
+            {(feat.tagStyle === "blue" || feat.tagStyle === "green") && !feat.highlight && (
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+            )}
+            {feat.tagStyle === "orange" && (
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            )}
+            {feat.tag}
+          </span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- ── How it works ── -->
+<section class="bg-white px-8 py-24" id="how">
+  <div class="mx-auto max-w-[1160px]">
+    <div class="max-w-[520px]">
+      <div class="mb-3 inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-widest text-brand-500">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        {t.howEyebrow}
+      </div>
+      <h2 class="font-display text-[clamp(28px,3vw,44px)] font-bold tracking-tight text-[#1e2d45]" style="letter-spacing:-0.03em;line-height:1.15">{t.howTitle}</h2>
+      <p class="mt-4 text-base text-gray-500">{t.howSub}</p>
+    </div>
+
+    <div class="mt-14 grid items-center gap-16 lg:grid-cols-2">
+      <!-- Steps -->
+      <div class="flex flex-col">
+        {t.steps.map((step, i) => (
+          <div class:list={["how-step group flex cursor-pointer gap-5 border-b border-gray-100 py-6 transition last:border-b-0", i === 0 && "active"]} data-step={i}>
+            <div class="how-step-num flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg bg-gray-100 font-mono text-xs font-semibold text-gray-500 transition group-hover:bg-brand-500 group-hover:text-white">
+              {String(i + 1).padStart(2, '0')}
             </div>
             <div>
-              <h3 class="text-sm font-semibold text-gray-900">{feature.title}</h3>
-              <p class="mt-1 text-sm leading-relaxed text-gray-500">{feature.description}</p>
+              <div class="font-display text-base font-semibold text-gray-700 transition">{step.title}</div>
+              <div class="mt-1.5 text-sm leading-relaxed text-gray-400">{step.desc}</div>
             </div>
           </div>
         ))}
       </div>
-    </div>
-  </section>
 
-  <!-- Footer -->
-  <footer class="border-t border-gray-200 bg-white py-12">
-    <div class="mx-auto max-w-5xl px-6">
-      <div class="flex flex-col items-center gap-8 sm:flex-row sm:items-start sm:justify-between">
-        <!-- Brand -->
-        <div class="text-center sm:text-left">
-          <a href="/">
-            <img src="/images/logo-compact.svg" alt="Vermietler" class="h-8" />
-          </a>
-          <p class="mt-2 text-sm text-gray-400">{t.badge}</p>
-        </div>
-
-        <!-- Links -->
-        <div class="flex flex-wrap justify-center gap-x-10 gap-y-6 text-sm">
-          <!-- Legal -->
-          <div>
-            <h4 class="font-semibold text-gray-900">{t.legal}</h4>
-            <ul class="mt-3 space-y-2">
-              <li><a href="#" class="text-gray-500 transition hover:text-gray-900">{t.imprint}</a></li>
-              <li><a href="#" class="text-gray-500 transition hover:text-gray-900">{t.privacy}</a></li>
-              <li><a href="#" class="text-gray-500 transition hover:text-gray-900">{t.terms}</a></li>
-            </ul>
+      <!-- Mock screen -->
+      <div class="relative">
+        <div class="overflow-hidden rounded-3xl border border-white/10 bg-[#1e2d45] shadow-xl">
+          <!-- Title bar -->
+          <div class="flex items-center gap-2 border-b border-white/5 bg-white/5 px-4 py-3">
+            <div class="flex gap-1.5">
+              <div class="h-2.5 w-2.5 rounded-full bg-[#ff5f57]"></div>
+              <div class="h-2.5 w-2.5 rounded-full bg-[#ffbe2e]"></div>
+              <div class="h-2.5 w-2.5 rounded-full bg-[#28c840]"></div>
+            </div>
+            <div class="ml-3 h-2 max-w-[180px] flex-1 rounded bg-white/8"></div>
           </div>
-
-          <!-- Social -->
+          <!-- Body -->
+          <div class="flex min-h-[340px]">
+            <!-- Sidebar -->
+            <div class="flex w-[52px] flex-col items-center gap-3.5 border-r border-white/5 bg-white/[0.03] pt-5">
+              <div class="h-6 w-6 rounded-md bg-brand-500/25"></div>
+              <div class="h-[3px] w-6 rounded bg-white/12"></div>
+              <div class="h-6 w-6 rounded-md bg-white/8"></div>
+              <div class="h-6 w-6 rounded-md bg-white/8"></div>
+              <div class="h-6 w-6 rounded-md bg-white/8"></div>
+              <div class="h-6 w-6 rounded-md bg-white/8"></div>
+            </div>
+            <!-- Content -->
+            <div class="flex-1 p-4">
+              <!-- KPI row -->
+              <div class="mb-3 grid grid-cols-3 gap-2">
+                <div class="rounded-lg border border-brand-500/30 bg-brand-500/20 p-3">
+                  <div class="mb-2 h-[5px] w-1/2 rounded bg-brand-400/40"></div>
+                  <div class="h-2.5 w-[70%] rounded bg-brand-400/60"></div>
+                </div>
+                <div class="rounded-lg border border-emerald-500/20 bg-emerald-500/15 p-3">
+                  <div class="mb-2 h-[5px] w-1/2 rounded bg-emerald-400/30"></div>
+                  <div class="h-2.5 w-[65%] rounded bg-emerald-400/50"></div>
+                </div>
+                <div class="rounded-lg border border-amber-500/20 bg-amber-500/10 p-3">
+                  <div class="mb-2 h-[5px] w-1/2 rounded bg-amber-400/30"></div>
+                  <div class="h-2.5 w-[55%] rounded bg-amber-400/50"></div>
+                </div>
+              </div>
+              <!-- Table -->
+              <div class="mb-2.5 rounded-lg border border-white/5 bg-white/[0.03] p-3">
+                <div class="mb-2 flex gap-1.5 border-b border-white/5 pb-1.5">
+                  <div class="h-[5px] flex-[1.5] rounded bg-white/10"></div>
+                  <div class="h-[5px] flex-1 rounded bg-white/8"></div>
+                  <div class="h-[5px] flex-1 rounded bg-white/8"></div>
+                  <div class="h-[5px] flex-[0.6] rounded bg-white/8"></div>
+                </div>
+                {[
+                  ['rgba(255,255,255,0.15)','rgba(52,211,153,0.4)'],
+                  ['rgba(255,255,255,0.12)','rgba(96,165,250,0.4)'],
+                  ['rgba(255,255,255,0.12)','rgba(251,191,36,0.4)'],
+                  ['rgba(255,255,255,0.1)','rgba(255,255,255,0.15)'],
+                ].map(([c1,c2]) => (
+                  <div class="flex items-center gap-1.5 border-b border-white/[0.03] py-1.5">
+                    <div class="h-[5px] flex-[1.5] rounded" style={`background:${c1}`}></div>
+                    <div class="h-[5px] flex-1 rounded bg-white/8"></div>
+                    <div class="h-[5px] flex-1 rounded bg-white/[0.06]"></div>
+                    <div class="h-3.5 flex-[0.6] rounded" style={`background:${c2}`}></div>
+                  </div>
+                ))}
+              </div>
+              <!-- Bar chart -->
+              <div class="flex items-end gap-1 rounded-lg border border-white/5 bg-white/[0.03] p-3" style="height:64px">
+                {[40,55,35,70,50,80,45,60].map(h => (
+                  <div class="flex-1 rounded-t" style={`height:${h}%;background:rgba(37,99,235,${h > 70 ? '0.7' : '0.4'})`}></div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Floating badge -->
+        <div class="absolute -right-4 -bottom-4 flex items-center gap-2.5 rounded-2xl border border-gray-200 bg-white px-4 py-3 shadow-lg">
+          <div class="flex h-9 w-9 items-center justify-center rounded-full bg-emerald-100 text-emerald-600">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
           <div>
-            <h4 class="font-semibold text-gray-900">{t.social}</h4>
-            <ul class="mt-3 space-y-2">
-              <li>
-                <a href="#" class="inline-flex items-center gap-1.5 text-gray-500 transition hover:text-gray-900">
-                  <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                  LinkedIn
-                </a>
-              </li>
-              <li>
-                <a href="#" class="inline-flex items-center gap-1.5 text-gray-500 transition hover:text-gray-900">
-                  <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-                  Twitter / X
-                </a>
-              </li>
-              <li>
-                <a href={t.loanCalcHref} class="inline-flex items-center gap-1.5 text-gray-500 transition hover:text-gray-900">
-                  <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 15.75V18m-7.5-6.75h.008v.008H8.25v-.008zm0 2.25h.008v.008H8.25V13.5zm0 2.25h.008v.008H8.25v-.008zm0 2.25h.008v.008H8.25V18zm2.498-6.75h.007v.008h-.007v-.008zm0 2.25h.007v.008h-.007V13.5zm0 2.25h.007v.008h-.007v-.008zm0 2.25h.007v.008h-.007V18zm2.504-6.75h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V13.5zm0 2.25h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V18zm2.498-6.75h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V13.5zM8.25 6h7.5v2.25h-7.5V6zM12 2.25c-1.892 0-3.758.11-5.593.322C5.307 2.7 4.5 3.65 4.5 4.757V19.5a2.25 2.25 0 0 0 2.25 2.25h10.5a2.25 2.25 0 0 0 2.25-2.25V4.757c0-1.108-.806-2.057-1.907-2.185A48.507 48.507 0 0 0 12 2.25z" /></svg>
-                  {t.loanCalc}
-                </a>
-              </li>
-              <li>
-                <a href={t.closingCostCalcHref} class="inline-flex items-center gap-1.5 text-gray-500 transition hover:text-gray-900">
-                  <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0 1 15.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 0 1 3 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 0 0-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 0 1-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 0 0 3 15h-.75M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z" /></svg>
-                  {t.closingCostCalc}
-                </a>
-              </li>
-              <li>
-                <a href={t.blogHref} class="inline-flex items-center gap-1.5 text-gray-500 transition hover:text-gray-900">
-                  <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 0 1-2.25 2.25M16.5 7.5V18a2.25 2.25 0 0 0 2.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 0 0 2.25 2.25h13.5M6 7.5h3v3H6v-3z" /></svg>
-                  {t.blog}
-                </a>
-              </li>
-            </ul>
+            <div class="text-[13px] font-semibold text-gray-900">{t.mockStatement}</div>
+            <div class="text-[11.5px] text-gray-400">{t.mockStatementSub}</div>
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
 
-      <div class="mt-10 border-t border-gray-200 pt-6">
-        <p class="text-center text-sm text-gray-400">{t.copyright}</p>
+<!-- ── Nebenkosten highlight ── -->
+<section class="landing-nebk relative overflow-hidden px-8 py-24" id="nebenkosten">
+  <div class="landing-nebk-glow"></div>
+  <div class="relative z-10 mx-auto grid max-w-[1160px] items-center gap-16 lg:grid-cols-2">
+    <!-- Content -->
+    <div>
+      <div class="mb-3 inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-widest text-brand-300">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/></svg>
+        {t.nebkEyebrow}
+      </div>
+      <h2 class="font-display text-[clamp(28px,3vw,44px)] font-bold tracking-tight text-white" style="letter-spacing:-0.03em;line-height:1.15">{t.nebkTitle}</h2>
+      <p class="mt-4 max-w-[480px] text-lg leading-relaxed text-white/55">{t.nebkSub}</p>
+
+      <div class="mt-8 flex flex-col gap-4">
+        {t.nebkPoints.map(point => (
+          <div class="flex items-start gap-3">
+            <div class="mt-0.5 flex h-[22px] w-[22px] flex-shrink-0 items-center justify-center rounded-full bg-brand-400/20 text-brand-300">
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <p class="text-[15px] leading-relaxed text-white/70" set:html={point} />
+          </div>
+        ))}
       </div>
     </div>
-  </footer>
-</div>
 
-<style>
-  @keyframes coming-soon-fade-up {
-    from {
-      opacity: 0;
-      transform: translateY(24px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    <!-- Card -->
+    <div>
+      <div class="rounded-3xl border border-white/10 bg-white/[0.06] p-7 shadow-lg backdrop-blur-xl">
+        <div class="mb-5 text-[10.5px] font-bold uppercase tracking-widest text-white/40">{t.nebkCardTitle}</div>
+        {nebkLines.map((line, i) => (
+          <div class="flex items-center justify-between border-b border-white/[0.06] py-2.5 last:border-b-0">
+            <span class="text-sm text-white/55">{line.label}</span>
+            <span class:list={["font-mono text-sm font-medium", i === nebkLines.length - 1 ? "text-white/40" : "text-white"]}>{line.val}</span>
+          </div>
+        ))}
+        <div class="mt-4 flex items-center justify-between rounded-2xl border border-brand-400/20 bg-brand-500/10 px-5 py-4">
+          <div>
+            <div class="text-[13px] font-semibold text-brand-300">{t.nebkTotalLabel}</div>
+            <div class="mt-0.5 text-xs text-brand-400/50">{t.nebkTotalNote}</div>
+          </div>
+          <div class="font-display text-[22px] font-bold tracking-tight text-brand-400">{t.nebkTotalVal}</div>
+        </div>
+        <div class="mt-4">
+          <span class="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/20 px-3 py-1 text-xs font-semibold text-emerald-400">
+            <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            {t.nebkBadge}
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Trust ── -->
+<section class="border-t border-gray-200 bg-gray-50 px-8 py-20">
+  <div class="mx-auto max-w-[1160px]">
+    <div class="mb-14 text-center">
+      <div class="mb-3 inline-flex items-center justify-center gap-1.5 text-xs font-semibold uppercase tracking-widest text-brand-500">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        {t.trustEyebrow}
+      </div>
+      <h2 class="font-display text-[clamp(28px,3vw,44px)] font-bold tracking-tight text-[#1e2d45]" style="letter-spacing:-0.03em;line-height:1.15;text-align:center">{t.trustTitle}</h2>
+    </div>
+    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+      {t.trustItems.map((item, i) => (
+        <div class="text-center px-5 py-8">
+          <div class="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-2xl" style={trustIconBgs[i]}>
+            <Fragment set:html={trustIcons[i]} />
+          </div>
+          <h3 class="font-display text-[15px] font-semibold text-[#1e2d45]">{item.title}</h3>
+          <p class="mt-2 text-[13.5px] leading-relaxed text-gray-500">{item.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<section class="landing-cta relative overflow-hidden px-8 py-24 text-center">
+  <div class="landing-cta-glow"></div>
+  <div class="relative z-10 mx-auto max-w-[640px]">
+    <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-brand-400/30 bg-brand-500/15 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-brand-300 backdrop-blur-sm">
+      <span class="relative flex h-1.5 w-1.5">
+        <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-brand-400 opacity-75"></span>
+        <span class="relative inline-flex h-1.5 w-1.5 rounded-full bg-brand-400"></span>
+      </span>
+      {t.ctaBadge}
+    </div>
+    <h2 class="font-display text-[clamp(28px,3.5vw,48px)] font-bold tracking-tight text-white" style="letter-spacing:-0.03em;line-height:1.15">{t.ctaTitle}</h2>
+    <p class="mx-auto mt-4 max-w-md text-[17px] leading-relaxed text-white/55">{t.ctaSub}</p>
+    <form class="mx-auto mt-10 flex max-w-[440px] items-center gap-0 rounded-full border-[1.5px] border-white/20 bg-white/8 p-1.5 pl-5 backdrop-blur-md landing-waitlist-form" id="cta-form">
+      <input
+        type="email"
+        id="cta-email"
+        placeholder={t.emailPlaceholder}
+        required
+        class="min-w-0 flex-1 border-none bg-transparent text-sm text-white outline-none placeholder:text-white/35"
+      />
+      <button type="submit" class="flex-shrink-0 rounded-full bg-brand-500 px-6 py-2.5 text-sm font-semibold text-white transition hover:bg-brand-400 hover:text-[#1e2d45]" id="cta-btn">
+        {t.heroCta}
+      </button>
+    </form>
+    <p class="mt-3.5 text-xs text-white/30">{t.ctaNote}</p>
+  </div>
+</section>
+
+<!-- ── Footer ── -->
+<footer class="bg-[#141f30] px-8 pt-14 pb-8">
+  <div class="mx-auto max-w-[1160px]">
+    <div class="grid gap-12 border-b border-white/8 pb-10 sm:grid-cols-2 lg:grid-cols-[2.5fr_1fr_1fr_1fr]">
+      <!-- Brand -->
+      <div>
+        <div class="flex items-center gap-2 font-display text-xl font-bold text-white" style="letter-spacing:-0.025em">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          vermietler<span class="text-brand-400">.</span>
+        </div>
+        <p class="mt-3 max-w-[280px] text-sm leading-relaxed text-white/38">{t.footerTagline}</p>
+        <div class="mt-5 inline-flex items-center gap-1.5 rounded-full border border-emerald-500/25 bg-emerald-500/15 px-3.5 py-1.5 text-xs font-semibold text-emerald-400">
+          <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
+          {t.footerStatus}
+        </div>
+      </div>
+
+      <!-- Product -->
+      <div>
+        <div class="mb-4 text-[10.5px] font-bold uppercase tracking-widest text-white/25">{t.footerProduct}</div>
+        <a href="#features" class="block mb-2.5 text-[13.5px] text-white/42 transition hover:text-white/85">{t.footerFeatures}</a>
+        <a href="#how" class="block mb-2.5 text-[13.5px] text-white/42 transition hover:text-white/85">{t.footerHowItWorks}</a>
+        <a href="#nebenkosten" class="block mb-2.5 text-[13.5px] text-white/42 transition hover:text-white/85">{t.footerNebenkosten}</a>
+        <a href="#" class="block mb-2.5 text-[13.5px] text-white/42 transition hover:text-white/85">{t.footerPricing}</a>
+      </div>
+
+      <!-- Resources -->
+      <div>
+        <div class="mb-4 text-[10.5px] font-bold uppercase tracking-widest text-white/25">{t.footerResources}</div>
+        <a href={t.blogHref} class="block mb-2.5 text-[13.5px] text-white/42 transition hover:text-white/85">{t.footerBlog}</a>
+        <a href={t.loanCalcHref} class="block mb-2.5 text-[13.5px] text-white/42 transition hover:text-white/85">{t.footerLoanCalc}</a>
+        <a href={t.closingCostCalcHref} class="block mb-2.5 text-[13.5px] text-white/42 transition hover:text-white/85">{t.footerClosingCostCalc}</a>
+        <a href="#" class="block mb-2.5 text-[13.5px] text-white/42 transition hover:text-white/85">{t.footerChangelog}</a>
+      </div>
+
+      <!-- Legal -->
+      <div>
+        <div class="mb-4 text-[10.5px] font-bold uppercase tracking-widest text-white/25">{t.footerLegal}</div>
+        <a href="#" class="block mb-2.5 text-[13.5px] text-white/42 transition hover:text-white/85">{t.footerImprint}</a>
+        <a href="#" class="block mb-2.5 text-[13.5px] text-white/42 transition hover:text-white/85">{t.footerPrivacy}</a>
+        <a href="#" class="block mb-2.5 text-[13.5px] text-white/42 transition hover:text-white/85">{t.footerTerms}</a>
+        <a href="#" class="block mb-2.5 text-[13.5px] text-white/42 transition hover:text-white/85">{t.footerDsgvo}</a>
+      </div>
+    </div>
+
+    <div class="flex flex-wrap items-center justify-between gap-3 pt-6">
+      <span class="text-xs text-white/22">{t.footerCopy}</span>
+      <div class="flex gap-2">
+        <a href="#" class="flex h-8 w-8 items-center justify-center rounded-md bg-white/[0.06] text-white/32 transition hover:bg-white/12 hover:text-white" aria-label="LinkedIn">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
+        <a href="#" class="flex h-8 w-8 items-center justify-center rounded-md bg-white/[0.06] text-white/32 transition hover:bg-white/12 hover:text-white" aria-label="Twitter">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53A4.48 4.48 0 0 0 22.43.36a9 9 0 0 1-2.83 1.08A4.52 4.52 0 0 0 16.11 0c-2.5 0-4.52 2.02-4.52 4.52 0 .35.04.7.11 1.03C7.69 5.37 4.07 3.58 1.64.9a4.52 4.52 0 0 0-.61 2.27 4.52 4.52 0 0 0 2.01 3.76 4.5 4.5 0 0 1-2.05-.56v.06c0 2.19 1.56 4.02 3.63 4.44a4.54 4.54 0 0 1-2.04.08 4.53 4.53 0 0 0 4.23 3.14A9.07 9.07 0 0 1 0 19.54a12.8 12.8 0 0 0 6.93 2.03c8.32 0 12.87-6.89 12.87-12.87 0-.2 0-.39-.01-.58A9.17 9.17 0 0 0 23 3z"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style is:global>
+  /* ── Hero ── */
+  .landing-hero {
+    background: linear-gradient(160deg, #141f30 0%, #1e2d45 45%, #1a3560 80%, #1e4080 100%);
+  }
+  .landing-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(96,165,250,0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(96,165,250,0.06) 1px, transparent 1px);
+    background-size: 48px 48px;
+    pointer-events: none;
+  }
+  .landing-hero-glow {
+    position: absolute;
+    top: -20%;
+    right: -10%;
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(ellipse, rgba(37,99,235,0.18) 0%, transparent 65%);
+    pointer-events: none;
+  }
+  .landing-hero-glow-2 {
+    position: absolute;
+    bottom: -20%;
+    left: -15%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(ellipse, rgba(96,165,250,0.1) 0%, transparent 65%);
+    pointer-events: none;
   }
 
-  .coming-soon-animate {
+  /* ── Waitlist form focus ── */
+  .landing-waitlist-form:focus-within {
+    border-color: rgba(96,165,250,0.5);
+    box-shadow: 0 0 0 4px rgba(37,99,235,0.12);
+  }
+
+  /* ── Feature card gradient overlay ── */
+  .feature-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, transparent 60%, rgba(37,99,235,0.025));
+    pointer-events: none;
     opacity: 0;
-    animation: coming-soon-fade-up 0.7s ease-out forwards;
+    transition: opacity 0.2s;
+  }
+  .feature-card:hover::before {
+    opacity: 1;
+  }
+
+  /* ── How it works step states ── */
+  .how-step.active .how-step-num {
+    background: var(--color-brand-500);
+    color: #fff;
+  }
+  .how-step.active .font-display {
+    color: #1e2d45;
+  }
+
+  /* ── Nebenkosten section ── */
+  .landing-nebk {
+    background: linear-gradient(160deg, #141f30 0%, #1e2d45 60%, #1a3560 100%);
+  }
+  .landing-nebk::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(96,165,250,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(96,165,250,0.04) 1px, transparent 1px);
+    background-size: 48px 48px;
+    pointer-events: none;
+  }
+  .landing-nebk-glow {
+    position: absolute;
+    top: -20%;
+    right: -10%;
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(ellipse, rgba(37,99,235,0.2) 0%, transparent 65%);
+    pointer-events: none;
+  }
+
+  /* ── CTA section ── */
+  .landing-cta {
+    background: linear-gradient(160deg, #141f30 0%, #1e2d45 60%, #1a3560 100%);
+  }
+  .landing-cta::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(96,165,250,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(96,165,250,0.04) 1px, transparent 1px);
+    background-size: 48px 48px;
+    pointer-events: none;
+  }
+  .landing-cta-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    height: 400px;
+    background: radial-gradient(ellipse, rgba(37,99,235,0.2) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  /* ── Smooth scroll for anchor links ── */
+  html {
+    scroll-behavior: smooth;
   }
 </style>
 
-<script define:vars={{ formEndpoint: "https://docs.google.com/forms/d/e/1FAIpQLScHcJlWZRXDs6RbxRDc44HUVVKgBSZWBQs-H28g7nWetaWpRQ/formResponse", entryId: "entry.741940622" }}>
-  // ── Google Form POST Configuration ──
-  // Replace these two values with your real Google Form endpoint and entry ID:
+<script define:vars={{ formEndpoint, entryId }}>
   const FORM_ENDPOINT = formEndpoint;
   const ENTRY_ID = entryId;
 
-  const form = document.getElementById("email-form");
-  const input = document.getElementById("email-input");
-  const btn = document.getElementById("submit-btn");
-  const btnText = document.getElementById("btn-text");
-  const btnArrow = document.getElementById("btn-arrow");
-  const spinner = document.getElementById("btn-spinner");
-  const successMsg = document.getElementById("success-msg");
-  const errorMsg = document.getElementById("error-msg");
-
-  if (form && input && btn && btnText && btnArrow && spinner && successMsg && errorMsg) {
-    form.addEventListener("submit", async (e) => {
+  function handleSubmit(formEl, successEl) {
+    if (!formEl) return;
+    formEl.addEventListener('submit', async (e) => {
       e.preventDefault();
-      const email = input.value.trim();
+      const input = formEl.querySelector('input[type="email"]');
+      const email = input?.value.trim();
       if (!email) return;
 
-      // Disable button, show spinner
-      btn.disabled = true;
-      btnText.classList.add("hidden");
-      btnArrow.classList.add("hidden");
-      spinner.classList.remove("hidden");
-      errorMsg.classList.add("hidden");
+      const btn = formEl.querySelector('button[type="submit"]');
+      if (btn) btn.disabled = true;
 
       try {
         const body = new URLSearchParams();
         body.append(ENTRY_ID, email);
-
         await fetch(FORM_ENDPOINT, {
-          method: "POST",
-          mode: "no-cors",
-          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          method: 'POST',
+          mode: 'no-cors',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
           body: body.toString(),
         });
 
-        // no-cors: fetch resolving = success (response is opaque)
-        form.classList.add("hidden");
-        successMsg.classList.remove("hidden");
+        if (successEl) {
+          formEl.style.display = 'none';
+          const note = formEl.nextElementSibling;
+          if (note?.tagName === 'P') note.style.display = 'none';
+          successEl.style.display = 'flex';
+        } else {
+          if (btn) {
+            btn.textContent = "\u2713";
+            btn.style.background = '#059669';
+          }
+        }
       } catch {
-        // Network error
-        errorMsg.classList.remove("hidden");
-        btn.disabled = false;
-        btnText.classList.remove("hidden");
-        btnArrow.classList.remove("hidden");
-        spinner.classList.add("hidden");
+        if (btn) btn.disabled = false;
       }
     });
   }
+
+  handleSubmit(
+    document.getElementById('hero-form'),
+    document.getElementById('hero-success')
+  );
+  handleSubmit(
+    document.getElementById('cta-form'),
+    null
+  );
+
+  // How it works step switching
+  document.querySelectorAll('.how-step').forEach(step => {
+    step.addEventListener('click', () => {
+      document.querySelectorAll('.how-step').forEach(s => s.classList.remove('active'));
+      step.classList.add('active');
+    });
+  });
+
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', (e) => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
 </script>
