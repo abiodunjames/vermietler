@@ -38,7 +38,7 @@ If the seller pays nothing, the buyer owes nothing.
 
 ## What You Pay by Property Type
 
-This is where it gets critical. The 2020 reform does **not** apply universally. It protects consumers buying residential property — and nothing else.
+This is where it gets critical. The 2020 reform does not apply universally. It protects consumers buying residential property — and nothing else.
 
 ### Apartments (Eigentumswohnung) — Protected
 
