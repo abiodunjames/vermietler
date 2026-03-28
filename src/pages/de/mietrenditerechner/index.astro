@@ -1,5 +1,6 @@
 ---
 import Layout from "../../../layouts/Layout.astro";
+import Navbar from "../../../components/Navbar.astro";
 import RentalYieldCalculator from "../../../components/calculator/RentalYieldCalculator";
 import Footer from "../../../components/Footer.astro";
 
@@ -43,19 +44,9 @@ const faqs = [
   alternateEn="/rental-yield-calculator"
   alternateDe="/de/mietrenditerechner"
 >
-  <!-- Navbar -->
-  <nav class="border-b border-gray-100 bg-white">
-    <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-      <a href="/de/" class="flex items-center gap-2 font-display text-xl font-bold tracking-tight text-slate-800 no-underline"><svg class="h-5 w-5 flex-shrink-0 text-blue-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>vermiet<span class="text-blue-600">ler</span></a>
-      <div class="flex items-center gap-4">
-        <a href="/de/tilgungsrechner" class="text-sm text-gray-500 hover:text-gray-900 transition">Tilgungsrechner</a>
-        <a href="/de/kaufnebenkostenrechner" class="text-sm text-gray-500 hover:text-gray-900 transition">Kaufnebenkosten</a>
-        <a href="/rental-yield-calculator" class="text-sm text-gray-500 hover:text-gray-900 transition">English</a>
-      </div>
-    </div>
-  </nav>
+  <Navbar lang="de" />
 
-  <main class="bg-gray-50 py-12 lg:py-16">
+  <main class="bg-gray-50 pt-28 pb-12 lg:pt-32 lg:pb-16">
     <div class="mx-auto max-w-6xl px-6">
       <RentalYieldCalculator client:load lang="de" />
 

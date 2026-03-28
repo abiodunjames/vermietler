@@ -81,6 +81,10 @@ const t = {
     footerBlog: "Blog",
     footerLoanCalc: "Loan Calculator",
     footerClosingCostCalc: "Closing Cost Calculator",
+    footerYieldCalc: "Rental Yield Calculator",
+    footerYieldCalcHref: "/rental-yield-calculator",
+    footerAfaCalc: "AfA Calculator",
+    footerAfaCalcHref: "/afa-calculator",
     footerChangelog: "Changelog",
     footerImprint: "Imprint",
     footerPrivacy: "Privacy Policy",
@@ -168,6 +172,10 @@ const t = {
     footerBlog: "Blog",
     footerLoanCalc: "Tilgungsrechner",
     footerClosingCostCalc: "Kaufnebenkostenrechner",
+    footerYieldCalc: "Mietrenditerechner",
+    footerYieldCalcHref: "/de/mietrenditerechner",
+    footerAfaCalc: "AfA-Rechner",
+    footerAfaCalcHref: "/de/afa-rechner",
     footerChangelog: "Changelog",
     footerImprint: "Impressum",
     footerPrivacy: "Datenschutz",
@@ -563,7 +571,7 @@ const entryId = "entry.741940622";
 <!-- ── Footer ── -->
 <footer class="bg-[#141f30] px-8 pt-14 pb-8">
   <div class="mx-auto max-w-[1160px]">
-    <div class="grid gap-12 border-b border-white/8 pb-10 sm:grid-cols-2 lg:grid-cols-[2.5fr_1fr_1fr_1fr]">
+    <div class="grid gap-12 border-b border-white/8 pb-10 sm:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr_1fr_1fr]">
       <!-- Brand -->
       <div>
         <div class="flex items-center gap-2 font-display text-xl font-bold tracking-tight text-white">
@@ -586,12 +594,19 @@ const entryId = "entry.741940622";
         <a href="#" class="block mb-2.5 text-[13.5px] text-white/42 transition hover:text-white/85">{t.footerPricing}</a>
       </div>
 
+      <!-- Calculators -->
+      <div>
+        <div class="mb-4 text-[10.5px] font-bold uppercase tracking-widest text-white/25">{lang === "de" ? "Rechner" : "Calculators"}</div>
+        <a href={t.loanCalcHref} class="block mb-2.5 text-[13.5px] text-white/42 transition hover:text-white/85">{t.footerLoanCalc}</a>
+        <a href={t.closingCostCalcHref} class="block mb-2.5 text-[13.5px] text-white/42 transition hover:text-white/85">{t.footerClosingCostCalc}</a>
+        <a href={t.footerYieldCalcHref} class="block mb-2.5 text-[13.5px] text-white/42 transition hover:text-white/85">{t.footerYieldCalc}</a>
+        <a href={t.footerAfaCalcHref} class="block mb-2.5 text-[13.5px] text-white/42 transition hover:text-white/85">{t.footerAfaCalc}</a>
+      </div>
+
       <!-- Resources -->
       <div>
         <div class="mb-4 text-[10.5px] font-bold uppercase tracking-widest text-white/25">{t.footerResources}</div>
         <a href={t.blogHref} class="block mb-2.5 text-[13.5px] text-white/42 transition hover:text-white/85">{t.footerBlog}</a>
-        <a href={t.loanCalcHref} class="block mb-2.5 text-[13.5px] text-white/42 transition hover:text-white/85">{t.footerLoanCalc}</a>
-        <a href={t.closingCostCalcHref} class="block mb-2.5 text-[13.5px] text-white/42 transition hover:text-white/85">{t.footerClosingCostCalc}</a>
         <a href="#" class="block mb-2.5 text-[13.5px] text-white/42 transition hover:text-white/85">{t.footerChangelog}</a>
       </div>
 

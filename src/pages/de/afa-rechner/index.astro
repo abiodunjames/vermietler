@@ -1,0 +1,171 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import Navbar from "../../../components/Navbar.astro";
+import DepreciationCalculator from "../../../components/calculator/DepreciationCalculator";
+import Footer from "../../../components/Footer.astro";
+
+const faqs = [
+  {
+    q: "Was ist AfA (Absetzung für Abnutzung) im deutschen Steuerrecht?",
+    a: "AfA ist das deutsche System zur Abschreibung der Anschaffungskosten einer Mietimmobilie über ihre Nutzungsdauer. Als Vermieter können Sie jedes Jahr einen Prozentsatz des Gebäudewerts von Ihren steuerpflichtigen Mieteinnahmen abziehen. Das mindert Ihre Einkommensteuer, obwohl die Immobilie am Markt möglicherweise an Wert gewinnt. Nur der Gebäudeanteil ist abschreibbar — der Grundstückswert kann nicht abgesetzt werden."
+  },
+  {
+    q: "Was ist der Unterschied zwischen linearer und degressiver AfA?",
+    a: "Lineare AfA setzt jedes Jahr denselben festen Betrag ab (z.B. 3% des Gebäudewerts = 33,3 Jahre). Degressive AfA wendet einen festen Prozentsatz auf den sinkenden Restbuchwert an — 5% des Restwerts pro Jahr. Das bedeutet deutlich höhere Abzüge in den Anfangsjahren, die allmählich sinken. Degressive AfA ist nur für Neubauten mit Fertigstellung nach dem 30. September 2023 verfügbar."
+  },
+  {
+    q: "Kann ich von degressiver auf lineare Abschreibung wechseln?",
+    a: "Ja, aber nur einmal und unwiderruflich. Sie können jederzeit von degressiver auf lineare AfA wechseln. Der optimale Zeitpunkt ist, wenn der lineare Abschreibungsbetrag (basierend auf dem ursprünglichen Gebäudewert) den degressiven Betrag (basierend auf dem sinkenden Buchwert) übersteigt. Nach dem Wechsel schreiben Sie linear über die restliche Nutzungsdauer ab. Ein Wechsel von linear auf degressiv ist nicht möglich."
+  },
+  {
+    q: "Wie bestimme ich die Aufteilung Grundstück vs. Gebäude?",
+    a: "Der Kaufpreis muss zwischen Grundstück und Gebäude aufgeteilt werden. Nur der Gebäudeanteil ist abschreibbar. Die Aufteilung liegt typischerweise bei 20–40% Grundstücksanteil je nach Lage — Top-Innenstadtlagen haben höhere Grundstücksanteile. Ihr Notarvertrag kann die Aufteilung enthalten. Andernfalls kann das Finanzamt die Arbeitshilfe des Bundesfinanzministeriums zur Bestimmung heranziehen. Für Sicherheit sorgt ein Gutachten."
+  },
+  {
+    q: "Welcher Abschreibungssatz gilt für mein Gebäude?",
+    a: "Neubauten ab Fertigstellung nach 30.09.2023: 3% linear oder 5% degressiv. Gebäude ab Fertigstellung 1925: 2% linear (50 Jahre Nutzungsdauer). Gebäude vor 1925: 2,5% linear (40 Jahre). Denkmalschutz-Sanierungskosten: 9% über 8 Jahre + 7% über 4 Jahre (100% in 12 Jahren). Das Fertigstellungsdatum bestimmt den Satz, nicht das Kaufdatum."
+  },
+  {
+    q: "Was ist die Denkmalschutz-AfA und wie funktioniert sie?",
+    a: "Die Denkmalschutz-AfA nach §§ 7h/7i EStG erlaubt eine erhöhte Abschreibung anerkannter Sanierungskosten bei denkmalgeschützten Gebäuden. Sie können 9% pro Jahr über die ersten 8 Jahre und 7% pro Jahr über die folgenden 4 Jahre absetzen — 100% der Sanierungskosten in nur 12 Jahren. Dies gilt nur für von der Denkmalschutzbehörde genehmigte Sanierungskosten, nicht für den Kaufpreis des Gebäudes selbst."
+  },
+  {
+    q: "Gilt die AfA auch wenn ich die Immobilie selbst bewohne?",
+    a: "Nein. AfA gibt es nur für Mietimmobilien (Vermietung und Verpachtung). Bei Eigennutzung können Sie keine Abschreibung geltend machen. Wenn Sie einen Teil der Immobilie als Arbeitszimmer nutzen, kann ggf. dieser Anteil abgeschrieben werden. Bei gemischt genutzten Immobilien wird anteilig nach dem Vermietungsanteil abgeschrieben."
+  },
+];
+---
+
+<Layout
+  title="Kostenloser AfA-Rechner Deutschland 2026 — Abschreibung Mietimmobilie | Vermietler"
+  description="Berechnen Sie die Gebäudeabschreibung (AfA) und jährliche Steuerersparnis für Ihre Mietimmobilie. Linear vs. degressiv, alle Gebäudetypen, Denkmalschutz, nach Steuersatz. Kostenloser AfA-Rechner 2026."
+  keywords="AfA Rechner, AfA Immobilie berechnen, Absetzung für Abnutzung, degressive AfA Neubau, lineare Abschreibung Immobilien, Gebäudeabschreibung Rechner, Abschreibung Mietwohnung, Denkmalschutz AfA Rechner, § 7 EStG, Steuerersparnis Vermietung"
+  lang="de"
+  alternateEn="/afa-calculator"
+  alternateDe="/de/afa-rechner"
+>
+  <Navbar lang="de" />
+
+  <main class="bg-gray-50 pt-28 pb-12 lg:pt-32 lg:pb-16">
+    <div class="mx-auto max-w-6xl px-6">
+      <DepreciationCalculator client:load lang="de" />
+
+      <!-- Cross-link CTAs -->
+      <section class="mt-12 grid gap-4 sm:grid-cols-3">
+        <a href="/de/mietrenditerechner" class="group flex items-center justify-between rounded-xl border border-emerald-200 bg-emerald-50 px-5 py-4 transition hover:border-emerald-300 hover:bg-emerald-100">
+          <div>
+            <p class="text-sm font-semibold text-emerald-700">Mietrendite berechnen</p>
+            <p class="mt-1 text-xs text-emerald-600/70">Brutto-, Netto- & Eigenkapitalrendite.</p>
+          </div>
+          <svg class="h-4 w-4 shrink-0 text-emerald-400 transition group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg>
+        </a>
+        <a href="/de/tilgungsrechner" class="group flex items-center justify-between rounded-xl border border-brand-200 bg-brand-50 px-5 py-4 transition hover:border-brand-300 hover:bg-brand-100">
+          <div>
+            <p class="text-sm font-semibold text-brand-700">Tilgungsrechner</p>
+            <p class="mt-1 text-xs text-brand-600/70">Monatliche Rate & Tilgungsplan.</p>
+          </div>
+          <svg class="h-4 w-4 shrink-0 text-brand-400 transition group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg>
+        </a>
+        <a href="/de/kaufnebenkostenrechner" class="group flex items-center justify-between rounded-xl border border-purple-200 bg-purple-50 px-5 py-4 transition hover:border-purple-300 hover:bg-purple-100">
+          <div>
+            <p class="text-sm font-semibold text-purple-700">Kaufnebenkostenrechner</p>
+            <p class="mt-1 text-xs text-purple-600/70">Grunderwerbsteuer, Notar & Makler.</p>
+          </div>
+          <svg class="h-4 w-4 shrink-0 text-purple-400 transition group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg>
+        </a>
+      </section>
+
+      <!-- FAQ section -->
+      <section class="mt-20 border-t border-gray-200 pt-12">
+        <h2 class="text-2xl font-bold text-gray-900">Häufig gestellte Fragen</h2>
+        <div class="mt-8 divide-y divide-gray-200">
+          {faqs.map((faq) => (
+            <details class="group py-5">
+              <summary class="flex cursor-pointer items-center justify-between text-base font-semibold text-gray-900 [&::-webkit-details-marker]:hidden">
+                <h3>{faq.q}</h3>
+                <svg class="h-5 w-5 shrink-0 text-gray-400 transition group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" /></svg>
+              </summary>
+              <p class="mt-3 text-sm leading-relaxed text-gray-600">{faq.a}</p>
+            </details>
+          ))}
+        </div>
+      </section>
+
+      <!-- How to use -->
+      <section class="mt-16 border-t border-gray-200 pt-12">
+        <h2 class="text-2xl font-bold text-gray-900">So nutzen Sie diesen AfA-Rechner</h2>
+        <div class="mt-6 grid gap-8 text-sm leading-relaxed text-gray-600 sm:grid-cols-2">
+          <div>
+            <h3 class="mb-2 font-semibold text-gray-900">1. Kaufpreis & Grundstücksanteil eingeben</h3>
+            <p>Geben Sie den gesamten <strong>Kaufpreis</strong> ein und passen Sie den Grundstücksanteil-Regler an. Nur der Gebäudeanteil ist abschreibbar. Ihr Notarvertrag oder ein Gutachten nennt die genaue Aufteilung — typischerweise 20–40% Grundstücksanteil je nach Lage.</p>
+          </div>
+          <div>
+            <h3 class="mb-2 font-semibold text-gray-900">2. Gebäudetyp & Methode wählen</h3>
+            <p>Wählen Sie den korrekten Gebäudetyp nach Fertigstellungsdatum. Für Neubauten nach Sep. 2023 können Sie <strong>linear (3%)</strong> und <strong>degressiv (5%)</strong> vergleichen. Der Rechner zeigt den optimalen Wechselzeitpunkt von degressiv auf linear.</p>
+          </div>
+          <div>
+            <h3 class="mb-2 font-semibold text-gray-900">3. Steuersatz einstellen</h3>
+            <p>Passen Sie Ihren <strong>Grenzsteuersatz</strong> an — er bestimmt Ihre tatsächliche Euro-Ersparnis. Ein höherer Steuersatz bedeutet mehr Nutzen aus jedem Euro Abschreibung. Kirchensteuer ggf. aktivieren.</p>
+          </div>
+          <div>
+            <h3 class="mb-2 font-semibold text-gray-900">4. Abschreibungsplan & Vergleich prüfen</h3>
+            <p>Nutzen Sie die Tabs für den vollständigen Abschreibungsplan, den Vergleich linear vs. degressiv und den optimalen Wechselzeitpunkt. Dann nutzen Sie unseren <a href="/de/mietrenditerechner" class="text-brand-600 hover:underline">Mietrenditerechner</a> für das komplette Investitionsbild.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SEO content -->
+      <section class="mt-16 border-t border-gray-200 pt-12">
+        <h2 class="text-2xl font-bold text-gray-900">Gebäudeabschreibung in Deutschland: Was Vermieter wissen müssen (2026)</h2>
+        <div class="mt-6 max-w-3xl space-y-4 text-sm leading-relaxed text-gray-600">
+          <p>
+            Die Abschreibung (AfA — Absetzung für Abnutzung) ist eines der wirksamsten Steuerinstrumente für deutsche Vermieter. Sie erlaubt es, die Anschaffungskosten des Mietgebäudes über die Nutzungsdauer steuerlich geltend zu machen, obwohl die Immobilie am Markt voraussichtlich an Wert gewinnt. Für Investoren in höheren Steuerklassen kann das Tausende Euro jährliche Steuerersparnis bedeuten.
+          </p>
+          <p>
+            Die bedeutendste Änderung der letzten Jahre ist die Einführung der <strong>degressiven AfA</strong> für Neubauten mit Fertigstellung nach dem 30. September 2023 (§ 7 Abs. 5a EStG). Mit 5% des sinkenden Buchwerts wird der Steuervorteil drastisch nach vorne verlagert — ein Gebäude mit 280.000 € Gebäudewert generiert im ersten Jahr 14.000 € Abschreibung, verglichen mit 8.400 € beim linearen Satz von 3%. Für einen Vermieter mit 42% Grenzsteuersatz sind das allein im ersten Jahr 2.352 € zusätzliche Steuerersparnis.
+          </p>
+          <p>
+            Die Entscheidung zwischen linearer und degressiver Abschreibung sollte von Ihrem Anlagehorizont und Cashflow-Bedarf abhängen. Degressive AfA ist optimal, wenn Sie den Cashflow in den ersten Jahren maximieren oder innerhalb von 10–15 Jahren verkaufen wollen. Lineare AfA bietet konstante, planbare Absetzungen über die gesamte Nutzungsdauer. Wichtig: Sie können einmal von degressiv auf linear wechseln — aber nicht zurück. Nutzen Sie den Vergleichs-Tab dieses Rechners, um den optimalen Wechselzeitpunkt zu finden.
+          </p>
+          <p>
+            Nach der AfA-Berechnung nutzen Sie unseren <a href="/de/mietrenditerechner" class="text-brand-600 hover:underline">Mietrenditerechner</a> für die Gesamtinvestition, unseren <a href="/de/tilgungsrechner" class="text-brand-600 hover:underline">Tilgungsrechner</a> für die Finanzierungsdetails und unseren <a href="/de/kaufnebenkostenrechner" class="text-brand-600 hover:underline">Kaufnebenkostenrechner</a> für den Gesamtkapitalbedarf.
+          </p>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <Footer lang="de" />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name: "AfA-Rechner — Abschreibung für Mietimmobilien",
+    alternateName: "Depreciation Calculator",
+    url: "https://vermietler.com/de/afa-rechner",
+    applicationCategory: "FinanceApplication",
+    operatingSystem: "Web",
+    offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" },
+    description: "Kostenloser AfA-Rechner für deutsche Mietimmobilien. Lineare vs. degressive Abschreibung und jährliche Steuerersparnis berechnen.",
+    inLanguage: ["de", "en"],
+    publisher: { "@type": "Organization", name: "Vermietler", url: "https://vermietler.com" },
+    dateModified: "2026-03-28",
+  })} />
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  })} />
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Startseite", item: "https://vermietler.com/de/" },
+      { "@type": "ListItem", position: 2, name: "AfA-Rechner", item: "https://vermietler.com/de/afa-rechner" },
+    ],
+  })} />
+</Layout>
