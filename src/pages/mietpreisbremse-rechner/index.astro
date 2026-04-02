@@ -1,0 +1,198 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Navbar from "../../components/Navbar.astro";
+import MietpreisbremseCalculator from "../../components/calculator/MietpreisbremseCalculator";
+import Footer from "../../components/Footer.astro";
+
+const faqs = [
+  {
+    q: "What is the Mietpreisbremse (rent brake)?",
+    a: "The Mietpreisbremse is a German law (§§ 556d–556g BGB) that caps the rent for re-lettings in designated tight housing markets. When renting out an existing apartment to a new tenant, the rent may not exceed the ortsübliche Vergleichsmiete (local comparable rent from the Mietspiegel) by more than 10%. It has been in effect since June 2015."
+  },
+  {
+    q: "Where does the Mietpreisbremse apply?",
+    a: "The Mietpreisbremse only applies in areas designated by state governments as angespannte Wohnungsmärkte (tight housing markets). As of 2026, this includes most major German cities — Berlin, Munich, Hamburg, Cologne, Frankfurt, Stuttgart, and many surrounding municipalities. Rural areas and smaller towns are generally not covered."
+  },
+  {
+    q: "Are new builds (Neubau) exempt from the Mietpreisbremse?",
+    a: "Yes. Apartments first used and rented after October 1, 2014 are permanently exempt from the Mietpreisbremse (§ 556f Satz 1 BGB). This exemption applies to all subsequent re-lettings, not just the first tenant. This makes new builds particularly attractive for investors in rent-controlled areas."
+  },
+  {
+    q: "What happens if I violate the Mietpreisbremse?",
+    a: "There are no criminal penalties, but the financial consequences can be significant. If a tenant sends a Rüge (formal complaint), you must reduce the rent to the permitted level and refund all excess rent collected from the Rüge date onward. Over several years, this can amount to thousands of euros in lost income and refunds."
+  },
+  {
+    q: "What is a Rüge and how does it work?",
+    a: "A Rüge is a formal written complaint from the tenant stating that the rent exceeds the Mietpreisbremse cap. Since the April 2020 reform, a simple notification in Textform is sufficient — the tenant does not need to provide detailed calculations. From the Rüge date, the tenant can claim refunds for any excess rent paid."
+  },
+  {
+    q: "How do I find the ortsübliche Vergleichsmiete for my area?",
+    a: "The primary source is your city's Mietspiegel (rent index), available on the city's website or from local Mieterverein/Haus & Grund associations. Most cities with over 50,000 inhabitants are required to publish a Mietspiegel. The qualified Mietspiegel (qualifizierter Mietspiegel) has legal presumption of accuracy in court."
+  },
+  {
+    q: "Can a comprehensive modernisation exempt my property?",
+    a: "Yes, but the bar is high. A comprehensive modernisation (umfassende Modernisierung) must be so extensive that the apartment is essentially comparable to a new build in quality and condition. This typically requires investment of about one-third of comparable new build costs and work on multiple core elements (heating, windows, electrical, plumbing, bathroom, flooring, insulation)."
+  },
+];
+---
+
+<Layout
+  title="Free Mietpreisbremse Calculator Germany 2026 — Rent Brake Checker | Vermietler"
+  description="Check if your rent complies with Germany's Mietpreisbremse. Calculate the maximum permitted rent, compare to market rent, and assess your Rüge refund risk. Free online rent brake calculator."
+  keywords="Mietpreisbremse Rechner, rent brake calculator germany, Mietpreisbremse calculator, rent cap germany, ortsübliche Vergleichsmiete, Mietspiegel calculator, Rüge refund risk, German rent control 2026, Wiedervermietung Mietpreisbremse"
+  alternateEn="/mietpreisbremse-rechner"
+  alternateDe="/de/mietpreisbremse-rechner"
+>
+  <Navbar lang="en" />
+
+  <main class="bg-gray-50 pt-28 pb-12 lg:pt-32 lg:pb-16">
+    <div class="mx-auto max-w-6xl px-6">
+      <MietpreisbremseCalculator client:load lang="en" />
+
+      <!-- Cross-link CTAs -->
+      <section class="mt-12 grid gap-4 sm:grid-cols-2">
+        <a href="/rental-yield-calculator" class="group flex items-center justify-between rounded-xl border border-brand-200 bg-brand-50 px-6 py-5 transition hover:border-brand-300 hover:bg-brand-100">
+          <div>
+            <p class="text-sm font-semibold text-brand-700">Calculate your rental yield</p>
+            <p class="mt-1 text-sm text-brand-600/70">Use the Mietpreisbremse-adjusted rent to see your realistic net yield.</p>
+          </div>
+          <svg class="h-5 w-5 shrink-0 text-brand-400 transition group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+          </svg>
+        </a>
+        <a href="/blog/mietpreisbremse-rent-control-germany" class="group flex items-center justify-between rounded-xl border border-brand-200 bg-brand-50 px-6 py-5 transition hover:border-brand-300 hover:bg-brand-100">
+          <div>
+            <p class="text-sm font-semibold text-brand-700">Read the full Mietpreisbremse guide</p>
+            <p class="mt-1 text-sm text-brand-600/70">Complete legal analysis with exemptions, BGH rulings, and practical strategies.</p>
+          </div>
+          <svg class="h-5 w-5 shrink-0 text-brand-400 transition group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+          </svg>
+        </a>
+      </section>
+
+      <!-- FAQ section -->
+      <section class="mt-20 border-t border-gray-200 pt-12">
+        <h2 class="text-2xl font-bold text-gray-900">
+          Frequently Asked Questions
+        </h2>
+        <div class="mt-8 divide-y divide-gray-200">
+          {faqs.map((faq) => (
+            <details class="group py-5">
+              <summary class="flex cursor-pointer items-center justify-between text-base font-semibold text-gray-900 [&::-webkit-details-marker]:hidden">
+                <h3>{faq.q}</h3>
+                <svg class="h-5 w-5 shrink-0 text-gray-400 transition group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                </svg>
+              </summary>
+              <p class="mt-3 text-sm leading-relaxed text-gray-600">{faq.a}</p>
+            </details>
+          ))}
+        </div>
+      </section>
+
+      <!-- How to use -->
+      <section class="mt-16 border-t border-gray-200 pt-12">
+        <h2 class="text-2xl font-bold text-gray-900">
+          How to Use This Mietpreisbremse Calculator
+        </h2>
+        <div class="mt-6 grid gap-8 text-sm leading-relaxed text-gray-600 sm:grid-cols-2">
+          <div>
+            <h3 class="mb-2 font-semibold text-gray-900">1. Select Your City</h3>
+            <p>Choose your city to auto-fill the <strong>ortsübliche Vergleichsmiete</strong> from the Mietspiegel. If your city isn't listed, select "Enter manually" and input the value from your local Mietspiegel.</p>
+          </div>
+          <div>
+            <h3 class="mb-2 font-semibold text-gray-900">2. Enter Apartment Details</h3>
+            <p>Input your apartment's <strong>Wohnfläche</strong> (living area in m²) and the <strong>market rent</strong> you charge or plan to charge per m². The calculator compares this to the legally permitted maximum.</p>
+          </div>
+          <div>
+            <h3 class="mb-2 font-semibold text-gray-900">3. Check Exemptions</h3>
+            <p>Select if your property qualifies for a <strong>Mietpreisbremse exemption</strong> — new build (post-Oct 2014), comprehensive modernisation, or Vormiete. Exempt properties can be rented at any price.</p>
+          </div>
+          <div>
+            <h3 class="mb-2 font-semibold text-gray-900">4. Assess Your Risk</h3>
+            <p>Review the <strong>annual income difference</strong> and <strong>Rüge refund risk</strong>. Enter the months since a potential Rüge to see your total refund liability. Add a purchase price for <strong>yield impact analysis</strong>.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SEO content -->
+      <section class="mt-16 border-t border-gray-200 pt-12">
+        <h2 class="text-2xl font-bold text-gray-900">
+          Understanding the Mietpreisbremse: What Landlords Need to Know
+        </h2>
+        <div class="mt-6 max-w-3xl space-y-4 text-sm leading-relaxed text-gray-600">
+          <p>
+            Germany's <strong>Mietpreisbremse</strong> (rent brake) is one of the most significant regulations affecting landlord returns. Introduced in June 2015 and extended through 2028, it caps re-letting rents at the <strong>ortsübliche Vergleichsmiete plus 10%</strong> in designated tight housing markets — which now includes virtually every major German city.
+          </p>
+          <p>
+            For investors, the practical impact is clear: the gross yield you calculate based on market rents may not be legally achievable. A tenant can file a <strong>Rüge</strong> at any time, forcing you to reduce the rent and refund the excess from the complaint date onward. Over years, the cumulative difference between market and permitted rent can amount to tens of thousands of euros.
+          </p>
+          <p>
+            The most important exemption is for <strong>new builds</strong> — apartments first used after October 1, 2014 are permanently exempt. This makes the Mietpreisbremse a key factor when comparing new build vs. existing property investments. For a detailed analysis, read our <a href="/blog/mietpreisbremse-rent-control-germany" class="text-brand-600 hover:underline">complete Mietpreisbremse guide</a>.
+          </p>
+          <p>
+            Once you know your permitted rent, calculate the full investment picture: closing costs with our <a href="/closing-cost-calculator" class="text-brand-600 hover:underline">closing cost calculator</a>, financing with our <a href="/hypothekenrechner" class="text-brand-600 hover:underline">mortgage calculator</a>, and net yield with our <a href="/rental-yield-calculator" class="text-brand-600 hover:underline">rental yield calculator</a>.
+          </p>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <Footer lang="en" />
+
+  <!-- JSON-LD: WebApplication -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name: "Mietpreisbremse Calculator for Germany",
+    alternateName: "Mietpreisbremse-Rechner",
+    url: "https://vermietler.com/mietpreisbremse-rechner",
+    applicationCategory: "FinanceApplication",
+    operatingSystem: "Web",
+    offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" },
+    description: "Free German rent brake calculator. Check if your rent complies with the Mietpreisbremse, calculate maximum permitted rent, and assess Rüge refund risk.",
+    inLanguage: ["en", "de"],
+    publisher: {
+      "@type": "Organization",
+      name: "Vermietler",
+      url: "https://vermietler.com",
+    },
+    dateModified: "2026-04-02",
+  })} />
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  })} />
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://vermietler.com/" },
+      { "@type": "ListItem", position: 2, name: "Mietpreisbremse Calculator", item: "https://vermietler.com/mietpreisbremse-rechner" },
+    ],
+  })} />
+
+  <!-- JSON-LD: HowTo -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name: "How to Check Your Rent Against the Mietpreisbremse",
+    description: "Use this free calculator to check if your rental price complies with Germany's Mietpreisbremse rent brake and calculate your refund risk.",
+    step: [
+      { "@type": "HowToStep", position: 1, name: "Select your city", text: "Choose your city to auto-fill the Mietspiegel value, or enter the ortsübliche Vergleichsmiete manually." },
+      { "@type": "HowToStep", position: 2, name: "Enter apartment details", text: "Input your apartment size (Wohnfläche) and the market rent you charge or plan to charge per m²." },
+      { "@type": "HowToStep", position: 3, name: "Check exemptions", text: "Select if your property qualifies for a Mietpreisbremse exemption — new build, comprehensive modernisation, or Vormiete." },
+      { "@type": "HowToStep", position: 4, name: "Assess your risk", text: "Review the annual income difference, Rüge refund liability, and gross yield impact to make informed investment decisions." },
+    ],
+  })} />
+</Layout>
