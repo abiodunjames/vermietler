@@ -1,4 +1,5 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect, useRef } from "react";
+import { track } from "../../lib/analytics";
 
 type Lang = "en" | "de";
 type BuildingType = "post2023" | "post1924" | "pre1925" | "denkmal";
@@ -359,6 +360,23 @@ export default function DepreciationCalculator({ lang = "en" }: { lang?: Lang })
       denkmalTotalSaving,
     };
   }, [price, landPct, buildingType, activeMethod, taxRate, includeKiSt, renovCosts, buildingValue, linearRate, usefulLife, effectiveRate, canDegressive]);
+
+  const tracked = useRef(false);
+  useEffect(() => {
+    if (tracked.current && result) {
+      track("calculator_used", {
+        calculator: "depreciation",
+        purchase_price: price,
+        building_type: buildingType,
+        method: activeMethod,
+        tax_rate: taxRate,
+        annual_afa: result.annualAfa,
+        annual_saving: result.annualSaving,
+        lang,
+      });
+    }
+    tracked.current = true;
+  }, [price, landPct, buildingType, activeMethod, taxRate, includeKiSt, renovCosts]);
 
   function handleNumberInput(raw: string, setter: (v: number) => void, rawSetter: (v: string) => void, max = 50000000) {
     rawSetter(raw);

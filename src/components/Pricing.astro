@@ -9,116 +9,112 @@ const t = {
   en: {
     eyebrow: "Pricing",
     headline: "Simple, transparent pricing",
-    sub: "Start free, upgrade when you grow. No hidden fees.",
+    sub: "Start free, upgrade when you grow. No credit card required.",
     mostPopular: "Most popular",
+    billedAnnually: "billed annually",
+    perMonth: "/month",
+    forever: "forever",
+    saveAnnual: "Save ~30% with annual billing",
     plans: [
       {
-        name: "Starter",
-        price: "Free",
-        period: "",
-        description: "Perfect for getting started with 1-2 properties.",
+        name: "Free",
+        tagline: "Starter",
+        price: "€0",
+        period: "forever",
+        description: "For single-unit landlords getting started.",
         features: [
-          "Up to 2 properties",
-          "Up to 5 units",
-          "Document upload & storage",
+          "1 unit · 1 property",
+          "1 active lease",
+          "1 bank connection",
+          "200 MB document storage",
+          "Full expense tracking",
           "Meter readings",
-          "Basic reporting",
+          "Cashflow dashboard",
+          "Unlimited email dispatch",
+          "1 Nebenkostenabrechnung per year",
+          "5 message templates",
         ],
-        cta: "Get started",
+        cta: "Start for free",
         highlighted: false,
       },
       {
-        name: "Professional",
-        price: "\u20AC19",
+        name: "Plus",
+        tagline: "For growing portfolios",
+        price: "€4.90",
         period: "/month",
-        description: "For landlords who want the full power of automation.",
+        priceNote: "billed annually (€58.80/year) · €6.90 monthly",
+        description: "For landlords with multiple units.",
         features: [
-          "Unlimited properties & units",
-          "Bank account integration",
-          "Auto rent reconciliation",
-          "AI receipt capture",
-          "Nebenkosten statements",
+          "10 units · 5 properties",
+          "10 active leases",
+          "2 bank connections",
+          "2 GB document storage",
+          "Unlimited Nebenkosten statements",
           "Tenant portal",
-          "Document sharing",
-          "Email communication",
-          "Priority support",
+          "Unlimited email dispatch",
+          "Letter dispatch (pay-per-use)",
+          "Recurring expenses",
+          "50 contacts directory",
+          "Unlimited message templates",
         ],
-        cta: "Start free trial",
+        cta: "Upgrade to Plus",
         highlighted: true,
-      },
-      {
-        name: "Enterprise",
-        price: "Custom",
-        period: "",
-        description: "For property managers and larger portfolios.",
-        features: [
-          "Everything in Professional",
-          "Multi-user access & roles",
-          "DATEV export",
-          "API access",
-          "Dedicated support",
-          "Custom integrations",
-        ],
-        cta: "Contact us",
-        highlighted: false,
       },
     ],
   },
   de: {
     eyebrow: "Preise",
     headline: "Einfache, transparente Preise",
-    sub: "Kostenlos starten, upgraden wenn Sie wachsen. Keine versteckten Kosten.",
+    sub: "Kostenlos starten, upgraden wenn Sie wachsen. Keine Kreditkarte erforderlich.",
     mostPopular: "Am beliebtesten",
+    billedAnnually: "jährlich abgerechnet",
+    perMonth: "/Monat",
+    forever: "für immer",
+    saveAnnual: "Spare ~30% mit jährlicher Abrechnung",
     plans: [
       {
-        name: "Starter",
-        price: "Kostenlos",
-        period: "",
-        description: "Perfekt zum Einstieg mit 1-2 Immobilien.",
+        name: "Free",
+        tagline: "Starter",
+        price: "0 €",
+        period: "für immer",
+        description: "Für Vermieter mit einer Einheit zum Einstieg.",
         features: [
-          "Bis zu 2 Immobilien",
-          "Bis zu 5 Einheiten",
-          "Dokumenten-Upload & Speicher",
+          "1 Einheit · 1 Immobilie",
+          "1 aktives Mietverhältnis",
+          "1 Bankverbindung",
+          "200 MB Dokumentenspeicher",
+          "Vollständige Ausgabenverfolgung",
           "Zählerstandserfassung",
-          "Basis-Berichte",
+          "Cashflow-Dashboard",
+          "Unbegrenzter E-Mail-Versand",
+          "1 Nebenkostenabrechnung pro Jahr",
+          "5 Nachrichtenvorlagen",
         ],
-        cta: "Jetzt starten",
+        cta: "Kostenlos starten",
         highlighted: false,
       },
       {
-        name: "Professional",
-        price: "\u20AC19",
+        name: "Plus",
+        tagline: "Für wachsende Portfolios",
+        price: "4,90 €",
         period: "/Monat",
-        description: "Für Vermieter, die volle Automatisierung wollen.",
+        priceNote: "jährlich abgerechnet (58,80 €/Jahr) · 6,90 € monatlich",
+        description: "Für Vermieter mit mehreren Einheiten.",
         features: [
-          "Unbegrenzte Immobilien & Einheiten",
-          "Bankkonten-Integration",
-          "Auto-Mietabgleich",
-          "KI-Belegerfassung",
-          "Nebenkostenabrechnung",
+          "10 Einheiten · 5 Immobilien",
+          "10 aktive Mietverhältnisse",
+          "2 Bankverbindungen",
+          "2 GB Dokumentenspeicher",
+          "Unbegrenzte Nebenkostenabrechnungen",
           "Mieterportal",
-          "Dokumentenfreigabe",
-          "E-Mail-Kommunikation",
-          "Prioritäts-Support",
+          "Unbegrenzter E-Mail-Versand",
+          "Briefversand (nutzungsbasiert)",
+          "Wiederkehrende Ausgaben",
+          "50 Kontakte im Verzeichnis",
+          "Unbegrenzte Nachrichtenvorlagen",
         ],
-        cta: "Kostenlos testen",
+        cta: "Auf Plus upgraden",
         highlighted: true,
-      },
-      {
-        name: "Enterprise",
-        price: "Individuell",
-        period: "",
-        description: "Für Hausverwaltungen und größere Portfolios.",
-        features: [
-          "Alles aus Professional",
-          "Mehrbenutzer & Rollen",
-          "DATEV-Export",
-          "API-Zugang",
-          "Dedizierter Support",
-          "Individuelle Integrationen",
-        ],
-        cta: "Kontaktieren Sie uns",
-        highlighted: false,
       },
     ],
   },
@@ -126,7 +122,7 @@ const t = {
 ---
 
 <section id="pricing" class="bg-gray-50 py-24">
-  <div class="mx-auto max-w-6xl px-6">
+  <div class="mx-auto max-w-5xl px-6">
     <div class="text-center">
       <p class="text-xs font-semibold uppercase tracking-[0.08em] text-brand-500">{t.eyebrow}</p>
       <h2 class="mt-3 font-display text-3xl font-semibold tracking-tight text-gray-900 sm:text-4xl">
@@ -135,7 +131,7 @@ const t = {
       <p class="mx-auto mt-4 max-w-2xl text-lg text-gray-500">{t.sub}</p>
     </div>
 
-    <div class="mt-16 grid gap-8 lg:grid-cols-3">
+    <div class="mt-16 grid gap-8 md:grid-cols-2">
       {t.plans.map((plan) => (
         <div
           class:list={[
@@ -151,12 +147,19 @@ const t = {
             </div>
           )}
 
-          <h3 class="text-lg font-semibold text-gray-900">{plan.name}</h3>
+          <div>
+            <h3 class="text-lg font-semibold text-gray-900">{plan.name}</h3>
+            <p class="text-sm text-gray-400">{plan.tagline}</p>
+          </div>
 
           <div class="mt-4 flex items-baseline">
             <span class="font-display text-4xl font-semibold text-gray-900">{plan.price}</span>
             {plan.period && <span class="ml-1 text-gray-500">{plan.period}</span>}
           </div>
+
+          {plan.priceNote && (
+            <p class="mt-1 text-xs text-gray-400">{plan.priceNote}</p>
+          )}
 
           <p class="mt-3 text-sm text-gray-500">{plan.description}</p>
 

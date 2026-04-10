@@ -1,0 +1,201 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Navbar from "../../components/Navbar.astro";
+import Pricing from "../../components/Pricing.astro";
+import Footer from "../../components/Footer.astro";
+
+const faqs = [
+  {
+    q: "Is the Free plan really free forever?",
+    a: "Yes. The Free (Starter) plan has no time limit, no credit card requirement, and no hidden fees. It's designed to fully cover a single-unit landlord's needs — banking, expenses, cashflow tracking, and one annual Nebenkostenabrechnung."
+  },
+  {
+    q: "What happens when I hit a limit on the Free plan?",
+    a: "You'll see a clear message in the app explaining which limit was reached, with a one-click upgrade option. Your existing data is never deleted — you simply can't add more until you upgrade or remove items."
+  },
+  {
+    q: "Can I cancel my Plus subscription at any time?",
+    a: "Yes. You can cancel directly from the customer portal. Your Plus features remain active until the end of your current billing period, then your account reverts to Free. Your data is preserved."
+  },
+  {
+    q: "Do you offer refunds?",
+    a: "Yes — within 14 days of your first payment, no questions asked. Just contact support and we'll process the refund to your original payment method."
+  },
+  {
+    q: "What's the difference between monthly and annual billing?",
+    a: "Annual billing saves you about 30%. Plus is €4.90/month when billed annually (€58.80/year total) compared to €6.90/month when billed monthly. You can switch between billing cycles at any time from your customer portal."
+  },
+  {
+    q: "Will there be more expensive plans (Pro, Business)?",
+    a: "We have Pro and Business tiers planned for the future, targeted at landlords with 50+ units and Hausverwaltungen. They'll add features like team roles, audit logs, scheduled bank sync, broadcast messaging, and API access. We'll launch them when there's clear demand from users hitting Plus limits."
+  },
+  {
+    q: "Is my data secure and DSGVO-compliant?",
+    a: "Yes. All data is hosted in Germany, encrypted at rest and in transit, and processed in full compliance with the DSGVO. You can export or delete your data at any time."
+  },
+  {
+    q: "Do I need to install anything?",
+    a: "No. Vermietler is a fully cloud-based web application. It works in any modern browser on desktop, tablet, or mobile — no downloads, no updates, no IT setup."
+  },
+];
+---
+
+<Layout
+  title="Pricing — Vermietler | Property Management for German Landlords"
+  description="Simple, transparent pricing for German landlords. Free for single-unit landlords, €4.90/month for growing portfolios. No credit card required, DSGVO-compliant."
+  keywords="vermietler pricing, property management software germany, landlord app price, immobilienverwaltung preise, vermieter software kosten"
+  alternateEn="/pricing"
+  alternateDe="/de/preise"
+>
+  <Navbar lang="en" />
+
+  <main class="bg-white pt-24">
+    <Pricing lang="en" />
+
+    <!-- Comparison context -->
+    <section class="bg-white py-16">
+      <div class="mx-auto max-w-4xl px-6">
+        <h2 class="text-center font-display text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
+          The best value for German landlords
+        </h2>
+        <p class="mx-auto mt-4 max-w-2xl text-center text-base text-gray-500">
+          Vermietler offers more features at a lower price than every comparable German tool.
+        </p>
+
+        <div class="mt-10 overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-xs">
+          <table class="w-full text-left text-sm">
+            <thead class="bg-gray-50">
+              <tr>
+                <th class="px-6 py-4 font-semibold text-gray-700">Tool</th>
+                <th class="px-6 py-4 font-semibold text-gray-700">Free tier</th>
+                <th class="px-6 py-4 font-semibold text-gray-700">Paid plan</th>
+                <th class="px-6 py-4 font-semibold text-gray-700">Cost per unit</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100">
+              <tr class="bg-brand-50/40">
+                <td class="px-6 py-4 font-semibold text-brand-700">Vermietler Plus</td>
+                <td class="px-6 py-4 text-gray-700">1 unit</td>
+                <td class="px-6 py-4 text-gray-700">€4.90/mo (10 units)</td>
+                <td class="px-6 py-4 font-semibold text-brand-600">€0.49</td>
+              </tr>
+              <tr>
+                <td class="px-6 py-4 text-gray-700">objego</td>
+                <td class="px-6 py-4 text-gray-500">1 unit</td>
+                <td class="px-6 py-4 text-gray-500">€4.90–€11.90/mo</td>
+                <td class="px-6 py-4 text-gray-500">€1–€2</td>
+              </tr>
+              <tr>
+                <td class="px-6 py-4 text-gray-700">Vermietet.de</td>
+                <td class="px-6 py-4 text-gray-500">Limited</td>
+                <td class="px-6 py-4 text-gray-500">€7.90–€9.90/mo</td>
+                <td class="px-6 py-4 text-gray-500">€1–€2</td>
+              </tr>
+              <tr>
+                <td class="px-6 py-4 text-gray-700">Landlord Studio</td>
+                <td class="px-6 py-4 text-gray-500">3 units</td>
+                <td class="px-6 py-4 text-gray-500">$9.99–$24.99/mo</td>
+                <td class="px-6 py-4 text-gray-500">$2–$3</td>
+              </tr>
+              <tr>
+                <td class="px-6 py-4 text-gray-700">WISO Vermieter</td>
+                <td class="px-6 py-4 text-gray-500">No</td>
+                <td class="px-6 py-4 text-gray-500">€29.99/year (desktop)</td>
+                <td class="px-6 py-4 text-gray-500">N/A</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="mt-4 text-center text-xs text-gray-400">
+          Pricing as advertised by each provider in 2026. Vermietler Plus offers full banking, OCR, tenant portal, and Nebenkosten — features competitors charge significantly more for.
+        </p>
+      </div>
+    </section>
+
+    <!-- Pay-per-use add-ons -->
+    <section class="bg-gray-50 py-16">
+      <div class="mx-auto max-w-4xl px-6">
+        <h2 class="text-center font-display text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
+          Pay-per-use add-ons
+        </h2>
+        <p class="mx-auto mt-4 max-w-2xl text-center text-base text-gray-500">
+          Available on the Plus plan. Only pay for what you use.
+        </p>
+        <div class="mt-10 grid gap-4 sm:grid-cols-3">
+          <div class="rounded-2xl border border-gray-200 bg-white p-6 text-center shadow-xs">
+            <p class="text-xs font-semibold uppercase tracking-wider text-gray-400">Letter dispatch</p>
+            <p class="mt-2 font-display text-3xl font-bold text-gray-900">€1.80</p>
+            <p class="mt-1 text-sm text-gray-500">per letter (via Pingen)</p>
+          </div>
+          <div class="rounded-2xl border border-gray-200 bg-white p-6 text-center shadow-xs">
+            <p class="text-xs font-semibold uppercase tracking-wider text-gray-400">Extra storage</p>
+            <p class="mt-2 font-display text-3xl font-bold text-gray-900">€0.50</p>
+            <p class="mt-1 text-sm text-gray-500">per GB / month</p>
+          </div>
+          <div class="rounded-2xl border border-gray-200 bg-white p-6 text-center shadow-xs">
+            <p class="text-xs font-semibold uppercase tracking-wider text-gray-400">Extra OCR</p>
+            <p class="mt-2 font-display text-3xl font-bold text-gray-900">€2.00</p>
+            <p class="mt-1 text-sm text-gray-500">block of 50 receipts</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="bg-white py-16">
+      <div class="mx-auto max-w-3xl px-6">
+        <h2 class="text-center font-display text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
+          Frequently Asked Questions
+        </h2>
+        <div class="mt-10 divide-y divide-gray-200">
+          {faqs.map((faq) => (
+            <details class="group py-5">
+              <summary class="flex cursor-pointer items-center justify-between text-base font-semibold text-gray-900 [&::-webkit-details-marker]:hidden">
+                <h3>{faq.q}</h3>
+                <svg class="h-5 w-5 shrink-0 text-gray-400 transition group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                </svg>
+              </summary>
+              <p class="mt-3 text-sm leading-relaxed text-gray-600">{faq.a}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer lang="en" />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  })} />
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: "Vermietler",
+    description: "Property management software for German landlords",
+    brand: { "@type": "Brand", name: "Vermietler" },
+    offers: [
+      {
+        "@type": "Offer",
+        name: "Free",
+        price: "0",
+        priceCurrency: "EUR",
+        description: "Free plan for single-unit landlords",
+      },
+      {
+        "@type": "Offer",
+        name: "Plus",
+        price: "4.90",
+        priceCurrency: "EUR",
+        description: "Plus plan billed annually for landlords with up to 10 units",
+      },
+    ],
+  })} />
+</Layout>

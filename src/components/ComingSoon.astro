@@ -777,6 +777,12 @@ const entryId = "entry.741940622";
           body: body.toString(),
         });
 
+        // Track signup
+        if (window.posthog) {
+          window.posthog.capture('email_signup', { location: successEl ? 'hero' : 'cta' });
+          window.posthog.identify(email, { email });
+        }
+
         if (successEl) {
           formEl.style.display = 'none';
           const note = formEl.nextElementSibling;

@@ -1,4 +1,5 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect, useRef } from "react";
+import { track } from "../../lib/analytics";
 
 type Lang = "en" | "de";
 
@@ -245,6 +246,23 @@ export default function ClosingCostCalculator({ lang = "en" }: { lang?: Lang }) 
     const closingPctOfPrice = (closingTotal / price) * 100;
     return { taxAmt, notaryAmt, registryAmt, agentAmt, closingTotal, grandTotal, closingPctOfPrice };
   }, [price, taxRate, notaryPct, registryPct, agentPct, hasResults]);
+
+  const tracked = useRef(false);
+  useEffect(() => {
+    if (tracked.current && hasResults) {
+      const state = states.find((s) => s.id === selectedStateId);
+      track("calculator_used", {
+        calculator: "closing_cost",
+        purchase_price: price,
+        state: state?.name[lang],
+        tax_rate: taxRate,
+        agent_pct: agentPct,
+        closing_total: result?.closingTotal,
+        lang,
+      });
+    }
+    tracked.current = true;
+  }, [price, selectedStateId, agentPct, notaryPct, registryPct]);
 
   function handlePriceChange(raw: string) {
     setPriceRaw(raw);

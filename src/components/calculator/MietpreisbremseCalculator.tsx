@@ -1,4 +1,5 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect, useRef } from "react";
+import { track } from "../../lib/analytics";
 
 type Lang = "en" | "de";
 
@@ -335,6 +336,19 @@ export default function MietpreisbremseCalculator({ lang = "en" }: { lang?: Lang
       yieldDiff,
     };
   }, [mietspiegel, size, marketRent, monthsRented, exemption, price, hasResults, isNoBremse]);
+
+  const tracked = useRef(false);
+  useEffect(() => {
+    if (tracked.current && result) {
+      track("calculator_used", {
+        calculator: "mietpreisbremse",
+        is_compliant: result.isCompliant,
+        monthly_diff: result.monthlyDiff,
+        lang,
+      });
+    }
+    tracked.current = true;
+  }, [mietspiegel, size, marketRent, monthsRented, exemption, price]);
 
   const fmt = (n: number) => fmtEur(n, locale);
   const inputCls = "w-full rounded-lg border-[1.5px] border-gray-200 bg-white px-3.5 py-2.5 text-sm text-gray-900 outline-none transition focus:border-brand-400 focus:ring-4 focus:ring-brand-500/10";

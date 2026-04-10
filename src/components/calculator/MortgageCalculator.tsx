@@ -1,5 +1,6 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect, useRef } from "react";
 import { calculate, type MortgageInput } from "./mortgage-math";
+import { track } from "../../lib/analytics";
 
 type Lang = "en" | "de";
 type Tab = "breakdown" | "amortization";
@@ -302,6 +303,22 @@ export default function MortgageCalculator({ lang = "en" }: { lang?: Lang }) {
   const result = useMemo(() => calculate({
     loanAmount, interestRate, repaymentRate, fixedRatePeriod, extraAnnualPayment,
   }), [loanAmount, interestRate, repaymentRate, fixedRatePeriod, extraAnnualPayment]);
+
+  const tracked = useRef(false);
+  useEffect(() => {
+    if (tracked.current) {
+      track("calculator_used", {
+        calculator: "mortgage",
+        loan_amount: loanAmount,
+        interest_rate: interestRate,
+        repayment_rate: repaymentRate,
+        fixed_period: fixedRatePeriod,
+        monthly_payment: result.monthlyPayment,
+        lang,
+      });
+    }
+    tracked.current = true;
+  }, [loanAmount, interestRate, repaymentRate, fixedRatePeriod, extraAnnualPayment]);
 
   const payoffYears = Math.floor(result.payoffMonths / 12);
   const lastPaymentYear = startYear + payoffYears;

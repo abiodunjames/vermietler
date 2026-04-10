@@ -1,4 +1,5 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useEffect, useRef } from "react";
+import { track } from "../../lib/analytics";
 
 type Lang = "en" | "de";
 
@@ -280,6 +281,22 @@ export default function RentalYieldCalculator({ lang = "en" }: { lang?: Lang }) 
       equity,
       cashOnCash,
     };
+  }, [price, rent, closingPct, hausgeld, maintenance, vacancyPct, propertyTax, insurance, loan, interestRate, repaymentRate]);
+
+  const tracked = useRef(false);
+  useEffect(() => {
+    if (tracked.current && result) {
+      track("calculator_used", {
+        calculator: "rental_yield",
+        purchase_price: price,
+        monthly_rent: rent,
+        gross_yield: result.grossYield,
+        net_yield: result.netYield,
+        cash_on_cash: result.cashOnCash,
+        lang,
+      });
+    }
+    tracked.current = true;
   }, [price, rent, closingPct, hausgeld, maintenance, vacancyPct, propertyTax, insurance, loan, interestRate, repaymentRate]);
 
   function handleNumberInput(raw: string, setter: (v: number) => void, rawSetter: (v: string) => void, max = 50000000) {
