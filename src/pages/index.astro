@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Navbar from "../components/Navbar.astro";
 import ComingSoon from "../components/ComingSoon.astro";
+import Pricing from "../components/Pricing.astro";
 ---
 
 <Layout
@@ -9,5 +10,7 @@ import ComingSoon from "../components/ComingSoon.astro";
   description="The all-in-one platform for private landlords. Manage properties, finances, tenants, documents, and Nebenkosten statements in one place. Coming soon."
 >
   <Navbar lang="en" variant="transparent" />
-  <ComingSoon lang="en" />
+  <ComingSoon lang="en">
+    <Pricing lang="en" />
+  </ComingSoon>
 </Layout>

@@ -2,6 +2,7 @@
 import Layout from "../../layouts/Layout.astro";
 import Navbar from "../../components/Navbar.astro";
 import ComingSoon from "../../components/ComingSoon.astro";
+import Pricing from "../../components/Pricing.astro";
 ---
 
 <Layout
@@ -10,5 +11,7 @@ import ComingSoon from "../../components/ComingSoon.astro";
   lang="de"
 >
   <Navbar lang="de" variant="transparent" />
-  <ComingSoon lang="de" />
+  <ComingSoon lang="de">
+    <Pricing lang="de" />
+  </ComingSoon>
 </Layout>
