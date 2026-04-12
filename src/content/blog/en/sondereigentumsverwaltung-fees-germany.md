@@ -7,7 +7,7 @@ lang: "en"
 tags: ["Sondereigentumsverwaltung", "SEV", "property management", "fees", "Hausverwaltung", "landlord costs"]
 ---
 
-If you own a rental apartment inside a WEG (Wohnungseigentümergemeinschaft), you're already familiar with the WEG-Verwaltung - the management of common property. But the management of *your* individual unit - finding tenants, collecting rent, handling repairs inside the apartment - is a separate service called **Sondereigentumsverwaltung** (SEV), sometimes referred to as Mietverwaltung for individual WEG units.
+If you own a rental apartment inside a WEG (Wohnungseigentümergemeinschaft), you're already familiar with the WEG-Verwaltung, which covers common property. But the management of *your* individual unit, including finding tenants, collecting rent, and handling repairs inside the apartment, is a separate service called **Sondereigentumsverwaltung** (SEV), sometimes referred to as Mietverwaltung for individual WEG units.
 
 Over the past five years, SEV fees have risen significantly. Here's what happened, why, and what it means for your bottom line.
 
@@ -15,18 +15,18 @@ Over the past five years, SEV fees have risen significantly. Here's what happene
 
 SEV is the management of everything inside your unit that falls outside the WEG's responsibility. A typical SEV contract includes:
 
-- **Tenant search and selection** (advertising, viewings, credit checks)
+- **Tenant search and selection** including advertising, viewings, and credit checks
 - **Lease drafting and signing** (Mietvertrag)
 - **Rent collection and monitoring** (Mietinkasso, Mahnwesen)
 - **Nebenkostenabrechnung** for your unit (operating cost statement)
-- **Coordinating repairs** inside the apartment (not common areas - that's the WEG-Verwalter)
-- **Tenant communication** (complaints, requests, move-in/move-out)
+- **Coordinating repairs** inside the apartment, excluding common areas handled by the WEG-Verwalter
+- **Tenant communication** covering complaints, requests, and move-in/move-out
 - **Deposit management** (Kaution)
 - **Handover protocols** (Übergabeprotokoll)
 
-What's *not* included - and billed separately as Sonderleistungen - typically involves:
+What's *not* included, and billed separately as Sonderleistungen, typically involves:
 
-- Tenant changeover (Mieterwechsel): new lease, advertising, viewings
+- Tenant changeover (Mieterwechsel), including new lease, advertising, and viewings
 - Court proceedings or eviction coordination
 - Major renovation supervision inside the unit
 - Insurance claim handling (Schadenabwicklung)
@@ -75,26 +75,16 @@ SEV fees have climbed steadily, but the pace accelerated sharply from 2023 onwar
 <text x="470" y="268" text-anchor="middle" fill="#64748b" style="font-size:12px;font-weight:600;font-family:system-ui">2024</text>
 <text x="555" y="268" text-anchor="middle" fill="#64748b" style="font-size:12px;font-weight:600;font-family:system-ui">25/26</text>
 <!-- Bars: Without WEG (taller, behind) -->
-<!-- 2021: 27 € -->
 <rect x="145" y="73" width="22" height="167" rx="4" fill="#bfdbfe"/>
-<!-- 2022: 28.5 € -->
 <rect x="245" y="56" width="22" height="184" rx="4" fill="#bfdbfe"/>
-<!-- 2023: 31.5 € -->
 <rect x="345" y="26" width="22" height="214" rx="4" fill="#bfdbfe"/>
-<!-- 2024: 35 € -->
 <rect x="445" y="-9" width="22" height="249" rx="4" fill="#bfdbfe"/>
-<!-- 2025/26: 37.5 € -->
 <rect x="530" y="-34" width="22" height="274" rx="4" fill="#bfdbfe"/>
 <!-- Bars: With WEG (shorter, in front) -->
-<!-- 2021: 21 € -->
 <rect x="173" y="130" width="22" height="110" rx="4" fill="#2563eb"/>
-<!-- 2022: 22 € -->
 <rect x="273" y="120" width="22" height="120" rx="4" fill="#2563eb"/>
-<!-- 2023: 24 € -->
 <rect x="373" y="100" width="22" height="140" rx="4" fill="#2563eb"/>
-<!-- 2024: 26.5 € -->
 <rect x="473" y="75" width="22" height="165" rx="4" fill="#2563eb"/>
-<!-- 2025/26: 28.5 € -->
 <rect x="558" y="55" width="22" height="185" rx="4" fill="#2563eb"/>
 <!-- Value labels: Without WEG -->
 <text x="156" y="67" text-anchor="middle" fill="#64748b" style="font-size:10px;font-weight:600;font-family:system-ui">27 €</text>
@@ -116,19 +106,19 @@ SEV fees have climbed steadily, but the pace accelerated sharply from 2023 onwar
 </svg>
 </div>
 
-The key distinction: **with simultaneous WEG management** (the same Verwalter handles your unit *and* the WEG) is significantly cheaper than engaging a separate SEV-Verwalter. When the WEG-Verwalter also handles your SEV, they already know the building, the house rules, and the service providers - so overhead is lower.
+The key distinction: **with simultaneous WEG management** (the same Verwalter handles your unit *and* the WEG) is significantly cheaper than engaging a separate SEV-Verwalter. When the WEG-Verwalter also handles your SEV, they already know the building, the house rules, and the service providers, so overhead is lower.
 
-If you need a standalone SEV (your WEG-Verwalter doesn't offer it, or you want someone else), expect to pay **30–50% more** per unit.
+If you need a standalone SEV because your WEG-Verwalter doesn't offer it or you want someone else, expect to pay **30–50% more** per unit.
 
 ### Small properties pay more
 
 The per-unit economics of SEV punish small portfolios:
 
-- **1–3 units**: 35–50 €/unit/month (or minimum flat fees of 80–120 €/month)
+- **1–3 units**: 35–50 €/unit/month, or minimum flat fees of 80–120 €/month
 - **4–10 units**: 28–35 €/unit/month
 - **10+ units**: 22–28 €/unit/month
 
-Many Verwalter now set **minimum monthly fees** regardless of unit count. A single apartment that cost 22 €/month to manage in 2021 may now carry a 35–40 € minimum - a **60–80% increase** in effective cost.
+Many Verwalter now set **minimum monthly fees** regardless of unit count. A single apartment that cost 22 €/month to manage in 2021 may now carry a 35–40 € minimum, an **effective increase of 60–80%**.
 
 ### Regional differences
 
@@ -139,7 +129,7 @@ SEV fees vary by region, though the gap has narrowed:
 - **East Germany** (Sachsen, Brandenburg, Thüringen): lowest at ~27–28 €/unit/month
 - **Major cities** (Munich, Frankfurt, Hamburg): 15–25% premium over surrounding areas
 
-Berlin sits in between - historically an East German price level, but rapidly converging with West German rates as demand outstrips supply.
+Berlin sits in between. Historically at an East German price level, it is rapidly converging with West German rates as demand outstrips supply.
 
 ## What's driving the increases
 
@@ -147,13 +137,13 @@ Berlin sits in between - historically an East German price level, but rapidly co
 
 Germany has gone from approximately 24,000 Hausverwaltungen to fewer than 22,000 in just a few years. Nearly 25% of open positions at management firms remain unfilled. Many small, owner-operated firms are closing as their founders retire without successors.
 
-The result is a seller's market: Verwalter can choose their clients, raise prices, and drop unprofitable properties. Small WEGs and single-unit owners are hit hardest - they're the first to be "selectively terminated" (selektive Kündigung).
+The result is a seller's market. Verwalter can choose their clients, raise prices, and drop unprofitable properties. Small WEGs and single-unit owners are hit hardest, as they're the first to be "selectively terminated" (selektive Kündigung).
 
 ### 2. WEG Reform 2020 ripple effects
 
-The Wohnungseigentumsmodernisierungsgesetz expanded the WEG-Verwalter's responsibilities and introduced a mandatory certification requirement (since December 2023). While this primarily affects WEG management, it spills over into SEV:
+The Wohnungseigentumsmodernisierungsgesetz expanded the WEG-Verwalter's responsibilities and introduced a mandatory certification requirement since December 2023. While this primarily affects WEG management, it spills over into SEV:
 
-- Verwalter who handle both WEG and SEV are spreading their increased overhead across all services
+- Verwalter who handle both WEG and SEV spread their increased overhead across all services
 - The certification requirement drove some smaller operators out of the market entirely
 - 20 hours/year of mandatory continuing education adds cost
 
@@ -174,7 +164,7 @@ This is pure additional work that didn't exist before 2023.
 
 ### 5. Digitalization costs
 
-Modern owners expect online portals, digital document access, and real-time financial reporting. The software platforms that deliver this (Casavi, ETG24, Facilioo, etc.) cost Verwalter 1,000+ €/month in licensing fees - costs that are passed through in higher management fees.
+Modern owners expect online portals, digital document access, and real-time financial reporting. The software platforms that deliver this (Casavi, ETG24, Facilioo, etc.) cost Verwalter over 1,000 €/month in licensing fees, costs that are passed through in higher management fees.
 
 ### 6. Heizungsgesetz (GEG) complexity
 
@@ -186,18 +176,18 @@ The math depends on your situation.
 
 ### When SEV makes sense
 
-- **You live far from the property** - coordinating repairs and tenant issues remotely is painful
-- **You have multiple units** - economies of scale kick in above 5–10 units
-- **You don't want to deal with tenants** - tenant communication, Mahnung, and conflict resolution take real time
-- **Your WEG-Verwalter offers SEV** - bundled pricing makes it significantly cheaper
-- **Legal complexity** - Nebenkostenabrechnung errors alone can cost more than a year of SEV fees
+- **You live far from the property.** Coordinating repairs and tenant issues remotely is painful.
+- **You have multiple units.** Economies of scale kick in above 5–10 units.
+- **You don't want to deal with tenants.** Communication, Mahnung, and conflict resolution take real time.
+- **Your WEG-Verwalter offers SEV.** Bundled pricing makes it significantly cheaper.
+- **Legal complexity.** Nebenkostenabrechnung errors alone can cost more than a year of SEV fees.
 
 ### When self-management makes more sense
 
-- **1–3 units** - SEV minimum fees erode a significant chunk of your net yield
-- **You live nearby** - you can handle viewings, key handovers, and minor repairs yourself
-- **You're comfortable with Mietrecht** - lease drafting, Nebenkostenabrechnung, deposit handling
-- **You use management software** - tools like Vermietler, Vermietet.de, or objego handle the administrative burden at a fraction of SEV costs
+- **1–3 units.** SEV minimum fees erode a significant chunk of your net yield.
+- **You live nearby.** You can handle viewings, key handovers, and minor repairs yourself.
+- **You're comfortable with Mietrecht.** Lease drafting, Nebenkostenabrechnung, deposit handling.
+- **You use management software.** Tools like Vermietler, Vermietet.de, or objego handle the administrative burden at a fraction of SEV costs.
 
 ### The breakeven calculation
 
@@ -210,23 +200,23 @@ For a single apartment renting at 800 € Kaltmiete:
 | As % of annual rent | 4.4–5.0% | 0–0.6% |
 | Yield impact (on 200K property) | -0.21 to -0.24% | negligible |
 
-For a single unit, SEV consumes roughly a full month's rent per year. That's the equivalent of a 1-month vacancy - except it happens every year.
+For a single unit, SEV consumes roughly a full month's rent per year. That's the equivalent of a 1-month vacancy, except it happens every year.
 
 ## What to watch for in SEV contracts
 
 If you do engage an SEV-Verwalter, pay attention to:
 
-1. **Leistungskatalog**: what's included vs. what's a Sonderleistung? Vague clauses like "weitere Leistungen werden gesondert berechnet" are a red flag
-2. **Mieterwechsel costs**: tenant changeover is the most expensive Sonderleistung - often 1–2 months' rent. Clarify this upfront
-3. **Indexklauseln**: automatic fee increases tied to inflation indices can compound quickly
-4. **Contract term**: typical is 2–3 years with 3–6 months' notice. Avoid long lock-ins with untested Verwalter
-5. **Nebenkostenabrechnung**: confirm this is included in the base fee - some Verwalter charge it as extra
-6. **Minimum fees**: if you have a single unit, ask explicitly about minimums
+1. **Leistungskatalog.** What's included vs. what's a Sonderleistung? Vague clauses like "weitere Leistungen werden gesondert berechnet" are a red flag.
+2. **Mieterwechsel costs.** Tenant changeover is the most expensive Sonderleistung, often 1–2 months' rent. Clarify this upfront.
+3. **Indexklauseln.** Automatic fee increases tied to inflation indices can compound quickly.
+4. **Contract term.** Typical is 2–3 years with 3–6 months' notice. Avoid long lock-ins with untested Verwalter.
+5. **Nebenkostenabrechnung.** Confirm this is included in the base fee. Some Verwalter charge it as extra.
+6. **Minimum fees.** If you have a single unit, ask explicitly about minimums.
 
 ## The outlook
 
-SEV fees will continue to rise. The structural drivers - Verwalter shortage, regulatory complexity, labor costs - are not reversing. The VDIV projects further fee increases of 8–12% for 2026.
+SEV fees will continue to rise. The structural drivers (Verwalter shortage, regulatory complexity, labor costs) are not reversing. The VDIV projects further fee increases of 8–12% for 2026.
 
-For landlords with small portfolios, the trend points clearly toward **digital self-management**. The gap between what SEV costs and what software costs has widened to the point where the financial case for professional management only holds above a certain portfolio size - or when the owner simply doesn't want to be involved.
+For landlords with small portfolios, the trend points clearly toward **digital self-management**. The gap between what SEV costs and what software costs has widened to the point where the financial case for professional management only holds above a certain portfolio size, or when the owner simply doesn't want to be involved.
 
-The question is no longer whether you *can* manage your own rental unit. With modern tools, almost anyone can. The question is whether you *want to* - and whether the 400–500 €/year per unit is worth the convenience.
+The question is no longer whether you *can* manage your own rental unit. With modern tools, almost anyone can. The question is whether you *want to*, and whether the 400–500 €/year per unit is worth the convenience.

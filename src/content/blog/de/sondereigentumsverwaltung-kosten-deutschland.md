@@ -7,7 +7,7 @@ lang: "de"
 tags: ["Sondereigentumsverwaltung", "SEV", "Hausverwaltung", "Kosten", "Vermieter", "Mietverwaltung"]
 ---
 
-Wer eine vermietete Eigentumswohnung in einer WEG (Wohnungseigentümergemeinschaft) besitzt, kennt die WEG-Verwaltung - die Verwaltung des Gemeinschaftseigentums. Doch die Verwaltung der *eigenen* Wohneinheit - Mietersuche, Mietinkasso, Reparaturen innerhalb der Wohnung - ist eine separate Leistung: die **Sondereigentumsverwaltung** (SEV).
+Wer eine vermietete Eigentumswohnung in einer WEG (Wohnungseigentümergemeinschaft) besitzt, kennt die WEG-Verwaltung, also die Verwaltung des Gemeinschaftseigentums. Doch die Verwaltung der *eigenen* Wohneinheit, also Mietersuche, Mietinkasso und Reparaturen innerhalb der Wohnung, ist eine separate Leistung: die **Sondereigentumsverwaltung** (SEV).
 
 In den letzten fünf Jahren sind die SEV-Kosten deutlich gestiegen. Hier eine Einordnung: Was ist passiert, warum, und was bedeutet das für Ihre Rendite?
 
@@ -15,18 +15,18 @@ In den letzten fünf Jahren sind die SEV-Kosten deutlich gestiegen. Hier eine Ei
 
 Die SEV deckt alles innerhalb Ihrer Einheit ab, was nicht in den Zuständigkeitsbereich der WEG-Verwaltung fällt. Ein typischer SEV-Vertrag umfasst:
 
-- **Mietersuche und -auswahl** (Inserate, Besichtigungen, Bonitätsprüfung)
+- **Mietersuche und -auswahl** einschließlich Inserate, Besichtigungen und Bonitätsprüfung
 - **Mietvertragserstellung und -unterzeichnung**
 - **Mietinkasso und Mahnwesen**
 - **Nebenkostenabrechnung** für Ihre Einheit
-- **Koordination von Reparaturen** innerhalb der Wohnung (nicht Gemeinschaftsflächen - das macht der WEG-Verwalter)
-- **Mieterkommunikation** (Beschwerden, Anfragen, Ein-/Auszug)
+- **Koordination von Reparaturen** innerhalb der Wohnung, ausgenommen Gemeinschaftsflächen (das macht der WEG-Verwalter)
+- **Mieterkommunikation** bei Beschwerden, Anfragen sowie Ein- und Auszug
 - **Kautionsverwaltung**
 - **Übergabeprotokolle**
 
-Was *nicht* enthalten ist - und als Sonderleistungen gesondert berechnet wird:
+Was *nicht* enthalten ist und als Sonderleistungen gesondert berechnet wird:
 
-- Mieterwechsel (neuer Mietvertrag, Inserate, Besichtigungen)
+- Mieterwechsel einschließlich neuem Mietvertrag, Inseraten und Besichtigungen
 - Gerichtliche Verfahren oder Räumungskoordination
 - Baubetreuung bei größeren Renovierungen innerhalb der Einheit
 - Schadenabwicklung bei Versicherungsfällen
@@ -106,19 +106,19 @@ Die SEV-Gebühren sind kontinuierlich gestiegen, ab 2023 dann deutlich schneller
 </svg>
 </div>
 
-Der wichtige Unterschied: **Bei gleichzeitiger WEG-Verwaltung** (derselbe Verwalter betreut Ihre Einheit *und* die WEG) ist die SEV deutlich günstiger als bei einem separaten SEV-Verwalter. Der WEG-Verwalter kennt bereits das Gebäude, die Hausordnung und die Dienstleister - der Overhead ist geringer.
+Der wichtige Unterschied: **Bei gleichzeitiger WEG-Verwaltung** (derselbe Verwalter betreut Ihre Einheit *und* die WEG) ist die SEV deutlich günstiger als bei einem separaten SEV-Verwalter. Der WEG-Verwalter kennt bereits das Gebäude, die Hausordnung und die Dienstleister, wodurch der Overhead geringer ausfällt.
 
-Brauchen Sie eine eigenständige SEV (Ihr WEG-Verwalter bietet es nicht an, oder Sie möchten einen anderen), rechnen Sie mit **30–50 % Aufschlag** pro Einheit.
+Brauchen Sie eine eigenständige SEV, weil Ihr WEG-Verwalter sie nicht anbietet oder Sie jemand anderen bevorzugen, rechnen Sie mit **30–50 % Aufschlag** pro Einheit.
 
 ### Kleine Bestände zahlen mehr
 
 Die Stückkosten der SEV bestrafen kleine Portfolios:
 
-- **1–3 Einheiten**: 35–50 €/Einheit/Monat (oder Mindestpauschalen von 80–120 €/Monat)
+- **1–3 Einheiten**: 35–50 €/Einheit/Monat, oder Mindestpauschalen von 80–120 €/Monat
 - **4–10 Einheiten**: 28–35 €/Einheit/Monat
 - **10+ Einheiten**: 22–28 €/Einheit/Monat
 
-Viele Verwalter setzen inzwischen **Mindesthonorare** unabhängig von der Einheitenzahl an. Eine einzelne Wohnung, die 2021 noch für 22 €/Monat verwaltet wurde, kann heute ein Mindesthonorar von 35–40 € tragen - ein **effektiver Anstieg von 60–80 %**.
+Viele Verwalter setzen inzwischen **Mindesthonorare** unabhängig von der Einheitenzahl an. Eine einzelne Wohnung, die 2021 noch für 22 €/Monat verwaltet wurde, kann heute ein Mindesthonorar von 35–40 € tragen. Das entspricht einem **effektiven Anstieg von 60–80 %**.
 
 ### Regionale Unterschiede
 
@@ -129,15 +129,15 @@ SEV-Gebühren variieren nach Region, wobei die Schere sich langsam schließt:
 - **Ostdeutschland** (Sachsen, Brandenburg, Thüringen): am niedrigsten mit ~27–28 €/Einheit/Monat
 - **Großstädte** (München, Frankfurt, Hamburg): 15–25 % Aufschlag gegenüber dem Umland
 
-Berlin liegt dazwischen - historisch auf ostdeutschem Preisniveau, aber in rascher Annäherung an westdeutsche Tarife, da die Nachfrage das Angebot übersteigt.
+Berlin liegt dazwischen. Historisch auf ostdeutschem Preisniveau, nähert es sich rasch den westdeutschen Tarifen an, da die Nachfrage das Angebot übersteigt.
 
 ## Was die Steigerungen treibt
 
 ### 1. Verwalterknappheit
 
-Deutschland hatte vor wenigen Jahren noch rund 24.000 Hausverwaltungen - heute sind es weniger als 22.000. Fast 25 % der offenen Stellen bei Verwaltungsunternehmen bleiben unbesetzt. Viele kleine, inhabergeführte Firmen schließen, weil die Gründer in Rente gehen und keine Nachfolger finden.
+Deutschland hatte vor wenigen Jahren noch rund 24.000 Hausverwaltungen. Heute sind es weniger als 22.000. Fast 25 % der offenen Stellen bei Verwaltungsunternehmen bleiben unbesetzt. Viele kleine, inhabergeführte Firmen schließen, weil die Gründer in Rente gehen und keine Nachfolger finden.
 
-Das Ergebnis ist ein Verkäufermarkt: Verwalter können ihre Kunden wählen, Preise anheben und unrentable Objekte abgeben. Kleine WEGs und Einzeleigentümer trifft es zuerst - sie werden als erste „selektiv gekündigt".
+Das Ergebnis ist ein Verkäufermarkt. Verwalter können ihre Kunden wählen, Preise anheben und unrentable Objekte abgeben. Kleine WEGs und Einzeleigentümer trifft es zuerst, da sie als erste „selektiv gekündigt" werden.
 
 ### 2. Nachwirkungen der WEG-Reform 2020
 
@@ -164,7 +164,7 @@ Das ist zusätzlicher Aufwand, den es vor 2023 schlicht nicht gab.
 
 ### 5. Digitalisierungskosten
 
-Eigentümer erwarten heute Online-Portale, digitalen Dokumentenzugriff und Echtzeit-Finanzberichte. Die Softwareplattformen, die das ermöglichen (Casavi, ETG24, Facilioo etc.), kosten Verwalter monatlich über 1.000 € an Lizenzgebühren - Kosten, die über höhere Verwalterhonorare weitergereicht werden.
+Eigentümer erwarten heute Online-Portale, digitalen Dokumentenzugriff und Echtzeit-Finanzberichte. Die Softwareplattformen, die das ermöglichen (Casavi, ETG24, Facilioo etc.), kosten Verwalter monatlich über 1.000 € an Lizenzgebühren. Diese Kosten werden über höhere Verwalterhonorare weitergereicht.
 
 ### 6. Heizungsgesetz (GEG)
 
@@ -176,18 +176,18 @@ Die Rechnung hängt von Ihrer Situation ab.
 
 ### Wann SEV sinnvoll ist
 
-- **Sie wohnen weit vom Objekt entfernt** - Reparaturen und Mieteranliegen aus der Ferne zu koordinieren ist mühsam
-- **Sie haben mehrere Einheiten** - Skaleneffekte greifen ab 5–10 Einheiten
-- **Sie möchten keinen Mieterkontakt** - Mieterkommunikation, Mahnwesen und Konfliktlösung kosten reale Zeit
-- **Ihr WEG-Verwalter bietet SEV an** - gebündelte Preise sind deutlich günstiger
-- **Rechtliche Komplexität** - Fehler in der Nebenkostenabrechnung allein können mehr kosten als ein Jahr SEV-Gebühren
+- **Sie wohnen weit vom Objekt entfernt.** Reparaturen und Mieteranliegen aus der Ferne zu koordinieren ist mühsam.
+- **Sie haben mehrere Einheiten.** Skaleneffekte greifen ab 5–10 Einheiten.
+- **Sie möchten keinen Mieterkontakt.** Mieterkommunikation, Mahnwesen und Konfliktlösung kosten reale Zeit.
+- **Ihr WEG-Verwalter bietet SEV an.** Gebündelte Preise sind deutlich günstiger.
+- **Rechtliche Komplexität.** Fehler in der Nebenkostenabrechnung allein können mehr kosten als ein Jahr SEV-Gebühren.
 
 ### Wann Selbstverwaltung sinnvoller ist
 
-- **1–3 Einheiten** - SEV-Mindesthonorare fressen einen erheblichen Teil Ihrer Nettorendite
-- **Sie wohnen in der Nähe** - Besichtigungen, Schlüsselübergaben und kleine Reparaturen können Sie selbst erledigen
-- **Sie kennen sich mit Mietrecht aus** - Mietvertragserstellung, Nebenkostenabrechnung, Kautionsverwaltung
-- **Sie nutzen Verwaltungssoftware** - Tools wie Vermietler, Vermietet.de oder objego übernehmen den administrativen Aufwand zu einem Bruchteil der SEV-Kosten
+- **1–3 Einheiten.** SEV-Mindesthonorare fressen einen erheblichen Teil Ihrer Nettorendite.
+- **Sie wohnen in der Nähe.** Besichtigungen, Schlüsselübergaben und kleine Reparaturen können Sie selbst erledigen.
+- **Sie kennen sich mit Mietrecht aus.** Mietvertragserstellung, Nebenkostenabrechnung, Kautionsverwaltung.
+- **Sie nutzen Verwaltungssoftware.** Tools wie Vermietler, Vermietet.de oder objego übernehmen den administrativen Aufwand zu einem Bruchteil der SEV-Kosten.
 
 ### Die Break-even-Rechnung
 
@@ -200,23 +200,23 @@ Für eine einzelne Wohnung mit 800 € Kaltmiete:
 | In % der Jahresmiete | 4,4–5,0 % | 0–0,6 % |
 | Renditeauswirkung (bei 200.000 € Kaufpreis) | -0,21 bis -0,24 % | vernachlässigbar |
 
-Bei einer einzelnen Einheit verschlingt die SEV ungefähr eine volle Monatsmiete pro Jahr. Das entspricht einem einmonatigen Leerstand - nur dass es jedes Jahr anfällt.
+Bei einer einzelnen Einheit verschlingt die SEV ungefähr eine volle Monatsmiete pro Jahr. Das entspricht einem einmonatigen Leerstand, nur dass es jedes Jahr anfällt.
 
 ## Worauf Sie im SEV-Vertrag achten sollten
 
 Wenn Sie einen SEV-Verwalter beauftragen, achten Sie auf:
 
-1. **Leistungskatalog**: Was ist enthalten, was ist eine Sonderleistung? Vage Klauseln wie „weitere Leistungen werden gesondert berechnet" sind ein Warnsignal
-2. **Kosten bei Mieterwechsel**: Der Mieterwechsel ist die teuerste Sonderleistung - oft 1–2 Monatsmieten. Klären Sie das vorab
-3. **Indexklauseln**: Automatische Gebührenanpassungen an Inflationsindizes können sich schnell aufschaukeln
-4. **Vertragslaufzeit**: Üblich sind 2–3 Jahre mit 3–6 Monaten Kündigungsfrist. Vermeiden Sie lange Bindungen bei einem unerprobten Verwalter
-5. **Nebenkostenabrechnung**: Bestätigen Sie, dass diese in der Grundgebühr enthalten ist - manche Verwalter berechnen sie separat
-6. **Mindesthonorare**: Bei einer einzelnen Einheit fragen Sie explizit nach Mindestbeträgen
+1. **Leistungskatalog.** Was ist enthalten, was ist eine Sonderleistung? Vage Klauseln wie „weitere Leistungen werden gesondert berechnet" sind ein Warnsignal.
+2. **Kosten bei Mieterwechsel.** Der Mieterwechsel ist die teuerste Sonderleistung, oft 1–2 Monatsmieten. Klären Sie das vorab.
+3. **Indexklauseln.** Automatische Gebührenanpassungen an Inflationsindizes können sich schnell aufschaukeln.
+4. **Vertragslaufzeit.** Üblich sind 2–3 Jahre mit 3–6 Monaten Kündigungsfrist. Vermeiden Sie lange Bindungen bei einem unerprobten Verwalter.
+5. **Nebenkostenabrechnung.** Bestätigen Sie, dass diese in der Grundgebühr enthalten ist. Manche Verwalter berechnen sie separat.
+6. **Mindesthonorare.** Bei einer einzelnen Einheit fragen Sie explizit nach Mindestbeträgen.
 
 ## Der Ausblick
 
-Die SEV-Kosten werden weiter steigen. Die strukturellen Treiber - Verwalterknappheit, regulatorische Komplexität, Personalkosten - kehren sich nicht um. Der VDIV prognostiziert weitere Honorarsteigerungen von 8–12 % für 2026.
+Die SEV-Kosten werden weiter steigen. Die strukturellen Treiber (Verwalterknappheit, regulatorische Komplexität, Personalkosten) kehren sich nicht um. Der VDIV prognostiziert weitere Honorarsteigerungen von 8–12 % für 2026.
 
-Für Vermieter mit kleinen Beständen zeigt der Trend klar in Richtung **digitale Selbstverwaltung**. Die Schere zwischen SEV-Kosten und Softwarekosten hat sich so weit geöffnet, dass sich professionelle Verwaltung finanziell erst ab einer bestimmten Portfoliogröße rechnet - oder wenn der Eigentümer schlicht nicht selbst verwalten möchte.
+Für Vermieter mit kleinen Beständen zeigt der Trend klar in Richtung **digitale Selbstverwaltung**. Die Schere zwischen SEV-Kosten und Softwarekosten hat sich so weit geöffnet, dass sich professionelle Verwaltung finanziell erst ab einer bestimmten Portfoliogröße rechnet, oder wenn der Eigentümer schlicht nicht selbst verwalten möchte.
 
-Die Frage ist nicht mehr, ob Sie Ihre vermietete Wohnung selbst verwalten *können*. Mit modernen Tools kann das fast jeder. Die Frage ist, ob Sie es *wollen* - und ob die 400–500 €/Jahr pro Einheit den Komfort wert sind.
+Die Frage ist nicht mehr, ob Sie Ihre vermietete Wohnung selbst verwalten *können*. Mit modernen Tools kann das fast jeder. Die Frage ist, ob Sie es *wollen*, und ob die 400–500 €/Jahr pro Einheit den Komfort wert sind.
