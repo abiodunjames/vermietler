@@ -25,9 +25,9 @@ const t = {
       { title: "Property & unit management", desc: "Organize your entire portfolio in a clear hierarchy. Track units, leases, and tenants across multiple properties from a single dashboard.", tag: "In beta", tagStyle: "blue" },
       { title: "Banking & rent tracking", desc: "Auto-import transactions and reconcile payments instantly. See at a glance who\u2019s paid, what\u2019s outstanding, and where your money goes.", tag: "In beta", tagStyle: "blue" },
       { title: "AI receipt capture", desc: "Snap a photo of any receipt or invoice. Our AI extracts the vendor, amount, date, and category automatically \u2014 no manual entry needed.", tag: "AI-powered", tagStyle: "orange" },
-      { title: "Nebenkosten statements", desc: "Generate legally compliant operating cost statements with a guided step-by-step wizard. PDF output ready to send to tenants in minutes.", tag: "\u2605 Most popular", tagStyle: "blue", highlight: true },
+      { title: "Nebenkosten statements", desc: "Generate legally compliant operating cost statements with a guided step-by-step wizard. PDF output ready to send to tenants in minutes.", tag: "In Beta", tagStyle: "blue", highlight: true },
       { title: "Document vault", desc: "Upload, tag, and share documents securely with tenants. Rental agreements, \u00DCbergabeprotokolle, insurance docs \u2014 all organised and accessible.", tag: "Coming soon", tagStyle: "gray" },
-      { title: "DSGVO compliant", desc: "Built with German privacy law in mind from day one. Data hosted in Germany, end-to-end encrypted, full data portability and deletion on request.", tag: "Certified", tagStyle: "green" },
+      { title: "DSGVO compliant", desc: "Built with German privacy law in mind from day one. Data hosted in Germany, end-to-end encrypted, full data portability and deletion on request.", tagStyle: "green" },
     ],
 
     howEyebrow: "How it works",
@@ -116,9 +116,9 @@ const t = {
       { title: "Immobilien- & Einheitenverwaltung", desc: "Organisieren Sie Ihr gesamtes Portfolio \u00FCbersichtlich. Verfolgen Sie Einheiten, Mietvertr\u00E4ge und Mieter \u00FCber mehrere Objekte von einem Dashboard aus.", tag: "In Beta", tagStyle: "blue" },
       { title: "Banking & Mietverfolgung", desc: "Transaktionen automatisch importieren und Zahlungen sofort abgleichen. Sehen Sie auf einen Blick, wer gezahlt hat und was aussteht.", tag: "In Beta", tagStyle: "blue" },
       { title: "KI-Belegerfassung", desc: "Fotografieren Sie Belege oder Rechnungen. Unsere KI extrahiert Lieferant, Betrag, Datum und Kategorie automatisch.", tag: "KI-gest\u00FCtzt", tagStyle: "orange" },
-      { title: "Nebenkostenabrechnung", desc: "Erstellen Sie rechtskonforme Betriebskostenabrechnungen mit einem gef\u00FChrten Schritt-f\u00FCr-Schritt-Assistenten. PDF-Ausgabe sofort versandfertig.", tag: "\u2605 Beliebteste", tagStyle: "blue", highlight: true },
+      { title: "Nebenkostenabrechnung", desc: "Erstellen Sie rechtskonforme Betriebskostenabrechnungen mit einem gef\u00FChrten Schritt-f\u00FCr-Schritt-Assistenten. PDF-Ausgabe sofort versandfertig.", tag: "In Beta", tagStyle: "blue", highlight: true },
       { title: "Dokumenten-Tresor", desc: "Dokumente hochladen, taggen und sicher mit Mietern teilen. Mietvertr\u00E4ge, \u00DCbergabeprotokolle, Versicherungsdokumente \u2014 alles organisiert.", tag: "Bald verf\u00FCgbar", tagStyle: "gray" },
-      { title: "DSGVO-konform", desc: "Von Anfang an nach deutschem Datenschutzrecht entwickelt. Daten in Deutschland gehostet, Ende-zu-Ende verschl\u00FCsselt.", tag: "Zertifiziert", tagStyle: "green" },
+      { title: "DSGVO-konform", desc: "Von Anfang an nach deutschem Datenschutzrecht entwickelt. Daten in Deutschland gehostet, Ende-zu-Ende verschl\u00FCsselt.", tagStyle: "green" },
     ],
 
     howEyebrow: "So funktioniert\u2019s",
@@ -327,21 +327,23 @@ const entryId = "entry.741940622";
           </div>
           <h3 class="font-display text-lg font-bold text-[#1e2d45]" style="letter-spacing:-0.015em">{feat.title}</h3>
           <p class="mt-2.5 text-sm leading-relaxed text-gray-500">{feat.desc}</p>
-          <span class:list={[
-            "mt-4 inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[11.5px] font-semibold",
-            feat.tagStyle === "blue" && "bg-brand-50 text-brand-700",
-            feat.tagStyle === "orange" && "bg-orange-50 text-orange-700",
-            feat.tagStyle === "green" && "bg-emerald-50 text-emerald-800",
-            feat.tagStyle === "gray" && "bg-gray-100 text-gray-500",
-          ]}>
-            {(feat.tagStyle === "blue" || feat.tagStyle === "green") && !feat.highlight && (
-              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
-            )}
-            {feat.tagStyle === "orange" && (
-              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-            )}
-            {feat.tag}
-          </span>
+          {feat.tag && (
+            <span class:list={[
+              "mt-4 inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[11.5px] font-semibold",
+              feat.tagStyle === "blue" && "bg-brand-50 text-brand-700",
+              feat.tagStyle === "orange" && "bg-orange-50 text-orange-700",
+              feat.tagStyle === "green" && "bg-emerald-50 text-emerald-800",
+              feat.tagStyle === "gray" && "bg-gray-100 text-gray-500",
+            ]}>
+              {(feat.tagStyle === "blue" || feat.tagStyle === "green") && !feat.highlight && (
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+              )}
+              {feat.tagStyle === "orange" && (
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+              )}
+              {feat.tag}
+            </span>
+          )}
         </div>
       ))}
     </div>
@@ -615,7 +617,7 @@ const entryId = "entry.741940622";
       <!-- Legal -->
       <div>
         <div class="mb-4 text-[10.5px] font-bold uppercase tracking-widest text-white/25">{t.footerLegal}</div>
-        <a href="#" class="block mb-2.5 text-[13.5px] text-white/42 transition hover:text-white/85">{t.footerImprint}</a>
+        <a href={lang === "de" ? "/de/impressum" : "/imprint"} class="block mb-2.5 text-[13.5px] text-white/42 transition hover:text-white/85">{t.footerImprint}</a>
         <a href={lang === "de" ? "/de/datenschutz" : "/privacy"} class="block mb-2.5 text-[13.5px] text-white/42 transition hover:text-white/85">{t.footerPrivacy}</a>
         <a href="#" class="block mb-2.5 text-[13.5px] text-white/42 transition hover:text-white/85">{t.footerTerms}</a>
         <a href="#" class="block mb-2.5 text-[13.5px] text-white/42 transition hover:text-white/85">{t.footerDsgvo}</a>

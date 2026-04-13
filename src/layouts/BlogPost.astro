@@ -24,6 +24,44 @@ const backHref = lang === "de" ? "/de/blog" : "/blog";
 
 <Layout title={`${title} — Vermietler Blog`} description={description} lang={lang}>
   <Navbar lang={lang} />
+
+  <!-- JSON-LD: Article -->
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Article",
+      headline: title,
+      description: description,
+      datePublished: date.toISOString(),
+      author: {
+        "@type": "Person",
+        name: author,
+      },
+      publisher: {
+        "@type": "Organization",
+        name: "Vermietler",
+        url: "https://vermietler.com",
+      },
+      inLanguage: lang === "de" ? "de-DE" : "en-US",
+      keywords: tags.join(", "),
+    })}
+  />
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script
+    type="application/ld+json"
+    set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: lang === "de" ? "Startseite" : "Home", item: lang === "de" ? "https://vermietler.com/de/" : "https://vermietler.com/" },
+        { "@type": "ListItem", position: 2, name: "Blog", item: lang === "de" ? "https://vermietler.com/de/blog" : "https://vermietler.com/blog" },
+        { "@type": "ListItem", position: 3, name: title },
+      ],
+    })}
+  />
+
   <main class="pt-32 pb-24">
     <article class="mx-auto max-w-3xl px-6">
       <!-- Back link (commented out) -->

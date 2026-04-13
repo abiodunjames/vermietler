@@ -1,0 +1,54 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import Navbar from "../../../components/Navbar.astro";
+import Footer from "../../../components/Footer.astro";
+---
+
+<Layout
+  title="Impressum — Vermietler"
+  description="Impressum für Vermietler gemäß § 5 TMG."
+  lang="de"
+>
+  <Navbar lang="de" />
+
+  <main class="pt-32 pb-24">
+    <article class="mx-auto max-w-3xl px-6">
+      <header>
+        <h1 class="font-display text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Impressum</h1>
+        <p class="mt-3 text-sm text-gray-500">Angaben gemäß § 5 TMG</p>
+      </header>
+
+      <div class="prose mt-10 max-w-none prose-headings:font-display prose-headings:font-semibold prose-headings:tracking-tight prose-p:text-gray-600 prose-li:text-gray-600 prose-strong:text-gray-900">
+
+        <p>
+          Abiodun Samuel<br />
+          Glockenturmstraße 30<br />
+          14055 Berlin, Deutschland
+        </p>
+
+        <h2>Kontakt</h2>
+        <p>
+          E-Mail: <a href="mailto:info@vermietler.com">info@vermietler.com</a>
+        </p>
+
+        <h2>Verantwortlich für den Inhalt gemäß § 55 Abs. 2 RStV</h2>
+        <p>
+          Abiodun Samuel<br />
+          Glockenturmstraße 30<br />
+          14055 Berlin
+        </p>
+
+        <h2>Haftungsausschluss</h2>
+
+        <h3>Haftung für Inhalte</h3>
+        <p>Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen.</p>
+
+        <h3>Haftung für Links</h3>
+        <p>Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.</p>
+
+      </div>
+    </article>
+  </main>
+
+  <Footer lang="de" />
+</Layout>
