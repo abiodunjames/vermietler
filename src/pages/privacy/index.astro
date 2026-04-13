@@ -1,0 +1,125 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Navbar from "../../components/Navbar.astro";
+import Footer from "../../components/Footer.astro";
+---
+
+<Layout
+  title="Privacy Policy — Vermietler"
+  description="Privacy policy for Vermietler. How we collect, use, and protect your data in accordance with the GDPR (DSGVO)."
+>
+  <Navbar lang="en" />
+
+  <main class="pt-32 pb-24">
+    <article class="mx-auto max-w-3xl px-6">
+      <header>
+        <h1 class="font-display text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Privacy Policy</h1>
+        <p class="mt-3 text-sm text-gray-500">Last updated: April 13, 2026</p>
+      </header>
+
+      <div class="prose mt-10 max-w-none prose-headings:font-display prose-headings:font-semibold prose-headings:tracking-tight prose-a:text-brand-500 prose-a:no-underline hover:prose-a:underline prose-p:text-gray-600 prose-li:text-gray-600 prose-strong:text-gray-900">
+
+        <h2>1. Controller</h2>
+        <p>The controller responsible for data processing on this website is:</p>
+        <p>
+          James Samuel<br />
+          Glockenturmstraße 30<br />
+          14055 Berlin, Germany<br />
+          Email: <a href="mailto:info@vermietler.com">info@vermietler.com</a>
+        </p>
+
+        <h2>2. Overview of data processing</h2>
+        <p>This website is a static marketing and tools site for Vermietler. We process personal data only to the extent necessary to provide a functional website, our free calculators, and our email signup for early access. We process data in accordance with the General Data Protection Regulation (GDPR/DSGVO) and the German Bundesdatenschutzgesetz (BDSG).</p>
+
+        <h2>3. Data we collect</h2>
+
+        <h3>3.1 Email address (early access signup)</h3>
+        <p>When you submit your email address through our early access signup form, we collect and store your email address for the purpose of notifying you when Vermietler launches. The data is submitted to <strong>Google Forms</strong> and stored in Google's infrastructure.</p>
+        <ul>
+          <li><strong>Data collected:</strong> Email address</li>
+          <li><strong>Purpose:</strong> Sending launch notifications and product updates</li>
+          <li><strong>Legal basis:</strong> Art. 6(1)(a) GDPR (your consent, given by submitting the form)</li>
+          <li><strong>Storage duration:</strong> Until you request deletion or the purpose ceases</li>
+          <li><strong>Third party:</strong> Google Ireland Limited (Gordon House, Barrow Street, Dublin 4, Ireland)</li>
+        </ul>
+        <p>You can withdraw your consent at any time by emailing <a href="mailto:info@vermietler.com">info@vermietler.com</a> and requesting deletion of your email address.</p>
+
+        <h3>3.2 Calculator usage data</h3>
+        <p>When you use our free calculators (mortgage, closing costs, rental yield, depreciation, rent brake), we collect anonymous usage data to understand how the tools are used and to improve them. This includes the values you enter into the calculators and the calculated results.</p>
+        <ul>
+          <li><strong>Data collected:</strong> Calculator type, input values (e.g. purchase price, interest rate, selected German state), calculated results, language preference</li>
+          <li><strong>Purpose:</strong> Product improvement and understanding which features are most valuable</li>
+          <li><strong>Legal basis:</strong> Art. 6(1)(f) GDPR (legitimate interest in improving our tools)</li>
+          <li><strong>Third party:</strong> PostHog (see Section 4.1)</li>
+        </ul>
+        <p>Calculator inputs do not include personally identifiable information. No names, addresses, or financial account details are collected.</p>
+
+        <h2>4. Analytics and tracking</h2>
+
+        <h3>4.1 PostHog</h3>
+        <p>We use <strong>PostHog</strong> for website analytics and product usage tracking. PostHog is hosted in the European Union (EU) at <code>eu.i.posthog.com</code>. PostHog collects:</p>
+        <ul>
+          <li>Pages visited and interaction events</li>
+          <li>Calculator usage data (as described in Section 3.2)</li>
+          <li>Device type, browser, operating system</li>
+          <li>Approximate location (derived from IP address, which is anonymised)</li>
+        </ul>
+        <p>PostHog is configured in <strong>"identified_only"</strong> mode, meaning anonymous visitors are not assigned persistent person profiles. A person profile is only created when you voluntarily provide your email address through the signup form.</p>
+        <ul>
+          <li><strong>Provider:</strong> PostHog, Inc. (2261 Market Street #4008, San Francisco, CA 94114, USA)</li>
+          <li><strong>Data location:</strong> European Union</li>
+          <li><strong>Legal basis:</strong> Art. 6(1)(f) GDPR (legitimate interest in understanding website usage)</li>
+          <li><strong>Privacy policy:</strong> <a href="https://posthog.com/privacy" target="_blank" rel="noopener">posthog.com/privacy</a></li>
+        </ul>
+
+        <h2>5. Third-party services</h2>
+
+        <h3>5.1 Google Fonts</h3>
+        <p>This website loads typefaces (DM Sans, Space Grotesk) from <strong>Google Fonts</strong>, a service provided by Google Ireland Limited. When you visit a page, your browser establishes a connection to Google's servers to download the font files. This transmits your IP address to Google.</p>
+        <ul>
+          <li><strong>Provider:</strong> Google Ireland Limited (Gordon House, Barrow Street, Dublin 4, Ireland)</li>
+          <li><strong>Legal basis:</strong> Art. 6(1)(f) GDPR (legitimate interest in consistent and efficient typography)</li>
+          <li><strong>Privacy policy:</strong> <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></li>
+        </ul>
+
+        <h3>5.2 Google Forms</h3>
+        <p>Email signup submissions are sent to Google Forms as described in Section 3.1. Google may process the data in accordance with its own privacy policy.</p>
+
+        <h2>6. Cookies</h2>
+        <p>This website does not set first-party cookies. PostHog may set cookies or use local storage to maintain session information. No advertising or marketing cookies are used.</p>
+
+        <h2>7. Your rights under GDPR</h2>
+        <p>You have the following rights regarding your personal data:</p>
+        <ul>
+          <li><strong>Right of access</strong> (Art. 15 GDPR): You can request information about whether and what personal data we process about you.</li>
+          <li><strong>Right to rectification</strong> (Art. 16 GDPR): You can request correction of inaccurate data.</li>
+          <li><strong>Right to erasure</strong> (Art. 17 GDPR): You can request deletion of your data, provided no legal obligation requires retention.</li>
+          <li><strong>Right to restriction of processing</strong> (Art. 18 GDPR): You can request that we limit processing of your data in certain circumstances.</li>
+          <li><strong>Right to data portability</strong> (Art. 20 GDPR): You can request your data in a structured, machine-readable format.</li>
+          <li><strong>Right to object</strong> (Art. 21 GDPR): You can object to processing based on legitimate interest at any time.</li>
+          <li><strong>Right to withdraw consent</strong> (Art. 7(3) GDPR): You can withdraw any consent you have given at any time, without affecting the lawfulness of prior processing.</li>
+        </ul>
+        <p>To exercise any of these rights, contact us at <a href="mailto:info@vermietler.com">info@vermietler.com</a>.</p>
+
+        <h2>8. Right to lodge a complaint</h2>
+        <p>You have the right to lodge a complaint with a data protection supervisory authority. The competent authority for Berlin is:</p>
+        <p>
+          Berliner Beauftragte für Datenschutz und Informationsfreiheit<br />
+          Alt-Moabit 59-61<br />
+          10555 Berlin<br />
+          <a href="https://www.datenschutz-berlin.de" target="_blank" rel="noopener">www.datenschutz-berlin.de</a>
+        </p>
+
+        <h2>9. SSL/TLS encryption</h2>
+        <p>This site uses SSL/TLS encryption for security reasons and to protect the transmission of confidential information, such as inquiries that you send to us as the site operator. You can recognize an encrypted connection by the fact that the browser's address bar changes from "http://" to "https://" and by the lock symbol in your browser's address bar.</p>
+        <p>When SSL or TLS encryption is enabled, the data you send to us cannot be read by third parties.</p>
+
+        <h2>10. Changes to this privacy policy</h2>
+        <p>We may update this privacy policy to reflect changes in our data processing practices or legal requirements. The "Last updated" date at the top of this page indicates the most recent revision. We recommend reviewing this page periodically.</p>
+
+      </div>
+    </article>
+  </main>
+
+  <Footer lang="en" />
+</Layout>

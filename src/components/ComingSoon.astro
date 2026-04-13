@@ -616,7 +616,7 @@ const entryId = "entry.741940622";
       <div>
         <div class="mb-4 text-[10.5px] font-bold uppercase tracking-widest text-white/25">{t.footerLegal}</div>
         <a href="#" class="block mb-2.5 text-[13.5px] text-white/42 transition hover:text-white/85">{t.footerImprint}</a>
-        <a href="#" class="block mb-2.5 text-[13.5px] text-white/42 transition hover:text-white/85">{t.footerPrivacy}</a>
+        <a href={lang === "de" ? "/de/datenschutz" : "/privacy"} class="block mb-2.5 text-[13.5px] text-white/42 transition hover:text-white/85">{t.footerPrivacy}</a>
         <a href="#" class="block mb-2.5 text-[13.5px] text-white/42 transition hover:text-white/85">{t.footerTerms}</a>
         <a href="#" class="block mb-2.5 text-[13.5px] text-white/42 transition hover:text-white/85">{t.footerDsgvo}</a>
       </div>
