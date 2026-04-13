@@ -7,15 +7,15 @@ const { lang = "en" } = Astro.props;
 
 const t = {
   en: {
-    heroBadge: "Coming Soon \u00B7 Early Access Open",
-    heroTitle1: "Your Sondereigentumsverwaltung",
-    heroTitle2: "platform.",
+    heroBadge: "Now Available",
+    heroTitle1: "Property management",
+    heroTitle2: "for German landlords.",
     heroSub: 'Everything a private landlord needs to manage rental units, without paying a Verwalter. <strong class="text-white/85 font-medium">Rent, tenants, Nebenkostenabrechnung, documents.</strong> The WEG stays with your Verwalter.',
     emailPlaceholder: "your@email.de",
-    heroCta: "Get Early Access",
-    heroNote: "DSGVO-compliant \u00B7 No spam \u00B7 Free during beta",
+    heroCta: "Try Now",
+    heroNote: "DSGVO-compliant \u00B7 Free starter plan \u00B7 No credit card required",
     successTitle: "You\u2019re on the list!",
-    successSub: "We\u2019ll notify you as soon as Vermietler launches.",
+    successSub: "Your account is ready.",
     errorMessage: "Something went wrong. Please try again.",
 
     featEyebrow: "What\u2019s coming",
@@ -64,13 +64,13 @@ const t = {
       { title: "Full data portability", desc: "Export all your data at any time. No lock-in, ever." },
     ],
 
-    ctaBadge: "Beta launching soon",
-    ctaTitle: "Join the waitlist",
-    ctaSub: "Be the first to access Vermietler when we launch. Free during the open beta.",
+    ctaBadge: "Now available",
+    ctaTitle: "Ready to get started?",
+    ctaSub: "Start managing your rental units today. Free for your first property.",
     ctaNote: "No credit card \u00B7 No spam \u00B7 Cancel anytime",
 
-    footerTagline: "Your Sondereigentumsverwaltung platform. Built for private landlords.",
-    footerStatus: "Early access open",
+    footerTagline: "Property management for German landlords.",
+    footerStatus: "Now available",
     footerProduct: "Product",
     footerResources: "Resources",
     footerLegal: "Legal",
@@ -98,13 +98,13 @@ const t = {
     mockStatementSub: "PDF ready for tenant",
   },
   de: {
-    heroBadge: "Demn\u00E4chst verf\u00FCgbar \u00B7 Fr\u00FChzugang offen",
-    heroTitle1: "Ihre Sondereigentumsverwaltung",
-    heroTitle2: "Plattform.",
+    heroBadge: "Jetzt verf\u00FCgbar",
+    heroTitle1: "Immobilienverwaltung",
+    heroTitle2: "für deutsche Vermieter.",
     heroSub: 'Alles, was ein privater Vermieter braucht, um Mieteinheiten selbst zu verwalten. <strong class="text-white/85 font-medium">Miete, Mieter, Nebenkostenabrechnung, Dokumente.</strong> Die WEG bleibt bei Ihrem Verwalter.',
     emailPlaceholder: "ihre@email.de",
-    heroCta: "Fr\u00FChzugang sichern",
-    heroNote: "DSGVO-konform \u00B7 Kein Spam \u00B7 Kostenlos in der Beta",
+    heroCta: "Jetzt testen",
+    heroNote: "DSGVO-konform \u00B7 Kostenloser Starter-Plan \u00B7 Keine Kreditkarte erforderlich",
     successTitle: "Sie sind dabei!",
     successSub: "Wir benachrichtigen Sie, sobald Vermietler startet.",
     errorMessage: "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut.",
@@ -155,13 +155,13 @@ const t = {
       { title: "Volle Datenportabilit\u00E4t", desc: "Exportieren Sie alle Ihre Daten jederzeit. Kein Lock-in, niemals." },
     ],
 
-    ctaBadge: "Beta startet bald",
-    ctaTitle: "Auf die Warteliste",
-    ctaSub: "Geh\u00F6ren Sie zu den Ersten, wenn Vermietler startet. Kostenlos w\u00E4hrend der offenen Beta.",
+    ctaBadge: "Jetzt verf\u00FCgbar",
+    ctaTitle: "Bereit loszulegen?",
+    ctaSub: "Verwalten Sie Ihre Mieteinheiten ab heute. Kostenlos f\u00FCr Ihre erste Immobilie.",
     ctaNote: "Keine Kreditkarte \u00B7 Kein Spam \u00B7 Jederzeit k\u00FCndbar",
 
-    footerTagline: "Ihre Sondereigentumsverwaltung Plattform. F\u00FCr private Vermieter.",
-    footerStatus: "Fr\u00FChzugang offen",
+    footerTagline: "Immobilienverwaltung für deutsche Vermieter.",
+    footerStatus: "Jetzt verf\u00FCgbar",
     footerProduct: "Produkt",
     footerResources: "Ressourcen",
     footerLegal: "Rechtliches",
@@ -270,36 +270,21 @@ const entryId = "entry.741940622";
       <!-- Subtitle -->
       <p class="mx-auto mt-6 max-w-[580px] text-[clamp(16px,1.8vw,20px)] leading-relaxed text-white/60" set:html={t.heroSub} />
 
-      <!-- Waitlist form -->
-      <div class="mt-10" id="waitlist">
-        <form class="landing-waitlist-form mx-auto flex max-w-[460px] items-center gap-0 rounded-full border-[1.5px] border-white/20 bg-white/8 p-1.5 pl-5 backdrop-blur-md" id="hero-form">
-          <input
-            type="email"
-            id="hero-email"
-            required
-            placeholder={t.emailPlaceholder}
-            class="min-w-0 flex-1 border-none bg-transparent text-sm text-white outline-none placeholder:text-white/40"
-          />
-          <button type="submit" class="flex-shrink-0 rounded-full bg-brand-500 px-6 py-2.5 text-sm font-semibold text-white transition hover:bg-brand-400 hover:text-[#1e2d45]">
-            {t.heroCta}
-          </button>
-        </form>
+      <!-- CTA -->
+      <div class="mt-10">
+        <a
+          href="https://app.vermietler.com/login"
+          class="inline-flex items-center gap-2 rounded-full bg-brand-500 px-8 py-3.5 text-base font-semibold text-white shadow-lg transition hover:bg-brand-400 hover:-translate-y-px hover:shadow-xl"
+        >
+          {t.heroCta}
+          <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg>
+        </a>
         <p class="mt-3.5 flex items-center justify-center gap-1.5 text-xs text-white/35">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
           {t.heroNote}
         </p>
       </div>
 
-      <!-- Success message -->
-      <div class="hidden mx-auto max-w-[460px] items-center gap-3 rounded-2xl border border-emerald-500/30 bg-emerald-500/15 px-5 py-4" id="hero-success">
-        <div class="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-emerald-500/25 text-emerald-400">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-        </div>
-        <div class="text-left">
-          <div class="text-sm font-semibold text-white">{t.successTitle}</div>
-          <div class="text-xs text-white/50">{t.successSub}</div>
-        </div>
-      </div>
     </div>
   </div>
 </section>
@@ -554,19 +539,13 @@ const entryId = "entry.741940622";
     </div>
     <h2 class="font-display text-[clamp(28px,3.5vw,48px)] font-bold tracking-tight text-white" style="letter-spacing:-0.03em;line-height:1.15">{t.ctaTitle}</h2>
     <p class="mx-auto mt-4 max-w-md text-[17px] leading-relaxed text-white/55">{t.ctaSub}</p>
-    <form class="mx-auto mt-10 flex max-w-[440px] items-center gap-0 rounded-full border-[1.5px] border-white/20 bg-white/8 p-1.5 pl-5 backdrop-blur-md landing-waitlist-form" id="cta-form">
-      <input
-        type="email"
-        id="cta-email"
-        placeholder={t.emailPlaceholder}
-        required
-        class="min-w-0 flex-1 border-none bg-transparent text-sm text-white outline-none placeholder:text-white/35"
-      />
-      <button type="submit" class="flex-shrink-0 rounded-full bg-brand-500 px-6 py-2.5 text-sm font-semibold text-white transition hover:bg-brand-400 hover:text-[#1e2d45]" id="cta-btn">
-        {t.heroCta}
-      </button>
-    </form>
-    <p class="mt-3.5 text-xs text-white/30">{t.ctaNote}</p>
+    <a
+      href="https://app.vermietler.com/login"
+      class="mt-10 inline-flex items-center gap-2 rounded-full bg-brand-500 px-8 py-3.5 text-base font-semibold text-white shadow-lg transition hover:bg-brand-400 hover:-translate-y-px hover:shadow-xl"
+    >
+      {t.heroCta}
+      <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg>
+    </a>
   </div>
 </section>
 
@@ -675,7 +654,7 @@ const entryId = "entry.741940622";
     pointer-events: none;
   }
 
-  /* ── Waitlist form focus ── */
+  /* ── Form focus (legacy) ── */
   .landing-waitlist-form:focus-within {
     border-color: rgba(96,165,250,0.5);
     box-shadow: 0 0 0 4px rgba(37,99,235,0.12);
