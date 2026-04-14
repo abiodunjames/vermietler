@@ -18,15 +18,21 @@ const t = {
     successSub: "Your account is ready.",
     errorMessage: "Something went wrong. Please try again.",
 
-    featEyebrow: "What\u2019s coming",
+    featEyebrow: "Features",
     featTitle: "Everything a private landlord needs",
     featSub: "One platform to replace the spreadsheets, paper folders, and disconnected tools.",
     features: [
-      { title: "Property & unit management", desc: "Organize your entire portfolio in a clear hierarchy. Track units, leases, and tenants across multiple properties from a single dashboard.", tag: "In beta", tagStyle: "blue" },
-      { title: "Banking & rent tracking", desc: "Auto-import transactions and reconcile payments instantly. See at a glance who\u2019s paid, what\u2019s outstanding, and where your money goes.", tag: "In beta", tagStyle: "blue" },
-      { title: "AI receipt capture", desc: "Snap a photo of any receipt or invoice. Our AI extracts the vendor, amount, date, and category automatically \u2014 no manual entry needed.", tag: "AI-powered", tagStyle: "orange" },
-      { title: "Nebenkosten statements", desc: "Generate legally compliant operating cost statements with a guided step-by-step wizard. PDF output ready to send to tenants in minutes.", tag: "In Beta", tagStyle: "blue", highlight: true },
-      { title: "Document vault", desc: "Upload, tag, and share documents securely with tenants. Rental agreements, \u00DCbergabeprotokolle, insurance docs \u2014 all organised and accessible.", tag: "Coming soon", tagStyle: "gray" },
+      { title: "Property & unit management", desc: "Organize your entire portfolio in a clear hierarchy. Track units, leases, and tenants across multiple properties from a single dashboard.", tag: "Available", tagStyle: "blue" },
+      { title: "Banking & rent tracking", desc: "Auto-import transactions and reconcile payments instantly. See at a glance who\u2019s paid, what\u2019s outstanding, and where your money goes.", tag: "Coming soon", tagStyle: "gray" },
+      { title: "AI receipt capture", desc: "Snap a photo of any receipt or invoice. Our AI extracts the vendor, amount, date, and category automatically \u2014 no manual entry needed.", tag: "Coming soon", tagStyle: "gray" },
+      { title: "Nebenkosten statements", desc: "Generate legally compliant operating cost statements with a guided step-by-step wizard. PDF output ready to send to tenants in minutes.", tag: "Available", tagStyle: "blue", highlight: true },
+      { title: "Expense tracking & recurring costs", desc: "Log one-time expenses or set up recurring costs like Hausgeld, insurance, and Grundsteuer. Everything auto-categorised and ready for your Steuererklärung.", tag: "Available", tagStyle: "blue" },
+      { title: "Cashflow dashboard", desc: "See rental income vs. expenses at a glance. Monthly and yearly charts, per-property breakdown, and net yield tracking over time.", tag: "Available", tagStyle: "blue" },
+      { title: "Document management", desc: "Upload, tag, and share documents securely with tenants. Rental agreements, Übergabeprotokolle, insurance docs \u2014 all organised and searchable.", tag: "Available", tagStyle: "blue" },
+      { title: "Damage reports", desc: "Tenants report issues with photos directly in the app. Track status from reported to resolved, assign tradespeople, and keep a full repair history.", tag: "Available", tagStyle: "blue" },
+      { title: "Tradesperson contacts", desc: "Maintain a directory of your trusted Handwerker, Hausmeister, and service providers. Link them to properties and assign them to repair jobs.", tag: "Available", tagStyle: "blue" },
+      { title: "Tenant communication", desc: "Send messages and documents to tenants directly from the platform. Keep a full audit trail of every interaction, no more lost emails.", tag: "Available", tagStyle: "blue" },
+      { title: "Meter readings", desc: "Record water, heating, and electricity meter readings per unit. Automatic consumption calculation for accurate Nebenkostenabrechnungen.", tag: "Available", tagStyle: "blue" },
       { title: "DSGVO compliant", desc: "Built with German privacy law in mind from day one. Data hosted in Germany, end-to-end encrypted, full data portability and deletion on request.", tagStyle: "green" },
     ],
 
@@ -109,15 +115,21 @@ const t = {
     successSub: "Wir benachrichtigen Sie, sobald Vermietler startet.",
     errorMessage: "Etwas ist schiefgelaufen. Bitte versuchen Sie es erneut.",
 
-    featEyebrow: "Was kommt",
+    featEyebrow: "Funktionen",
     featTitle: "Alles was ein deutscher Vermieter braucht",
     featSub: "Eine Plattform ersetzt Tabellen, Papierordner und einzelne Tools.",
     features: [
-      { title: "Immobilien- & Einheitenverwaltung", desc: "Organisieren Sie Ihr gesamtes Portfolio \u00FCbersichtlich. Verfolgen Sie Einheiten, Mietvertr\u00E4ge und Mieter \u00FCber mehrere Objekte von einem Dashboard aus.", tag: "In Beta", tagStyle: "blue" },
-      { title: "Banking & Mietverfolgung", desc: "Transaktionen automatisch importieren und Zahlungen sofort abgleichen. Sehen Sie auf einen Blick, wer gezahlt hat und was aussteht.", tag: "In Beta", tagStyle: "blue" },
+      { title: "Immobilien- & Einheitenverwaltung", desc: "Organisieren Sie Ihr gesamtes Portfolio \u00FCbersichtlich. Verfolgen Sie Einheiten, Mietvertr\u00E4ge und Mieter \u00FCber mehrere Objekte von einem Dashboard aus.", tag: "Verf\u00FCgbar", tagStyle: "blue" },
+      { title: "Banking & Mietverfolgung", desc: "Transaktionen automatisch importieren und Zahlungen sofort abgleichen. Sehen Sie auf einen Blick, wer gezahlt hat und was aussteht.", tag: "Bald verf\u00FCgbar", tagStyle: "gray" },
       { title: "KI-Belegerfassung", desc: "Fotografieren Sie Belege oder Rechnungen. Unsere KI extrahiert Lieferant, Betrag, Datum und Kategorie automatisch.", tag: "KI-gest\u00FCtzt", tagStyle: "orange" },
-      { title: "Nebenkostenabrechnung", desc: "Erstellen Sie rechtskonforme Betriebskostenabrechnungen mit einem gef\u00FChrten Schritt-f\u00FCr-Schritt-Assistenten. PDF-Ausgabe sofort versandfertig.", tag: "In Beta", tagStyle: "blue", highlight: true },
-      { title: "Dokumenten-Tresor", desc: "Dokumente hochladen, taggen und sicher mit Mietern teilen. Mietvertr\u00E4ge, \u00DCbergabeprotokolle, Versicherungsdokumente \u2014 alles organisiert.", tag: "Bald verf\u00FCgbar", tagStyle: "gray" },
+      { title: "Nebenkostenabrechnung", desc: "Erstellen Sie rechtskonforme Betriebskostenabrechnungen mit einem gef\u00FChrten Schritt-f\u00FCr-Schritt-Assistenten. PDF-Ausgabe sofort versandfertig.", tag: "Verf\u00FCgbar", tagStyle: "blue", highlight: true },
+      { title: "Ausgabenverfolgung & wiederkehrende Kosten", desc: "Einzelausgaben erfassen oder wiederkehrende Kosten wie Hausgeld, Versicherung und Grundsteuer einrichten. Alles automatisch kategorisiert und bereit f\u00FCr die Steuererkl\u00E4rung.", tag: "Verf\u00FCgbar", tagStyle: "blue" },
+      { title: "Cashflow-Dashboard", desc: "Mieteinnahmen vs. Ausgaben auf einen Blick. Monats- und Jahresdiagramme, Aufschl\u00FCsselung pro Immobilie und Netto-Rendite-Tracking \u00FCber die Zeit.", tag: "Verf\u00FCgbar", tagStyle: "blue" },
+      { title: "Dokumentenverwaltung", desc: "Dokumente hochladen, taggen und sicher mit Mietern teilen. Mietvertr\u00E4ge, \u00DCbergabeprotokolle, Versicherungsdokumente \u2014 alles organisiert und durchsuchbar.", tag: "Verf\u00FCgbar", tagStyle: "blue" },
+      { title: "Schadensmeldungen", desc: "Mieter melden Sch\u00E4den mit Fotos direkt in der App. Status von gemeldet bis gel\u00F6st verfolgen, Handwerker zuweisen und komplette Reparaturhistorie f\u00FChren.", tag: "Verf\u00FCgbar", tagStyle: "blue" },
+      { title: "Handwerker-Kontakte", desc: "Verwalten Sie Ihre vertrauensw\u00FCrdigen Handwerker, Hausmeister und Dienstleister. Verkn\u00FCpfen Sie sie mit Immobilien und weisen Sie sie Reparaturauftr\u00E4gen zu.", tag: "Verf\u00FCgbar", tagStyle: "blue" },
+      { title: "Mieter-Kommunikation", desc: "Nachrichten und Dokumente direkt \u00FCber die Plattform an Mieter senden. Vollst\u00E4ndiges Protokoll jeder Interaktion, keine verlorenen E-Mails mehr.", tag: "Verf\u00FCgbar", tagStyle: "blue" },
+      { title: "Z\u00E4hlerst\u00E4nde", desc: "Wasser-, Heizungs- und Stromz\u00E4hlerst\u00E4nde pro Einheit erfassen. Automatische Verbrauchsberechnung f\u00FCr exakte Nebenkostenabrechnungen.", tag: "Verf\u00FCgbar", tagStyle: "blue" },
       { title: "DSGVO-konform", desc: "Von Anfang an nach deutschem Datenschutzrecht entwickelt. Daten in Deutschland gehostet, Ende-zu-Ende verschl\u00FCsselt.", tagStyle: "green" },
     ],
 
@@ -209,19 +221,37 @@ const featureIcons = [
   '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ea580c" stroke-width="2"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>',
   // Nebenkosten
   '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--color-brand-600)" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>',
-  // Document vault
+  // Expense tracking
+  '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#d97706" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>',
+  // Cashflow dashboard
+  '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0891b2" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>',
+  // Document management
   '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>',
+  // Damage reports
+  '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#dc2626" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>',
+  // Tradesperson contacts
+  '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>',
+  // Tenant communication
+  '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--color-brand-500)" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>',
+  // Meter readings
+  '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0891b2" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>',
   // DSGVO
   '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#059669" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>',
 ];
 
 const featureIconBgs = [
-  "background:var(--color-brand-50)",
-  "background:#ecfdf5",
-  "background:#fff7ed",
-  "background:var(--color-brand-100)",
-  "background:#f5f3ff",
-  "background:#ecfdf5",
+  "background:var(--color-brand-50)",   // Property
+  "background:#ecfdf5",                 // Banking
+  "background:#fff7ed",                 // AI receipt
+  "background:var(--color-brand-100)",  // Nebenkosten
+  "background:#fffbeb",                 // Expense tracking
+  "background:#ecfeff",                 // Cashflow
+  "background:#f5f3ff",                 // Documents
+  "background:#fef2f2",                 // Damage reports
+  "background:#ecfdf5",                 // Tradesperson
+  "background:var(--color-brand-50)",   // Tenant communication
+  "background:#ecfeff",                 // Meter readings
+  "background:#ecfdf5",                 // DSGVO
 ];
 
 const trustIcons = [
