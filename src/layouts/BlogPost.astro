@@ -20,6 +20,17 @@ const formattedDate = date.toLocaleDateString(lang === "de" ? "de-DE" : "en-US",
 });
 const backLabel = lang === "de" ? "Alle Artikel" : "All posts";
 const backHref = lang === "de" ? "/de/blog" : "/blog";
+const blogLabel = "Blog";
+const readingTimeLabel = lang === "de" ? "Min. Lesezeit" : "min read";
+const tocLabel = lang === "de" ? "Inhalt" : "Contents";
+const tocCollapse = lang === "de" ? "Einklappen" : "Collapse";
+const tocExpand = lang === "de" ? "Aufklappen" : "Expand";
+const shareLabel = lang === "de" ? "Teilen" : "Share";
+const copyLinkLabel = lang === "de" ? "Link kopiert!" : "Link copied!";
+const progressLabel = lang === "de" ? "Lesefortschritt" : "Reading progress";
+const remainingLabel = lang === "de" ? "Min. verbleibend" : "min remaining";
+const finishedLabel = lang === "de" ? "Artikel gelesen" : "Article complete";
+const authorInitials = author.split(" ").map(w => w[0]).join("").slice(0, 2).toUpperCase();
 ---
 
 <Layout title={`${title} — Vermietler Blog`} description={description} lang={lang}>
@@ -34,15 +45,8 @@ const backHref = lang === "de" ? "/de/blog" : "/blog";
       headline: title,
       description: description,
       datePublished: date.toISOString(),
-      author: {
-        "@type": "Person",
-        name: author,
-      },
-      publisher: {
-        "@type": "Organization",
-        name: "Vermietler",
-        url: "https://vermietler.com",
-      },
+      author: { "@type": "Person", name: author },
+      publisher: { "@type": "Organization", name: "Vermietler", url: "https://vermietler.com" },
       inLanguage: lang === "de" ? "de-DE" : "en-US",
       keywords: tags.join(", "),
     })}
@@ -62,43 +66,298 @@ const backHref = lang === "de" ? "/de/blog" : "/blog";
     })}
   />
 
-  <main class="pt-32 pb-24">
-    <article class="mx-auto max-w-3xl px-6">
-      <!-- Back link (commented out) -->
-      <!-- <a
-        href={backHref}
-        class="inline-flex items-center gap-1.5 text-sm text-gray-500 transition hover:text-gray-900"
-      >
-        <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
-        </svg>
-        {backLabel}
-      </a> -->
+  <!-- Reading progress bar -->
+  <div class="fixed top-0 left-0 right-0 z-[60] h-[3px] pointer-events-none">
+    <div id="progress-bar" class="h-[3px] rounded-r-full bg-gradient-to-r from-brand-500 to-brand-400 transition-[width] duration-100" style="width:0%"></div>
+  </div>
 
-      <!-- Header -->
-      <header class="mt-8">
-        <div class="flex flex-wrap gap-2">
-          {tags.map((tag) => (
-            <span class="rounded-full bg-brand-50 px-2.5 py-0.5 text-xs font-medium text-brand-700">
-              {tag}
-            </span>
-          ))}
-        </div>
-        <h1 class="mt-4 font-display text-3xl font-semibold tracking-tight text-gray-900 sm:text-4xl">
-          {title}
-        </h1>
-        <div class="mt-4 flex items-center gap-3 text-sm text-gray-500">
-          <span>{author}</span>
-          <span class="h-1 w-1 rounded-full bg-gray-300"></span>
-          <time datetime={date.toISOString()}>{formattedDate}</time>
-        </div>
-      </header>
+  <!-- Hero header -->
+  <div class="relative overflow-hidden pt-28 pb-0" style="background:linear-gradient(160deg,#1e2d45 0%,#2d4068 55%,#1a3560 100%)">
+    <div class="pointer-events-none absolute inset-0 opacity-[0.04]" style="background-image:url(&quot;data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%2360a5fa'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E&quot;);background-repeat:repeat;"></div>
+    <div class="relative mx-auto max-w-[820px] px-6">
+      <!-- Breadcrumbs -->
+      <nav class="mb-5 flex items-center gap-2 text-[13px] text-white/40">
+        <a href={backHref} class="text-white/50 no-underline transition hover:text-white/80">{blogLabel}</a>
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="shrink-0"><polyline points="9 18 15 12 9 6"/></svg>
+        <span class="truncate">{title}</span>
+      </nav>
 
-      <!-- Content -->
-      <div class="prose mt-10 max-w-none prose-headings:font-display prose-headings:font-semibold prose-headings:tracking-tight prose-a:text-brand-500 prose-a:no-underline hover:prose-a:underline prose-p:text-gray-600 prose-li:text-gray-600 prose-strong:text-gray-900">
-        <slot />
+      <!-- Tags -->
+      <div class="mb-4 flex flex-wrap gap-2">
+        {tags.slice(0, 3).map((tag) => (
+          <span class="inline-flex items-center gap-1.5 rounded-full border border-blue-400/25 bg-blue-400/15 px-3 py-1 text-xs font-semibold tracking-wide text-brand-300">
+            {tag}
+          </span>
+        ))}
       </div>
+
+      <!-- Title -->
+      <h1 class="mb-4 font-display text-[clamp(26px,3.5vw,44px)] font-bold leading-[1.15] tracking-tight text-white" style="letter-spacing:-0.03em">
+        {title}
+      </h1>
+
+      <!-- Excerpt -->
+      <p class="mb-8 max-w-[660px] text-[17px] leading-relaxed text-white/55">
+        {description}
+      </p>
+
+      <!-- Meta row -->
+      <div class="flex flex-wrap items-center gap-5 pb-7">
+        <div class="flex items-center gap-2.5">
+          <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border-2 border-white/20 bg-brand-700 font-display text-[13px] font-bold text-brand-200">
+            {authorInitials}
+          </div>
+          <div>
+            <div class="text-sm font-semibold text-white">{author}</div>
+          </div>
+        </div>
+        <div class="h-8 w-px bg-white/15"></div>
+        <div class="flex items-center gap-1.5 text-[13px] text-white/45">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          <strong class="font-medium text-white/70">{formattedDate}</strong>
+        </div>
+        <div class="flex items-center gap-1.5 text-[13px] text-white/45">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <strong class="font-medium text-white/70" id="read-time-hero"></strong>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main content -->
+  <main class="mx-auto max-w-[820px] px-6 pt-12 pb-24">
+
+    <!-- Floating share rail (desktop) -->
+    <div id="share-rail" class="fixed left-[max(1rem,calc(50%-440px-80px))] top-28 z-30 hidden flex-col items-center gap-2.5 lg:flex">
+      <button onclick="shareTo('twitter')" class="group flex h-9 w-9 items-center justify-center rounded-full border border-gray-200 bg-white text-gray-400 shadow-xs transition hover:border-brand-300 hover:bg-brand-50 hover:text-brand-500" title="Share on X">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4l11.733 16h4.267l-11.733-16zM4 20l6.768-6.768M20 4l-6.768 6.768"/></svg>
+      </button>
+      <button onclick="shareTo('linkedin')" class="group flex h-9 w-9 items-center justify-center rounded-full border border-gray-200 bg-white text-gray-400 shadow-xs transition hover:border-brand-300 hover:bg-brand-50 hover:text-brand-500" title="Share on LinkedIn">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+      </button>
+      <button onclick="copyLink()" class="group flex h-9 w-9 items-center justify-center rounded-full border border-gray-200 bg-white text-gray-400 shadow-xs transition hover:border-brand-300 hover:bg-brand-50 hover:text-brand-500" title="Copy link">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+      </button>
+      <div class="h-px w-5 bg-gray-200"></div>
+      <div class="text-[10px] font-semibold tracking-wider text-gray-400 uppercase">{shareLabel}</div>
+    </div>
+
+    <!-- Table of contents -->
+    <div id="toc-card" class="mb-10 overflow-hidden rounded-xl border border-gray-200 bg-white shadow-xs">
+      <div class="flex items-center justify-between border-b border-gray-100 bg-gray-50 px-5 py-3.5">
+        <div class="flex items-center gap-2 font-display text-[13px] font-bold text-gray-800">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+          {tocLabel}
+        </div>
+        <button id="toc-toggle" class="text-xs font-medium text-brand-500 transition hover:text-brand-700">{tocCollapse}</button>
+      </div>
+      <nav id="toc-list" class="px-5 py-3"></nav>
+    </div>
+
+    <!-- Article prose -->
+    <article id="article-content" class="blog-prose prose max-w-none prose-headings:font-display prose-headings:font-semibold prose-headings:tracking-tight prose-a:text-brand-600 prose-a:decoration-brand-200 prose-a:underline-offset-[3px] hover:prose-a:decoration-brand-400 prose-p:text-gray-700 prose-li:text-gray-700 prose-strong:text-gray-900 prose-table:text-sm prose-th:bg-gray-50 prose-th:text-gray-600 prose-th:font-semibold prose-th:text-xs prose-th:uppercase prose-th:tracking-wider prose-td:text-gray-700">
+      <slot />
     </article>
+
+    <!-- Bottom share bar (mobile + desktop) -->
+    <div class="mt-14 flex items-center justify-between border-t border-gray-200 pt-6">
+      <div class="flex flex-wrap gap-2">
+        {tags.map((tag) => (
+          <span class="rounded-full border border-gray-200 bg-white px-3 py-1 text-xs font-medium text-gray-600 transition hover:border-brand-300 hover:bg-brand-50 hover:text-brand-700">
+            {tag}
+          </span>
+        ))}
+      </div>
+      <div class="flex items-center gap-2">
+        <button onclick="shareTo('twitter')" class="flex h-9 w-9 items-center justify-center rounded-full border border-gray-200 bg-white text-gray-400 transition hover:border-brand-300 hover:text-brand-500" title="Share on X">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4l11.733 16h4.267l-11.733-16zM4 20l6.768-6.768M20 4l-6.768 6.768"/></svg>
+        </button>
+        <button onclick="shareTo('linkedin')" class="flex h-9 w-9 items-center justify-center rounded-full border border-gray-200 bg-white text-gray-400 transition hover:border-brand-300 hover:text-brand-500" title="Share on LinkedIn">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        </button>
+        <button onclick="copyLink()" class="flex h-9 w-9 items-center justify-center rounded-full border border-gray-200 bg-white text-gray-400 transition hover:border-brand-300 hover:text-brand-500" title="Copy link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Author bio -->
+    <div class="mt-10 flex gap-5 rounded-2xl border border-gray-200 bg-gray-50 p-7">
+      <div class="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-brand-100 font-display text-xl font-bold text-brand-700">
+        {authorInitials}
+      </div>
+      <div>
+        <div class="font-display text-lg font-bold text-gray-900">{author}</div>
+        <div class="mt-0.5 text-sm text-brand-500 font-medium">{lang === "de" ? "Vermietler Team" : "Vermietler Team"}</div>
+        <a href={backHref} class="mt-3 inline-flex items-center gap-1.5 rounded-full border border-gray-200 bg-white px-3 py-1.5 text-xs font-medium text-gray-600 no-underline transition hover:border-brand-300 hover:text-brand-700">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/></svg>
+          {backLabel}
+        </a>
+      </div>
+    </div>
+
   </main>
+
   <Footer lang={lang} />
 </Layout>
+
+<style is:global>
+  /* ── Callout boxes (used in markdown via HTML) ── */
+  .callout {
+    display: flex;
+    gap: 14px;
+    padding: 18px 20px;
+    border-radius: 12px;
+    border: 1px solid;
+    margin: 28px 0;
+    font-family: var(--font-sans);
+    font-size: 14.5px;
+    line-height: 1.65;
+  }
+  .callout-icon { flex-shrink: 0; margin-top: 1px; }
+  .callout-title { font-weight: 700; margin-bottom: 4px; font-size: 14.5px; }
+  .callout-info { background: var(--color-brand-50); border-color: var(--color-brand-200); color: var(--color-brand-700); }
+  .callout-warn { background: #fef3c7; border-color: rgba(217,119,6,.3); color: #92400e; }
+  .callout-success { background: #d1fae5; border-color: rgba(5,150,105,.3); color: #047857; }
+  .callout-error { background: #fee2e2; border-color: rgba(220,38,38,.3); color: #991b1b; }
+
+  /* ── Law / legal reference box ── */
+  .law-box { border: 1.5px solid #1e2d45; border-radius: 16px; overflow: hidden; margin: 32px 0; font-family: var(--font-sans); }
+  .law-box-hd { background: #1e2d45; padding: 12px 20px; display: flex; align-items: center; gap: 8px; }
+  .law-box-label { font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: rgba(255,255,255,.5); }
+  .law-box-ref { font-family: var(--font-display); font-size: 14px; font-weight: 700; color: #fff; }
+  .law-box-body { padding: 18px 20px; background: var(--color-gray-50); }
+  .law-box-body p { font-size: 14.5px; color: var(--color-gray-700); line-height: 1.7; margin: 0; }
+
+  /* ── Formula block ── */
+  .formula { background: var(--color-gray-900); border-radius: 12px; padding: 20px 24px; margin: 28px 0; font-family: monospace; }
+  .formula-label { font-size: 10.5px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--color-gray-500); margin-bottom: 10px; }
+  .formula-expr { font-size: 16px; color: var(--color-brand-300); line-height: 1.6; }
+  .formula-expr .op { color: rgba(255,255,255,.4); }
+  .formula-expr .val { color: #fbbf24; }
+  .formula-result { margin-top: 10px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,.1); font-size: 13.5px; color: rgba(255,255,255,.45); }
+
+  /* ── Blog prose table enhancements ── */
+  .blog-prose table { border-collapse: collapse; width: 100%; font-family: var(--font-sans); overflow: hidden; border-radius: 12px; border: 1px solid var(--color-gray-200); }
+  .blog-prose thead tr { border-bottom: 1.5px solid var(--color-gray-200); }
+  .blog-prose tbody tr { border-bottom: 1px solid var(--color-gray-100); }
+  .blog-prose tbody tr:last-child { border-bottom: none; }
+  .blog-prose tbody tr:hover { background: var(--color-brand-25); }
+
+  /* ── TOC item styles ── */
+  .toc-item { display: flex; align-items: flex-start; gap: 8px; padding: 6px 0; border-bottom: 1px solid var(--color-gray-100); cursor: pointer; transition: color .13s; }
+  .toc-item:last-child { border-bottom: none; }
+  .toc-num { font-family: monospace; font-size: 11px; color: var(--color-brand-400); min-width: 22px; margin-top: 2px; font-weight: 600; }
+  .toc-text { font-size: 13.5px; color: var(--color-gray-600); line-height: 1.5; transition: color .13s; }
+  .toc-item:hover .toc-text { color: var(--color-brand-600); }
+  .toc-item.active .toc-text { color: var(--color-brand-600); font-weight: 600; }
+  .toc-item.active .toc-num { color: var(--color-brand-600); }
+
+  /* ── Blockquote enhancement ── */
+  .blog-prose blockquote { border-left: 4px solid var(--color-brand-400); background: var(--color-brand-25); border-radius: 0 12px 12px 0; padding: 20px 24px 20px 28px; }
+</style>
+
+<script define:vars={{ tocCollapse, tocExpand, copyLinkLabel, remainingLabel, finishedLabel }}>
+  // ── Reading time calculation ──
+  const articleEl = document.getElementById('article-content');
+  const wordCount = articleEl ? articleEl.textContent.trim().split(/\s+/).length : 0;
+  const readTime = Math.max(1, Math.round(wordCount / 200));
+  const heroTime = document.getElementById('read-time-hero');
+  if (heroTime) heroTime.textContent = readTime + ' min read';
+
+  // ── Build TOC from h2 headings ──
+  const tocList = document.getElementById('toc-list');
+  if (articleEl && tocList) {
+    const headings = articleEl.querySelectorAll('h2[id]');
+    if (headings.length === 0) {
+      // Auto-generate IDs for h2s without them
+      const allH2 = articleEl.querySelectorAll('h2');
+      allH2.forEach((h, i) => {
+        if (!h.id) h.id = 'section-' + (i + 1);
+      });
+    }
+    const h2s = articleEl.querySelectorAll('h2');
+    h2s.forEach((h, i) => {
+      const item = document.createElement('div');
+      item.className = 'toc-item' + (i === 0 ? ' active' : '');
+      item.innerHTML = `<span class="toc-num">${String(i + 1).padStart(2, '0')}</span><span class="toc-text">${h.textContent}</span>`;
+      item.addEventListener('click', () => {
+        h.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      });
+      tocList.appendChild(item);
+    });
+
+    // Hide TOC if no headings
+    if (h2s.length === 0) {
+      document.getElementById('toc-card').style.display = 'none';
+    }
+  }
+
+  // ── TOC toggle ──
+  let tocOpen = true;
+  const tocToggle = document.getElementById('toc-toggle');
+  if (tocToggle) {
+    tocToggle.addEventListener('click', () => {
+      tocOpen = !tocOpen;
+      tocList.style.display = tocOpen ? 'block' : 'none';
+      tocToggle.textContent = tocOpen ? tocCollapse : tocExpand;
+    });
+  }
+
+  // ── Reading progress ──
+  function updateProgress() {
+    if (!articleEl) return;
+    const rect = articleEl.getBoundingClientRect();
+    const total = articleEl.offsetHeight;
+    const scrolled = Math.max(0, -rect.top);
+    const pct = Math.min(100, Math.round((scrolled / total) * 100));
+
+    const bar = document.getElementById('progress-bar');
+    if (bar) bar.style.width = pct + '%';
+
+    // TOC active state
+    const h2s = articleEl.querySelectorAll('h2');
+    const tocItems = document.querySelectorAll('.toc-item');
+    let activeIdx = 0;
+    h2s.forEach((h, i) => {
+      if (h.getBoundingClientRect().top < 120) activeIdx = i;
+    });
+    tocItems.forEach((item, i) => {
+      item.classList.toggle('active', i === activeIdx);
+    });
+
+    // Show/hide floating share rail based on article visibility
+    const rail = document.getElementById('share-rail');
+    if (rail) {
+      const show = rect.top < 0 && rect.bottom > 200;
+      rail.style.opacity = show ? '1' : '0';
+      rail.style.pointerEvents = show ? 'auto' : 'none';
+    }
+  }
+
+  window.addEventListener('scroll', updateProgress, { passive: true });
+  updateProgress();
+
+  // ── Share functions ──
+  window.shareTo = function(platform) {
+    const url = encodeURIComponent(window.location.href);
+    const text = encodeURIComponent(document.title);
+    let shareUrl = '';
+    if (platform === 'twitter') {
+      shareUrl = `https://x.com/intent/tweet?url=${url}&text=${text}`;
+    } else if (platform === 'linkedin') {
+      shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${url}`;
+    }
+    if (shareUrl) window.open(shareUrl, '_blank', 'width=600,height=400');
+  };
+
+  window.copyLink = function() {
+    navigator.clipboard.writeText(window.location.href).then(() => {
+      const msg = document.createElement('div');
+      msg.style.cssText = 'position:fixed;bottom:28px;left:50%;transform:translateX(-50%);background:#1e2d45;color:#fff;padding:10px 20px;border-radius:999px;font-size:13.5px;font-family:system-ui,sans-serif;font-weight:500;box-shadow:0 8px 24px rgba(0,0,0,.2);z-index:9999;display:flex;align-items:center;gap:8px;';
+      msg.innerHTML = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> ' + copyLinkLabel;
+      document.body.appendChild(msg);
+      setTimeout(() => { msg.style.opacity='0'; msg.style.transition='opacity .3s'; setTimeout(()=>msg.remove(),300); }, 2000);
+    });
+  };
+</script>
