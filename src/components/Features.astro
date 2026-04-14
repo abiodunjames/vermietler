@@ -47,6 +47,26 @@ const t = {
         description: "Track water, heating, and electricity consumption per unit. Import readings via CSV or enter manually.",
       },
       {
+        icon: "recurring",
+        title: "Recurring expenses",
+        description: "Set up recurring costs like insurance, maintenance contracts, or property tax. They're auto-generated monthly and flow into your statements.",
+      },
+      {
+        icon: "chart",
+        title: "Cashflow charts",
+        description: "See rental income, expenses, and net cashflow at a glance. Filter by property, unit, or time period with interactive charts.",
+      },
+      {
+        icon: "damage",
+        title: "Damage reports",
+        description: "Tenants submit damage reports with photos through the portal. Track status, assign priority, and keep a full repair history.",
+      },
+      {
+        icon: "contacts",
+        title: "Handyman & contacts",
+        description: "Keep a directory of plumbers, electricians, and service providers. Link contacts to properties for quick access when issues arise.",
+      },
+      {
         icon: "shield",
         title: "DSGVO compliant",
         description: "Built with German privacy law in mind. Audit logs, data export, retention policies, and encryption at rest.",
@@ -94,6 +114,26 @@ const t = {
         description: "Wasser-, Heizungs- und Stromverbrauch pro Einheit erfassen. Import per CSV oder manuelle Eingabe.",
       },
       {
+        icon: "recurring",
+        title: "Wiederkehrende Ausgaben",
+        description: "Versicherungen, Wartungsverträge oder Grundsteuer als wiederkehrende Kosten anlegen. Automatisch monatlich erzeugt und in die Abrechnung übernommen.",
+      },
+      {
+        icon: "chart",
+        title: "Cashflow-Diagramme",
+        description: "Mieteinnahmen, Ausgaben und Netto-Cashflow auf einen Blick. Nach Immobilie, Einheit oder Zeitraum filtern mit interaktiven Diagrammen.",
+      },
+      {
+        icon: "damage",
+        title: "Schadensmeldungen",
+        description: "Mieter melden Schäden mit Fotos über das Portal. Status verfolgen, Priorität zuweisen und eine vollständige Reparaturhistorie führen.",
+      },
+      {
+        icon: "contacts",
+        title: "Handwerker & Kontakte",
+        description: "Verzeichnis für Klempner, Elektriker und Dienstleister. Kontakte mit Immobilien verknüpfen für schnellen Zugriff bei Problemen.",
+      },
+      {
         icon: "shield",
         title: "DSGVO-konform",
         description: "Entwickelt nach deutschem Datenschutzrecht. Audit-Logs, Datenexport, Aufbewahrungsrichtlinien und Verschlüsselung.",
@@ -110,6 +150,10 @@ const iconPaths: Record<string, string> = {
   folder: "M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44z",
   message: "M8.625 12a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 0 1-2.555-.337A5.972 5.972 0 0 1 5.41 20.97a5.969 5.969 0 0 1-.474-.065 4.48 4.48 0 0 0 .978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z",
   meter: "M3.75 3v11.25A2.25 2.25 0 0 0 6 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0 1 18 16.5h-2.25m-7.5 0h7.5m-7.5 0-1 3m8.5-3 1 3m0 0 .5 1.5m-.5-1.5h-9.5m0 0-.5 1.5M9 11.25v1.5M12 9v3.75m3-6v6",
+  recurring: "M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99",
+  chart: "M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 0 1 3 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V4.125z",
+  damage: "M11.42 15.17 17.25 21A2.652 2.652 0 0 0 21 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 1 1-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 0 0 4.486-6.336l-3.276 3.277a3.004 3.004 0 0 1-2.25-2.25l3.276-3.276a4.5 4.5 0 0 0-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085",
+  contacts: "M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0z",
   shield: "M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z",
 };
 ---
