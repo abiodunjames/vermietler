@@ -1,13 +1,13 @@
 ---
 title: "Erste Mietimmobilie in Deutschland finanzieren: Schritt-für-Schritt-Anleitung (2026)"
-description: "Vollständiger Leitfaden zur Finanzierung einer Mietimmobilie in Deutschland. Eigenkapitalbedarf, wie Banken Mieteinnahmen bewerten, Annuitätendarlehen-Struktur, KfW-Programme, Tilgungsstrategie und Zinsbindung — ein praktischer Leitfaden für Erst-Vermieter und Kapitalanleger."
+description: "Vollständiger Leitfaden zur Finanzierung einer Mietimmobilie in Deutschland. Eigenkapitalbedarf, wie Banken Mieteinnahmen bewerten, Annuitätendarlehen-Struktur, KfW-Programme, Tilgungsstrategie und Zinsbindung, ein praktischer Leitfaden für Erst-Vermieter und Kapitalanleger."
 date: 2026-04-03
 author: "Vermietler Team"
 lang: "de"
 tags: ["Finanzierung", "Hypothek", "Eigenkapital", "KfW", "Kapitalanlage", "Erst-Vermieter", "Annuitätendarlehen"]
 ---
 
-Eine Mietimmobilie in Deutschland kaufen, ohne zu verstehen, wie Banken über Ihren Kredit denken — das ist der teuerste Fehler, den ein Erstinvestor machen kann. Nicht weil der Kauf schiefgeht, sondern weil die Finanzierungsbedingungen, die Sie akzeptieren, Ihren Cashflow, Ihre Steuerposition und Ihre Ausstiegsflexibilität für die nächsten 10–15 Jahre bestimmen.
+Eine Mietimmobilie in Deutschland kaufen, ohne zu verstehen, wie Banken über Ihren Kredit denken, das ist der teuerste Fehler, den ein Erstinvestor machen kann. Nicht weil der Kauf schiefgeht, sondern weil die Finanzierungsbedingungen, die Sie akzeptieren, Ihren Cashflow, Ihre Steuerposition und Ihre Ausstiegsflexibilität für die nächsten 10–15 Jahre bestimmen.
 
 Dieser Leitfaden führt Sie durch den gesamten Finanzierungsprozess: wie viel Eigenkapital Sie wirklich brauchen, wie Banken Mieteinnahmen bewerten, welche Darlehensstruktur Sie wählen sollten und wie Sie KfW-Förderprogramme nutzen können, um Ihre Konditionen zu verbessern.
 
@@ -15,11 +15,11 @@ Dieser Leitfaden führt Sie durch den gesamten Finanzierungsprozess: wie viel Ei
 
 ## Schritt 1: Das Annuitätendarlehen verstehen
 
-Praktisch alle deutschen Wohnimmobilienkredite sind als **Annuitätendarlehen** strukturiert — ein Darlehen mit fester monatlicher Rate, die Zinsen und Tilgung kombiniert. Ihre monatliche Rate bleibt während der gesamten Zinsbindung gleich, aber die Aufteilung zwischen Zinsen und Tilgung verschiebt sich im Lauf der Zeit.
+Praktisch alle deutschen Wohnimmobilienkredite sind als **Annuitätendarlehen** strukturiert, ein Darlehen mit fester monatlicher Rate, die Zinsen und Tilgung kombiniert. Ihre monatliche Rate bleibt während der gesamten Zinsbindung gleich, aber die Aufteilung zwischen Zinsen und Tilgung verschiebt sich im Lauf der Zeit.
 
 ### So funktioniert es
 
-In den ersten Jahren fließt der Großteil Ihrer Zahlung in die Zinsen. Mit sinkendem Restbetrag schrumpft der Zinsanteil und der Tilgungsanteil wächst — während der monatliche Gesamtbetrag konstant bleibt.
+In den ersten Jahren fließt der Großteil Ihrer Zahlung in die Zinsen. Mit sinkendem Restbetrag schrumpft der Zinsanteil und der Tilgungsanteil wächst, während der monatliche Gesamtbetrag konstant bleibt.
 
 **Beispiel:** 300.000 € Darlehen bei 3,5 % Zinsen, 2 % anfänglicher Tilgung:
 
@@ -28,7 +28,7 @@ In den ersten Jahren fließt der Großteil Ihrer Zahlung in die Zinsen. Mit sink
 - Jahr 10: ~700 € Zinsen + ~675 € Tilgung
 - Nach 10 Jahren: ~68.000 € Tilgung geleistet, ~232.000 € Restschuld
 
-Diese Struktur unterscheidet sich grundlegend von variablen oder tilgungsfreien Darlehen, die in anderen Ländern üblich sind. Die Berechenbarkeit ist ein Vorteil für die Cashflow-Planung — aber sie bedeutet auch, dass Ihre monatliche Verpflichtung feststeht, unabhängig davon, was mit Ihren Mieteinnahmen passiert.
+Diese Struktur unterscheidet sich grundlegend von variablen oder tilgungsfreien Darlehen, die in anderen Ländern üblich sind. Die Berechenbarkeit ist ein Vorteil für die Cashflow-Planung, aber sie bedeutet auch, dass Ihre monatliche Verpflichtung feststeht, unabhängig davon, was mit Ihren Mieteinnahmen passiert.
 
 Nutzen Sie unseren [Tilgungsrechner](/de/tilgungsrechner), um Ihr genaues Szenario mit verschiedenen Zinssätzen, Tilgungsraten und Zinsbindungsfristen durchzurechnen.
 
@@ -52,17 +52,17 @@ Deutsche Banken sind konservativ. Die Grundregel ist einfach: **Je mehr Eigenkap
 - Notar + Grundbuch: ~2 %
 - Maklerprovision: 0–3,57 %
 
-In einem Bundesland wie Brandenburg (6,5 % Grunderwerbsteuer) mit Makler erreichen die Kaufnebenkosten allein **12 %** des Kaufpreises. Bei einer 300.000-€-Immobilie sind das 36.000 € Eigenkapital nur für die Nebenkosten — noch vor jeder Anzahlung auf die Immobilie selbst.
+In einem Bundesland wie Brandenburg (6,5 % Grunderwerbsteuer) mit Makler erreichen die Kaufnebenkosten allein **12 %** des Kaufpreises. Bei einer 300.000-€-Immobilie sind das 36.000 € Eigenkapital nur für die Nebenkosten, noch vor jeder Anzahlung auf die Immobilie selbst.
 
 Nutzen Sie unseren [Kaufnebenkostenrechner](/de/kaufnebenkostenrechner), um den genauen Betrag für Ihr Bundesland zu sehen.
 
-### 100%-Finanzierung — möglich, aber teuer
+### 100%-Finanzierung: möglich, aber teuer
 
-Einige Banken bieten **Vollfinanzierung** an — Finanzierung des gesamten Kaufpreises (aber weiterhin nicht der Kaufnebenkosten). Das bedeutet, Sie bringen nur Eigenkapital für die Nebenkosten. Es ist möglich, aber kostet:
+Einige Banken bieten **Vollfinanzierung** an, Finanzierung des gesamten Kaufpreises (aber weiterhin nicht der Kaufnebenkosten). Das bedeutet, Sie bringen nur Eigenkapital für die Nebenkosten. Es ist möglich, aber kostet:
 
 - Zinssätze sind typischerweise **0,3–0,8 % höher** als mit 20 % Eigenkapital
 - Weniger Banken konkurrieren um Ihr Geschäft, was Ihre Verhandlungsposition schwächt
-- Sie starten mit null Eigenkapitalpuffer — jeder Preisrückgang bringt Sie sofort unter Wasser
+- Sie starten mit null Eigenkapitalpuffer, jeder Preisrückgang bringt Sie sofort unter Wasser
 
 Bei einem 300.000-€-Darlehen kostet ein 0,5 %-Zinsaufschlag rund **1.500 € pro Jahr** oder 15.000 € über eine 10-jährige Zinsbindung. Das ist reales Geld, das direkt von Ihrer Rendite abgeht.
 
@@ -115,7 +115,7 @@ Banken prüfen Ihre **Gesamtkapitaldienstfähigkeit**:
 
 **Negative Verpflichtungen:**
 - Bestehende Kreditraten (andere Hypotheken, Autokredite, Konsumentenkredite)
-- Lebenshaltungskosten — typisch als Pauschale von 700–1.000 € pro Erwachsenem, 250–400 € pro Kind
+- Lebenshaltungskosten, typisch als Pauschale von 700–1.000 € pro Erwachsenem, 250–400 € pro Kind
 - Die neue Kreditrate (volle Annuität: Zinsen + Tilgung)
 
 Die Bankregel: Ihre gesamten Verpflichtungen dürfen **35–40 % Ihres anerkannten Bruttoeinkommens** nicht übersteigen (Belastungsquote). Manche Banken erlauben bis zu 45 % bei Besserverdienern.
@@ -125,12 +125,12 @@ Die Bankregel: Ihre gesamten Verpflichtungen dürfen **35–40 % Ihres anerkannt
 Bereiten Sie diese vor, bevor Sie sich an eine Bank wenden:
 
 - **Letzte 3 Gehaltsabrechnungen**
-- **Letzte 2–3 Einkommensteuerbescheide** — besonders wichtig bei variablem Einkommen
+- **Letzte 2–3 Einkommensteuerbescheide**, besonders wichtig bei variablem Einkommen
 - **Kontoauszüge** mit Nachweis Ihres Eigenkapitals
-- **Selbstauskunft** — listet alle Vermögenswerte, Verbindlichkeiten und monatlichen Verpflichtungen auf
-- **Immobilienunterlagen** — Exposé, Grundriss, Energieausweis, Teilungserklärung (bei Wohnungen)
-- **Nachweis der Mieteinnahmen** — bestehender Mietvertrag bei vermieteter Wohnung oder Marktmiet-Schätzung (Mietspiegel-Referenz) bei Leerstand
-- **Schufa-Einwilligung** — die Bank wird eine Bonitätsauskunft einholen
+- **Selbstauskunft**, listet alle Vermögenswerte, Verbindlichkeiten und monatlichen Verpflichtungen auf
+- **Immobilienunterlagen**, Exposé, Grundriss, Energieausweis, Teilungserklärung (bei Wohnungen)
+- **Nachweis der Mieteinnahmen**, bestehender Mietvertrag bei vermieteter Wohnung oder Marktmiet-Schätzung (Mietspiegel-Referenz) bei Leerstand
+- **Schufa-Einwilligung**, die Bank wird eine Bonitätsauskunft einholen
 
 ### Vorab-Finanzierungszusage einholen
 
@@ -153,7 +153,7 @@ Die Zinsbindung bestimmt, wie lange Ihr Zinssatz festgeschrieben ist. Nach Ablau
 | Zinsbindung | Typischer Zinssatz (2026) | Am besten für |
 |---|---|---|
 | 5 Jahre | Niedriger (–0,3 bis –0,5 % vs. 10 Jahre) | Kurzfristige Halter, Zinsspekulanten |
-| 10 Jahre | Standard-Referenz | Die meisten Kreditnehmer — ausgewogenes Risiko/Kosten-Verhältnis |
+| 10 Jahre | Standard-Referenz | Die meisten Kreditnehmer, ausgewogenes Risiko/Kosten-Verhältnis |
 | 15 Jahre | Höher (+0,2 bis +0,4 % vs. 10 Jahre) | Sicherheitsorientierte, Langfrist-Halter |
 | 20 Jahre | Höher (+0,4 bis +0,7 % vs. 10 Jahre) | Maximale Planungssicherheit |
 | 25–30 Jahre | Höchster Aufschlag | Selten, wenige Banken bieten das an |
@@ -182,7 +182,7 @@ Nach § 489 BGB haben Sie das gesetzliche Recht, jedes Festzinsdarlehen **nach 1
 - Eine 20-jährige Zinsbindung hat dieselbe Ausstiegsoption nach 10 Jahren
 - Sie binden sich nie wirklich länger als 10 Jahre
 
-Das macht längere Zinsbindungen weniger riskant, als sie erscheinen — Sie bekommen den Schutz nach oben, behalten aber die Option zur Umfinanzierung bei fallenden Zinsen.
+Das macht längere Zinsbindungen weniger riskant, als sie erscheinen, Sie bekommen den Schutz nach oben, behalten aber die Option zur Umfinanzierung bei fallenden Zinsen.
 
 ---
 
@@ -229,9 +229,9 @@ Modellieren Sie verschiedene Tilgungsraten und Sondertilgungsszenarien mit unser
 
 ## Schritt 6: KfW-Programme für Mietimmobilien erkunden
 
-Die KfW (Kreditanstalt für Wiederaufbau) bietet zinsgünstige Darlehen und Zuschüsse, die Ihre Finanzierungskosten erheblich senken können — aber die Förderbedingungen für Mietimmobilien unterscheiden sich von denen für Eigennutzer.
+Die KfW (Kreditanstalt für Wiederaufbau) bietet zinsgünstige Darlehen und Zuschüsse, die Ihre Finanzierungskosten erheblich senken können, aber die Förderbedingungen für Mietimmobilien unterscheiden sich von denen für Eigennutzer.
 
-### KfW 261/262 — Bundesförderung für effiziente Gebäude (BEG)
+### KfW 261/262: Bundesförderung für effiziente Gebäude (BEG)
 
 Das ist das Hauptprogramm für Vermieter-Investoren. Es fördert energieeffiziente Neubauten und umfassende energetische Sanierungen.
 
@@ -246,7 +246,7 @@ Das ist das Hauptprogramm für Vermieter-Investoren. Es fördert energieeffizien
 - Tilgungszuschuss bis zu **45 %** für die Erreichung von Effizienzhaus 40 ausgehend von einem Altbau
 - Einzelmaßnahmen (neue Fenster, Dämmung, Heizung) ebenfalls förderfähig mit geringeren Zuschusssätzen
 
-### KfW 297/298 — Klimafreundlicher Neubau
+### KfW 297/298: Klimafreundlicher Neubau
 
 Für Neubauten, die bestimmte klimafreundliche Standards erfüllen:
 - Darlehen bis **100.000–150.000 €** zu geförderten Zinssätzen
@@ -257,7 +257,7 @@ Für Neubauten, die bestimmte klimafreundliche Standards erfüllen:
 KfW-Darlehen werden **nicht direkt beantragt**. Sie beantragen über Ihre reguläre Bank (die Hausbank), die die KfW-Tranche in Ihre Gesamtfinanzierung einbindet. Der Ablauf:
 
 1. **KfW-Förderfähigkeit mit Ihrer Bank besprechen** vor Unterzeichnung des Kaufvertrags
-2. **Akkreditierten Energieberater beauftragen** (Energieeffizienz-Experte) — bei den meisten Programmen Pflicht
+2. **Akkreditierten Energieberater beauftragen** (Energieeffizienz-Experte), bei den meisten Programmen Pflicht
 3. **Über Ihre Bank beantragen** vor Baubeginn oder Sanierungsstart
 4. **Bank zahlt KfW-Mittel aus** als Teil Ihrer Hypothek
 5. **Nach Fertigstellung** bestätigt der Energieberater den erreichten Standard
@@ -269,7 +269,7 @@ KfW-Darlehen werden **nicht direkt beantragt**. Sie beantragen über Ihre regul�
 
 Für Neubauten, die bereits den Effizienzhaus-40-Standard erfüllen: **absolut ja**. Der Zinsvorteil plus Tilgungszuschuss kann 20.000–40.000 € über die Darlehenslaufzeit sparen.
 
-Für Bestandsgebäude: nur wenn Sie ohnehin eine bedeutende energetische Sanierung planen. Der obligatorische Energieberater, die Dokumentationsanforderungen und die Zeitvorgaben verursachen Kosten und Komplexität. Sanieren Sie nicht nur wegen des KfW-Zuschusses — tun Sie es, weil es wirtschaftlich sinnvoll für die Immobilie ist, und nehmen Sie den Zuschuss dann als Bonus mit.
+Für Bestandsgebäude: nur wenn Sie ohnehin eine bedeutende energetische Sanierung planen. Der obligatorische Energieberater, die Dokumentationsanforderungen und die Zeitvorgaben verursachen Kosten und Komplexität. Sanieren Sie nicht nur wegen des KfW-Zuschusses, tun Sie es, weil es wirtschaftlich sinnvoll für die Immobilie ist, und nehmen Sie den Zuschuss dann als Bonus mit.
 
 ---
 
@@ -288,11 +288,11 @@ Das erzeugt einen wirkungsvollen Steuerschild:
 - Bei 42 % Grenzsteuersatz: **4.410 € Steuerersparnis**
 - Effektive Zinskosten nach Steuern: ~2,03 %
 
-Je höher Ihr Grenzsteuersatz, desto wertvoller der Zinsabzug. Deshalb bevorzugen Gutverdiener manchmal eine niedrigere Tilgung (weniger Rückzahlung, mehr abzugsfähige Zinsen) — der Steuervorteil gleicht den langsameren Eigenkapitalaufbau teilweise aus.
+Je höher Ihr Grenzsteuersatz, desto wertvoller der Zinsabzug. Deshalb bevorzugen Gutverdiener manchmal eine niedrigere Tilgung (weniger Rückzahlung, mehr abzugsfähige Zinsen), der Steuervorteil gleicht den langsameren Eigenkapitalaufbau teilweise aus.
 
 ### Die Disagio-Option (Zinsvorauszahlung)
 
-Manche Banken bieten ein **Disagio** an — Sie zahlen eine Einmalzahlung vorab im Tausch gegen einen niedrigeren laufenden Zinssatz. Für Eigennutzer lohnt sich das selten. Für Investoren kann es attraktiv sein, weil:
+Manche Banken bieten ein **Disagio** an, Sie zahlen eine Einmalzahlung vorab im Tausch gegen einen niedrigeren laufenden Zinssatz. Für Eigennutzer lohnt sich das selten. Für Investoren kann es attraktiv sein, weil:
 
 - Das Disagio ist sofort als Werbungskosten abzugsfähig (wenn die Zinsbindung mindestens 5 Jahre beträgt und das Disagio marktübliche Höhe nicht übersteigt)
 - Das erzeugt einen hohen Steuerabzug im ersten Jahr, der gegen andere Einkünfte verrechnet werden kann
@@ -301,25 +301,25 @@ Besprechen Sie mit Ihrem Steuerberater, ob diese Struktur für Ihre spezifische 
 
 ### Separate Finanzierung der Kaufnebenkosten
 
-Wenn Sie einen separaten Privatkredit oder eine Kreditlinie für die Kaufnebenkosten nutzen (statt aus Ersparnissen zu zahlen), sind diese Zinsen **ebenfalls abzugsfähig** — solange die Mittel nachweislich für den Erwerb der Mietimmobilie verwendet wurden. Halten Sie eine saubere Dokumentation über den Darlehenszweck.
+Wenn Sie einen separaten Privatkredit oder eine Kreditlinie für die Kaufnebenkosten nutzen (statt aus Ersparnissen zu zahlen), sind diese Zinsen **ebenfalls abzugsfähig**, solange die Mittel nachweislich für den Erwerb der Mietimmobilie verwendet wurden. Halten Sie eine saubere Dokumentation über den Darlehenszweck.
 
 ---
 
 ## Schritt 8: Banken vergleichen und verhandeln
 
-Deutsche Hypothekenzinsen können bei gleicher Person und Immobilie um **0,3–0,5 %** zwischen Banken variieren. Über eine 10-jährige Zinsbindung bei einem 300.000-€-Darlehen bedeutet ein 0,3 %-Unterschied **9.000 €** an zusätzlich oder gespart gezahlten Zinsen. Vergleichen ist keine Option — es ist eine der Aktivitäten mit der höchsten Rendite im gesamten Kaufprozess.
+Deutsche Hypothekenzinsen können bei gleicher Person und Immobilie um **0,3–0,5 %** zwischen Banken variieren. Über eine 10-jährige Zinsbindung bei einem 300.000-€-Darlehen bedeutet ein 0,3 %-Unterschied **9.000 €** an zusätzlich oder gespart gezahlten Zinsen. Vergleichen ist keine Option, es ist eine der Aktivitäten mit der höchsten Rendite im gesamten Kaufprozess.
 
 ### Wo Sie Angebote einholen
 
-1. **Ihre Hausbank** — starten Sie hier für ein Basis-Angebot. Sie kennen Ihre Finanzen und bieten möglicherweise Beziehungskonditionen.
+1. **Ihre Hausbank**, starten Sie hier für ein Basis-Angebot. Sie kennen Ihre Finanzen und bieten möglicherweise Beziehungskonditionen.
 
-2. **Online-Hypothekenmakler** (Interhyp, Dr. Klein, Baufi24) — sie vergleichen Angebote von Hunderten Banken und können oft Konditionen sichern, die Ihre Hausbank nicht bieten kann. Der Service ist für Sie kostenlos (die Bank zahlt die Provision).
+2. **Online-Hypothekenmakler** (Interhyp, Dr. Klein, Baufi24), sie vergleichen Angebote von Hunderten Banken und können oft Konditionen sichern, die Ihre Hausbank nicht bieten kann. Der Service ist für Sie kostenlos (die Bank zahlt die Provision).
 
-3. **Direktbanken** (ING, DKB, Commerzbank) — wettbewerbsfähige Online-Angebote, besonders für Standardprofile.
+3. **Direktbanken** (ING, DKB, Commerzbank), wettbewerbsfähige Online-Angebote, besonders für Standardprofile.
 
-4. **Regionalbanken und Sparkassen** — manchmal die besten Zinsen für lokale Immobilien, besonders bei bestehender Kundenbeziehung.
+4. **Regionalbanken und Sparkassen**, manchmal die besten Zinsen für lokale Immobilien, besonders bei bestehender Kundenbeziehung.
 
-5. **Versicherungsbasierte Kreditgeber** (Allianz, Ergo, Munich-Re-Tochtergesellschaften) — bieten gelegentlich die niedrigsten Zinsen für lange Zinsbindungen.
+5. **Versicherungsbasierte Kreditgeber** (Allianz, Ergo, Munich-Re-Tochtergesellschaften), bieten gelegentlich die niedrigsten Zinsen für lange Zinsbindungen.
 
 ### Was Sie vergleichen sollten
 
@@ -331,9 +331,9 @@ Vergleichen Sie nicht nur den Nominalzins. Fokussieren Sie auf den **Effektivzin
 - Bedingungen für Sondertilgung und Tilgungssatzwechsel
 
 Vergleichen Sie auch:
-- **Bereitstellungszinsen** — Zinsen auf nicht abgerufene Darlehensteile während der Bauphase. Typisch 0,25 %/Monat nach einer Karenzzeit von 3–12 Monaten. Kritisch bei Neubauten.
-- **Sondertilgungsrecht** — 5 % ist Standard, 10 % ist besser. Manche Banken berechnen für höhere Sondertilgungsrechte.
-- **Tilgungssatzwechsel** — die Option, Ihre Tilgungsrate während der Darlehenslaufzeit zu ändern. Nützlich bei veränderter finanzieller Situation.
+- **Bereitstellungszinsen**, Zinsen auf nicht abgerufene Darlehensteile während der Bauphase. Typisch 0,25 %/Monat nach einer Karenzzeit von 3–12 Monaten. Kritisch bei Neubauten.
+- **Sondertilgungsrecht**, 5 % ist Standard, 10 % ist besser. Manche Banken berechnen für höhere Sondertilgungsrechte.
+- **Tilgungssatzwechsel**, die Option, Ihre Tilgungsrate während der Darlehenslaufzeit zu ändern. Nützlich bei veränderter finanzieller Situation.
 
 ---
 
@@ -353,7 +353,7 @@ Den Ablauf zu verstehen, verhindert kostspielige Verzögerungen.
 | Grundschuldbestellung | Tag 35–60 | Sicherheit der Bank im Grundbuch eingetragen |
 | Darlehensauszahlung | Tag 60–90 | Bank gibt Mittel an Notaranderkonto des Verkäufers frei |
 | Grunderwerbsteuer-Zahlung | Innerhalb 30 Tagen nach Bescheid | Muss vor Eigentumsübertragung gezahlt werden |
-| Eigentumsübergang | Tag 90–120 | Grundbucheintragung abgeschlossen — Sie sind Eigentümer |
+| Eigentumsübergang | Tag 90–120 | Grundbucheintragung abgeschlossen, Sie sind Eigentümer |
 
 **Der Engpass ist meist das Grundbuch.** Die Bearbeitungszeiten der Grundbuchämter variieren je nach Gemeinde und können 4–12 Wochen dauern. Planen Sie Ihren Finanzierungszeitplan entsprechend.
 
@@ -367,7 +367,7 @@ Sie erwarten 900 €/Monat. Die Bank erkennt 630 €/Monat an. Plötzlich passt 
 
 ### 2. Bereitstellungszinsen bei Neubauten vergessen
 
-Neubauten können 12–24 Monate von Vertrag bis Fertigstellung dauern. Wenn Ihre bereitstellungszinsfreie Zeit nur 6 Monate beträgt, zahlen Sie 0,25 %/Monat auf den nicht abgerufenen Betrag — potenziell Tausende Euro, bevor Sie einen einzigen Euro Miete erhalten.
+Neubauten können 12–24 Monate von Vertrag bis Fertigstellung dauern. Wenn Ihre bereitstellungszinsfreie Zeit nur 6 Monate beträgt, zahlen Sie 0,25 %/Monat auf den nicht abgerufenen Betrag, potenziell Tausende Euro, bevor Sie einen einzigen Euro Miete erhalten.
 
 ### 3. Die kürzeste Zinsbindung wählen, um 0,3 % zu sparen
 
@@ -379,7 +379,7 @@ Eine 5-jährige Zinsbindung spart jetzt Geld, setzt Sie aber dem Refinanzierungs
 
 ### 5. Die Spekulationsfrist ignorieren
 
-Wenn Sie eine Mietimmobilie innerhalb von **10 Jahren** nach Kauf verkaufen, ist der Veräußerungsgewinn voll steuerpflichtig (Spekulationssteuer). Ihre Finanzierung sollte eine 10+-jährige Haltedauer unterstellen. Bei Unsicherheit über Ihren Zeithorizont binden Sie sich nicht zu stark bei der Tilgung — bewahren Sie Flexibilität.
+Wenn Sie eine Mietimmobilie innerhalb von **10 Jahren** nach Kauf verkaufen, ist der Veräußerungsgewinn voll steuerpflichtig (Spekulationssteuer). Ihre Finanzierung sollte eine 10+-jährige Haltedauer unterstellen. Bei Unsicherheit über Ihren Zeithorizont binden Sie sich nicht zu stark bei der Tilgung, bewahren Sie Flexibilität.
 
 ### 6. Immobilienfinanzierung nicht von privaten Finanzen trennen
 
@@ -391,7 +391,7 @@ Eröffnen Sie ein dediziertes Bankkonto für die Mietimmobilie. Alle Mieteinnahm
 
 **Immobilie:** 65-m²-Wohnung in Leipzig
 **Kaufpreis:** 180.000 €
-**Kaufnebenkosten:** 18.000 € (10 % — Sachsen mit 5,5 % GrESt + Notar + kein Makler)
+**Kaufnebenkosten:** 18.000 € (10 %, Sachsen mit 5,5 % GrESt + Notar + kein Makler)
 **Eigenkapital:** 40.000 €
 
 | Komponente | Betrag |
@@ -422,8 +422,8 @@ Eröffnen Sie ein dediziertes Bankkonto für die Mietimmobilie. Alle Mieteinnahm
 | Versicherung (nicht umlagefähig) | -25 € |
 | **Netto-Cashflow (vor Steuern)** | **-202 €** |
 
-Die Immobilie ist **cashflow-negativ** mit 202 €/Monat vor Steuern. Aber nach Berücksichtigung des Zinsabzugs (474 €/Monat im Jahr 1) und der AfA-Abschreibung reduziert der steuerliche Verlust Ihre sonstige Einkommensteuerlast. Bei einem Grenzsteuersatz von 42 % beträgt die Steuerersparnis rund 300 €/Monat — was die Immobilie **netto nach Steuern positiv** macht.
+Die Immobilie ist **cashflow-negativ** mit 202 €/Monat vor Steuern. Aber nach Berücksichtigung des Zinsabzugs (474 €/Monat im Jahr 1) und der AfA-Abschreibung reduziert der steuerliche Verlust Ihre sonstige Einkommensteuerlast. Bei einem Grenzsteuersatz von 42 % beträgt die Steuerersparnis rund 300 €/Monat, was die Immobilie **netto nach Steuern positiv** macht.
 
-Das ist die Realität der meisten deutschen Mietimmobilieninvestitionen: **cashflow-negativ, aber steuerlich positiv**. Ihre Gesamtrendite entsteht aus Steuerersparnis + Tilgungsleistung + Wertsteigerung — nicht aus dem monatlichen Cashflow.
+Das ist die Realität der meisten deutschen Mietimmobilieninvestitionen: **cashflow-negativ, aber steuerlich positiv**. Ihre Gesamtrendite entsteht aus Steuerersparnis + Tilgungsleistung + Wertsteigerung, nicht aus dem monatlichen Cashflow.
 
 Berechnen Sie Ihr eigenes Szenario: Starten Sie mit unserem [Kaufnebenkostenrechner](/de/kaufnebenkostenrechner) für den Eigenkapitalbedarf, nutzen Sie dann unseren [Tilgungsrechner](/de/tilgungsrechner) für die monatlichen Raten, unseren [Mietrenditerechner](/de/mietrenditerechner) für die Renditeanalyse und unseren [AfA-Rechner](/de/afa-rechner) für den Abschreibungs-Steuervorteil.

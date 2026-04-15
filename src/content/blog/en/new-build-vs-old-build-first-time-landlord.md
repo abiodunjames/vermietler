@@ -1,13 +1,13 @@
 ---
 title: "New Build vs Old Build: What First-Time Landlords in Germany Need to Know (2026)"
-description: "Comparing Neubau and Altbau as rental investments. Maintenance, tax benefits, tenant demand, financing, and Nebenkosten — a practical guide for first-time private landlords in Germany."
+description: "Comparing Neubau and Altbau as rental investments. Maintenance, tax benefits, tenant demand, financing, and Nebenkosten, a practical guide for first-time private landlords in Germany."
 date: 2026-03-25
 author: "Vermietler Team"
 lang: "en"
 tags: ["Neubau", "Altbau", "rental investment", "first-time landlord", "property buying"]
 ---
 
-Buying your first rental property in Germany is exciting — and the very first fork in the road is choosing between a **Neubau** (new build) and an **Altbau** (old build). Each comes with a completely different set of costs, tax rules, tenant expectations, and long-term headaches. This guide walks you through everything a first-time private landlord should weigh before signing.
+Buying your first rental property in Germany is exciting, and the very first fork in the road is choosing between a **Neubau** (new build) and an **Altbau** (old build). Each comes with a completely different set of costs, tax rules, tenant expectations, and long-term headaches. This guide walks you through everything a first-time private landlord should weigh before signing.
 
 ---
 
@@ -29,7 +29,7 @@ German banks generally view new builds more favourably:
 |---|---|---|
 | Loan-to-value (LTV) | Up to 90 % common | Typically capped at 80 % |
 | Interest rate premium | None | +0.1–0.3 % for older stock |
-| Valuation risk | Low — comparable new sales | Higher — condition-dependent |
+| Valuation risk | Low, comparable new sales | Higher, condition-dependent |
 | KfW subsidised loans | Often eligible (EH 40/55) | Only after energy retrofit |
 
 With a new build, the bank sees a predictable asset. With an Altbau, they'll often require a **Gutachten** (surveyor's report) and may discount the valuation if the energy certificate shows class F or worse.
@@ -38,21 +38,21 @@ If you're financing with tight equity, a new build's higher LTV allowance can ma
 
 ---
 
-## Tax depreciation — the landlord's best friend
+## Tax depreciation: the landlord's best friend
 
 This is where things get interesting. German tax law lets you depreciate the building portion of your rental property (not the land) against your rental income.
 
 **New builds (completed after 2023):**
-- **Degressive depreciation** of 5 % per year is available under § 7 Abs. 5a EStG, introduced in 2024. This is a major incentive — you front-load your tax deductions, offsetting rental income heavily in the early years.
+- **Degressive depreciation** of 5 % per year is available under § 7 Abs. 5a EStG, introduced in 2024. This is a major incentive, you front-load your tax deductions, offsetting rental income heavily in the early years.
 - Alternatively, the standard **linear depreciation** rate is 3 % per year (over ~33 years).
 
 **Old builds:**
 - Standard linear depreciation at **2 % per year** (over 50 years) for buildings completed after 1924.
 - For pre-1925 buildings: **2.5 % per year** (over 40 years).
-- If you're buying a **Denkmalschutz** (listed heritage) property, you can deduct renovation costs at enhanced rates under §§ 7h/7i EStG — but the bureaucratic overhead is significant.
+- If you're buying a **Denkmalschutz** (listed heritage) property, you can deduct renovation costs at enhanced rates under §§ 7h/7i EStG, but the bureaucratic overhead is significant.
 
 **Practical example:**
-You buy a Neubau apartment for €350 000. The building portion is roughly €280 000 (excluding land). With 5 % degressive depreciation, you write off **€14 000 in year one** — a massive reduction in taxable rental income. The same €280 000 on an Altbau at 2 % gives you just €5 600.
+You buy a Neubau apartment for €350 000. The building portion is roughly €280 000 (excluding land). With 5 % degressive depreciation, you write off **€14 000 in year one**, a massive reduction in taxable rental income. The same €280 000 on an Altbau at 2 % gives you just €5 600.
 
 For a first-time landlord in a high tax bracket, the Neubau depreciation alone can shift the entire investment calculation.
 
@@ -63,14 +63,14 @@ For a first-time landlord in a high tax bracket, the Neubau depreciation alone c
 This is where Altbau investors get caught off guard.
 
 **New build advantages:**
-- Everything is under **Gewährleistung** (builder's warranty) — typically 5 years for structural defects under BGB or VOB/B.
+- Everything is under **Gewährleistung** (builder's warranty), typically 5 years for structural defects under BGB or VOB/B.
 - Modern systems (heating, plumbing, electrics) won't need major work for 15–20 years.
-- Energy-efficient building envelope means lower Nebenkosten — a real selling point for tenants.
+- Energy-efficient building envelope means lower Nebenkosten, a real selling point for tenants.
 
 **Old build realities:**
 - **Instandhaltungsrücklage** (maintenance reserve) for WEG properties is often underfunded. Check the Hausgeld breakdown and the minutes from the last three Eigentümerversammlungen.
 - Common surprise costs: roof (€20 000–€60 000), heating system replacement (€10 000–€25 000), façade renovation, balcony repairs, lead pipe replacement.
-- If the building hasn't been energy-retrofitted, you may face **mandatory renovation obligations** under the GEG (Building Energy Act) when you buy — especially heating system upgrades.
+- If the building hasn't been energy-retrofitted, you may face **mandatory renovation obligations** under the GEG (Building Energy Act) when you buy, especially heating system upgrades.
 
 **Rule of thumb:** Budget €10–€15 per m² per year for maintenance reserves on older buildings. For new builds, €5–€7 per m² is usually sufficient for the first decade.
 
@@ -78,7 +78,7 @@ This is where Altbau investors get caught off guard.
 
 ## Nebenkosten & energy efficiency
 
-Tenants in Germany care deeply about the **zweite Miete** — the "second rent" they pay via Nebenkosten. Lower operating costs make your property easier to let and justify a higher base rent.
+Tenants in Germany care deeply about the **zweite Miete**, the "second rent" they pay via Nebenkosten. Lower operating costs make your property easier to let and justify a higher base rent.
 
 | Cost category | Neubau (typical) | Altbau (typical) |
 |---|---|---|
@@ -90,7 +90,7 @@ Tenants in Germany care deeply about the **zweite Miete** — the "second rent" 
 
 A new build with a heat pump and solar panels can halve a tenant's heating bill compared to an unrenovated Altbau with a 25-year-old gas boiler. That's a tangible competitive advantage when advertising your unit.
 
-When you're preparing your annual Betriebskostenabrechnung, lower energy costs also mean fewer tenant disputes — nobody argues about a €60/month heating bill.
+When you're preparing your annual Betriebskostenabrechnung, lower energy costs also mean fewer tenant disputes, nobody argues about a €60/month heating bill.
 
 ---
 
@@ -98,29 +98,29 @@ When you're preparing your annual Betriebskostenabrechnung, lower energy costs a
 
 Here's the tension: Altbau properties in prime urban locations often achieve **higher gross rental yields** because the purchase price is lower relative to achievable rents. A charming Altbau in Hamburg-Eimsbüttel or Cologne-Ehrenfeld will never lack tenants.
 
-New builds in suburban or developing areas may take longer to let and attract a different tenant profile — often young families or corporate relocations.
+New builds in suburban or developing areas may take longer to let and attract a different tenant profile, often young families or corporate relocations.
 
 **What matters for first-time landlords:**
 
 - **Vacancy risk:** In A-cities (Berlin, Munich, Hamburg, Frankfurt, etc.), vacancy is essentially zero for both types. In B- and C-cities, new builds in peripheral locations can sit empty longer.
-- **Rent control:** Many German cities have a **Mietpreisbremse** (rent cap). New builds completed after October 2014 are **exempt** — you can set the initial rent freely. This is a significant financial advantage.
+- **Rent control:** Many German cities have a **Mietpreisbremse** (rent cap). New builds completed after October 2014 are **exempt**, you can set the initial rent freely. This is a significant financial advantage.
 - **Mieterhöhung:** Raising rent on an Altbau is capped at 20 % over three years (15 % in tight markets) up to the Mietspiegel. New builds start higher, so this matters less initially.
 
 ---
 
-## The WEG factor — don't ignore it
+## The WEG factor: don't ignore it
 
-Most first-time landlords buy an apartment (Eigentumswohnung), not a whole building. That means you're part of a **WEG** (Wohnungseigentümergemeinschaft) — the owners' association.
+Most first-time landlords buy an apartment (Eigentumswohnung), not a whole building. That means you're part of a **WEG** (Wohnungseigentümergemeinschaft), the owners' association.
 
 **In a new build WEG:**
-- Other owners are likely also investors or first-time buyers — aligned interests.
-- The Hausverwaltung is typically the developer's pick — check the contract term (often locked in for 3–5 years).
-- Reserve fund starts from zero — build-up contributions will be set by the first Eigentümerversammlung.
+- Other owners are likely also investors or first-time buyers, aligned interests.
+- The Hausverwaltung is typically the developer's pick, check the contract term (often locked in for 3–5 years).
+- Reserve fund starts from zero, build-up contributions will be set by the first Eigentümerversammlung.
 
 **In an Altbau WEG:**
 - Check the **Instandhaltungsrücklage** balance. Is it healthy (€30+ per m²) or dangerously low?
 - Read the **Protokolle** (meeting minutes) from the last 3 years. Look for: planned special assessments (Sonderumlagen), unresolved structural issues, disputes about the Hausverwaltung.
-- Beware of WEGs where owner-occupiers outnumber investors — they may vote against rent-optimising decisions.
+- Beware of WEGs where owner-occupiers outnumber investors, they may vote against rent-optimising decisions.
 
 ---
 
@@ -159,4 +159,4 @@ There is no universally better choice. The right answer depends on your financia
 - You find a well-maintained WEG with a healthy reserve fund.
 - You're buying in a prime location where tenant demand is guaranteed regardless of building age.
 
-Whatever you choose, the key is to **run the numbers honestly** — including closing costs, maintenance reserves, tax effects, and realistic rent projections. Use our [closing cost calculator](/closing-cost-calculator) to get the full picture before making an offer.
+Whatever you choose, the key is to **run the numbers honestly**, including closing costs, maintenance reserves, tax effects, and realistic rent projections. Use our [closing cost calculator](/closing-cost-calculator) to get the full picture before making an offer.
