@@ -125,10 +125,15 @@ import "../styles/global.css";
   <body class="bg-white">
     <slot />
 
-    <!-- Tawk.to live chat -->
+    <!-- Tawk.to live chat (homepage + blog only) -->
     <script is:inline>
-      var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
       (function(){
+        var p = window.location.pathname.replace(/\/+$/, '') || '/';
+        var show = p === '' || p === '/' || p === '/de' || p.indexOf('/blog') !== -1;
+        if (!show) return;
+        var Tawk_API = window.Tawk_API || {};
+        window.Tawk_API = Tawk_API;
+        window.Tawk_LoadStart = new Date();
         var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
         s1.async = true;
         s1.src = 'https://embed.tawk.to/69e135891dd97e1c38bed1e6/1jmbri85a';
