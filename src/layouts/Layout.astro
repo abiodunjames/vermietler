@@ -125,18 +125,28 @@ import "../styles/global.css";
   <body class="bg-white">
     <slot />
 
-    <!-- Tawk.to live chat (homepage + blog only) -->
-    <script is:inline>
+    <!-- Tawk.to live chat (homepage + blog only, localised by language) -->
+    <script is:inline define:vars={{ lang }}>
       (function(){
         var p = window.location.pathname.replace(/\/+$/, '') || '/';
         var show = p === '' || p === '/' || p === '/de' || p.indexOf('/blog') !== -1;
         if (!show) return;
+
+        var isDE = lang === 'de';
+        // English widget: 1jmbri85a | German widget: replace with your DE widget hash
+        var widgetId = isDE ? '1jmd4d4ub' : '1jmbri85a';
+        var propertyId = '69e135891dd97e1c38bed1e6';
+
         var Tawk_API = window.Tawk_API || {};
         window.Tawk_API = Tawk_API;
         window.Tawk_LoadStart = new Date();
+
+        // Set Tawk language
+        Tawk_API.language = isDE ? 'de' : 'en';
+
         var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
         s1.async = true;
-        s1.src = 'https://embed.tawk.to/69e135891dd97e1c38bed1e6/1jmbri85a';
+        s1.src = 'https://embed.tawk.to/' + propertyId + '/' + widgetId;
         s1.charset = 'UTF-8';
         s1.setAttribute('crossorigin', '*');
         s0.parentNode.insertBefore(s1, s0);
