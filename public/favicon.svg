@@ -1,12 +1,14 @@
-<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Background -->
-  <rect width="48" height="48" rx="11" fill="#1d4ed8"/>
-  <!-- Roof -->
-  <path d="M24 10 L8 24 L12 24 L12 36 L36 36 L36 24 L40 24 Z" fill="#93c5fd"/>
-  <!-- Door -->
-  <rect x="20" y="26" width="8" height="10" rx="1" fill="#1d4ed8"/>
-  <!-- Window left -->
-  <rect x="14" y="22" width="5" height="5" rx="0.75" fill="#1d4ed8" opacity="0.7"/>
-  <!-- Window right -->
-  <rect x="29" y="22" width="5" height="5" rx="0.75" fill="#1d4ed8" opacity="0.7"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <!-- Rounded square background in brand navy -->
+  <rect width="512" height="512" rx="96" fill="#1a2538"/>
+
+  <!-- House icon, centered and enlarged for favicon visibility -->
+  <g transform="translate(80.5 77.8) scale(2.7)" fill="none" stroke="#3b82f6" stroke-width="10" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Main house body with roof -->
+    <path d="M 10 55 L 65 12 L 120 55 L 120 115 Q 120 120 115 120 L 15 120 Q 10 120 10 115 Z"/>
+    <!-- Chimney -->
+    <path d="M 28 42 L 28 25 L 42 25 L 42 33"/>
+    <!-- Arched door -->
+    <path d="M 48 120 L 48 88 Q 48 76 65 76 Q 82 76 82 88 L 82 120"/>
+  </g>
 </svg>
