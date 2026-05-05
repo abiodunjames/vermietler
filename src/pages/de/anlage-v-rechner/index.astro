@@ -1,0 +1,152 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import Navbar from "../../../components/Navbar.astro";
+import AnlageVCalculator from "../../../components/calculator/AnlageVCalculator";
+import Footer from "../../../components/Footer.astro";
+
+const faqs = [
+  {
+    q: "Was berechnet dieser Rechner eigentlich?",
+    a: "Er bildet die Einnahmen- und Werbungskostenseite der Anlage V ab, summiert sie zu einem Vermietungsergebnis und multipliziert es mit Ihrem effektiven Grenzsteuersatz, um die echte Cash-Wirkung zu zeigen. Ein negatives Ergebnis (Verlust) wird zur Steuerersparnis gegen Ihr übriges Einkommen. Ein positives Ergebnis (Gewinn) bedeutet zusätzlich fällige Steuer."
+  },
+  {
+    q: "Warum ist mein Buchergebnis negativ, obwohl mein Cashflow positiv ist?",
+    a: "Weil die AfA eine nicht zahlungswirksame Position ist und Schuldzinsen voll absetzbar sind, während die Tilgung es nicht ist. In den ersten Jahren einer fremdfinanzierten Immobilie sind beide groß genug, um das steuerliche Ergebnis ins Minus zu drücken, während Ihr Konto positiven Mietsaldo zeigt. Das ist der strukturelle Grund, warum deutsche Mietimmobilien bei höheren Steuersätzen attraktiv sind."
+  },
+  {
+    q: "Was ist der effektive Grenzsteuersatz?",
+    a: "Ihr persönlicher Einkommensteuersatz plus optionale Zuschläge. Soli (Solidaritätszuschlag) addiert 5,5% der Einkommensteuer. Kirchensteuer addiert ca. 8 bis 9% je nach Bundesland. Mit den Schaltern aktivieren Sie diese für einen genaueren Effektivsatz."
+  },
+  {
+    q: "Kann ich die Tilgung absetzen?",
+    a: "Nein. Nur der Zinsanteil (Schuldzinsen) der Annuität ist Werbungskosten nach § 9 EStG. Die jährliche Steuerbescheinigung Ihrer Bank zeigt den reinen Zinsbetrag. Würden Sie die Tilgung hier eingeben, wäre der Abzug zu hoch und das Finanzamt würde korrigieren."
+  },
+  {
+    q: "Wie finde ich die AfA-Bemessungsgrundlage?",
+    a: "Kaufpreis minus Grundstücksanteil. Der Notarvertrag enthält die Aufteilung häufig, sonst nutzt das Finanzamt die BMF-Arbeitshilfe. Modellieren Sie den Gebäudeanteil mit unserem AfA-Rechner und sehen Sie die jährliche Abschreibung für alle vier Gebäudetypen."
+  },
+  {
+    q: "Warum wird die degressive AfA nur für Jahr 1 gezeigt?",
+    a: "Die degressive AfA mit 5% wirkt auf den sinkenden Buchwert, der Abzug schrumpft also jedes Jahr. Die Übersicht zeigt Jahr 1. Die 10-Jahres-Projektion zeigt den vollständigen Verlauf mit der schrumpfenden AfA, sodass Sie den Effekt über die Zeit sehen."
+  },
+  {
+    q: "Berücksichtigt der Rechner den Anschaffungsnahen Aufwand (15%-Regel)?",
+    a: "Nicht automatisch. Wenn Sie die Immobilie in den letzten 3 Jahren erworben haben und Ihre Renovierungskosten 15% der abschreibbaren Gebäude-Bemessungsgrundlage übersteigen, werden die gesamten Kosten in die AfA-Bemessungsgrundlage umqualifiziert statt sofort abgezogen. Modellieren Sie das, indem Sie die Reparaturzeile reduzieren und die AfA-Basis entsprechend erhöhen."
+  },
+  {
+    q: "Was, wenn ich mehrere Objekte habe?",
+    a: "Berechnen Sie jedes separat und addieren Sie die Vermietungsergebnisse. Jedes Objekt erhält in der Steuererklärung eine eigene Anlage V. Verluste eines Objekts verrechnen sich mit Gewinnen eines anderen innerhalb derselben Einkunftsart."
+  },
+];
+---
+
+<Layout
+  title="Anlage V Steuerersparnis-Rechner 2026 | Vermietler"
+  description="Vermietungsergebnis und tatsächliche Steuerwirkung zum Grenzsteuersatz berechnen. Bildet AfA, Schuldzinsen, Hausgeld und alle wichtigen Werbungskosten der Anlage V ab."
+  keywords="Anlage V Rechner, Vermietungsergebnis berechnen, Werbungskosten Vermietung, Steuerersparnis Vermieter, Mieteinnahmen Steuer, Anlage V Steuererklärung, Grenzsteuersatz Vermietung"
+  lang="de"
+  alternateEn="/anlage-v-tax-calculator"
+  alternateDe="/de/anlage-v-rechner"
+>
+  <Navbar lang="de" />
+
+  <main class="bg-gray-50 pt-28 pb-12 lg:pt-32 lg:pb-16">
+    <div class="mx-auto max-w-6xl px-6">
+      <AnlageVCalculator client:load lang="de" />
+
+      <!-- Cross-link CTAs -->
+      <section class="mt-12 grid gap-4 sm:grid-cols-3">
+        <a href="/de/afa-rechner" class="group flex items-center justify-between rounded-xl border border-brand-200 bg-brand-50 px-5 py-4 transition hover:border-brand-300 hover:bg-brand-100">
+          <div>
+            <p class="text-sm font-semibold text-brand-700">AfA-Rechner</p>
+            <p class="mt-1 text-xs text-brand-600/70">AfA-Bemessungsgrundlage Schritt für Schritt.</p>
+          </div>
+          <svg class="h-4 w-4 shrink-0 text-brand-400 transition group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg>
+        </a>
+        <a href="/de/tilgungsrechner" class="group flex items-center justify-between rounded-xl border border-purple-200 bg-purple-50 px-5 py-4 transition hover:border-purple-300 hover:bg-purple-100">
+          <div>
+            <p class="text-sm font-semibold text-purple-700">Tilgungsrechner</p>
+            <p class="mt-1 text-xs text-purple-600/70">Den jährlich absetzbaren Zinsanteil ermitteln.</p>
+          </div>
+          <svg class="h-4 w-4 shrink-0 text-purple-400 transition group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg>
+        </a>
+        <a href="/de/mietrenditerechner" class="group flex items-center justify-between rounded-xl border border-emerald-200 bg-emerald-50 px-5 py-4 transition hover:border-emerald-300 hover:bg-emerald-100">
+          <div>
+            <p class="text-sm font-semibold text-emerald-700">Mietrenditerechner</p>
+            <p class="mt-1 text-xs text-emerald-600/70">Cashflow- und Renditeanalyse vor Steuern.</p>
+          </div>
+          <svg class="h-4 w-4 shrink-0 text-emerald-400 transition group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg>
+        </a>
+      </section>
+
+      <!-- FAQ -->
+      <section class="mt-20 border-t border-gray-200 pt-12">
+        <h2 class="text-2xl font-bold text-gray-900">Häufig gestellte Fragen</h2>
+        <div class="mt-8 divide-y divide-gray-200">
+          {faqs.map((faq) => (
+            <details class="group py-5">
+              <summary class="flex cursor-pointer items-center justify-between text-base font-semibold text-gray-900 [&::-webkit-details-marker]:hidden">
+                <h3>{faq.q}</h3>
+                <svg class="h-5 w-5 shrink-0 text-gray-400 transition group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" /></svg>
+              </summary>
+              <p class="mt-3 text-sm leading-relaxed text-gray-600">{faq.a}</p>
+            </details>
+          ))}
+        </div>
+      </section>
+
+      <!-- How to use -->
+      <section class="mt-16 border-t border-gray-200 pt-12">
+        <h2 class="text-2xl font-bold text-gray-900">So nutzen Sie den Rechner</h2>
+        <div class="mt-6 grid gap-8 text-sm leading-relaxed text-gray-600 sm:grid-cols-2">
+          <div>
+            <h3 class="mb-2 font-semibold text-gray-900">1. Monatliche Kaltmiete eingeben</h3>
+            <p>Nur die Kaltmiete. Erhaltene Vorauszahlungen (Umlagen) sind steuerneutral, weil Sie sie an die Versorger durchreichen.</p>
+          </div>
+          <div>
+            <h3 class="mb-2 font-semibold text-gray-900">2. AfA festlegen</h3>
+            <p>Wählen Sie einen Standardsatz (2%, 2,5%, 3% oder 5% degressiv) und tragen Sie die abschreibbare Bemessungsgrundlage ein, oder geben Sie einen eigenen jährlichen AfA-Betrag ein. Der 10-Jahres-Tab zeigt, wie die degressive AfA über die Zeit sinkt.</p>
+          </div>
+          <div>
+            <h3 class="mb-2 font-semibold text-gray-900">3. Werbungskosten erfassen</h3>
+            <p>Schuldzinsen (nicht Tilgung), nicht umlagefähiges Hausgeld, Reparaturen, Grundsteuer bei Direktzahlung, Gebäudeversicherung außerhalb Hausgeld und sonstige Kosten (Steuerberater, Fahrten, GWG).</p>
+          </div>
+          <div>
+            <h3 class="mb-2 font-semibold text-gray-900">4. Grenzsteuersatz einstellen</h3>
+            <p>Das Ergebnis hängt vollständig von Ihrem persönlichen Grenzsteuersatz ab. Ein Verlust von 2.000 € spart bei 42% genau 840 €, bei 14% nur 280 €. Soli und Kirchensteuer für den Effektivsatz aktivieren.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <Footer lang="de" />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name: "Anlage V Steuerersparnis-Rechner",
+    alternateName: "Anlage V Tax Calculator",
+    url: "https://vermietler.com/de/anlage-v-rechner",
+    applicationCategory: "FinanceApplication",
+    operatingSystem: "Web",
+    offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" },
+    description: "Kostenloser Anlage-V-Rechner für deutsche Mietimmobilien. Vermietungsergebnis und tatsächliche Steuerwirkung zum Grenzsteuersatz berechnen.",
+    inLanguage: ["de", "en"],
+    publisher: { "@type": "Organization", name: "Vermietler", url: "https://vermietler.com" },
+    dateModified: "2026-04-26",
+  })} />
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
+  })} />
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Startseite", item: "https://vermietler.com/de/" },
+      { "@type": "ListItem", position: 2, name: "Anlage V Rechner", item: "https://vermietler.com/de/anlage-v-rechner" },
+    ],
+  })} />
+</Layout>

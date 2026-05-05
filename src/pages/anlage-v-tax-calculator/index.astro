@@ -1,0 +1,151 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Navbar from "../../components/Navbar.astro";
+import AnlageVCalculator from "../../components/calculator/AnlageVCalculator";
+import Footer from "../../components/Footer.astro";
+
+const faqs = [
+  {
+    q: "What does this calculator actually compute?",
+    a: "It mirrors the income and Werbungskosten sections of Anlage V, sums them into a Vermietungsergebnis (taxable result), and multiplies the result by your effective marginal tax rate to show the actual cash impact. A negative result (loss) becomes a tax saving against your other income. A positive result (profit) becomes additional tax owed."
+  },
+  {
+    q: "Why is my paper result negative even though my cash flow is positive?",
+    a: "Because AfA (depreciation) is a non-cash expense and mortgage interest is fully deductible while principal repayment is not. In the early years of a leveraged property, both are large enough to push the taxable result below zero, while your bank account still receives positive net rent. This is the structural reason German rental property is tax-attractive at higher brackets."
+  },
+  {
+    q: "What is the effective marginal rate?",
+    a: "Your personal income tax bracket plus optional surcharges. Soli (Solidaritätszuschlag) adds 5.5% of the income tax. Kirchensteuer adds roughly 8 to 9% of the income tax depending on Bundesland. The slider here lets you toggle these on for a more accurate effective rate."
+  },
+  {
+    q: "Can I deduct mortgage principal?",
+    a: "No. Only the interest portion (Schuldzinsen) of your mortgage payment is a Werbungskosten under § 9 EStG. Your bank's annual Steuerbescheinigung shows the interest-only figure. Entering principal here would overstate your deduction and trigger a Finanzamt correction."
+  },
+  {
+    q: "How do I find the AfA basis?",
+    a: "Take the property purchase price and subtract the land share. The notary contract often states the split, otherwise the Finanzamt's BMF Arbeitshilfe estimates it. Use our AfA calculator to model the building share with a slider and see the resulting annual depreciation across all four building types."
+  },
+  {
+    q: "Why is degressive AfA shown only for year one?",
+    a: "Degressive AfA at 5% applies to the declining book value, so the deduction shrinks each year. The summary tab shows year one. The 10-year projection tab shows the full schedule with the shrinking AfA, so you can see how the tax effect compounds (or fades) over time."
+  },
+  {
+    q: "Does this account for the 15% Anschaffungsnaher Aufwand rule?",
+    a: "Not automatically. If you bought the property within the last 3 years and your renovation spend exceeds 15% of the depreciable building value, the entire spend is recharacterised into the AfA basis instead of being immediately deductible. You would need to model that by reducing your repairs line and increasing your AfA basis accordingly."
+  },
+  {
+    q: "What if I have multiple properties?",
+    a: "Calculate each separately and add up the Vermietungsergebnisse. Each property gets its own Anlage V on the actual return. Losses from one property offset profits from another within the same income category."
+  },
+];
+---
+
+<Layout
+  title="Anlage V Tax Calculator Germany 2026 | Vermietler"
+  description="Estimate your taxable rental result and the actual tax effect at your marginal rate. Models AfA, Schuldzinsen, Hausgeld, and all major Werbungskosten lines from the Anlage V form."
+  keywords="Anlage V Rechner, rental income tax germany, Vermietungsergebnis berechnen, Werbungskosten Vermietung, Steuerersparnis Vermieter, Mieteinnahmen Steuer, Anlage V calculator"
+  alternateEn="/anlage-v-tax-calculator"
+  alternateDe="/de/anlage-v-rechner"
+>
+  <Navbar lang="en" />
+
+  <main class="bg-gray-50 pt-28 pb-12 lg:pt-32 lg:pb-16">
+    <div class="mx-auto max-w-6xl px-6">
+      <AnlageVCalculator client:load lang="en" />
+
+      <!-- Cross-link CTAs -->
+      <section class="mt-12 grid gap-4 sm:grid-cols-3">
+        <a href="/afa-calculator" class="group flex items-center justify-between rounded-xl border border-brand-200 bg-brand-50 px-5 py-4 transition hover:border-brand-300 hover:bg-brand-100">
+          <div>
+            <p class="text-sm font-semibold text-brand-700">AfA calculator</p>
+            <p class="mt-1 text-xs text-brand-600/70">Compute the depreciation basis line by line.</p>
+          </div>
+          <svg class="h-4 w-4 shrink-0 text-brand-400 transition group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg>
+        </a>
+        <a href="/hypothekenrechner" class="group flex items-center justify-between rounded-xl border border-purple-200 bg-purple-50 px-5 py-4 transition hover:border-purple-300 hover:bg-purple-100">
+          <div>
+            <p class="text-sm font-semibold text-purple-700">Mortgage calculator</p>
+            <p class="mt-1 text-xs text-purple-600/70">Break out the annual interest you can deduct.</p>
+          </div>
+          <svg class="h-4 w-4 shrink-0 text-purple-400 transition group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg>
+        </a>
+        <a href="/rental-yield-calculator" class="group flex items-center justify-between rounded-xl border border-emerald-200 bg-emerald-50 px-5 py-4 transition hover:border-emerald-300 hover:bg-emerald-100">
+          <div>
+            <p class="text-sm font-semibold text-emerald-700">Rental yield calculator</p>
+            <p class="mt-1 text-xs text-emerald-600/70">Pre-tax cash flow and yield analysis.</p>
+          </div>
+          <svg class="h-4 w-4 shrink-0 text-emerald-400 transition group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" /></svg>
+        </a>
+      </section>
+
+      <!-- FAQ -->
+      <section class="mt-20 border-t border-gray-200 pt-12">
+        <h2 class="text-2xl font-bold text-gray-900">Frequently Asked Questions</h2>
+        <div class="mt-8 divide-y divide-gray-200">
+          {faqs.map((faq) => (
+            <details class="group py-5">
+              <summary class="flex cursor-pointer items-center justify-between text-base font-semibold text-gray-900 [&::-webkit-details-marker]:hidden">
+                <h3>{faq.q}</h3>
+                <svg class="h-5 w-5 shrink-0 text-gray-400 transition group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" /></svg>
+              </summary>
+              <p class="mt-3 text-sm leading-relaxed text-gray-600">{faq.a}</p>
+            </details>
+          ))}
+        </div>
+      </section>
+
+      <!-- How to use -->
+      <section class="mt-16 border-t border-gray-200 pt-12">
+        <h2 class="text-2xl font-bold text-gray-900">How to Use This Calculator</h2>
+        <div class="mt-6 grid gap-8 text-sm leading-relaxed text-gray-600 sm:grid-cols-2">
+          <div>
+            <h3 class="mb-2 font-semibold text-gray-900">1. Enter Your Monthly Cold Rent</h3>
+            <p>Use the Kaltmiete only. Operating cost prepayments (Umlagen) you receive are tax-neutral because you pass them straight through to providers.</p>
+          </div>
+          <div>
+            <h3 class="mb-2 font-semibold text-gray-900">2. Set Up Your AfA</h3>
+            <p>Either pick a standard rate (2%, 2.5%, 3%, or 5% degressive) and enter the depreciable building value, or enter a custom annual AfA you have already computed elsewhere. The 10-year projection tab shows how degressive AfA shrinks over time.</p>
+          </div>
+          <div>
+            <h3 class="mb-2 font-semibold text-gray-900">3. Add Your Werbungskosten</h3>
+            <p>Mortgage interest (not principal), non-recoverable Hausgeld, repairs, Grundsteuer if you pay it directly, building insurance if not in Hausgeld, and any other deductible costs (Steuerberater, travel, GWG).</p>
+          </div>
+          <div>
+            <h3 class="mb-2 font-semibold text-gray-900">4. Set Your Marginal Tax Rate</h3>
+            <p>The result depends entirely on your personal Grenzsteuersatz. A €2,000 paper loss saves €840 at 42% but only €280 at 14%. Toggle Soli and Kirchensteuer for the effective rate.</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <Footer lang="en" />
+
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name: "Anlage V Tax Calculator for German Rental Property",
+    alternateName: "Anlage V Rechner",
+    url: "https://vermietler.com/anlage-v-tax-calculator",
+    applicationCategory: "FinanceApplication",
+    operatingSystem: "Web",
+    offers: { "@type": "Offer", price: "0", priceCurrency: "EUR" },
+    description: "Free German Anlage V calculator. Estimate the taxable rental result and the actual tax effect at your marginal rate.",
+    inLanguage: ["en", "de"],
+    publisher: { "@type": "Organization", name: "Vermietler", url: "https://vermietler.com" },
+    dateModified: "2026-04-26",
+  })} />
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((f) => ({ "@type": "Question", name: f.q, acceptedAnswer: { "@type": "Answer", text: f.a } })),
+  })} />
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: "https://vermietler.com/" },
+      { "@type": "ListItem", position: 2, name: "Anlage V Calculator", item: "https://vermietler.com/anlage-v-tax-calculator" },
+    ],
+  })} />
+</Layout>
