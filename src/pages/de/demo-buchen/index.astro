@@ -1,0 +1,68 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import Navbar from "../../../components/Navbar.astro";
+import Footer from "../../../components/Footer.astro";
+import BookDemoForm from "../../../components/BookDemoForm.astro";
+---
+
+<Layout
+  title="Demo buchen | Vermietler"
+  description="Sehen Sie Vermietler live. Buchen Sie eine 30-minütige Demo, wir führen Sie durch die Plattform, abgestimmt auf Ihr Portfolio."
+  keywords="vermietler demo, demo buchen immobilienverwaltung, vermieter software demo"
+  lang="de"
+  alternateEn="/book-demo"
+  alternateDe="/de/demo-buchen"
+>
+  <Navbar lang="de" />
+
+  <main class="bg-white pt-28 pb-20">
+    <div class="mx-auto max-w-5xl px-6">
+      <div class="grid gap-10 lg:grid-cols-[1fr_460px]">
+        <!-- Linke Spalte: Pitch -->
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-[0.12em] text-brand-500">Lass uns sprechen</p>
+          <h1 class="mt-2 font-display text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+            30-minütige Demo buchen
+          </h1>
+          <p class="mt-4 max-w-md text-base text-gray-500">
+            Wir zeigen Ihnen Vermietler mit realistischen deutschen Vermieter-Workflows. Bringen Sie Ihre Portfolio-Details mit, wir richten die Demo darauf aus.
+          </p>
+
+          <div class="mt-8 space-y-5">
+            {[
+              { title: "Auf Ihr Portfolio zugeschnitten", body: "Wir richten die Demo nach Ihrer Einheitenzahl, Gebäudetypen und tatsächlichen Mietersituationen aus." },
+              { title: "30 Minuten, keine Folien", body: "Direkter Klick durch die Bereiche, die für Sie zählen. Banking, Nebenkosten, Mieterportal oder Steuern." },
+              { title: "Echte Rückfragen", body: "Bringen Sie Ihre Spezialfälle mit. Lokaler Mietspiegel, WEG-Eigenheiten oder Finanzierungsstruktur." },
+            ].map((item) => (
+              <div class="flex items-start gap-3">
+                <div class="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-brand-50 text-brand-500">
+                  <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
+                    <polyline points="20 6 9 17 4 12" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </div>
+                <div>
+                  <p class="text-sm font-semibold text-gray-900">{item.title}</p>
+                  <p class="mt-1 text-sm text-gray-500">{item.body}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div class="mt-10 rounded-xl border border-gray-200 bg-gray-50 p-5">
+            <p class="text-xs font-semibold uppercase tracking-wider text-gray-500">Lieber per E-Mail?</p>
+            <p class="mt-1 text-sm text-gray-700">
+              Schreiben Sie an <a href="mailto:info@vermietler.com" class="font-medium text-brand-600 hover:underline">info@vermietler.com</a> mit ein paar Worten zu Ihrem Portfolio.
+            </p>
+          </div>
+        </div>
+
+        <!-- Rechte Spalte: Formular -->
+        <div class="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm sm:p-8">
+          <BookDemoForm lang="de" />
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <Footer lang="de" />
+</Layout>

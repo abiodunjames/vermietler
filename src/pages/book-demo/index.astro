@@ -1,0 +1,67 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Navbar from "../../components/Navbar.astro";
+import Footer from "../../components/Footer.astro";
+import BookDemoForm from "../../components/BookDemoForm.astro";
+---
+
+<Layout
+  title="Book a Demo | Vermietler"
+  description="See Vermietler in action. Book a 30-minute demo with our team and we will walk you through the platform tailored to your portfolio."
+  keywords="vermietler demo, book demo property management germany, landlord software demo"
+  alternateEn="/book-demo"
+  alternateDe="/de/demo-buchen"
+>
+  <Navbar lang="en" />
+
+  <main class="bg-white pt-28 pb-20">
+    <div class="mx-auto max-w-5xl px-6">
+      <div class="grid gap-10 lg:grid-cols-[1fr_460px]">
+        <!-- Left: pitch -->
+        <div>
+          <p class="text-xs font-semibold uppercase tracking-[0.12em] text-brand-500">Talk to us</p>
+          <h1 class="mt-2 font-display text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+            Book a 30-minute demo
+          </h1>
+          <p class="mt-4 max-w-md text-base text-gray-500">
+            We will show you Vermietler running with realistic German landlord workflows. Bring your portfolio details and we will tailor the walkthrough.
+          </p>
+
+          <div class="mt-8 space-y-5">
+            {[
+              { title: "Tailored to your portfolio", body: "We will configure the demo around the number of units, building types, and tenant situations you actually manage." },
+              { title: "30 minutes, no slides", body: "Hands-on click-through of the parts that matter most to you. Banking, Nebenkosten, tenant portal, or tax flow." },
+              { title: "Real Q&A", body: "Bring your edge cases. Your specific Mietspiegel, WEG quirks, or financing structure." },
+            ].map((item) => (
+              <div class="flex items-start gap-3">
+                <div class="mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-brand-50 text-brand-500">
+                  <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
+                    <polyline points="20 6 9 17 4 12" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </div>
+                <div>
+                  <p class="text-sm font-semibold text-gray-900">{item.title}</p>
+                  <p class="mt-1 text-sm text-gray-500">{item.body}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div class="mt-10 rounded-xl border border-gray-200 bg-gray-50 p-5">
+            <p class="text-xs font-semibold uppercase tracking-wider text-gray-500">Prefer email?</p>
+            <p class="mt-1 text-sm text-gray-700">
+              Write to <a href="mailto:info@vermietler.com" class="font-medium text-brand-600 hover:underline">info@vermietler.com</a> with a short note about your portfolio.
+            </p>
+          </div>
+        </div>
+
+        <!-- Right: form -->
+        <div class="rounded-2xl border border-gray-200 bg-white p-6 shadow-sm sm:p-8">
+          <BookDemoForm lang="en" />
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <Footer lang="en" />
+</Layout>
