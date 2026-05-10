@@ -1,4 +1,6 @@
 ---
+import VimeoEmbed from "./VimeoEmbed.astro";
+
 interface Props {
   lang?: string;
 }
@@ -488,6 +490,84 @@ const entryId = "entry.741940622";
   </div>
 </section>
 -->
+
+<!-- ── Video showcase (Pattern C: video + value props) ── -->
+<section class="bg-white px-8 py-24" id="video-showcase">
+  <div class="mx-auto max-w-[1160px]">
+    <div class="grid items-center gap-10 lg:grid-cols-[1.15fr_1fr] lg:gap-14">
+
+      {/* Video player (left) */}
+      <div>
+        <VimeoEmbed
+          videoId="1190161638"
+          title={lang === "de" ? "Vermietler Produkt-Demo" : "Vermietler product demo"}
+          lang={lang}
+        />
+      </div>
+
+      {/* Value props (right) */}
+      <div>
+        <p class="mb-3 text-xs font-semibold uppercase tracking-[0.15em] text-brand-500">
+          {lang === "de" ? "Sehen Sie es in Aktion" : "See it in action"}
+        </p>
+        <h2 class="font-display text-[clamp(28px,3vw,40px)] font-bold tracking-tight text-[#1e2d45]" style="letter-spacing:-0.025em;line-height:1.15">
+          {lang === "de" ? "Ihre Mieteinnahmen, Kosten und Rendite," : "Your rental income, costs, and yield,"}
+          <br/>
+          <span class="bg-gradient-to-r from-brand-500 to-brand-400 bg-clip-text text-transparent">
+            {lang === "de" ? "an einem Ort." : "in one place."}
+          </span>
+        </h2>
+        <p class="mt-5 text-base leading-relaxed text-gray-500">
+          {lang === "de"
+            ? "Eine 3-Minuten-Tour durch Vermietler. Sehen Sie, wie Sie Mieten verfolgen, Ausgaben kategorisieren und Nebenkostenabrechnungen erstellen, ohne Excel oder Papierordner."
+            : "A 3-minute tour through Vermietler. See how you track rent, categorise expenses, and generate Nebenkostenabrechnungen without spreadsheets or paper folders."}
+        </p>
+
+        <ul class="mt-7 space-y-4">
+          <li class="flex items-start gap-3">
+            <div class="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-emerald-50 text-emerald-600">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            </div>
+            <div>
+              <div class="font-semibold text-gray-900">{lang === "de" ? "Sparen Sie 5+ Stunden pro Monat" : "Save 5+ hours per month"}</div>
+              <div class="mt-0.5 text-sm text-gray-500">{lang === "de" ? "Schluss mit Tabellen, manueller Abgleichung und gesuchten Belegen." : "No more spreadsheets, manual reconciliation, or hunting for receipts."}</div>
+            </div>
+          </li>
+          <li class="flex items-start gap-3">
+            <div class="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-brand-50 text-brand-600">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+            </div>
+            <div>
+              <div class="font-semibold text-gray-900">{lang === "de" ? "Kennen Sie Ihre echte Netto-Rendite" : "Know your real net yield"}</div>
+              <div class="mt-0.5 text-sm text-gray-500">{lang === "de" ? "Sehen Sie genau, wo Hausgeld, Versicherung und Sondervergütung Ihren Cashflow auffressen." : "See exactly where Hausgeld, insurance, and Sondervergütung eat into your cash flow."}</div>
+            </div>
+          </li>
+          <li class="flex items-start gap-3">
+            <div class="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-purple-50 text-purple-600">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div>
+              <div class="font-semibold text-gray-900">{lang === "de" ? "DSGVO-konform, in Deutschland gehostet" : "DSGVO compliant, hosted in Germany"}</div>
+              <div class="mt-0.5 text-sm text-gray-500">{lang === "de" ? "Ihre Mieter- und Finanzdaten verlassen nie deutsche Server." : "Your tenant and financial data never leaves German servers."}</div>
+            </div>
+          </li>
+        </ul>
+
+        <div class="mt-8 flex flex-wrap items-center gap-4">
+          <a href="https://app.vermietler.com/login" class="inline-flex items-center gap-2 rounded-full bg-brand-500 px-6 py-3 text-sm font-semibold text-white shadow-md transition hover:bg-brand-600 hover:-translate-y-px hover:shadow-lg">
+            {lang === "de" ? "Kostenlos starten" : "Start free"}
+            <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+          </a>
+          <a href={lang === "de" ? "/de/demo-buchen" : "/book-demo"} class="inline-flex items-center gap-2 text-sm font-medium text-gray-600 transition hover:text-brand-600">
+            {lang === "de" ? "Persönliche Demo buchen" : "Book a personal demo"}
+            <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 
 <!-- ── Features ── -->
 <section class="bg-gray-50 px-8 py-24" id="features">
