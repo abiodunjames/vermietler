@@ -6,28 +6,32 @@ import Footer from "../../../components/Footer.astro";
 
 const faqs = [
   {
-    q: "Ist der Free-Plan wirklich für immer kostenlos?",
-    a: "Ja. Der Free-Plan (Starter) hat keine zeitliche Begrenzung, erfordert keine Kreditkarte und enthält keine versteckten Gebühren. Er ist so konzipiert, dass er den Bedarf eines Vermieters mit einer Einheit vollständig abdeckt — Banking, Ausgaben, Cashflow-Tracking und eine jährliche Nebenkostenabrechnung."
+    q: "Ist die kostenlose Stufe wirklich für immer kostenlos?",
+    a: "Ja. Eine Mieteinheit ist dauerhaft kostenlos, ohne Kreditkarte und ohne zeitliche Begrenzung. Alle Funktionen außer der Bankverbindung sind enthalten — Nebenkostenabrechnung, Mieterportal, Ausgabenverfolgung, Dokumentenspeicher, Steuerberichte und vieles mehr funktionieren auf der kostenlosen Stufe."
   },
   {
-    q: "Was passiert, wenn ich ein Limit im Free-Plan erreiche?",
-    a: "Sie sehen eine klare Meldung in der App, welches Limit erreicht wurde, mit einer Ein-Klick-Upgrade-Option. Ihre vorhandenen Daten werden nie gelöscht — Sie können nur nichts mehr hinzufügen, bis Sie upgraden oder Einträge entfernen."
+    q: "Wie funktioniert die Abrechnung pro Einheit?",
+    a: "Stripe-Abonnement-Menge = max(1, Einheiten gesamt − 1). Ihre erste Einheit ist immer kostenlos. 2. Einheit → 10 €/Monat. 10. Einheit → 90 €/Monat (9 kostenpflichtige Plätze). Bei Entfernen einer Einheit wird die Menge automatisch angepasst und auf der nächsten Rechnung anteilig gutgeschrieben."
   },
   {
-    q: "Kann ich mein Plus-Abo jederzeit kündigen?",
-    a: "Ja. Sie können direkt aus dem Kundenportal kündigen. Ihre Plus-Funktionen bleiben bis zum Ende des aktuellen Abrechnungszeitraums aktiv, danach wird Ihr Konto auf Free zurückgesetzt. Ihre Daten bleiben erhalten."
+    q: "Was, wenn ich nur eine Einheit habe, aber die Bankverbindung möchte?",
+    a: "Wir nennen das „Single Plus“: ein Vermieter mit einer Einheit abonniert für 10 €/Monat und schaltet damit den automatischen Bankabgleich frei. Gleicher Preis wie eine zweite Einheit, kein zusätzlicher Tarif zu verwalten. Jederzeit kündbar."
+  },
+  {
+    q: "Sind die 10 € inkl. oder zzgl. MwSt.?",
+    a: "Inklusive MwSt. Die 10 €, die Sie sehen, sind die 10 €, die Sie zahlen. Keine Überraschungen beim Bezahlen."
+  },
+  {
+    q: "Kann ich jederzeit kündigen?",
+    a: "Ja. Kündigen Sie über die Abrechnungsseite oder das Stripe-Kundenportal. Ihr Abonnement bleibt bis zum Ende des aktuellen Abrechnungszeitraums aktiv, danach wird Ihr Konto auf die kostenlose Stufe zurückgesetzt (1 Einheit, keine Bankverbindung). Ihre Daten bleiben erhalten."
   },
   {
     q: "Bieten Sie Rückerstattungen an?",
     a: "Ja — innerhalb von 14 Tagen nach Ihrer ersten Zahlung, ohne Wenn und Aber. Kontaktieren Sie einfach den Support, und wir erstatten den Betrag auf Ihr ursprüngliches Zahlungsmittel zurück."
   },
   {
-    q: "Was ist der Unterschied zwischen monatlicher und jährlicher Abrechnung?",
-    a: "Bei jährlicher Abrechnung sparen Sie etwa 30%. Plus kostet 4,90 €/Monat bei jährlicher Zahlung (58,80 €/Jahr) im Vergleich zu 6,90 €/Monat bei monatlicher Abrechnung. Sie können jederzeit über das Kundenportal zwischen den Abrechnungszyklen wechseln."
-  },
-  {
-    q: "Wird es teurere Pläne (Pro, Business) geben?",
-    a: "Wir haben Pro- und Business-Tarife für die Zukunft geplant, gerichtet an Vermieter mit 50+ Einheiten und Hausverwaltungen. Sie werden Funktionen wie Team-Rollen, Audit-Logs, geplanten Bank-Sync, Massennachrichten und API-Zugang bieten. Wir starten sie, wenn klare Nachfrage von Nutzern besteht, die Plus-Limits erreichen."
+    q: "Was passiert mit bestehenden Einheiten, wenn ich kündige?",
+    a: "Nichts. Einheiten, Immobilien, Mietverträge, Dokumente und Verlauf bleiben vollständig erhalten. Sie können lediglich keine weiteren Einheiten über die erste kostenlose hinaus hinzufügen, und die Bankverbindung ist deaktiviert, bis Sie wieder abonnieren."
   },
   {
     q: "Sind meine Daten sicher und DSGVO-konform?",
@@ -42,8 +46,8 @@ const faqs = [
 
 <Layout
   title="Preise | Vermietler"
-  description="Einfache, transparente Preise für private Vermieter. Kostenlos für eine Einheit, 4,90 €/Monat für wachsende Portfolios. Keine Kreditkarte erforderlich."
-  keywords="vermietler preise, immobilienverwaltung software preise, vermieter app kosten, hausverwaltungssoftware preis"
+  description="Preise pro Einheit für private Vermieter. Erste Einheit dauerhaft kostenlos, 10 €/Monat je weitere Einheit (inkl. MwSt.). Keine jährliche Bindung, keine Kreditkarte für den Einstieg."
+  keywords="vermietler preise, immobilienverwaltung software preise, vermieter app kosten, hausverwaltungssoftware preis, pro einheit abrechnung"
   lang="de"
   alternateEn="/pricing"
   alternateDe="/de/preise"
@@ -60,18 +64,13 @@ const faqs = [
           Nutzungsbasierte Zusatzleistungen
         </h2>
         <p class="mx-auto mt-4 max-w-2xl text-center text-base text-gray-500">
-          Verfügbar im Plus-Plan. Sie zahlen nur, was Sie tatsächlich nutzen.
+          Verfügbar auf jedem Konto, kostenlos oder abonniert. Sie zahlen nur, was Sie tatsächlich nutzen.
         </p>
-        <div class="mt-10 grid gap-4 sm:grid-cols-3">
+        <div class="mt-10 grid gap-4 sm:grid-cols-2">
           <div class="rounded-2xl border border-gray-200 bg-white p-6 text-center shadow-xs">
             <p class="text-xs font-semibold uppercase tracking-wider text-gray-400">Briefversand</p>
             <p class="mt-2 font-display text-3xl font-bold text-gray-900">1,80 €</p>
             <p class="mt-1 text-sm text-gray-500">pro Brief (über Pingen)</p>
-          </div>
-          <div class="rounded-2xl border border-gray-200 bg-white p-6 text-center shadow-xs">
-            <p class="text-xs font-semibold uppercase tracking-wider text-gray-400">Zusatzspeicher</p>
-            <p class="mt-2 font-display text-3xl font-bold text-gray-900">0,50 €</p>
-            <p class="mt-1 text-sm text-gray-500">pro GB / Monat</p>
           </div>
           <div class="rounded-2xl border border-gray-200 bg-white p-6 text-center shadow-xs">
             <p class="text-xs font-semibold uppercase tracking-wider text-gray-400">Zusatz-OCR</p>
@@ -120,22 +119,29 @@ const faqs = [
     "@context": "https://schema.org",
     "@type": "Product",
     name: "Vermietler",
-    description: "Immobilienverwaltungssoftware für deutsche Vermieter",
+    description: "Immobilienverwaltungssoftware für deutsche Vermieter mit Abrechnung pro Einheit",
     brand: { "@type": "Brand", name: "Vermietler" },
     offers: [
       {
         "@type": "Offer",
-        name: "Free",
+        name: "Kostenlose Stufe",
         price: "0",
         priceCurrency: "EUR",
-        description: "Kostenloser Plan für Vermieter mit einer Einheit",
+        description: "Dauerhaft kostenlos für eine Mieteinheit. Keine Karte erforderlich.",
       },
       {
         "@type": "Offer",
-        name: "Plus",
-        price: "4.90",
+        name: "Abonnement pro Einheit",
+        price: "10",
         priceCurrency: "EUR",
-        description: "Plus-Plan jährlich abgerechnet für Vermieter mit bis zu 10 Einheiten",
+        priceSpecification: {
+          "@type": "UnitPriceSpecification",
+          price: "10",
+          priceCurrency: "EUR",
+          unitText: "Einheit pro Monat",
+          valueAddedTaxIncluded: true,
+        },
+        description: "10 €/Monat je weitere Einheit über die erste hinaus. Inkl. MwSt.",
       },
     ],
   })} />

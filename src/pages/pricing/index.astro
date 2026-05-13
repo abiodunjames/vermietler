@@ -6,28 +6,32 @@ import Footer from "../../components/Footer.astro";
 
 const faqs = [
   {
-    q: "Is the Free plan really free forever?",
-    a: "Yes. The Free (Starter) plan has no time limit, no credit card requirement, and no hidden fees. It's designed to fully cover a single-unit landlord's needs — banking, expenses, cashflow tracking, and one annual Nebenkostenabrechnung."
+    q: "Is the free tier really free forever?",
+    a: "Yes. One rental unit is free forever, no credit card required and no time limit. It includes every feature except bank-account connection — operating cost statements (Nebenkostenabrechnung), tenant portal, expense tracking, document storage, tax reports, and more all work on the free tier."
   },
   {
-    q: "What happens when I hit a limit on the Free plan?",
-    a: "You'll see a clear message in the app explaining which limit was reached, with a one-click upgrade option. Your existing data is never deleted — you simply can't add more until you upgrade or remove items."
+    q: "How does per-unit billing actually work?",
+    a: "Stripe Subscription quantity = max(1, total units − 1). Your first unit is always free. Add a 2nd unit → €10/month. Add a 10th → €90/month (9 billable seats). Remove a unit → quantity adjusts down automatically on the next invoice with prorated credit."
   },
   {
-    q: "Can I cancel my Plus subscription at any time?",
-    a: "Yes. You can cancel directly from the customer portal. Your Plus features remain active until the end of your current billing period, then your account reverts to Free. Your data is preserved."
+    q: "What if I only have one unit but want bank connection?",
+    a: "We call that Single Plus: a single-unit landlord subscribes for €10/month to unlock automatic bank reconciliation. Same price as adding a second unit, no extra plan to manage. Cancel anytime."
+  },
+  {
+    q: "Is the €10 with or without VAT?",
+    a: "VAT inclusive. The €10 you see is the €10 you pay. No surprises at checkout."
+  },
+  {
+    q: "Can I cancel at any time?",
+    a: "Yes. Cancel from your billing page or the Stripe customer portal. Your subscription remains active until the end of the current billing period, then your account reverts to the free tier (1 unit, no bank connection). Your data is preserved."
   },
   {
     q: "Do you offer refunds?",
     a: "Yes — within 14 days of your first payment, no questions asked. Just contact support and we'll process the refund to your original payment method."
   },
   {
-    q: "What's the difference between monthly and annual billing?",
-    a: "Annual billing saves you about 30%. Plus is €4.90/month when billed annually (€58.80/year total) compared to €6.90/month when billed monthly. You can switch between billing cycles at any time from your customer portal."
-  },
-  {
-    q: "Will there be more expensive plans (Pro, Business)?",
-    a: "We have Pro and Business tiers planned for the future, targeted at landlords with 50+ units and Hausverwaltungen. They'll add features like team roles, audit logs, scheduled bank sync, broadcast messaging, and API access. We'll launch them when there's clear demand from users hitting Plus limits."
+    q: "What happens to existing units if I cancel?",
+    a: "Nothing. Units, properties, leases, documents, and history all stay intact. You just can't add more units beyond the first free one, and bank connection is disabled, until you resubscribe."
   },
   {
     q: "Is my data secure and DSGVO-compliant?",
@@ -42,8 +46,8 @@ const faqs = [
 
 <Layout
   title="Pricing | Vermietler"
-  description="Simple, transparent pricing for private landlords. Free for single-unit owners, €4.90/month for growing portfolios. No credit card required."
-  keywords="vermietler pricing, property management software germany, landlord app price, immobilienverwaltung preise, vermieter software kosten"
+  description="Per-unit pricing for private landlords. First unit free forever, €10/month per additional unit (VAT included). No annual lock-in, no credit card to get started."
+  keywords="vermietler pricing, property management software germany, landlord app price, immobilienverwaltung preise, vermieter software kosten, per unit pricing"
   alternateEn="/pricing"
   alternateDe="/de/preise"
 >
@@ -59,18 +63,13 @@ const faqs = [
           Pay-per-use add-ons
         </h2>
         <p class="mx-auto mt-4 max-w-2xl text-center text-base text-gray-500">
-          Available on the Plus plan. Only pay for what you use.
+          Available on every account, free or subscribed. Only pay for what you use.
         </p>
-        <div class="mt-10 grid gap-4 sm:grid-cols-3">
+        <div class="mt-10 grid gap-4 sm:grid-cols-2">
           <div class="rounded-2xl border border-gray-200 bg-white p-6 text-center shadow-xs">
             <p class="text-xs font-semibold uppercase tracking-wider text-gray-400">Letter dispatch</p>
             <p class="mt-2 font-display text-3xl font-bold text-gray-900">€1.80</p>
             <p class="mt-1 text-sm text-gray-500">per letter (via Pingen)</p>
-          </div>
-          <div class="rounded-2xl border border-gray-200 bg-white p-6 text-center shadow-xs">
-            <p class="text-xs font-semibold uppercase tracking-wider text-gray-400">Extra storage</p>
-            <p class="mt-2 font-display text-3xl font-bold text-gray-900">€0.50</p>
-            <p class="mt-1 text-sm text-gray-500">per GB / month</p>
           </div>
           <div class="rounded-2xl border border-gray-200 bg-white p-6 text-center shadow-xs">
             <p class="text-xs font-semibold uppercase tracking-wider text-gray-400">Extra OCR</p>
@@ -119,22 +118,29 @@ const faqs = [
     "@context": "https://schema.org",
     "@type": "Product",
     name: "Vermietler",
-    description: "Property management software for private landlords",
+    description: "Property management software for private landlords with per-unit pricing",
     brand: { "@type": "Brand", name: "Vermietler" },
     offers: [
       {
         "@type": "Offer",
-        name: "Free",
+        name: "Free tier",
         price: "0",
         priceCurrency: "EUR",
-        description: "Free plan for single-unit landlords",
+        description: "Free forever for a single rental unit. No card required.",
       },
       {
         "@type": "Offer",
-        name: "Plus",
-        price: "4.90",
+        name: "Per-unit subscription",
+        price: "10",
         priceCurrency: "EUR",
-        description: "Plus plan billed annually for landlords with up to 10 units",
+        priceSpecification: {
+          "@type": "UnitPriceSpecification",
+          price: "10",
+          priceCurrency: "EUR",
+          unitText: "unit per month",
+          valueAddedTaxIncluded: true,
+        },
+        description: "€10/month per additional unit beyond the first. VAT inclusive.",
       },
     ],
   })} />
