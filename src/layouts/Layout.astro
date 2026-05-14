@@ -43,6 +43,57 @@ import "../styles/global.css";
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Language auto-redirect (must run before render to avoid flash) -->
+    <script is:inline>
+      (function () {
+        try {
+          var path = window.location.pathname;
+          var search = window.location.search;
+          var hash = window.location.hash;
+          var KEY = 'vermietler_lang';
+
+          // If the URL carries ?lang=en, the user explicitly chose English.
+          // Record the preference and strip the query param.
+          if (search.indexOf('lang=en') !== -1) {
+            localStorage.setItem(KEY, 'en');
+            var cleaned = search.replace(/([?&])lang=en(&|$)/, function (_, p1, p2) {
+              return p2 ? p1 : '';
+            }).replace(/\?$/, '');
+            window.history.replaceState({}, '', path + cleaned + hash);
+          }
+
+          // On any DE page, mark preference as DE (sticky on subsequent visits).
+          if (path === '/de' || path === '/de/' || path.indexOf('/de/') === 0) {
+            if (localStorage.getItem(KEY) !== 'de') {
+              localStorage.setItem(KEY, 'de');
+            }
+            return;
+          }
+
+          // Only auto-redirect on the EN root.
+          if (path !== '/' && path !== '') return;
+
+          var pref = localStorage.getItem(KEY);
+          if (pref === 'de') {
+            window.location.replace('/de/');
+            return;
+          }
+          if (pref === 'en') return; // user has been here; respect their choice
+
+          // First visit: check browser language.
+          var lang = (navigator.language || navigator.userLanguage || '').toLowerCase();
+          if (lang.indexOf('de') === 0) {
+            localStorage.setItem(KEY, 'de');
+            window.location.replace('/de/');
+          } else {
+            localStorage.setItem(KEY, 'en');
+          }
+        } catch (e) {
+          // localStorage / navigator unavailable — fail silently
+        }
+      })();
+    </script>
     <meta name="description" content={description} />
     {noindex && <meta name="robots" content="noindex, nofollow" />}
     <meta name="generator" content={Astro.generator} />
