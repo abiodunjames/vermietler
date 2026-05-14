@@ -1,6 +1,7 @@
 import React, { useState, useMemo, useEffect, useRef } from "react";
 import { calculate, type MortgageInput } from "./mortgage-math";
 import { track } from "../../lib/analytics";
+import NumberInput from "./NumberInput";
 
 type Lang = "en" | "de";
 type Tab = "breakdown" | "amortization";
@@ -396,12 +397,14 @@ export default function MortgageCalculator({ lang = "en" }: { lang?: Lang }) {
             {/* Interest rate */}
             <div>
               <label className="mb-2 block text-[13px] font-semibold tracking-[0.01em] text-gray-700">{t.interestRate}</label>
-              <div className="relative">
-                <input type="number" step={0.1} min={0} max={15} value={interestRate}
-                  onChange={(e) => handleInterestRate(Number(e.target.value))}
-                  className={`${inputCls} pr-10`} />
-                <span className="pointer-events-none absolute right-3.5 top-1/2 -translate-y-1/2 font-mono text-[13px] text-gray-400">%</span>
-              </div>
+              <NumberInput
+                value={interestRate}
+                onChange={handleInterestRate}
+                min={0}
+                max={15}
+                suffix="%"
+                className={inputCls}
+              />
               {interestRate <= 0 && <p className="mt-1 text-xs text-red-500">Must be greater than 0</p>}
             </div>
 
@@ -411,12 +414,14 @@ export default function MortgageCalculator({ lang = "en" }: { lang?: Lang }) {
                 <label className="text-[13px] font-semibold tracking-[0.01em] text-gray-700">{t.repaymentRate}</label>
                 <InfoTooltip text={t.infoRepayment} />
               </div>
-              <div className="relative">
-                <input type="number" step={0.5} min={0.5} max={15} value={repaymentRate}
-                  onChange={(e) => handleRepaymentRate(Number(e.target.value))}
-                  className={`${inputCls} pr-10`} />
-                <span className="pointer-events-none absolute right-3.5 top-1/2 -translate-y-1/2 font-mono text-[13px] text-gray-400">%</span>
-              </div>
+              <NumberInput
+                value={repaymentRate}
+                onChange={handleRepaymentRate}
+                min={0.5}
+                max={15}
+                suffix="%"
+                className={inputCls}
+              />
               {repaymentRate < 0.5 && <p className="mt-1 text-xs text-red-500">Min 0.5%</p>}
             </div>
 

@@ -1,5 +1,6 @@
 import React, { useState, useMemo, useEffect, useRef } from "react";
 import { track } from "../../lib/analytics";
+import NumberInput from "./NumberInput";
 
 type Lang = "en" | "de";
 
@@ -495,12 +496,11 @@ export default function MietpreisbremseCalculator({ lang = "en" }: { lang?: Lang
               {/* Months since Rüge */}
               <div>
                 <label className="mb-2 block text-[13px] font-semibold tracking-[0.01em] text-gray-700">{t.monthsRented}</label>
-                <input
-                  type="number"
+                <NumberInput
+                  value={monthsRented}
+                  onChange={(n) => setMonthsRented(Math.round(n))}
                   min={0}
                   max={120}
-                  value={monthsRented}
-                  onChange={(e) => setMonthsRented(Math.max(0, Math.min(parseInt(e.target.value) || 0, 120)))}
                   className={inputCls}
                 />
                 <p className="mt-1 text-xs text-gray-400">{t.monthsRentedHint}</p>

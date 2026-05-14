@@ -1,5 +1,6 @@
 import React, { useState, useMemo, useEffect, useRef } from "react";
 import { track } from "../../lib/analytics";
+import NumberInput from "./NumberInput";
 
 type Lang = "en" | "de";
 
@@ -363,17 +364,15 @@ export default function ClosingCostCalculator({ lang = "en" }: { lang?: Lang }) 
                     {agentPct.toFixed(2)}%
                   </span>
                 </div>
-                <div className="relative mt-2">
-                  <input
-                    type="number"
-                    step={0.01}
+                <div className="mt-2">
+                  <NumberInput
+                    value={agentPct}
+                    onChange={(n) => setAgentPct(n)}
                     min={0}
                     max={7.14}
-                    value={agentPct}
-                    onChange={(e) => handleAgentSlider(e.target.value)}
-                    className={`${inputCls} pr-10`}
+                    suffix="%"
+                    className={inputCls}
                   />
-                  <span className="pointer-events-none absolute right-3.5 top-1/2 -translate-y-1/2 font-mono text-[13px] text-gray-400">%</span>
                 </div>
                 <p className="mt-1 text-xs text-gray-400">{t.agentHint}</p>
               </div>
@@ -384,33 +383,25 @@ export default function ClosingCostCalculator({ lang = "en" }: { lang?: Lang }) 
                 <div className="grid grid-cols-2 gap-3">
                   <div>
                     <p className="mb-1 text-xs text-gray-500">{t.notaryFee}</p>
-                    <div className="relative">
-                      <input
-                        type="number"
-                        step={0.1}
-                        min={0.5}
-                        max={3}
-                        value={notaryPct}
-                        onChange={(e) => setNotaryPct(Math.max(0, Math.min(parseFloat(e.target.value) || 0, 3)))}
-                        className={`${inputCls} pr-10`}
-                      />
-                      <span className="pointer-events-none absolute right-3.5 top-1/2 -translate-y-1/2 font-mono text-[13px] text-gray-400">%</span>
-                    </div>
+                    <NumberInput
+                      value={notaryPct}
+                      onChange={setNotaryPct}
+                      min={0}
+                      max={3}
+                      suffix="%"
+                      className={inputCls}
+                    />
                   </div>
                   <div>
                     <p className="mb-1 text-xs text-gray-500">{t.landRegistry}</p>
-                    <div className="relative">
-                      <input
-                        type="number"
-                        step={0.1}
-                        min={0.1}
-                        max={1.5}
-                        value={registryPct}
-                        onChange={(e) => setRegistryPct(Math.max(0, Math.min(parseFloat(e.target.value) || 0, 1.5)))}
-                        className={`${inputCls} pr-10`}
-                      />
-                      <span className="pointer-events-none absolute right-3.5 top-1/2 -translate-y-1/2 font-mono text-[13px] text-gray-400">%</span>
-                    </div>
+                    <NumberInput
+                      value={registryPct}
+                      onChange={setRegistryPct}
+                      min={0}
+                      max={1.5}
+                      suffix="%"
+                      className={inputCls}
+                    />
                   </div>
                 </div>
                 <p className="mt-1 text-xs text-gray-400">{t.notaryHint}</p>
