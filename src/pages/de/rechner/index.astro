@@ -1,0 +1,312 @@
+---
+import Layout from "../../../layouts/Layout.astro";
+import Navbar from "../../../components/Navbar.astro";
+import Footer from "../../../components/Footer.astro";
+
+const calculators = [
+  {
+    name: "Kaufnebenkostenrechner",
+    href: "/de/kaufnebenkostenrechner",
+    eyebrow: "Kauf",
+    summary: "Berechnen Sie Grunderwerbsteuer, Notar, Grundbuch und Maklerprovision für jedes Bundesland. Zeigt Ihren Gesamtkapitalbedarf vor der Finanzierung.",
+    bullets: [
+      "Alle 16 Bundesländer mit aktuellen 2026-Sätzen (3,5%-6,5%)",
+      "Notar + Grundbuch + Maklerprovision",
+      "Gesamttransaktionskosten in Euro",
+    ],
+    category: "acquisition",
+    colors: { bg: "bg-amber-50", text: "text-amber-700", icon: "text-amber-500" },
+    icon: '<path d="M2.25 18.75a60.07 60.07 0 0 1 15.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 0 1 3 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 0 0-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 0 1-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 0 0 3 15h-.75M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>',
+  },
+  {
+    name: "Tilgungsrechner",
+    href: "/de/tilgungsrechner",
+    eyebrow: "Kauf",
+    summary: "Modellieren Sie Ihr Annuitätendarlehen. Monatliche Rate, vollständiger Tilgungsplan, Gesamtzinsen über die Zinsbindung und Auswirkung von Sondertilgung.",
+    bullets: [
+      "Jährliche Annuität = (Zins + Tilgung) × Darlehenssumme",
+      "Tilgungsplan Jahr für Jahr",
+      "Sondertilgung + Tilgungssatzwechsel simulieren",
+    ],
+    category: "acquisition",
+    colors: { bg: "bg-cyan-50", text: "text-cyan-700", icon: "text-cyan-600" },
+    icon: '<path d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 0 0 2.25-2.25V6.75A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25v10.5A2.25 2.25 0 0 0 4.5 19.5Z"/>',
+  },
+  {
+    name: "Mietrenditerechner",
+    href: "/de/mietrenditerechner",
+    eyebrow: "Rendite",
+    summary: "Sehen Sie Brutto-, Nettorendite und Eigenkapitalrendite jeder Mietimmobilie. Berücksichtigt nicht umlagefähiges Hausgeld, Leerstand und Verwaltungskosten.",
+    bullets: [
+      "Bruttomietrendite vs. Nettomietrendite",
+      "Faktor (Vervielfältiger) Aufschlüsselung",
+      "Rendite nach Betriebskosten",
+    ],
+    category: "returns",
+    colors: { bg: "bg-emerald-50", text: "text-emerald-700", icon: "text-emerald-600" },
+    icon: '<path d="M2.25 18 9 11.25l4.306 4.306a11.95 11.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941"/>',
+  },
+  {
+    name: "Mietpreisbremse-Rechner",
+    href: "/de/mietpreisbremse-rechner",
+    eyebrow: "Compliance",
+    summary: "Prüfen Sie, ob Ihre Miete der Mietpreisbremse entspricht. Berechnen Sie die maximal zulässige Miete und das Rüge-Rückzahlungsrisiko.",
+    bullets: [
+      "Ortsübliche Vergleichsmiete + 10% Obergrenze",
+      "Mietspiegel-basierte Berechnung",
+      "Rüge-Rückzahlungsrisiko-Schätzung",
+    ],
+    category: "operations",
+    colors: { bg: "bg-purple-50", text: "text-purple-700", icon: "text-purple-600" },
+    icon: '<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>',
+  },
+  {
+    name: "AfA-Rechner",
+    href: "/de/afa-rechner",
+    eyebrow: "Steuer",
+    summary: "Berechnen Sie Ihre jährliche Abschreibung für Abnutzung. Unterstützt 2 %, 3 % (Gebäude ab 2023) und die degressive Variante.",
+    bullets: [
+      "Linear 2 % / 3 % / degressiv 5 %",
+      "Gebäudeanteil am Kaufpreis",
+      "Jährliche + kumulierte Abschreibung",
+    ],
+    category: "tax",
+    colors: { bg: "bg-brand-50", text: "text-brand-700", icon: "text-brand-600" },
+    icon: '<path d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9z"/>',
+  },
+  {
+    name: "Anlage V Rechner",
+    href: "/de/anlage-v-rechner",
+    eyebrow: "Steuer",
+    summary: "Schätzen Sie Ihre jährliche Einkommensteuer auf Vermietungseinkünfte. Füllt die wichtigsten Anlage-V-Positionen: Einnahmen, Werbungskosten, AfA, Schuldzinsen.",
+    bullets: [
+      "Mietüberschuss/-verlust Berechnung",
+      "Werbungskosten-Aufschlüsselung",
+      "Steuerwirkung zu Ihrem Grenzsteuersatz",
+    ],
+    category: "tax",
+    colors: { bg: "bg-red-50", text: "text-red-700", icon: "text-red-600" },
+    icon: '<path d="M9 12h6m-6 4h6m2 5H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5.586a1 1 0 0 1 .707.293l5.414 5.414a1 1 0 0 1 .293.707V19a2 2 0 0 1-2 2z"/>',
+  },
+];
+
+const groups = [
+  { id: "acquisition", title: "Immobilie kaufen", desc: "Rechnen Sie vor dem Kaufvertrag durch." },
+  { id: "returns", title: "Rendite & Erträge", desc: "Wissen Sie, was die Immobilie nach Kosten wirklich abwirft." },
+  { id: "operations", title: "Betrieb & Mietfestlegung", desc: "Bleiben Sie konform mit dem deutschen Mietrecht." },
+  { id: "tax", title: "Steuer & Abschreibung", desc: "Optimieren Sie Ihre Steuererklärung als Vermieter." },
+];
+
+const faqs = [
+  {
+    q: "Sind die Rechner kostenlos?",
+    a: "Ja. Alle Rechner sind kostenlos, unbegrenzt nutzbar und erfordern keine Anmeldung. Sie laufen vollständig in Ihrem Browser, es werden keine Daten gespeichert oder an einen Server gesendet.",
+  },
+  {
+    q: "Mit welchem Rechner soll ich anfangen?",
+    a: "Wenn Sie einen Kauf erwägen, starten Sie mit dem Kaufnebenkostenrechner für den Eigenkapitalbedarf, dann der Tilgungsrechner für die monatliche Rate, und der Mietrenditerechner zur Bestätigung der Wirtschaftlichkeit. Für bestehende Vermieter sind der Anlage-V-Rechner und der AfA-Rechner die wertvollsten Tools.",
+  },
+  {
+    q: "Berücksichtigen die Rechner die Steuersätze und Regeln 2026?",
+    a: "Ja. Alle Rechner sind für das Steuerjahr 2026 aktualisiert: aktuelle Grunderwerbsteuersätze in allen 16 Bundesländern, der 3 %-AfA-Satz für Gebäude ab 2023, die neuesten Mietpreisbremse-Regeln und aktuelle Anlage-V-Formularfelder.",
+  },
+  {
+    q: "Kann ich die Rechner auf Deutsch oder Englisch nutzen?",
+    a: "Ja. Jeder Rechner ist sowohl auf Deutsch als auch auf Englisch verfügbar. Die deutsche Version verwendet deutsches Zahlenformat (1.234,56 €) und die übliche deutsche Immobilien-Terminologie (Kaltmiete, Hausgeld, Tilgung, AfA usw.).",
+  },
+  {
+    q: "Wie genau sind die Prognosen?",
+    a: "Die Rechner verwenden Standardformeln, wie sie deutsche Banken, Finanzämter und die BetrKV anerkennen. Die Ergebnisse sind illustrativ und hängen von Ihren Eingaben ab. Für verbindliche Entscheidungen, insbesondere Steuern und Finanzierung, bestätigen Sie die Ergebnisse mit Ihrem Steuerberater und Ihrer Bank.",
+  },
+  {
+    q: "Sind die Rechner DSGVO-konform?",
+    a: "Ja. Die gesamte Berechnung findet lokal in Ihrem Browser statt. Wir speichern, übertragen oder teilen keine Ihrer Eingaben. Die Website selbst nutzt nur essenzielle Cookies und eine minimale Analytik-Lösung mit EU-Hosting.",
+  },
+];
+---
+
+<Layout
+  title="Kostenlose Rechner für deutsche Vermieter | Vermietler"
+  description="Kostenlose Rechner für Kauf, Finanzierung, Vermietung und Steuern in Deutschland. Kaufnebenkosten, Tilgung, Mietrendite, AfA, Mietpreisbremse, Anlage V. DE/EN, ohne Anmeldung, DSGVO-konform."
+  lang="de"
+  keywords="Immobilienrechner, Vermieter Rechner, Hypothekenrechner, Tilgungsrechner, Kaufnebenkostenrechner, Mietrenditerechner, AfA Rechner, Mietpreisbremse Rechner, Anlage V Rechner, Grunderwerbsteuer Rechner, Rendite berechnen Immobilie"
+  alternateEn="/calculators"
+  alternateDe="/de/rechner"
+>
+  <Navbar lang="de" />
+
+  <!-- Hero -->
+  <header class="bg-gradient-to-b from-brand-50/40 to-white pt-28 pb-12 lg:pt-32 lg:pb-16">
+    <div class="mx-auto max-w-5xl px-6 text-center">
+      <p class="mb-3 inline-flex items-center gap-1.5 rounded-full bg-brand-50 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-brand-700">
+        <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+        6 kostenlose Rechner · Edition 2026
+      </p>
+      <h1 class="font-display text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl" style="letter-spacing:-0.025em">
+        Rechner für deutsche Vermieter
+      </h1>
+      <p class="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-gray-600">
+        Kostenlose Tools ohne Anmeldung für jede Phase der Mietimmobilie. Kaufen, finanzieren, vermieten und versteuern mit denselben Zahlen, die Ihre Bank, Ihr Steuerberater und das Finanzamt verwenden.
+      </p>
+    </div>
+  </header>
+
+  <main class="bg-white pb-20">
+    <div class="mx-auto max-w-5xl px-6">
+
+      <!-- Grouped calculator cards -->
+      {groups.map((group) => (
+        <section class="mt-14 first:mt-0">
+          <div class="mb-6">
+            <h2 class="font-display text-2xl font-bold tracking-tight text-gray-900" style="letter-spacing:-0.02em">{group.title}</h2>
+            <p class="mt-1 text-sm text-gray-500">{group.desc}</p>
+          </div>
+          <div class="grid gap-4 sm:grid-cols-2">
+            {calculators.filter((c) => c.category === group.id).map((calc) => (
+              <a
+                href={calc.href}
+                class="group relative flex flex-col overflow-hidden rounded-2xl border border-gray-200 bg-white p-6 shadow-xs transition hover:-translate-y-[2px] hover:border-brand-200 hover:shadow-md"
+              >
+                <div class={`mb-4 flex h-11 w-11 items-center justify-center rounded-xl ${calc.colors.bg}`}>
+                  <svg class={`h-5 w-5 ${calc.colors.icon}`} fill="none" viewBox="0 0 24 24" stroke-width="1.75" stroke="currentColor" set:html={calc.icon} />
+                </div>
+                <p class={`mb-1 text-[11px] font-semibold uppercase tracking-[0.1em] ${calc.colors.text}`}>{calc.eyebrow}</p>
+                <h3 class="font-display text-lg font-bold text-gray-900 transition group-hover:text-brand-600" style="letter-spacing:-0.01em">{calc.name}</h3>
+                <p class="mt-2 text-sm leading-relaxed text-gray-500">{calc.summary}</p>
+                <ul class="mt-4 space-y-1.5 text-xs text-gray-500">
+                  {calc.bullets.map((b) => (
+                    <li class="flex items-start gap-2">
+                      <svg class="mt-0.5 h-3.5 w-3.5 shrink-0 text-brand-400" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><polyline points="20 6 9 17 4 12"/></svg>
+                      <span>{b}</span>
+                    </li>
+                  ))}
+                </ul>
+                <div class="mt-5 flex items-center gap-1.5 text-sm font-semibold text-brand-600">
+                  Rechner öffnen
+                  <svg class="h-4 w-4 transition group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+                </div>
+              </a>
+            ))}
+          </div>
+        </section>
+      ))}
+
+      <!-- The full lifecycle flow -->
+      <section class="mt-20 rounded-2xl border border-gray-200 bg-gray-50 p-8">
+        <h2 class="font-display text-2xl font-bold tracking-tight text-gray-900" style="letter-spacing:-0.02em">So nutzen Sie sie zusammen</h2>
+        <p class="mt-2 text-sm text-gray-600">Ein typischer Buy-and-Hold-Vermieter rechnet sie in dieser Reihenfolge durch:</p>
+        <ol class="mt-6 space-y-4">
+          <li class="flex gap-4">
+            <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-500 text-sm font-bold text-white">1</span>
+            <div>
+              <p class="text-sm font-semibold text-gray-900"><a href="/de/kaufnebenkostenrechner" class="text-brand-600 hover:underline">Kaufnebenkostenrechner</a> + <a href="/de/tilgungsrechner" class="text-brand-600 hover:underline">Tilgungsrechner</a></p>
+              <p class="mt-1 text-sm text-gray-600">Bestätigen Sie Ihren Gesamteigenkapitalbedarf (Kaufpreis + Nebenkosten) und die monatliche Annuität, bevor Sie Besichtigungen vereinbaren.</p>
+            </div>
+          </li>
+          <li class="flex gap-4">
+            <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-500 text-sm font-bold text-white">2</span>
+            <div>
+              <p class="text-sm font-semibold text-gray-900"><a href="/de/mietrenditerechner" class="text-brand-600 hover:underline">Mietrenditerechner</a></p>
+              <p class="mt-1 text-sm text-gray-600">Belastungstest für Brutto- und Nettorendite anhand der Soll-Miete. Liegt die Nettorendite nach nicht umlagefähigen Kosten unter ~3 %, lohnt sich die Investition meist nicht.</p>
+            </div>
+          </li>
+          <li class="flex gap-4">
+            <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-500 text-sm font-bold text-white">3</span>
+            <div>
+              <p class="text-sm font-semibold text-gray-900"><a href="/de/mietpreisbremse-rechner" class="text-brand-600 hover:underline">Mietpreisbremse-Rechner</a></p>
+              <p class="mt-1 text-sm text-gray-600">Vor jeder Neuvermietung die rechtlich zulässige Höchstmiete für die Adresse prüfen. In angespannten Märkten liegt die Obergrenze oft 20-30 % unter der Marktmiete.</p>
+            </div>
+          </li>
+          <li class="flex gap-4">
+            <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-brand-500 text-sm font-bold text-white">4</span>
+            <div>
+              <p class="text-sm font-semibold text-gray-900"><a href="/de/afa-rechner" class="text-brand-600 hover:underline">AfA-Rechner</a> + <a href="/de/anlage-v-rechner" class="text-brand-600 hover:underline">Anlage V Rechner</a></p>
+              <p class="mt-1 text-sm text-gray-600">Zum Jahresende Abschreibung berechnen und die Anlage V vorbereiten. Die meisten Mietimmobilien erzeugen in den ersten Jahren einen steuerlichen Verlust, der Ihre übrige Einkommensteuer mindert.</p>
+            </div>
+          </li>
+        </ol>
+      </section>
+
+      <!-- FAQ -->
+      <section class="mt-20 border-t border-gray-200 pt-12">
+        <h2 class="font-display text-2xl font-bold tracking-tight text-gray-900" style="letter-spacing:-0.02em">Häufig gestellte Fragen</h2>
+        <div class="mt-8 divide-y divide-gray-200">
+          {faqs.map((faq) => (
+            <details class="group py-5">
+              <summary class="flex cursor-pointer items-center justify-between text-base font-semibold text-gray-900 [&::-webkit-details-marker]:hidden">
+                <h3>{faq.q}</h3>
+                <svg class="h-5 w-5 shrink-0 text-gray-400 transition group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5"/></svg>
+              </summary>
+              <p class="mt-3 text-sm leading-relaxed text-gray-600">{faq.a}</p>
+            </details>
+          ))}
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="mt-20 overflow-hidden rounded-2xl border border-brand-200 bg-gradient-to-br from-brand-50 to-white p-8 lg:p-10">
+        <div class="flex flex-col items-start gap-6 lg:flex-row lg:items-center lg:justify-between">
+          <div>
+            <h2 class="font-display text-2xl font-bold tracking-tight text-gray-900" style="letter-spacing:-0.02em">Über die Rechner hinaus</h2>
+            <p class="mt-2 max-w-xl text-sm leading-relaxed text-gray-600">Vermietler verbindet die Rechner zu einer integrierten Vermietungsplattform. Echte Mieten, echte Ausgaben, echter Cashflow und automatische Nebenkostenabrechnungen.</p>
+          </div>
+          <a href="https://app.vermietler.com/signup" class="inline-flex shrink-0 items-center gap-2 rounded-full bg-brand-500 px-6 py-3 text-sm font-semibold text-white shadow-lg transition hover:bg-brand-600 hover:-translate-y-px">
+            Kostenlos starten
+            <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"/></svg>
+          </a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <Footer lang="de" />
+
+  <!-- JSON-LD: ItemList -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "Kostenlose Rechner für deutsche Vermieter",
+    description: "Eine Sammlung kostenloser, browserbasierter Rechner für Kauf, Finanzierung, Vermietung und Steuern von Immobilien in Deutschland.",
+    itemListOrder: "http://schema.org/ItemListOrderAscending",
+    numberOfItems: calculators.length,
+    itemListElement: calculators.map((c, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      url: `https://vermietler.com${c.href}`,
+      name: c.name,
+      description: c.summary,
+    })),
+  })} />
+
+  <!-- JSON-LD: CollectionPage -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: "Kostenlose Rechner für deutsche Vermieter",
+    url: "https://vermietler.com/de/rechner",
+    inLanguage: ["de", "en"],
+    publisher: { "@type": "Organization", name: "Vermietler", url: "https://vermietler.com" },
+    dateModified: "2026-05-21",
+  })} />
+
+  <!-- JSON-LD: FAQPage -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  })} />
+
+  <!-- JSON-LD: BreadcrumbList -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Startseite", item: "https://vermietler.com/de" },
+      { "@type": "ListItem", position: 2, name: "Rechner", item: "https://vermietler.com/de/rechner" },
+    ],
+  })} />
+</Layout>
