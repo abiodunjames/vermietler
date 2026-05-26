@@ -1,5 +1,5 @@
 ---
-title: "Every New Rule Affecting Private Landlords in Germany in 2026"
+title: "Every New Rule Affecting Private Landlords in Germany"
 description: "A complete overview of new and upcoming regulations for German landlords in 2026: rental law reform, CO2 cost increases, energy certificates, Grundsteuer, municipal heat planning, smart meters, and the Gebäudemodernisierungsgesetz."
 date: 2026-04-20
 author: "Vermietler Team"

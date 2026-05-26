@@ -1,5 +1,5 @@
 ---
-title: "Heating Replacement Funding 2026: KfW Subsidies for German Landlords"
+title: "Heating Replacement Funding: KfW Subsidies for German Landlords"
 description: "Complete guide to KfW heating subsidies (BEG / KfW 458) for landlords in 2026. Subsidy rates, eligible costs, the 10dB noise rule, the new § 559e BGB rent surcharge, and the application process step by step."
 date: 2026-04-24
 author: "Vermietler Team"

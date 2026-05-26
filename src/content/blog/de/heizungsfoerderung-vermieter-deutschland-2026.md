@@ -1,5 +1,5 @@
 ---
-title: "Heizungsförderung 2026: KfW-Zuschüsse für Vermieter im Detail"
+title: "Heizungsförderung: KfW-Zuschüsse für Vermieter im Detail"
 description: "Vollständiger Leitfaden zur KfW-Heizungsförderung (BEG / KfW 458) für Vermieter 2026. Förderhöhen, förderfähige Kosten, die neue 10 dB-Regel, der § 559e BGB Mietzuschlag und das Antragsverfahren Schritt für Schritt."
 date: 2026-04-24
 author: "Vermietler Team"

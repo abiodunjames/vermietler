@@ -1,5 +1,5 @@
 ---
-title: "Energieausweis: New Rules from May 2026, What Private Landlords Need to Know"
+title: "Energieausweis: The New Rules and What Private Landlords Need to Know"
 description: "The EU EPBD transposition deadline is 29 May 2026, and it brings a new A to G efficiency scale, CO2 disclosure, renovation recommendations, and expanded issuance triggers. A practical guide for private landlords in Germany."
 date: 2026-04-16
 author: "Vermietler Team"

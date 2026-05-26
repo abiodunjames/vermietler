@@ -1,5 +1,5 @@
 ---
-title: "Sondereigentumsverwaltung (SEV) Fees in Germany: How Costs Have Changed (2021–2026)"
+title: "Sondereigentumsverwaltung (SEV) Fees in Germany: How Costs Have Changed"
 description: "How Sondereigentumsverwaltung fees have developed in Germany over the last five years. What private landlords pay for special property management, what's driving increases, and whether it's still worth it."
 date: 2026-04-12
 author: "Vermietler Team"

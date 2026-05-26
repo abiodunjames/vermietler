@@ -1,5 +1,5 @@
 ---
-title: "Immobilienmarkt Deutschland 2026: Wo kaufen, wo verkaufen"
+title: "Immobilienmarkt Deutschland: Wo kaufen, wo verkaufen"
 description: "Datenbasierter Ausblick auf den deutschen Wohnimmobilienmarkt 2026: Städteranking, Renditen in B-Städten, die Energieeffizienz-Preisschere und ein praktischer Entscheidungsrahmen für Vermieter."
 date: 2026-04-25
 author: "Vermietler Team"

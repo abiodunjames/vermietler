@@ -1,5 +1,5 @@
 ---
-title: "Sondereigentumsverwaltung (SEV): So haben sich die Kosten in Deutschland entwickelt (2021–2026)"
+title: "Sondereigentumsverwaltung (SEV): So haben sich die Kosten in Deutschland entwickelt"
 description: "Wie sich die Kosten für Sondereigentumsverwaltung in Deutschland in den letzten fünf Jahren entwickelt haben. Was private Vermieter zahlen, was die Preise treibt und ob sich SEV noch lohnt."
 date: 2026-04-12
 author: "Vermietler Team"

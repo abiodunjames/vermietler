@@ -1,5 +1,5 @@
 ---
-title: "Alle neuen Regeln für private Vermieter in Deutschland 2026"
+title: "Alle neuen Regeln für private Vermieter in Deutschland"
 description: "Vollständiger Überblick über neue und kommende Vorschriften für Vermieter 2026: Mietrechtsreform, CO2-Kosten, Energieausweis, Grundsteuer, kommunale Wärmeplanung, Smart Meter und das Gebäudemodernisierungsgesetz."
 date: 2026-04-20
 author: "Vermietler Team"

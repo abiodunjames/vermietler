@@ -1,5 +1,5 @@
 ---
-title: "German Property Market Outlook 2026: Where to Buy, Where to Sell"
+title: "German Property Market Outlook: Where to Buy, Where to Sell"
 description: "A research-driven outlook on the German residential property market in 2026: city rankings, B-city yields, the energy-efficiency price gap, and a practical decision framework for landlords on where to deploy capital and where to exit."
 date: 2026-04-25
 author: "Vermietler Team"

@@ -1,5 +1,5 @@
 ---
-title: "Energieausweis: Neue Regeln ab Mai 2026, was private Vermieter wissen müssen"
+title: "Energieausweis: Die neuen Regeln und was private Vermieter wissen müssen"
 description: "Am 29. Mai 2026 endet die EU-Umsetzungsfrist für die neue EPBD. Eine einheitliche Skala A bis G, CO2-Kennzeichnung, Sanierungsempfehlungen und neue Ausstellungspflichten: ein praktischer Leitfaden für private Vermieter in Deutschland."
 date: 2026-04-16
 author: "Vermietler Team"
