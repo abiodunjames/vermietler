@@ -1,5 +1,5 @@
 ---
-title: "Mietkaution-Handbuch: So nehmen, verwahren und erstatten Vermieter die Kaution (2026)"
+title: "Mietkaution-Handbuch: So nehmen, verwahren und erstatten Vermieter die Kaution"
 description: "Alles, was Vermieter zur Mietkaution nach § 551 BGB wissen müssen. Drei-Monatsmieten-Obergrenze, getrenntes Kautionskonto, Verzinsung, zulässige Einbehalte, die 6-Monats-Frist in der Praxis und die Kautionsbürgschaft als Alternative."
 date: 2026-05-21
 author: "Vermietler Team"

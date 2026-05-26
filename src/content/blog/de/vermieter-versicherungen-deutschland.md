@@ -1,5 +1,5 @@
 ---
-title: "Versicherungen für Vermieter in Deutschland: Welche Sie wirklich brauchen (2026)"
+title: "Versicherungen für Vermieter in Deutschland: Welche Sie wirklich brauchen"
 description: "Ein praktischer Leitfaden zu Vermieterversicherungen in Deutschland. Gebäudeversicherung, Haus- und Grundbesitzerhaftpflicht, Elementarschaden, Mietausfall, Rechtsschutz: was jede deckt, was sie kostet, was umlagefähig ist und was Sie weglassen können."
 date: 2026-05-14
 author: "Vermietler Team"

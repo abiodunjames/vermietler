@@ -1,5 +1,5 @@
 ---
-title: "How to Finance Your First Rental Property in Germany: A Step-by-Step Guide (2026)"
+title: "How to Finance Your First Rental Property in Germany: A Step-by-Step Guide"
 description: "Complete guide to financing a rental property in Germany. Eigenkapital requirements, how banks assess rental income, Annuitätendarlehen structure, KfW programs, Tilgung strategy, and Zinsbindung decisions, a practical walkthrough for first-time landlord-investors."
 date: 2026-04-03
 author: "Vermietler Team"

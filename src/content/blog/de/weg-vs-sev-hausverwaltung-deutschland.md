@@ -1,5 +1,5 @@
 ---
-title: "WEG vs. SEV: Die zwei Ebenen der Hausverwaltung in Deutschland verstehen (2026)"
+title: "WEG vs. SEV: Die zwei Ebenen der Hausverwaltung in Deutschland verstehen"
 description: "Der Unterschied zwischen WEG-Verwaltung und Sondereigentumsverwaltung erklärt. Was jede abdeckt, worauf Sie in Verträgen achten müssen, wann Sie eine SEV beauftragen sollten und was das WEMoG 2020 geändert hat."
 date: 2026-04-15
 author: "Vermietler Team"

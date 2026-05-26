@@ -1,5 +1,5 @@
 ---
-title: "Mieterprüfung in Deutschland: Selbstauskunft, Schufa und was Sie fragen dürfen (2026)"
+title: "Mieterprüfung in Deutschland: Selbstauskunft, Schufa und was Sie fragen dürfen"
 description: "So prüfen Sie Mietinteressenten rechtssicher in Deutschland. Mieterselbstauskunft, Schufa-BonitätsCheck, AGG-konforme Fragen, das neue 3-Phasen-Modell der DSK 2026, und was passiert, wenn Mieter lügen oder Sie die falsche Frage stellen."
 date: 2026-04-21
 author: "Vermietler Team"

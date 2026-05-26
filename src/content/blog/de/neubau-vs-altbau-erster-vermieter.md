@@ -1,5 +1,5 @@
 ---
-title: "Neubau vs. Altbau: Was Erst-Vermieter in Deutschland wissen müssen (2026)"
+title: "Neubau vs. Altbau: Was Erst-Vermieter in Deutschland wissen müssen"
 description: "Neubau oder Altbau als Kapitalanlage? Instandhaltung, Steuervorteile, Mietnachfrage, Finanzierung und Nebenkosten, ein praktischer Leitfaden für private Erst-Vermieter in Deutschland."
 date: 2026-03-25
 author: "Vermietler Team"

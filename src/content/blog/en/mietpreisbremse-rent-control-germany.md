@@ -1,5 +1,5 @@
 ---
-title: "Mietpreisbremse Explained: Rent Control Rules Every German Landlord Must Know (2026)"
+title: "Mietpreisbremse Explained: Rent Control Rules Every German Landlord Must Know"
 description: "Complete guide to Germany's Mietpreisbremse rent brake. Learn where it applies, which properties are exempt, what happens if you violate it, and how rent control affects your rental yield, with practical examples and legal references."
 date: 2026-04-01
 author: "Vermietler Team"

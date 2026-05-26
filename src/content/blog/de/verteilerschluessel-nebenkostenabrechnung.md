@@ -1,5 +1,5 @@
 ---
-title: "Verteilerschlüssel in der Nebenkostenabrechnung: Wie Betriebskosten in Deutschland aufgeteilt werden (2026)"
+title: "Verteilerschlüssel in der Nebenkostenabrechnung: Wie Betriebskosten in Deutschland aufgeteilt werden"
 description: "Wie der Verteilerschlüssel bestimmt, was jeder Mieter zahlt. Wohnfläche, Personenzahl, Verbrauch, MEA und mehr. Rechtliche Regeln, häufige Fehler, der Unterschied WEG vs. Mieter und praktische Beispiele für private Vermieter."
 date: 2026-04-17
 author: "Vermietler Team"

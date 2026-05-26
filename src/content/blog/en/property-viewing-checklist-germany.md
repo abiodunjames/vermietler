@@ -1,5 +1,5 @@
 ---
-title: "Property Viewing in Germany: The Complete Checklist for First-Time Buyers (2026)"
+title: "Property Viewing in Germany: The Complete Checklist for First-Time Buyers"
 description: "Everything to check, ask, and bring to a Hausbesichtigung in Germany. From timing your visit to inspecting heating systems, windows, and Keller, a practical guide for buyers and landlord-investors."
 date: 2026-03-28
 author: "Vermietler Team"

@@ -1,5 +1,5 @@
 ---
-title: "Wohnungsübergabeprotokoll: So führen Vermieter eine rechtssichere Übergabe (2026)"
+title: "Wohnungsübergabeprotokoll: So führen Vermieter eine rechtssichere Übergabe"
 description: "So schreiben Sie ein Wohnungsübergabeprotokoll, das vor Gericht hält. Was bei Einzug und Auszug zu prüfen, zu fotografieren und zu protokollieren ist, warum die gemeinsame Unterschrift bindend ist, die Regel zu offenen vs. verdeckten Mängeln und wie das Protokoll über Ihre Kautionseinbehalte entscheidet."
 date: 2026-05-22
 author: "Vermietler Team"

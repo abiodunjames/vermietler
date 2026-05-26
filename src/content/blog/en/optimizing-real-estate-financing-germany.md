@@ -1,5 +1,5 @@
 ---
-title: "Optimizing Real Estate Financing: Strategies for Landlords in Germany (2026)"
+title: "Optimizing Real Estate Financing: Strategies for Landlords in Germany"
 description: "How to optimize your existing mortgage, reduce interest costs, and improve cash flow. Anschlussfinanzierung, Forward-Darlehen, Sondertilgung strategy, KfW stacking, tax-efficient structures, and Vorfälligkeitsentschädigung for private landlords."
 date: 2026-04-19
 author: "Vermietler Team"

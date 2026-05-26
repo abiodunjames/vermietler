@@ -1,5 +1,5 @@
 ---
-title: "Agent Fees in Germany: What Buyers Pay for Apartments, Land & Commercial Property (2026)"
+title: "Agent Fees in Germany: What Buyers Pay for Apartments, Land & Commercial Property"
 description: "Complete guide to German real estate agent commission laws. Learn who pays the Maklerprovision for apartments, houses, land, and commercial property, including the 2020 reform, recent BGH rulings, and how to reclaim overpaid fees."
 date: 2026-03-24
 author: "Vermietler Team"

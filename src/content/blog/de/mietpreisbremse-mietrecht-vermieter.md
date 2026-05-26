@@ -1,5 +1,5 @@
 ---
-title: "Mietpreisbremse erklärt: Mietrecht-Regeln, die jeder Vermieter kennen muss (2026)"
+title: "Mietpreisbremse erklärt: Mietrecht-Regeln, die jeder Vermieter kennen muss"
 description: "Vollständiger Leitfaden zur Mietpreisbremse in Deutschland. Erfahren Sie, wo sie gilt, welche Ausnahmen es gibt, was bei Verstößen passiert und wie die Mietpreisbremse Ihre Rendite beeinflusst, mit praktischen Beispielen und Gesetzesverweisen."
 date: 2026-04-01
 author: "Vermietler Team"

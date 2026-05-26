@@ -1,5 +1,5 @@
 ---
-title: "Tenant Vetting in Germany: Selbstauskunft, Schufa, and What You're Allowed to Ask (2026)"
+title: "Tenant Vetting in Germany: Selbstauskunft, Schufa, and What You're Allowed to Ask"
 description: "How to legally vet rental applicants in Germany. The Mieterselbstauskunft, Schufa-BonitätsCheck, AGG-compliant questions, the new 2026 three-phase data collection rules, and what happens when tenants lie or you ask the wrong questions."
 date: 2026-04-21
 author: "Vermietler Team"

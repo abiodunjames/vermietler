@@ -1,5 +1,5 @@
 ---
-title: "Erste Mietimmobilie in Deutschland finanzieren: Schritt-für-Schritt-Anleitung (2026)"
+title: "Erste Mietimmobilie in Deutschland finanzieren: Schritt-für-Schritt-Anleitung"
 description: "Vollständiger Leitfaden zur Finanzierung einer Mietimmobilie in Deutschland. Eigenkapitalbedarf, wie Banken Mieteinnahmen bewerten, Annuitätendarlehen-Struktur, KfW-Programme, Tilgungsstrategie und Zinsbindung, ein praktischer Leitfaden für Erst-Vermieter und Kapitalanleger."
 date: 2026-04-03
 author: "Vermietler Team"

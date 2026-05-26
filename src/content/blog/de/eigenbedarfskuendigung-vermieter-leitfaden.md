@@ -1,5 +1,5 @@
 ---
-title: "Eigenbedarfskündigung: Wann Sie Ihre Wohnung legal zurückbekommen (2026)"
+title: "Eigenbedarfskündigung: Wann Sie Ihre Wohnung legal zurückbekommen"
 description: "Ein vollständiger Leitfaden zur Kündigung wegen Eigenbedarf nach § 573 Abs. 2 Nr. 2 BGB. Wer als Bedarfsperson zählt, gültige Gründe, Kündigungsfristen, Sperrfrist, der Härtefall-Widerspruch und die wichtigsten BGH-Urteile 2024-2026."
 date: 2026-05-15
 author: "Vermietler Team"

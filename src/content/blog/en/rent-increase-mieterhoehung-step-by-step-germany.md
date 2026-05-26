@@ -1,5 +1,5 @@
 ---
-title: "Mieterhöhung Step by Step: Writing a Legally Valid Rent Increase Letter (2026)"
+title: "Mieterhöhung Step by Step: Writing a Legally Valid Rent Increase Letter"
 description: "Everything a German landlord needs to raise rent legally under § 558 BGB: timing rules, the Kappungsgrenze, valid justifications, the consent window, lawsuit deadlines, and the common mistakes that get rent increases struck down."
 date: 2026-04-26
 author: "Vermietler Team"

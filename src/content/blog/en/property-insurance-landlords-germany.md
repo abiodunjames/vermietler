@@ -1,5 +1,5 @@
 ---
-title: "Property Insurance for Landlords in Germany: Which Policies You Actually Need (2026)"
+title: "Property Insurance for Landlords in Germany: Which Policies You Actually Need"
 description: "A practical guide to landlord insurance in Germany. Gebäudeversicherung, Haus- und Grundbesitzerhaftpflicht, Elementarschaden, Mietausfall, Rechtsschutz: what each covers, what it costs, what's allocable to tenants, and what to skip."
 date: 2026-05-14
 author: "Vermietler Team"

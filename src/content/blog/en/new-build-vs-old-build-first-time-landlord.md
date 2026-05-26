@@ -1,5 +1,5 @@
 ---
-title: "New Build vs Old Build: What First-Time Landlords in Germany Need to Know (2026)"
+title: "New Build vs Old Build: What First-Time Landlords in Germany Need to Know"
 description: "Comparing Neubau and Altbau as rental investments. Maintenance, tax benefits, tenant demand, financing, and Nebenkosten, a practical guide for first-time private landlords in Germany."
 date: 2026-03-25
 author: "Vermietler Team"

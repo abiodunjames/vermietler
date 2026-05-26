@@ -1,5 +1,5 @@
 ---
-title: "Distribution Keys in the Nebenkostenabrechnung: How Operating Costs Are Split in Germany (2026)"
+title: "Distribution Keys in the Nebenkostenabrechnung: How Operating Costs Are Split in Germany"
 description: "How the Verteilerschlüssel determines what each tenant pays. Wohnfläche, Personenzahl, consumption, MEA, and more. Legal rules, common mistakes, the WEG vs. tenant distinction, and practical examples for private landlords."
 date: 2026-04-17
 author: "Vermietler Team"

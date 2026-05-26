@@ -1,5 +1,5 @@
 ---
-title: "Mietkaution Handbook: How German Landlords Take, Hold, and Return a Deposit (2026)"
+title: "Mietkaution Handbook: How German Landlords Take, Hold, and Return a Deposit"
 description: "Everything a German landlord needs to handle the Mietkaution lawfully under § 551 BGB. The 3-month-rent cap, the separate Kautionskonto, interest, when and what you can deduct, the 6-month default return window, and the Kautionsbürgschaft alternative."
 date: 2026-05-21
 author: "Vermietler Team"

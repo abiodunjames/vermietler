@@ -1,5 +1,5 @@
 ---
-title: "Hausbesichtigung in Deutschland: Die vollständige Checkliste für Immobilienkäufer (2026)"
+title: "Hausbesichtigung in Deutschland: Die vollständige Checkliste für Immobilienkäufer"
 description: "Alles, was Sie bei einer Hausbesichtigung prüfen, fragen und mitbringen sollten. Vom richtigen Zeitpunkt über Heizung, Fenster und Keller bis zu kritischen Fragen an Verkäufer und Makler, ein praktischer Leitfaden."
 date: 2026-03-28
 author: "Vermietler Team"

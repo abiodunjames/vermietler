@@ -1,5 +1,5 @@
 ---
-title: "Maklerprovision in Deutschland: Was Käufer bei Wohnung, Grundstück & Gewerbe zahlen (2026)"
+title: "Maklerprovision in Deutschland: Was Käufer bei Wohnung, Grundstück & Gewerbe zahlen"
 description: "Vollständiger Ratgeber zu Maklergebühren beim Immobilienkauf in Deutschland. Wer zahlt die Provision bei Wohnungen, Häusern, Grundstücken und Gewerbeimmobilien? Inkl. Reform 2020, aktuelle BGH-Urteile und Tipps zur Rückforderung."
 date: 2026-03-24
 author: "Vermietler Team"

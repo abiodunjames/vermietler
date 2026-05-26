@@ -1,5 +1,5 @@
 ---
-title: "Mieterhöhung Schritt für Schritt: Ein rechtssicheres Mieterhöhungsschreiben verfassen (2026)"
+title: "Mieterhöhung Schritt für Schritt: Ein rechtssicheres Mieterhöhungsschreiben verfassen"
 description: "Alles, was Vermieter zur Mieterhöhung nach § 558 BGB wissen müssen: Fristen, Kappungsgrenze, gültige Begründungen, Zustimmungsfrist, Klagefrist und die häufigsten Fehler, die Mieterhöhungen vor Gericht scheitern lassen."
 date: 2026-04-26
 author: "Vermietler Team"

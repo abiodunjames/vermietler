@@ -1,5 +1,5 @@
 ---
-title: "Wohnungsübergabeprotokoll: How German Landlords Run a Legally Bulletproof Handover (2026)"
+title: "Wohnungsübergabeprotokoll: How German Landlords Run a Legally Bulletproof Handover"
 description: "How to write a Wohnungsübergabeprotokoll that actually holds up in court. What to inspect, photograph, and log at move-in and move-out, why the joint signature is binding, the open vs hidden defect rule, and how the protocol determines what you can deduct from the Mietkaution."
 date: 2026-05-22
 author: "Vermietler Team"

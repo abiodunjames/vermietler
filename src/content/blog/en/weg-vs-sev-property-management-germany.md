@@ -1,5 +1,5 @@
 ---
-title: "WEG vs. SEV: Understanding the Two Layers of Property Management in Germany (2026)"
+title: "WEG vs. SEV: Understanding the Two Layers of Property Management in Germany"
 description: "The difference between WEG-Verwaltung and Sondereigentumsverwaltung explained. What each covers, what to look for in contracts, when to hire an SEV vs. self-manage, and how the WEMoG 2020 reform changed the rules."
 date: 2026-04-15
 author: "Vermietler Team"

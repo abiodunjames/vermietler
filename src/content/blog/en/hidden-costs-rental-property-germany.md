@@ -1,5 +1,5 @@
 ---
-title: "Hidden Costs of Owning a Rental Property in Germany: Hausgeld, Instandhaltung & More (2026)"
+title: "Hidden Costs of Owning a Rental Property in Germany: Hausgeld, Instandhaltung & More"
 description: "The real ongoing costs of owning a rental property in Germany that most buyers overlook. From Hausgeld and maintenance reserves to insurance, Grundsteuer reform, and vacancy risk, a practical breakdown for landlord-investors."
 date: 2026-03-28
 author: "Vermietler Team"

@@ -1,5 +1,5 @@
 ---
-title: "Eigenbedarfskündigung: When You Can Legally Take Back Your Rental in Germany (2026)"
+title: "Eigenbedarfskündigung: When You Can Legally Take Back Your Rental in Germany"
 description: "A complete guide to terminating a tenancy for personal use under § 573 Abs. 2 Nr. 2 BGB. Who counts as a Bedarfsperson, valid grounds, notice periods, Sperrfrist, the Härtefall objection, and the most recent BGH rulings for 2024-2026."
 date: 2026-05-15
 author: "Vermietler Team"

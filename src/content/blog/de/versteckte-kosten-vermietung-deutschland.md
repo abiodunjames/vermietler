@@ -1,5 +1,5 @@
 ---
-title: "Versteckte Kosten einer Mietimmobilie in Deutschland: Hausgeld, Instandhaltung & mehr (2026)"
+title: "Versteckte Kosten einer Mietimmobilie in Deutschland: Hausgeld, Instandhaltung & mehr"
 description: "Die tatsächlichen laufenden Kosten einer Mietimmobilie in Deutschland, die viele Käufer übersehen. Von Hausgeld und Instandhaltungsrücklage über Versicherungen bis zur Grundsteuer-Reform, ein praktischer Leitfaden für Vermieter und Kapitalanleger."
 date: 2026-03-28
 author: "Vermietler Team"
