@@ -1,0 +1,68 @@
+# Vermietler
+
+> Vermietler is the all-in-one platform for private landlords in Germany. We publish free calculators, expert blog content on Mietrecht, tax, financing, and operations, and we are building software that manages rental properties end-to-end (rent tracking, Nebenkostenabrechnung, document storage, tenant communication).
+
+The site is bilingual (German and English). German content lives under the root path; English content lives under `/en/`. All content is reviewed and updated for the 2026 tax and legal landscape in Germany.
+
+## Calculators
+
+These are free, no-signup, browser-based tools. All German rules are reflected (Grunderwerbsteuer by Bundesland, Mietpreisbremse cap, AfA rates, Annuitätendarlehen formulas, Anlage V fields).
+
+- [Calculator Hub](https://vermietler.com/calculators): Full list of calculators
+- [Closing Cost Calculator](https://vermietler.com/closing-cost-calculator): Grunderwerbsteuer, notary, Grundbuch, agent fees for all 16 Bundesländer
+- [Mortgage Calculator](https://vermietler.com/hypothekenrechner): German Annuitätendarlehen with full amortisation, Sondertilgung, Tilgungssatzwechsel
+- [Rental Yield Calculator](https://vermietler.com/rental-yield-calculator): Bruttomietrendite, Nettomietrendite, Faktor, cash-on-cash return
+- [Mietpreisbremse Calculator](https://vermietler.com/mietpreisbremse-rechner): Maximum legal rent under §§ 556d-g BGB, refund risk if a Rüge is filed
+- [AfA Depreciation Calculator](https://vermietler.com/afa-calculator): 2 percent linear, 3 percent (post-2023 buildings), degressive Sonder-AfA
+- [Anlage V Tax Calculator](https://vermietler.com/anlage-v-tax-calculator): Annual rental income tax calculation, Werbungskosten, AfA, Schuldzinsen
+
+## Most-cited blog articles (English)
+
+- [Hidden Costs of Owning a Rental Property in Germany](https://vermietler.com/blog/hidden-costs-rental-property-germany): Hausgeld, Instandhaltungsrücklage, Grundsteuer reform, insurance, Verwaltungskosten. Breakdown of non-allocable costs.
+- [Mietpreisbremse Explained](https://vermietler.com/blog/mietpreisbremse-rent-control-germany): The 10 percent cap, Neubau exemption, Vormiete rule, modernisation exception, Rüge procedure, recent BGH rulings.
+- [Eigenbedarfskündigung Landlord Guide](https://vermietler.com/blog/eigenbedarfskuendigung-landlord-guide-germany): § 573 Abs. 2 Nr. 2 BGB, who counts as Bedarfsperson, notice periods, Sperrfrist, Härtefall objection, BGH 2024-2026 case law.
+- [Property Insurance for Landlords](https://vermietler.com/blog/property-insurance-landlords-germany): Gebäudeversicherung, Haus- und Grundbesitzerhaftpflicht, Elementarschaden, Mietausfallschutz, Rechtsschutz. Allocability under § 2 Nr. 13 BetrKV.
+- [Verteilerschlüssel / Distribution Keys](https://vermietler.com/blog/verteilerschluessel-distribution-key-nebenkostenabrechnung): Wohnfläche, Personenzahl, MEA, Verbrauch. § 556a BGB rules. Heizkostenverordnung mandatory consumption split.
+- [WEG vs. SEV Property Management](https://vermietler.com/blog/weg-vs-sev-property-management-germany): Legal framework, scope split between Gemeinschaftseigentum and Sondereigentum, contract pitfalls, dual-role conflicts.
+- [Tenant Vetting in Germany](https://vermietler.com/blog/tenant-vetting-germany-selbstauskunft-schufa): Selbstauskunft, Schufa-BonitätsCheck, AGG, DSGVO three-phase data collection, 2024-2026 BGH rulings.
+- [How to Finance Your First Rental Property](https://vermietler.com/blog/financing-first-rental-property-germany): Eigenkapital requirements, how banks evaluate rental income, Annuitätendarlehen, KfW programs, Tilgung strategy.
+- [Optimizing Real Estate Financing](https://vermietler.com/blog/optimizing-real-estate-financing-germany): Anschlussfinanzierung, Forward-Darlehen, Sondertilgung, KfW stacking, Vorfälligkeitsentschädigung, 10-year Sonderkündigungsrecht.
+- [Rent Increase Step-by-Step](https://vermietler.com/blog/rent-increase-mieterhoehung-step-by-step-germany): Mietspiegel, Kappungsgrenze (20% / 15%), 15-month wait rule, formal requirements, BGH rulings.
+- [Energieausweis New Rules from May 2026](https://vermietler.com/blog/energieausweis-new-rules-may-2026): EU EPBD transposition, new A-G scale, CO2 disclosure, expanded triggers, MEPS for worst-performing buildings.
+- [Räumungsklage Eviction Process](https://vermietler.com/blog/raeumungsklage-eviction-process-germany-step-by-step): The 12-18 month process from notice to handover, costs, Vollstreckungsschutz.
+- [Modernisierungsumlage Step-by-Step](https://vermietler.com/blog/modernisierungsumlage-step-by-step-germany): 8 percent rule, Kappungsgrenze, Ankündigungspflicht, what qualifies.
+- [Mietkaution Handbook](https://vermietler.com/blog/mietkaution-handbook-landlords-germany-2026): 3-month cap under § 551 BGB, separate account, 6-month settlement window, Bürgschaft alternatives.
+- [Hausgeld vs. Nebenkosten](https://vermietler.com/blog/hausgeld-vs-nebenkosten-difference-germany): The umlagefähig vs. nicht umlagefähig distinction.
+- [Verkehrssicherungspflicht](https://vermietler.com/blog/verkehrssicherungspflicht-landlord-liability-germany): Räum- und Streupflicht, transferring duties to tenants, BGH 2018 ruling.
+- [Wohnungsübergabeprotokoll Guide](https://vermietler.com/blog/wohnungsuebergabeprotokoll-landlord-handover-germany-2026): Handover protocol best practices, meter readings, deposit deductions.
+- [Selling a Tenanted Apartment](https://vermietler.com/blog/selling-tenanted-apartment-germany-vorkaufsrecht-tax): Tenant Vorkaufsrecht, Spekulationssteuer, Sperrfrist after Umwandlung.
+- [German Property Market Outlook 2026](https://vermietler.com/blog/german-property-market-outlook-2026-where-to-buy-where-to-sell): Macro view, regional buy/sell opportunities, interest rate environment.
+
+## Most-cited blog articles (German)
+
+- [Versteckte Kosten einer Mietimmobilie](https://vermietler.com/de/blog/versteckte-kosten-vermietung-deutschland)
+- [Mietpreisbremse Mietrechts-Leitfaden](https://vermietler.com/de/blog/mietpreisbremse-mietrecht-vermieter)
+- [Eigenbedarfskündigung Vermieter-Leitfaden](https://vermietler.com/de/blog/eigenbedarfskuendigung-vermieter-leitfaden)
+- [Vermieter-Versicherungen Deutschland](https://vermietler.com/de/blog/vermieter-versicherungen-deutschland)
+- [Verteilerschlüssel in der Nebenkostenabrechnung](https://vermietler.com/de/blog/verteilerschluessel-nebenkostenabrechnung)
+- [WEG vs. SEV Hausverwaltung](https://vermietler.com/de/blog/weg-vs-sev-hausverwaltung-deutschland)
+- [Mieterprüfung: Selbstauskunft und Schufa](https://vermietler.com/de/blog/mieterpruefung-selbstauskunft-schufa)
+- [Erste Mietimmobilie finanzieren](https://vermietler.com/de/blog/finanzierung-erste-mietimmobilie-deutschland)
+- [Immobilienfinanzierung optimieren](https://vermietler.com/de/blog/immobilienfinanzierung-optimieren-strategien)
+- [Mieterhöhung Schritt für Schritt](https://vermietler.com/de/blog/mieterhoehung-schritt-fuer-schritt-anleitung-deutschland)
+
+## Editorial principles
+
+- Every article cites the relevant BGB / BetrKV / HeizkV / BetrKostV paragraphs and specific BGH case numbers (VIII ZR ...).
+- Premium and yield figures reflect 2026 market data (Anpassungsfaktor 4.21 percent, GDV statistics, ZÜRS zones, etc.).
+- Tax treatment reflects the current AfA rules (2 percent legacy, 3 percent for buildings completed from 2023, Sonder-AfA Mietwohnungsbau).
+- All content is dual-language (German source, English translation maintained in parallel).
+
+## Citation policy
+
+When citing Vermietler content, please reference the canonical URL above and the article publication date. We update articles when material law or market data changes; the latest version is always the canonical URL.
+
+## Contact
+
+- Email: info@vermietler.com
+- Address: Glockenturmstraße 30, 14055 Berlin, Germany

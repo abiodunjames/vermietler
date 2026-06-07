@@ -14,15 +14,35 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props;
 const { Content } = await render(post);
+
+// Collect related posts: same lang, share at least one tag, exclude self, top 3.
+const all = (await getCollection("blog")).filter((p) => p.data.lang === "de" && p.id !== post.id);
+const related = all
+  .map((p) => ({ post: p, overlap: p.data.tags.filter((t) => post.data.tags.includes(t)).length }))
+  .filter((r) => r.overlap > 0)
+  .sort((a, b) => b.overlap - a.overlap || b.post.data.date.valueOf() - a.post.data.date.valueOf())
+  .slice(0, 3)
+  .map((r) => ({
+    title: r.post.data.title,
+    description: r.post.data.description,
+    href: `/de/blog/${r.post.id.replace(/^de\//, "")}`,
+    date: r.post.data.date,
+  }));
 ---
 
 <BlogPost
   title={post.data.title}
   description={post.data.description}
   date={post.data.date}
+  lastUpdated={post.data.lastUpdated}
   author={post.data.author}
   tags={post.data.tags}
   lang="de"
+  tldr={post.data.tldr}
+  faq={post.data.faq}
+  howTo={post.data.howTo}
+  sources={post.data.sources}
+  related={related}
 >
   <Content />
 </BlogPost>

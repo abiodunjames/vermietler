@@ -3,23 +3,63 @@ import Layout from "./Layout.astro";
 import Navbar from "../components/Navbar.astro";
 import Footer from "../components/Footer.astro";
 
+interface RelatedPost {
+  title: string;
+  description: string;
+  href: string;
+  date: Date;
+}
+
 interface Props {
   title: string;
   description: string;
   date: Date;
+  lastUpdated?: Date;
   author: string;
   tags: string[];
   lang?: string;
+  tldr?: string;
+  faq?: { q: string; a: string }[];
+  howTo?: { name: string; description?: string; steps: { name: string; text: string }[] };
+  sources?: { name: string; url: string }[];
+  related?: RelatedPost[];
 }
 
-const { title, description, date, author, tags, lang = "en" } = Astro.props;
+const {
+  title,
+  description,
+  date,
+  lastUpdated,
+  author,
+  tags,
+  lang = "en",
+  tldr,
+  faq,
+  howTo,
+  sources,
+  related,
+} = Astro.props;
 const formattedDate = date.toLocaleDateString(lang === "de" ? "de-DE" : "en-US", {
   year: "numeric",
   month: "long",
   day: "numeric",
 });
+const effectiveUpdated = lastUpdated ?? date;
+const formattedUpdated = effectiveUpdated.toLocaleDateString(lang === "de" ? "de-DE" : "en-US", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+});
+const showUpdatedLine = lastUpdated && lastUpdated.valueOf() !== date.valueOf();
 const backLabel = lang === "de" ? "Alle Artikel" : "All posts";
 const backHref = lang === "de" ? "/de/blog" : "/blog";
+const canonicalPath = Astro.url.pathname;
+const canonical = `https://vermietler.com${canonicalPath}`;
+const articleImage = `https://vermietler.com/images/og-default.png`;
+const tldrLabel = lang === "de" ? "Kurz gesagt" : "In short";
+const updatedLabel = lang === "de" ? "Aktualisiert" : "Updated";
+const sourcesLabel = lang === "de" ? "Quellen" : "Sources";
+const relatedLabel = lang === "de" ? "Weiterlesen" : "Read next";
 const blogLabel = "Blog";
 const readingTimeLabel = lang === "de" ? "Min. Lesezeit" : "min read";
 const tocLabel = lang === "de" ? "Inhalt" : "Contents";
@@ -42,15 +82,59 @@ const authorInitials = author.split(" ").map(w => w[0]).join("").slice(0, 2).toU
     set:html={JSON.stringify({
       "@context": "https://schema.org",
       "@type": "Article",
+      "@id": `${canonical}#article`,
       headline: title,
       description: description,
+      image: [articleImage],
       datePublished: date.toISOString(),
-      author: { "@type": "Person", name: author },
-      publisher: { "@type": "Organization", name: "Vermietler", url: "https://vermietler.com" },
+      dateModified: effectiveUpdated.toISOString(),
+      author: {
+        "@type": "Organization",
+        name: author,
+        "@id": "https://vermietler.com/#organization",
+      },
+      publisher: { "@id": "https://vermietler.com/#organization" },
+      mainEntityOfPage: { "@type": "WebPage", "@id": canonical },
       inLanguage: lang === "de" ? "de-DE" : "en-US",
       keywords: tags.join(", "),
+      articleSection: tags[0] ?? "Vermieter",
+      isAccessibleForFree: true,
     })}
   />
+
+  {faq && faq.length > 0 && (
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        mainEntity: faq.map((f) => ({
+          "@type": "Question",
+          name: f.q,
+          acceptedAnswer: { "@type": "Answer", text: f.a },
+        })),
+      })}
+    />
+  )}
+
+  {howTo && howTo.steps && howTo.steps.length > 0 && (
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        name: howTo.name,
+        description: howTo.description ?? description,
+        inLanguage: lang === "de" ? "de-DE" : "en-US",
+        step: howTo.steps.map((s, i) => ({
+          "@type": "HowToStep",
+          position: i + 1,
+          name: s.name,
+          text: s.text,
+        })),
+      })}
+    />
+  )}
 
   <!-- JSON-LD: BreadcrumbList -->
   <script
@@ -116,6 +200,12 @@ const authorInitials = author.split(" ").map(w => w[0]).join("").slice(0, 2).toU
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
           <strong class="font-medium text-white/70">{formattedDate}</strong>
         </div>
+        {showUpdatedLine && (
+          <div class="flex items-center gap-1.5 text-[13px] text-white/45">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>
+            <strong class="font-medium text-white/70">{updatedLabel}: {formattedUpdated}</strong>
+          </div>
+        )}
         <div class="flex items-center gap-1.5 text-[13px] text-white/45">
           <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
           <strong class="font-medium text-white/70" id="read-time-hero"></strong>
@@ -154,10 +244,36 @@ const authorInitials = author.split(" ").map(w => w[0]).join("").slice(0, 2).toU
       <nav id="toc-list" class="px-5 py-3"></nav>
     </div>
 
+    {tldr && (
+      <aside class="mb-8 rounded-2xl border border-brand-200 bg-brand-25 p-6">
+        <div class="mb-2 flex items-center gap-2">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" class="text-brand-600"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          <div class="font-display text-[12px] font-bold tracking-wider text-brand-700 uppercase">{tldrLabel}</div>
+        </div>
+        <p class="m-0 text-[15.5px] leading-relaxed text-gray-800">{tldr}</p>
+      </aside>
+    )}
+
     <!-- Article prose -->
     <article id="article-content" class="blog-prose prose max-w-none prose-headings:font-display prose-headings:font-semibold prose-headings:tracking-tight prose-a:text-brand-600 prose-a:decoration-brand-200 prose-a:underline-offset-[3px] hover:prose-a:decoration-brand-400 prose-p:text-gray-700 prose-li:text-gray-700 prose-strong:text-gray-900 prose-table:text-sm prose-th:bg-gray-50 prose-th:text-gray-600 prose-th:font-semibold prose-th:text-xs prose-th:uppercase prose-th:tracking-wider prose-td:text-gray-700">
       <slot />
     </article>
+
+    {sources && sources.length > 0 && (
+      <section class="mt-12 rounded-2xl border border-gray-200 bg-gray-50 p-7">
+        <div class="mb-4 flex items-center gap-2">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-gray-500"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+          <h2 class="font-display text-[13px] font-bold tracking-wider text-gray-700 uppercase m-0">{sourcesLabel}</h2>
+        </div>
+        <ul class="m-0 space-y-2 p-0 list-none">
+          {sources.map((s) => (
+            <li class="text-[14px] leading-relaxed">
+              <a href={s.url} target="_blank" rel="noopener nofollow" class="text-brand-600 no-underline hover:underline">{s.name}</a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )}
 
     <!-- Bottom share bar (mobile + desktop) -->
     <div class="mt-14 flex items-center justify-between border-t border-gray-200 pt-6">
@@ -181,6 +297,23 @@ const authorInitials = author.split(" ").map(w => w[0]).join("").slice(0, 2).toU
       </div>
     </div>
 
+    {related && related.length > 0 && (
+      <section class="mt-14">
+        <div class="mb-5 flex items-center gap-2">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="text-gray-500"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          <h2 class="font-display text-[13px] font-bold tracking-wider text-gray-700 uppercase m-0">{relatedLabel}</h2>
+        </div>
+        <div class="grid gap-4 sm:grid-cols-3">
+          {related.map((r) => (
+            <a href={r.href} class="group block rounded-2xl border border-gray-200 bg-white p-5 no-underline transition hover:border-brand-300 hover:shadow-sm">
+              <div class="font-display text-[15px] font-bold leading-snug text-gray-900 group-hover:text-brand-700">{r.title}</div>
+              <p class="mt-2 line-clamp-3 text-[13.5px] leading-relaxed text-gray-600">{r.description}</p>
+            </a>
+          ))}
+        </div>
+      </section>
+    )}
+
     <!-- Author bio -->
     <div class="mt-10 flex gap-5 rounded-2xl border border-gray-200 bg-gray-50 p-7">
       <div class="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-brand-100 font-display text-xl font-bold text-brand-700">
@@ -188,7 +321,11 @@ const authorInitials = author.split(" ").map(w => w[0]).join("").slice(0, 2).toU
       </div>
       <div>
         <div class="font-display text-lg font-bold text-gray-900">{author}</div>
-        <div class="mt-0.5 text-sm text-brand-500 font-medium">{lang === "de" ? "Vermietler Team" : "Vermietler Team"}</div>
+        <div class="mt-0.5 text-sm text-brand-500 font-medium">
+          {lang === "de"
+            ? "Fachredaktion für deutsches Mietrecht, Steuern und Vermietung."
+            : "Editorial team covering German rental law, tax, and property management."}
+        </div>
         <a href={backHref} class="mt-3 inline-flex items-center gap-1.5 rounded-full border border-gray-200 bg-white px-3 py-1.5 text-xs font-medium text-gray-600 no-underline transition hover:border-brand-300 hover:text-brand-700">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/></svg>
           {backLabel}

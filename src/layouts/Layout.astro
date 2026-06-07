@@ -31,8 +31,6 @@ const deURL = alternateDe
   ? new URL(alternateDe, Astro.site)
   : new URL(Astro.url.pathname.startsWith("/de/") ? Astro.url.pathname : `/de${Astro.url.pathname}`, Astro.site);
 
-const defaultKeywords = "property management, landlord software, Immobilienverwaltung, Vermietung, Nebenkostenabrechnung, tenant management, rent tracking, DSGVO";
-
 const posthogKey = process.env.PUBLIC_POSTHOG_KEY || "";
 
 import "../styles/global.css";
@@ -100,8 +98,7 @@ import "../styles/global.css";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="canonical" href={canonicalURL} />
 
-    <!-- SEO keywords -->
-    <meta name="keywords" content={keywords || defaultKeywords} />
+    {keywords && <meta name="keywords" content={keywords} />}
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
@@ -141,14 +138,69 @@ import "../styles/global.css";
       set:html={JSON.stringify({
         "@context": "https://schema.org",
         "@type": "Organization",
+        "@id": "https://vermietler.com/#organization",
         name: "Vermietler",
+        legalName: "Vermietler",
         url: "https://vermietler.com",
-        logo: "https://vermietler.com/images/logo-compact.svg",
+        logo: {
+          "@type": "ImageObject",
+          url: "https://vermietler.com/images/logo-compact.svg",
+          width: 512,
+          height: 512,
+        },
+        image: "https://vermietler.com/images/og-default.png",
         description:
           lang === "de"
-            ? "Die All-in-One-Plattform für deutsche Vermieter."
-            : "The all-in-one platform for private landlords.",
-        sameAs: [],
+            ? "Die All-in-One-Plattform für private Vermieter in Deutschland. Kostenlose Rechner, Fachartikel zu Mietrecht, Steuern, Finanzierung und Vermietungssoftware."
+            : "The all-in-one platform for private landlords in Germany. Free calculators, expert content on Mietrecht, tax, financing, and rental management software.",
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "Glockenturmstraße 30",
+          postalCode: "14055",
+          addressLocality: "Berlin",
+          addressCountry: "DE",
+        },
+        contactPoint: {
+          "@type": "ContactPoint",
+          contactType: "customer support",
+          email: "info@vermietler.com",
+          telephone: "+49-30-91204795",
+          availableLanguage: ["German", "English"],
+        },
+        areaServed: { "@type": "Country", name: "Germany" },
+        knowsAbout: [
+          "Mietrecht",
+          "German rental law",
+          "Nebenkostenabrechnung",
+          "Mietpreisbremse",
+          "AfA",
+          "Anlage V",
+          "Annuitätendarlehen",
+          "Hausgeld",
+          "Grunderwerbsteuer",
+          "Verkehrssicherungspflicht",
+        ],
+        sameAs: [
+          "https://www.linkedin.com/company/vermietler",
+        ],
+      })}
+    />
+
+    <!-- Structured Data: WebSite with SearchAction -->
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "@id": "https://vermietler.com/#website",
+        url: "https://vermietler.com",
+        name: "Vermietler",
+        description:
+          lang === "de"
+            ? "Kostenlose Rechner und Fachinhalte für private Vermieter in Deutschland."
+            : "Free calculators and expert content for private landlords in Germany.",
+        inLanguage: lang === "de" ? "de-DE" : "en-US",
+        publisher: { "@id": "https://vermietler.com/#organization" },
       })}
     />
 
